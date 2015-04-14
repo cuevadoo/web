@@ -18,12 +18,17 @@ public class Conexion{
         comandos.Connection = conexion;
         adaptador.SelectCommand = comandos;
 	}
-    public DataSet ejecutar(string comando){
+    public DataTable ejecutarT(string comando){
         DataSet contenido = new DataSet();
         comandos.CommandText = comando;
-        try { conexion.Open(); }catch(SqlCeException ex){}
-        adaptador.Fill(contenido,"cosas");
-        conexion.Close();
+        try { adaptador.Fill(contenido, "cosas"); }catch (SqlCeException ex) {}
+        return contenido.Tables["cosas"];
+    }
+    public DataSet ejecutarS(string comando){
+        DataSet contenido = new DataSet();
+        comandos.CommandText = comando;
+        try { adaptador.Fill(contenido, "cosas"); }
+        catch (SqlCeException ex) { }
         return contenido;
     }
 }
