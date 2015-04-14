@@ -18,6 +18,7 @@ public partial class _Default : System.Web.UI.Page
         Conexion c = new Conexion();
         DataSet data=c.ejecutar("SELECT * FROM USUARIOS");
         DataTable tabla=data.Tables["cosas"];
+        GridView1.DataSource = data;
         Label1.Text = tabla.Rows[0].ToString();
     }
 }
