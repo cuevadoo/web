@@ -8,7 +8,7 @@ using System.Web;
 /// </summary>
 namespace CAD
 {
-    public class relaciones
+    public class Relaciones
     {
     }
 }

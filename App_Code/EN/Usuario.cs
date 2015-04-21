@@ -11,15 +11,48 @@ namespace EN
     public class Usuario
     {
         private String nombre;
-        private String apellidos;
+        private String contraseña;
+        private String apellido1;
+        private String apellido2;
         private String email;
         private byte edad;
         private bool sexo;
+        private GustosFilm film;
+        private GustosMusicales musica;
+        private GustosOrdenadores ordenador;
+        private GustosVideojuegos videojuego;
 
-        public String Apellidos
+        public Usuario(String email,String contraseña,String nombre,String apellido1,String apellido2,byte edad,bool sexo){
+            this.email = email;
+            this.contraseña = contraseña;
+            this.nombre = nombre;
+            this.apellido1 = apellido1;
+            this.apellido2 = apellido2;
+            this.edad = edad;
+            this.sexo = sexo;
+        }
+        public Usuario(String email,String contraseña,String nombre,String apellido1,String apellido2,byte edad,bool sexo,GustosFilm film,GustosMusicales musica,GustosOrdenadores ordenador,GustosVideojuegos videojuego){
+            this.email = email;
+            this.contraseña = contraseña;
+            this.nombre = nombre;
+            this.apellido1 = apellido1;
+            this.apellido2 = apellido2;
+            this.edad = edad;
+            this.sexo = sexo;
+            this.film = film;
+            this.musica = musica;
+            this.ordenador = ordenador;
+            this.videojuego = videojuego;
+        }
+        public String Apellido1
         {
-            get { return apellidos; }
-            set { apellidos = value; }
+            get { return apellido1; }
+            set { apellido1 = value; }
+        }
+        public String Apellido2
+        {
+            get { return apellido2; }
+            set { apellido2 = value; }
         }
         public String Email
         {
@@ -40,6 +73,31 @@ namespace EN
         {
             get { return nombre; }
             set { nombre = value; }
+        }
+        public GustosFilm Film
+        {
+            get { return film; }
+            set { film = value; }
+        }
+        public GustosMusicales Musica
+        {
+            get { return musica; }
+            set { musica = value; }
+        }
+        public GustosOrdenadores Ordenador
+        {
+            get { return ordenador; }
+            set { ordenador = value; }
+        }
+        public GustosVideojuegos Videojuego
+        {
+            get { return videojuego; }
+            set { videojuego = value; }
+        }
+        public String Contraseña
+        {
+            get { return contraseña; }
+            set { contraseña = value; }
         }
     }
 }

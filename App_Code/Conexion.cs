@@ -5,9 +5,6 @@ using System.Web;
 using System.Data.SqlServerCe;
 using System.Data;
 
-/// <summary>
-/// Descripción breve de Conexion
-/// </summary>
 public class Conexion{
     private SqlCeDataAdapter adaptador = new SqlCeDataAdapter();
     private SqlCeConnection conexion = new SqlCeConnection();
@@ -18,17 +15,44 @@ public class Conexion{
         comandos.Connection = conexion;
         adaptador.SelectCommand = comandos;
 	}
-    public DataTable ejecutarT(string comando){
-        DataSet contenido = new DataSet();
+    public void ejecutarS(String comando) {
         comandos.CommandText = comando;
-        try { adaptador.Fill(contenido, "cosas"); }catch (SqlCeException ex) {}
+        try {
+            conexion.Open();
+            comandos.ExecuteNonQuery();
+        }catch(Exception ex){
+            throw ex;
+        }finally {
+            if (conexion != null) conexion.Close();
+        }
+    }
+    public DataTable ejecutarR(string comando){
+        DataSet contenido = new DataSet();
+        try {
+            comandos.CommandText = comando;
+            adaptador.Fill(contenido, "cosas");
+        }catch (Exception ex){
+            throw ex;
+        }finally {
+            if (conexion != null) conexion.Close();
+        }
         return contenido.Tables["cosas"];
     }
-    public DataSet ejecutarS(string comando){
+    public DataSet ejecutarR(string[] comando){
         DataSet contenido = new DataSet();
-        comandos.CommandText = comando;
-        try { adaptador.Fill(contenido, "cosas"); }
-        catch (SqlCeException ex) { }
+        int i = 0;
+        try {
+            foreach(String c in comando){
+                comandos.CommandText = c;
+                adaptador.Fill(contenido, "C"+i);
+                
+                i++;
+            }
+        }catch (Exception ex){
+            throw ex;
+        }finally {
+            if (conexion != null) conexion.Close();
+        }
         return contenido;
     }
 }

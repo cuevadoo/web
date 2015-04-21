@@ -8,7 +8,7 @@ using System.Web;
 /// </summary>
 namespace EN
 {
-    public class relaciones
+    public class Relaciones
     {
         private Usuario usuario1;
         private Usuario usuario2;
