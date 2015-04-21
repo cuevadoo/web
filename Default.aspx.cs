@@ -8,7 +8,7 @@ using System.Data;
 
 public partial class _Default : System.Web.UI.Page
 {
-    static Contador cont=new Contador(0,1);
+    static Contador cont = new Contador(0, 1);
     static Conexion c = new Conexion();
     protected void Page_Load(object sender, EventArgs e)
     {

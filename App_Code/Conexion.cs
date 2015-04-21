@@ -27,7 +27,8 @@ public class Conexion{
     public DataSet ejecutarS(string comando){
         DataSet contenido = new DataSet();
         comandos.CommandText = comando;
-        try { adaptador.Fill(contenido, "cosas"); }catch (SqlCeException ex) { }
+        try { adaptador.Fill(contenido, "cosas"); }
+        catch (SqlCeException ex) { }
         return contenido;
     }
 }

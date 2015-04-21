@@ -20,22 +20,22 @@ public class Contador
     public Contador(int min,int max){
         this.min = min; this.max = max; this.cont = 0;
     }
-    public Contador(int min, int max,int cont){
+    public Contador(int min,int max,int cont){
         this.min = min; this.max = max; this.cont = cont;
     }
     public static Contador operator++(Contador c){
-        if(c.cont!=c.max){
-            c.cont= c.cont + 1;
+        if (c.cont != c.max){
+            c.cont = c.cont + 1;
         }
         else{
-            c.cont= c.min;
+            c.cont = c.min;
         }
         return c;
     }
     public override String ToString(){
         return ""+cont;
     }
-    public int ToInt() {
+    public int ToInt(){
         return cont;
     }
 }
