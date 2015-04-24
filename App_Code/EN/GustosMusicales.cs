@@ -8,12 +8,24 @@ using System.Web;
 /// </summary>
 namespace EN
 {
-    public class GustosMusicales
+    public class GustosMusicales:Usuario
     {
         private String estilo;
         private String grupo;
         private String artista;
         private String concierto;
+        private byte decada;
+
+        
+
+        public GustosMusicales(String estilo,String grupo,String artista,String concierto,byte decada) {
+            this.estilo = estilo;
+            this.grupo = grupo;
+            this.artista = artista;
+            this.concierto = concierto;
+            this.decada = decada;
+
+        }
 
         public String Estilo
         {
@@ -35,6 +47,10 @@ namespace EN
             get { return concierto; }
             set { concierto = value; }
         }
-
+        public byte Decada
+        {
+            get { return decada; }
+            set { decada = value; }
+        }
     }
 }

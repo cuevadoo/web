@@ -101,7 +101,7 @@ namespace EN
             get { return videojuego; }
             set { videojuego = value; }
         }
-        public String pass
+        public String Pass
         {
             get { return pass; }
             set { pass = value; }
