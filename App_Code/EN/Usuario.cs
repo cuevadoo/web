@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Web;
 
@@ -17,10 +18,6 @@ namespace EN
         private String email;
         private byte edad;
         private bool sexo;
-        private GustosFilm film;
-        private GustosMusicales musica;
-        private GustosOrdenadores ordenador;
-        private GustosVideojuegos videojuego;
 
         public Usuario(String email, String pass, String nombre, String apellido1, String apellido2, byte edad, bool sexo)
         {
@@ -37,20 +34,11 @@ namespace EN
             this.email = email;
         }
 
-        public Usuario(String email, String pass, String nombre, String apellido1, String apellido2, byte edad, bool sexo, GustosFilm film, GustosMusicales musica, GustosOrdenadores ordenador, GustosVideojuegos videojuego)
-        {
-            this.email = email;
-            this.pass = pass;
-            this.nombre = nombre;
-            this.apellido1 = apellido1;
-            this.apellido2 = apellido2;
-            this.edad = edad;
-            this.sexo = sexo;
-            this.film = film;
-            this.musica = musica;
-            this.ordenador = ordenador;
-            this.videojuego = videojuego;
+        public Chat abrirChat(){
+            Chat c = new Chat(this);
+            return c;
         }
+
         public String Apellido1
         {
             get { return apellido1; }
@@ -80,26 +68,6 @@ namespace EN
         {
             get { return nombre; }
             set { nombre = value; }
-        }
-        public GustosFilm Film
-        {
-            get { return film; }
-            set { film = value; }
-        }
-        public GustosMusicales Musica
-        {
-            get { return musica; }
-            set { musica = value; }
-        }
-        public GustosOrdenadores Ordenador
-        {
-            get { return ordenador; }
-            set { ordenador = value; }
-        }
-        public GustosVideojuegos Videojuego
-        {
-            get { return videojuego; }
-            set { videojuego = value; }
         }
         public String Pass
         {
