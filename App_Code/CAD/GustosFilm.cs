@@ -17,7 +17,7 @@ namespace CAD
         }
         public void delete(EN.GustosFilm gfilm)
         {
-
+            
         }
         public EN.GustosFilm read(String email)
         {
@@ -26,6 +26,8 @@ namespace CAD
         public void update(EN.GustosFilm deleted, EN.GustosFilm added)
         {
 
+
         }
+
     }
 }

@@ -17,14 +17,16 @@ namespace CAD
         }
         public void delete(EN.GustosMusicales gmusic)
         {
-
+             
         }
-        public EN.Usuario read(String email)
+        public EN.GustosMusicales read(String email)
         {
             return null;
         }
         public void update(EN.GustosMusicales deleted, EN.GustosMusicales added)
         {
+
+
 
         }
     }
