@@ -15,7 +15,7 @@ namespace EN
         private String consolaFav;
         private String desarrolladorFav;
 
-        public GustosVideojuegos(String genero, String juegoFav, String consolaFav, String desarolladorFav, String email):base(email)
+        public GustosVideojuegos(String genero, String juegoFav, String consolaFav, String desarrolladorFav, String email):base(email)
         {
             this.genero = genero;
             this.juegoFav = juegoFav;
