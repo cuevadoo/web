@@ -8,7 +8,40 @@ using System.Web;
 /// </summary>
 namespace EN
 {
-    public class GustosVideojuegos
+    public class GustosVideojuegos:Usuario
     {
+        private String genero;
+        private String juegoFav;
+        private String consolaFav;
+        private String desarrolladorFav;
+
+        public GustosVideojuegos(String genero, String juegoFav, String consolaFav, String desarolladorFav, String email):base(email)
+        {
+            this.genero = genero;
+            this.juegoFav = juegoFav;
+            this.consolaFav = consolaFav;
+            this.desarrolladorFav = desarrolladorFav;
+        }
+
+        public String Genero
+        {
+            get { return genero; }
+            set { genero = value; }
+        }
+        public String ConsolaFav
+        {
+            get { return consolaFav; }
+            set { consolaFav = value; }
+        }
+        public String JuegoFav
+        {
+            get { return juegoFav; }
+            set { juegoFav = value; }
+        }
+        public String DesarrolladorFav
+        {
+            get { return desarrolladorFav; }
+            set { consolaFav = value; }
+        }
     }
 }

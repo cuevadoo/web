@@ -8,11 +8,17 @@ using System.Web;
 /// </summary>
 namespace EN
 {
-    public class GustosOrdenadores
+    public class GustosOrdenadores:Usuario
     {
         private String sistemaoperativo;
         private String marcashw;
         private String lprogramacion;
+
+        public GustosOrdenadores(String so,String marca,String lprog, String email):base(email){
+          this.sistemaoperativo = so;
+          this.marcashw = marca;
+          this.lprogramacion=lprog;
+        }
 
         public String Sistemaoperativo
         {
