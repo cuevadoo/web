@@ -23,7 +23,7 @@ namespace CAD
         {
             return null;
         }
-        public void update(EN.GustosOrdenadores deleted, EN.Usuario added)
+        public void update(EN.GustosOrdenadores deleted, EN.GustosOrdenadores added)
         {
 
         }
