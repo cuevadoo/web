@@ -19,7 +19,7 @@ namespace CAD
         {
 
         }
-        public EN.Usuario read(String email)
+        public EN.GustosFilm read(String email)
         {
             return null;
         }
