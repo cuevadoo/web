@@ -18,7 +18,7 @@ namespace EN
 
         
 
-        public GustosMusicales(String estilo,String grupo,String artista,String concierto,byte decada) {
+        public GustosMusicales(String email,String estilo,String grupo,String artista,String concierto,byte decada):base(email){
             this.estilo = estilo;
             this.grupo = grupo;
             this.artista = artista;
