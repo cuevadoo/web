@@ -14,6 +14,12 @@ namespace EN
         private String marcashw;
         private String lprogramacion;
 
+        public GustosOrdenadores(String so,String marca,String lprog){
+          this.sistemaoperativo = so;
+          this.marcashw = marca;
+          this.lprogramacion=lprog;
+        }
+
         public String Sistemaoperativo
         {
             get { return sistemaoperativo; }
