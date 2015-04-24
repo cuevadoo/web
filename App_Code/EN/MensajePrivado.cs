@@ -8,13 +8,13 @@ using System.Web;
 /// </summary>
 namespace EN
 {
-    public class MensajesPrivados
+    public class MensajePrivado
     {
         private Usuario usuario;
 
         private String texto;
 
-        public MensajesPrivados(Usuario usuario, String texto)
+        public MensajePrivado(Usuario usuario, String texto)
         {
             this.usuario = usuario;
             this.texto = texto;
