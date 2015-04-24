@@ -23,5 +23,11 @@ namespace EN
             get { return usuario2; }
             set { usuario2 = value; }
         }
+
+        public Relaciones(Usuario usuario1, Usuario usuario2){
+            this.usuario1 = usuario1;
+            this.usuario2 = usuario2;
+        }
+
     }
 }
