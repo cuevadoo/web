@@ -34,7 +34,7 @@ namespace EN
             this.email = email;
         }
 
-        public Chat abrirChat(){
+        public Chat abrirChat(Usuario user){
             Chat c = new Chat(this);
             return c;
         }

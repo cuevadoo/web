@@ -25,6 +25,12 @@ namespace EN
         public static void disconect(Usuario user){
             usuarios.Remove(user);
         }
+        public static bool conected(Usuario user){
+            if(usuarios.Contains(user)){
+                return true;
+            }
+            return false;
+        }
         public void conectarChat(Usuario user){
             user2 = user;
         }
