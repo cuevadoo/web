@@ -11,7 +11,7 @@ namespace EN
     public class Usuario
     {
         private String nombre;
-        private String contraseña;
+        private String pass;
         private String apellido1;
         private String apellido2;
         private String email;
@@ -22,18 +22,25 @@ namespace EN
         private GustosOrdenadores ordenador;
         private GustosVideojuegos videojuego;
 
-        public Usuario(String email,String contraseña,String nombre,String apellido1,String apellido2,byte edad,bool sexo){
+        public Usuario(String email, String pass, String nombre, String apellido1, String apellido2, byte edad, bool sexo)
+        {
             this.email = email;
-            this.contraseña = contraseña;
+            this.pass = pass;
             this.nombre = nombre;
             this.apellido1 = apellido1;
             this.apellido2 = apellido2;
             this.edad = edad;
             this.sexo = sexo;
         }
-        public Usuario(String email,String contraseña,String nombre,String apellido1,String apellido2,byte edad,bool sexo,GustosFilm film,GustosMusicales musica,GustosOrdenadores ordenador,GustosVideojuegos videojuego){
+        protected Usuario(String email) 
+        {
             this.email = email;
-            this.contraseña = contraseña;
+        }
+
+        public Usuario(String email, String pass, String nombre, String apellido1, String apellido2, byte edad, bool sexo, GustosFilm film, GustosMusicales musica, GustosOrdenadores ordenador, GustosVideojuegos videojuego)
+        {
+            this.email = email;
+            this.pass = pass;
             this.nombre = nombre;
             this.apellido1 = apellido1;
             this.apellido2 = apellido2;
@@ -94,10 +101,10 @@ namespace EN
             get { return videojuego; }
             set { videojuego = value; }
         }
-        public String Contraseña
+        public String pass
         {
-            get { return contraseña; }
-            set { contraseña = value; }
+            get { return pass; }
+            set { pass = value; }
         }
     }
 }
