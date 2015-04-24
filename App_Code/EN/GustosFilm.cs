@@ -28,9 +28,8 @@ namespace EN
             this.Sgenero = Sgenero;
             this.Sdirector = Sdirector;
             this.serie = serie;
-        }
+        } 
         
-
         public String Genero
         {
             get { return genero; }
