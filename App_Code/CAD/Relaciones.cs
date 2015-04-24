@@ -20,7 +20,7 @@ namespace CAD
         { 
         
         }
-        public EN.Usuario read(String email)
+        public EN.Relaciones read(String email)
         {
             return null;
         }
