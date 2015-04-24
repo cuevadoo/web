@@ -12,9 +12,7 @@ namespace EN
     {
         public Notificaciones()
         {
-            //
-            // TODO: Agregar aquí la lógica del constructor
-            //
+         
         }
     }
 }
