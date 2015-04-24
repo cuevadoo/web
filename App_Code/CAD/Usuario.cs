@@ -14,7 +14,7 @@ namespace CAD
         private static Conexion conexion=new Conexion();
         public void create(EN.Usuario user){
             try{
-                String s = "Insert into Usuarios values(" + user.Email+","+user.Contraseña+","+user.Nombre+","+user.Apellido1+
+                String s = "Insert into Usuarios values(" + user.Email+","+user.Pass+","+user.Nombre+","+user.Apellido1+
                     ","+user.Apellido2+","+user.Edad+","+user.Sexo+")";
                 conexion.ejecutarS(s);
             }catch(System.Exception ex){
@@ -41,7 +41,7 @@ namespace CAD
         }
         public void update(EN.Usuario deleted, EN.Usuario added){
             try{
-                String s = "Update Usuarios set Email=" + added.Email+",Contraseña="+added.Contraseña+
+                String s = "Update Usuarios set Email=" + added.Email+",Pass="+added.Pass+
                     ",Nombre="+added.Nombre+",Apellido1="+added.Apellido1+",Apellido2"+added.Apellido2+
                     ",Edad="+added.Edad+",Sexo="+added.Sexo+" where Email="+deleted.Email;
                 conexion.ejecutarS(s);
