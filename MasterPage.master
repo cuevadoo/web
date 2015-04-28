@@ -13,6 +13,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div id="Flotante">
             <asp:Table ID="Table1" runat="server">
                 <asp:TableRow runat="server">
@@ -20,7 +21,7 @@
                         <asp:Image ID="Image2" runat="server" Height="50px" ImageUrl="~/Imagenes/logoRecortado.png" Width="50px" />
                     </asp:TableCell>
                     <asp:TableCell runat="server">
-                        <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal">
+                        <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="Default">
                             <Items>
                                 <asp:MenuItem Text="Ingresar" Value="Nuevo elemento"></asp:MenuItem>
                                 <asp:MenuItem Text="Registrar" Value="Nuevo elemento"></asp:MenuItem>
@@ -35,7 +36,13 @@
             <div>
                 <center><asp:Image ID="Image1" runat="server" ImageUrl="~/Imagenes/logo.png" /></center>
             </div>
-            <div id="Contenido"><asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder></div> <!--contenido -->
+            <div id="Contenido">
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder> <!--contenido -->
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
             <div>
                 <footer>Copyright © 2015 <p id="facebook">f</p></footer>
             </div>
