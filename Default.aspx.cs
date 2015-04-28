@@ -19,6 +19,5 @@ public partial class _Default : System.Web.UI.Page
         Label2.Text = (string)tabla.Rows[0][1];
         Label3.Text = (string)tabla.Rows[0][2];
         Label4.Text = (string)tabla.Rows[0][3];
-        Label5.Text = (string)tabla.Rows[0][4];
     }
 }
