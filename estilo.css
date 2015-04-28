@@ -1,24 +1,51 @@
 ﻿body {
     background-image: url("Imagenes/fondo.jpg");
 }
-#Contenido{
-    margin-top:30px;
+#Flotante{
+    position:fixed;
+    float:left;
+    margin:0px;
+    top:0;
+    left:0;
+    background-color:#E3EAEB;
+    width:100%;
 }
+
+#Cuerpo{
+    background: rgba(70,130,180,0.8);
+    background: -moz-linear-gradient(top, rgba(70,130,180,0) 100px, rgba(70,130,180,0.9) 250px);
+    background: -webkit-gradient(left top, left bottom, color-stop(100px, rgba(70,130,180,0)), color-stop(250px, rgba(70,130,180,0.9)));
+    background: -webkit-linear-gradient(top, rgba(70,130,180,0) 100px, rgba(70,130,180,0.9) 250px);
+    background: -o-linear-gradient(top, rgba(70,130,180,0) 100px, rgba(70,130,180,0.9) 250px);
+    background: -ms-linear-gradient(top, rgba(70,130,180,0) 100px, rgba(70,130,180,0.9) 250px);
+    background: linear-gradient(to bottom, rgba(70,130,180,0) 100px, rgba(70,130,180,0.9) 250p 250px);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4682b4', endColorstr='#4682b4', GradientType=0 );
+    margin-left:50px;
+    margin-right:50px;
+    margin-top:50px;
+    padding:20px;
+    border-radius: 3em;
+    -moz-border-radius: 3em;
+    -webkit-border-radius: 3em;
+}
+
+#Contenido{
+    margin-top:40px;
+}
+
 #Menu1{
-    position:absolute;
+    margin:0px;
+    padding-left:30px;
+    padding-bottom:5px;
+    padding-right:5px;
+    padding-top:5px;
+    background-color:#E3EAEB;
 }
 #Menu1 li{
     font-size:24px;
-    float:left;
-    position:relative;
+    padding:5px;
     width:180px;
     height:auto;
-}
-
-#Menu1 li ul li{
-    position:relative;
-    padding-left:10px;
-    top:30px;
 }
 #facebook{
   background: #5178D0;
