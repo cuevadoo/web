@@ -1,16 +1,12 @@
 ﻿body {
-
+    background-image: url("Imagenes/fondo.jpg");
+}
+#Contenido{
+    margin-top:30px;
 }
 #Menu1{
-
+    position:absolute;
 }
-
-#Menu1 ul{
-    margin:0;
-    padding:0;
-    width:auto;
-}
-
 #Menu1 li{
     font-size:24px;
     float:left;
@@ -19,6 +15,11 @@
     height:auto;
 }
 
+#Menu1 li ul li{
+    position:relative;
+    padding-left:10px;
+    top:30px;
+}
 #facebook{
   background: #5178D0;
   border-radius: 0.8em;
