@@ -15,17 +15,17 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div id="Flotante">
-            <asp:Table ID="Table1" runat="server">
+            <asp:Table ID="Table1" runat="server" style="margin-bottom: 0px">
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server">
                         <asp:Image ID="Image2" runat="server" Height="50px" ImageUrl="~/Imagenes/logoRecortado.png" Width="50px" />
                     </asp:TableCell>
                     <asp:TableCell runat="server">
-                        <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="Default">
+                        <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="Default" DisappearAfter="100">
                             <Items>
-                                <asp:MenuItem Text="Ingresar" Value="Nuevo elemento"></asp:MenuItem>
-                                <asp:MenuItem Text="Registrar" Value="Nuevo elemento"></asp:MenuItem>
-                                <asp:MenuItem Text="Buscador" Value="Nuevo elemento"></asp:MenuItem>
+                                <asp:MenuItem Text="Ingresar" Value="Nuevo elemento" NavigateUrl="~/SinIdentificar/index.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Registrar" Value="Nuevo elemento" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Buscador" Value="Nuevo elemento" NavigateUrl="~/Identificado/Prueba.aspx"></asp:MenuItem>
                             </Items>
                         </asp:Menu>
                     </asp:TableCell>
@@ -35,6 +35,7 @@
         <div id="Cuerpo">
             <div>
                 <center><asp:Image ID="Image1" runat="server" ImageUrl="~/Imagenes/logo.png" /></center>
+                <asp:Literal ID="Literal1" runat="server"></asp:Literal>
             </div>
             <div id="Contenido">
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">

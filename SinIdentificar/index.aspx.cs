@@ -9,6 +9,18 @@ public partial class index : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["User"] == null){
+            Label1.Text = "No estas registrado";
+        }
+        else {
+            Label1.Text = (String)Session["User"];
+        }
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Session["User"]=TextBox1.Text;
+    }
+    public ASP.sinidentificar_index_aspx hola() {
+        return new ASP.sinidentificar_index_aspx();
     }
 }
