@@ -13,7 +13,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:WebPartManager ID="WebPartManager1" runat="server"></asp:WebPartManager>
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div id="Flotante">
             <asp:Table ID="Table1" runat="server" style="margin-bottom: 0px">
