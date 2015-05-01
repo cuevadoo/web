@@ -96,7 +96,7 @@
             <asp:Label ID="Label8" runat="server" Text="Label"></asp:Label>
            </asp:TableCell>
            <asp:TableCell runat="server">          
-            <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox7" runat="server" TextMode="Password"></asp:TextBox>
           </asp:TableCell>
           <asp:TableCell ID="TableCell2" runat="server">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Falta por rellenar este campo" ControlToValidate="TextBox7"></asp:RequiredFieldValidator>
@@ -109,7 +109,7 @@
 
        <br />
 
-        <asp:Button ID="Button1" runat="server" Text="Registrar" CssClass="boton" OnClick="Button1_Click" Enabled="False"></asp:Button>
+        <asp:Button ID="Button1" runat="server" Text="Registrar" class="boton" OnClick="Button1_Click" Enabled="False"></asp:Button>
            </center>
    </div>
 </asp:Content>
