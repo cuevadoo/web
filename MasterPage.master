@@ -18,14 +18,14 @@
             <asp:Table ID="Table1" runat="server" style="margin-bottom: 0px">
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server">
-                        <asp:Image ID="Image2" runat="server" Height="50px" ImageUrl="~/Imagenes/logoRecortado.png" Width="50px" />
+                        <asp:ImageButton ID="ImageButton2" runat="server" Height="50px" ImageUrl="~/Imagenes/logoRecortado.png" Width="50px" OnClick="ImageButton2_Click"/>
                     </asp:TableCell>
                     <asp:TableCell runat="server">
                         <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="Default" DisappearAfter="100">
                             <Items>
-                                <asp:MenuItem Text="Ingresar" Value="Nuevo elemento" NavigateUrl="~/SinIdentificar/index.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Registrar" Value="Nuevo elemento" NavigateUrl="~/Default.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Buscador" Value="Nuevo elemento" NavigateUrl="~/Identificado/Prueba.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Ingresar" Value="Nuevo elemento" NavigateUrl="~/SinIdentificar/Ingresar.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Registrar" Value="Nuevo elemento" NavigateUrl="~/SinIdentificar/Registrar.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Buscador" Value="Nuevo elemento" NavigateUrl="~/SinIdentificar/Buscador.aspx"></asp:MenuItem>
                             </Items>
                         </asp:Menu>
                     </asp:TableCell>

@@ -20,7 +20,4 @@ public partial class index : System.Web.UI.Page
     {
         Session["User"]=TextBox1.Text;
     }
-    public ASP.sinidentificar_index_aspx hola() {
-        return new ASP.sinidentificar_index_aspx();
-    }
 }
