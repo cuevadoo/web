@@ -1,5 +1,6 @@
 ﻿body {
     background-image: url("Imagenes/fondo.jpg");
+    background-position: center; 
 }
 #Flotante{
     background: rgba(227,234,235,1);
