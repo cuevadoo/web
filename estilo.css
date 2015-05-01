@@ -3,6 +3,10 @@
     background-position: center; 
     background-attachment: fixed;
 }
+
+#centrar {
+    text-align:center
+}
 #Flotante{
     background: rgba(227,234,235,1);
     background: -moz-linear-gradient(top, rgba(227,234,235,1) 0%, rgba(227,234,235,1) 5%, rgba(227,234,235,0) 100%);
