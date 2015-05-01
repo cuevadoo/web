@@ -11,4 +11,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
 
     }
+    protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("~/Default.aspx");
+    }
 }
