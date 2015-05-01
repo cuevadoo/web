@@ -16,14 +16,15 @@ public partial class SinIdentificar_Registrar : System.Web.UI.Page
         CompareValidator1.Validate();
         if (RequiredFieldValidator1.IsValid&&CompareValidator1.IsValid){
             try {
-                byte aux1 = Byte.Parse(TextBox6.Text);
+                Fecha aux1 = new Fecha(byte.Parse(TextBox6.Text),byte.Parse(TextBox8.Text),Int32.Parse(TextBox9.Text));
                 bool aux2;
                 if(RadioButtonList1.SelectedIndex == 0){
                     aux2 = true;
                 }else{
                     aux2 = false;
                 }
-                EN.Usuario user = new EN.Usuario(TextBox5.Text,TextBox7.Text,TextBox1.Text,TextBox2.Text,
+                String aux3 = Hash.getHash(TextBox5.Text + TextBox7.Text);
+                EN.Usuario user = new EN.Usuario(TextBox5.Text,aux3,TextBox1.Text,TextBox2.Text,
                     TextBox3.Text,aux1,aux2);
                 CAD.Usuario cadUser = new CAD.Usuario();
                 cadUser.create(user);

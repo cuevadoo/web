@@ -16,10 +16,10 @@ namespace EN
         private String apellido1;
         private String apellido2;
         private String email;
-        private byte edad;
+        private Fecha edad;
         private bool sexo;
 
-        public Usuario(String email, String pass, String nombre, String apellido1, String apellido2, byte edad, bool sexo)
+        public Usuario(String email, String pass, String nombre, String apellido1, String apellido2, Fecha edad, bool sexo)
         {
             this.email = email;
             this.pass = pass;
@@ -54,7 +54,7 @@ namespace EN
             get { return email; }
             set { email = value; }
         }
-        public byte Edad
+        public Fecha Edad
         {
             get { return edad; }
             set { edad = value; }

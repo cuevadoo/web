@@ -17,7 +17,7 @@
                         <asp:Label ID="Label2" runat="server" Text="NOMBRE"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell runat="server">
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox1" runat="server" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                     <asp:TableCell runat="server">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Falta por rellenar este campo" ControlToValidate="TextBox1"></asp:RequiredFieldValidator>
@@ -28,7 +28,7 @@
                         <asp:Label ID="Label3" runat="server" Text="PRIMER APELLIDO:"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell runat="server">
-                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox2" runat="server" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                     <asp:TableCell runat="server">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Falta por rellenar este campo" ControlToValidate="TextBox2"></asp:RequiredFieldValidator>
@@ -39,7 +39,7 @@
                         <asp:Label ID="Label4" runat="server" Text="SEGUNDO APELLIDO:"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell runat="server">
-                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox3" runat="server" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                     <asp:TableCell runat="server">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Falta por rellenar este campo" ControlToValidate="TextBox3"></asp:RequiredFieldValidator>
@@ -64,7 +64,7 @@
                         <asp:Label ID="Label6" runat="server" Text="EMAIL:"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell runat="server">
-                        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox5" runat="server" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                     <asp:TableCell runat="server">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Falta por rellenar este campo " ControlToValidate="TextBox5"></asp:RequiredFieldValidator>
@@ -77,10 +77,24 @@
                         <asp:Label ID="Label7" runat="server" Text="FECHA DE NACIMIENTO:"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell runat="server">
-                        <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                        <asp:Table ID="Table2" runat="server">
+                            <asp:TableRow ID="TableRow1" runat="server">
+                                <asp:TableCell ID="TableCell1" runat="server">
+                                    <asp:TextBox ID="TextBox6" runat="server" Width="40px">dd</asp:TextBox>
+                                </asp:TableCell>
+                                <asp:TableCell ID="TableCell2" runat="server">
+                                    <asp:TextBox ID="TextBox8" runat="server" Width="40px">mm</asp:TextBox>
+                                </asp:TableCell>
+                                <asp:TableCell ID="TableCell3" runat="server">
+                                    <asp:TextBox ID="TextBox9" runat="server" Width="80px">yyyy</asp:TextBox>
+                                </asp:TableCell>
+                            </asp:TableRow>
+                        </asp:Table>
                     </asp:TableCell>
                     <asp:TableCell runat="server">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Falta por rellenar este campo" ControlToValidate="TextBox6"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Falta dia" ControlToValidate="TextBox6"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage=" Falta mes" ControlToValidate="TextBox8"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage=" Falta año" ControlToValidate="TextBox9"></asp:RequiredFieldValidator>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server">
@@ -88,7 +102,7 @@
                         <asp:Label ID="Label8" runat="server" Text="CONTRASEÑA:"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell runat="server">
-                        <asp:TextBox ID="TextBox7" runat="server" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="TextBox7" runat="server" TextMode="Password" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                     <asp:TableCell runat="server">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Falta por rellenar este campo" ControlToValidate="TextBox7"></asp:RequiredFieldValidator>
@@ -99,7 +113,7 @@
                         <asp:Label ID="Label9" runat="server" Text="REPITE CONTRASEÑA"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:TextBox ID="TextBox4"  runat="server" TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="TextBox4"  runat="server" TextMode="Password" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                     <asp:TableCell>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Falta por rellenar este campo " ControlToValidate="TextBox4"></asp:RequiredFieldValidator>
