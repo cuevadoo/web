@@ -54,7 +54,7 @@ public partial class SinIdentificar_Buscador : System.Web.UI.Page
                 Button aux1= new Button();
                 aux1.ID = "<";
                 aux1.Text = "<";
-                aux1.CssClass = "boton";
+                aux1.CssClass = "botonBuscador";
                 aux1.Click+=new EventHandler(this.Button_Paginas);
                 TableCell aux2 = new TableCell();
                 aux2.Controls.Add(aux1);
@@ -63,7 +63,7 @@ public partial class SinIdentificar_Buscador : System.Web.UI.Page
                     aux1 = new Button();
                     aux1.ID = ""+i;
                     aux1.Text = "" + i;
-                    aux1.CssClass = "boton";
+                    aux1.CssClass = "botonBuscador";
                     aux1.Click += new EventHandler(this.Button_Paginas);
                     aux2 = new TableCell();
                     aux2.Controls.Add(aux1);
@@ -72,7 +72,7 @@ public partial class SinIdentificar_Buscador : System.Web.UI.Page
                 aux1 = new Button();
                 aux1.ID = ">";
                 aux1.Text = ">";
-                aux1.CssClass = "boton";
+                aux1.CssClass = "botonBuscador";
                 aux1.Click += new EventHandler(this.Button_Paginas);
                 aux2 = new TableCell();
                 aux2.Controls.Add(aux1);

@@ -6,15 +6,12 @@
     <div>
         <asp:Table ID="Table3" runat="server" Width="100%">
             <asp:TableRow runat="server">
-                <asp:TableCell runat="server">
-                    <asp:Label ID="Label1" runat="server" Text="Inserte nombre de usuario" Width="220px"></asp:Label>
-                </asp:TableCell>
                 <asp:TableCell runat="server" Width="100%">
-                    <asp:TextBox ID="TextBox1" runat="server" Width="100%" AutoPostBack="True" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+                    <asp:TextBox CssClass="box" placeholder="Inserte nombre de usuario" ID="TextBox1" runat="server" Width="100%" AutoPostBack="True" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-        <asp:Table ID="Table2" runat="server" Width="100%"></asp:Table>
+        <asp:Table CssClass="tablaBuscador" ID="Table2" runat="server" Width="100%"></asp:Table>
         <asp:Table ID="Table1" runat="server"></asp:Table>
     </div>
 </asp:Content>
