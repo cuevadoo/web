@@ -5,9 +5,11 @@
     font-family: "ARIAL", serif;
 }
 .tablaBuscador{
-    border-width:2px;
-    border:yellow;
     background-color:#F6ECD9;
+    padding:10px;
+    -webkit-box-shadow: inset 0px 0px 7px 6px rgba(70,130,180,1);
+    -moz-box-shadow: inset 0px 0px 7px 6px rgba(70,130,180,1);
+    box-shadow: inset 0px 0px 7px 6px rgba(70,130,180,1);
 }
 .botonBuscador {
   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #bab1ba));
@@ -192,12 +194,11 @@
 #Menu1{
     margin:5px;
     top:0px;
-    left:60px;
-    position:absolute;
     padding-left:50px;
     padding-bottom:5px;
     padding-right:5px;
     padding-top:5px;
+    text-align:center;
 
     -moz-box-shadow: 3px 5px 9px 0px #1564ad;
 	-webkit-box-shadow: 3px 5px 9px 0px #1564ad;
