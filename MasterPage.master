@@ -18,7 +18,7 @@
             <asp:Table ID="Table1" runat="server" style="margin-bottom: 0px">
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server">
-                        <asp:ImageButton ID="ImageButton2" runat="server" Height="50px" ImageUrl="~/Imagenes/logoRecortado.png" Width="50px" OnClick="ImageButton2_Click"/>
+                        <asp:ImageButton ID="ImageButton2" runat="server" Height="50px" ImageUrl="~/Imagenes/logoRecortado.png" Width="50px" OnClick="ImageButton2_Click" CausesValidation="False" TabIndex="99" />
                     </asp:TableCell>
                     <asp:TableCell runat="server">
                         <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="Default" DisappearAfter="100">
