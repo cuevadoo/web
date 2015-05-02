@@ -11,10 +11,9 @@ public partial class SinIdentificar_Registrar : System.Web.UI.Page
 
     }
     protected void Button1_Click(object sender, EventArgs e){
-        RequiredFieldValidator1.Validate();
         CompareValidator1.ValueToCompare=TextBox7.Text;
-        CompareValidator1.Validate();
-        if (RequiredFieldValidator1.IsValid&&CompareValidator1.IsValid){
+        RequiredFieldValidator1.Validate();
+        if (RequiredFieldValidator1.IsValid){
             try {
                 Fecha aux1 = new Fecha(byte.Parse(TextBox6.Text),byte.Parse(TextBox8.Text),Int32.Parse(TextBox9.Text));
                 bool aux2;
@@ -31,6 +30,8 @@ public partial class SinIdentificar_Registrar : System.Web.UI.Page
             }catch(CAD.Exception){
                 Label10.Text = "Ya existe una cuenta con este email ";
             }
+        }else{
+            Label10.Text = "Faltan los campos con asteriscos";
         }
     }
     protected void CheckBox1_CheckedChanged(object sender, EventArgs e){
