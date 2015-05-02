@@ -5,6 +5,28 @@
     font-family: "ARIAL", serif;
 }
 
+.box {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 4px 8px;
+  border: 3px solid #b7b7b7;
+  -webkit-border-radius: 11px;
+  border-radius: 11px;
+  font: normal 16px/normal "Times New Roman", Times, serif;
+  color: rgba(0,142,198,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(229,224,224,1);
+  -webkit-box-shadow: 5px 5px 3px 0 rgba(0,0,0,0.2) ;
+  box-shadow: 5px 5px 3px 0 rgba(0,0,0,0.2) ;
+  -webkit-transition: color 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  -moz-transition: color 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  -o-transition: color 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: color 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
 .boton:enabled {
 	-moz-box-shadow:inset 0px 0px 9px 7px #23395e;
 	-webkit-box-shadow:inset 0px 0px 9px 7px #23395e;
@@ -75,6 +97,11 @@
 #centrar {
     text-align:center
 }
+
+.center {
+    text-align: center
+}
+
 #Flotante{
     background: rgba(227,234,235,1);
     background: -moz-linear-gradient(top, rgba(227,234,235,1) 0%, rgba(227,234,235,1) 5%, rgba(227,234,235,0) 100%);
@@ -118,7 +145,7 @@
 #Menu1{
     margin:5px;
     top:0px;
-    left:40px;
+    left:60px;
     position:absolute;
     padding-left:50px;
     padding-bottom:5px;
