@@ -123,7 +123,7 @@
             </asp:Table>
             <asp:CheckBox ID="CheckBox1" runat="server" Text="Acepto los términos y condiciones." OnCheckedChanged="CheckBox1_CheckedChanged" AutoPostBack="True"></asp:CheckBox>
             <br />
-            <asp:Button ID="Button1" runat="server" Text="Registrar" class="boton" OnClick="Button1_Click" Enabled="False"></asp:Button>
+            <asp:Button ID="Button1" runat="server" Text="Registrar" cssclass="boton" OnClick="Button1_Click" Enabled="False"></asp:Button>
         </div>
     </center>
 </asp:Content>
