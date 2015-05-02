@@ -23,7 +23,7 @@
                     <asp:TableCell runat="server">
                         <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="Default" DisappearAfter="100">
                             <Items>
-                                <asp:MenuItem Text="Ingresar" Value="Nuevo elemento" NavigateUrl="~/SinIdentificar/Ingresar.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Entrar" Value="Nuevo elemento" NavigateUrl="~/SinIdentificar/Entrar.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Registrar" Value="Nuevo elemento" NavigateUrl="~/SinIdentificar/Registrar.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Buscador" Value="Nuevo elemento" NavigateUrl="~/SinIdentificar/Buscador.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Ayuda" Value="Nuevo elemento" NavigateUrl="~/SinIdentificar/Ayuda.aspx"></asp:MenuItem>
