@@ -5,6 +5,12 @@
     font-family: "ARIAL", serif;
 }
 
+.warning {
+    color:red;
+    font-weight:bold;
+    font-size: 21px; 
+}
+
 .box {
   display: inline-block;
   -webkit-box-sizing: content-box;
