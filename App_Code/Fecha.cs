@@ -37,11 +37,9 @@ public class Fecha
     public String imprimirSql(){
         return año + "-" + mes + "-" + dia;
     }
-    public void traducirSql(String cadena) {
-        String[] aux = { "-", "-", "-" };
-        aux=cadena.Split(aux,3,new StringSplitOptions());
-        año = Int32.Parse(aux[0]);
-        mes = byte.Parse(aux[1]);
-        dia = byte.Parse(aux[2]);
+    public void traducirSql(DateTime date) {
+        año = date.Year;
+        mes = (byte)date.Month;
+        dia = (byte)date.Day;
     }
 }

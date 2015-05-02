@@ -9,15 +9,28 @@ public partial class Ingresar : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["User"] == null){
-            Label1.Text = "No estas registrado";
-        }
-        else {
-            Label1.Text = (String)Session["User"];
-        }
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        Session["User"]=TextBox1.Text;
+        RequiredFieldValidator1.Validate();
+        RequiredFieldValidator2.Validate();
+        if (RequiredFieldValidator1.IsValid) {
+            try
+            {
+                
+                CAD.Usuario user = new CAD.Usuario();
+                EN.Usuario usuario = user.read(TextBox1.Text);
+                String hash = Hash.getHash(TextBox1.Text + TextBox2.Text);
+                if(hash==usuario.Pass){
+                    Session["User"] = user.read(TextBox1.Text);
+                    Response.Redirect("~/Identificado/Indice.aspx");
+                    
+                }
+                Label3.Text = "Combinación usuario-contraseña incorrecta";              
+            }
+            catch (CAD.Exception userException) { Label3.Text = "Combinación usuario-contraseña incorrecta"; }
+            
+
+        }
     }
 }
