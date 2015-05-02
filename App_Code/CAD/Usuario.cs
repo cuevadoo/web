@@ -35,7 +35,7 @@ namespace CAD
             try{
                 DataRowCollection data=conexion.ejecutarR("Select * from Usuarios where Email='"+email+"'").Rows;
                 Fecha f = new Fecha();
-                f.traducirSql((String)data[0][5]);
+                f.traducirSql((DateTime)data[0][5]);
                 user = new EN.Usuario((String)data[0][0], (String)data[0][1], (String)data[0][2],
                     (String)data[0][3], (String)data[0][4], f,(bool)data[0][6]);
             }catch(System.Exception ex){
