@@ -17,19 +17,16 @@ public partial class Ingresar : System.Web.UI.Page
         if (RequiredFieldValidator1.IsValid) {
             try
             {
-                string hash = "";
+                
                 CAD.Usuario user = new CAD.Usuario();
                 EN.Usuario usuario = user.read(TextBox1.Text);
-                hash=Hash.getHash(TextBox1.Text + TextBox2.Text);
+                String hash = Hash.getHash(TextBox1.Text + TextBox2.Text);
                 if(hash==usuario.Pass){
                     Session["User"] = user.read(TextBox1.Text);
                     Response.Redirect("~/Identificado/Indice.aspx");
                     
                 }
-                Label3.Text = "Combinación usuario-contraseña incorrecta";
-
-                
-                
+                Label3.Text = "Combinación usuario-contraseña incorrecta";              
             }
             catch (CAD.Exception userException) { Label3.Text = "Combinación usuario-contraseña incorrecta"; }
             
