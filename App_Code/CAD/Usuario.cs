@@ -15,7 +15,8 @@ namespace CAD
         private static Conexion conexion=new Conexion();
         public void create(EN.Usuario user){
             try{
-                String s = "Insert into Usuarios values('" + user.Email+"','"+user.Pass+"','"+user.Nombre+"','"+user.Apellido1+
+                String s = "Insert into Usuarios (Email,Contraseña,Nombre,Apellido1,Apellido2,Edad,Sexo)values('"
+                    + user.Email+"','"+user.Pass+"','"+user.Nombre+"','"+user.Apellido1+
                     "','"+user.Apellido2+"','"+user.Edad.imprimirSql()+"','"+user.Sexo+"')";
                 conexion.ejecutarS(s);
             }catch(System.Exception ex){
@@ -54,6 +55,7 @@ namespace CAD
         }
         public object[] buscar(String nombre) {
             object[] obj=new object[2];
+            String image = "";
             try{
                 String s = "Select Nombre,Apellido1,Apellido2 From Usuarios Where Nombre Like '"+
                     nombre+"%' OR Apellido1 Like '"+nombre+"%' OR Apellido2 Like '"+nombre+"%'";
@@ -67,6 +69,7 @@ namespace CAD
                         i++;
                     }
                 }catch(System.Exception ex){
+                    obj[0] = image;
                     obj[1] = l;
                 }
             }catch(System.Exception ex){

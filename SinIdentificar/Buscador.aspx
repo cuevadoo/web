@@ -14,13 +14,8 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-        <asp:Table ID="Table2" runat="server" Width="100%">
-            <asp:TableRow runat="server">
-                <asp:TableCell runat="server"></asp:TableCell>
-                <asp:TableCell runat="server"></asp:TableCell>
-            </asp:TableRow>
-        </asp:Table>
-        <asp:Table ID="Table1" runat="server" Width="100%"></asp:Table>
+        <asp:Table ID="Table2" runat="server" Width="100%"></asp:Table>
+        <asp:Table ID="Table1" runat="server"></asp:Table>
     </div>
 </asp:Content>
 
