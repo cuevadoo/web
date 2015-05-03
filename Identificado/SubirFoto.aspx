@@ -1,15 +1,14 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Identificado_MasterPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SubirFoto.aspx.cs" Inherits="Identificado_SubirFoto" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="~/estilo.css" media="screen" />
     <link href="~/Imagenes/logoRecortado.png" type="image/x-icon" rel="shortcut icon" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Cuevadoo</title>
-    <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -38,11 +37,8 @@
                 <asp:Image ID="Image1"  runat="server" ImageUrl="~/Imagenes/logo.png" />
             </div>
             <div id="Contenido">
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                    <ContentTemplate>
-                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder> <!--contenido -->
-                    </ContentTemplate>
-                </asp:UpdatePanel>
+                <asp:FileUpload ID="FileUpload1" runat="server" />
+                <asp:Button ID="Button1" runat="server" Text="Subir foto" OnClick="Button1_Click" />
             </div>
             <div>
                 <footer><b>Copyright © 2015 </b><p id="facebook">f</p></footer>
@@ -51,4 +47,3 @@
     </form>
 </body>
 </html>
-
