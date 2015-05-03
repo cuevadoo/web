@@ -34,7 +34,6 @@ public partial class Identificado_SubirFoto : System.Web.UI.Page
                 try{
                     byte[] bytes = FileUpload1.FileBytes;
                     EN.Usuario user = (EN.Usuario)Session["User"];
-                    //Directory.CreateDirectory(path);
                     String path = Server.MapPath("~/Imagenes/Usuarios/" + user.Email + "/");
                     File.WriteAllBytes(path + DateTime.Now.ToBinary() + ".jpg", bytes);
                     Label1.Text = "Se ha subido correctamente";
