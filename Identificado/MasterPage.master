@@ -25,6 +25,7 @@
                             <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="Default" DisappearAfter="100">
                                 <Items>
                                     <asp:MenuItem Text="[Usuario]" Value="Nuevo elemento" NavigateUrl="~/Identificado/Configuracion.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="SubirFoto" Value="Nuevo Elemento" NavigateUrl="~/Identificado/SubirFoto.aspx"></asp:MenuItem>
                                 </Items>
                             </asp:Menu>
                         </asp:TableCell>
@@ -33,9 +34,6 @@
             </center>
         </div>
         <div id="Cuerpo">
-            <div id="centrar">
-                <asp:Image ID="Image1"  runat="server" ImageUrl="~/Imagenes/logo.png" />
-            </div>
             <div id="Contenido">
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>

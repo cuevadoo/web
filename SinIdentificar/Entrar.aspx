@@ -18,7 +18,7 @@
                 
                 <asp:TableRow ID="TableRow1" runat="server">
                 
-                    <asp:TableCell COLSPAN="4" runat="server"><center><br /><asp:Button class="boton" ID="Button1" runat="server" Text="Ingresar" OnClick="Button1_Click" /></center></asp:TableCell>
+                    <asp:TableCell COLSPAN="4" runat="server"><center><br /><asp:Button class="boton" ID="Button1" runat="server" Text="Login" OnClick="Button1_Click" /></center></asp:TableCell>
                     
                 </asp:TableRow>
             </asp:Table>

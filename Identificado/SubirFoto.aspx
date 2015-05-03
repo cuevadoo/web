@@ -1,15 +1,14 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SubirFoto.aspx.cs" Inherits="Identificado_SubirFoto" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="~/estilo.css" media="screen" />
     <link href="~/Imagenes/logoRecortado.png" type="image/x-icon" rel="shortcut icon" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Cuevadoo</title>
-    <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,17 +16,15 @@
         <div id="Flotante">
             <center>
                 <asp:Table ID="Table1" runat="server" style="margin-bottom: 0px">
-                    <asp:TableRow runat="server">
-                        <asp:TableCell runat="server">
+                    <asp:TableRow ID="TableRow1" runat="server">
+                        <asp:TableCell ID="TableCell1" runat="server">
                             <asp:ImageButton ID="ImageButton2" runat="server" Height="50px" ImageUrl="~/Imagenes/logoRecortado.png" Width="50px" OnClick="ImageButton2_Click" CausesValidation="False" TabIndex="99" />
                         </asp:TableCell>
-                        <asp:TableCell runat="server">
+                        <asp:TableCell ID="TableCell2" runat="server">
                             <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="Default" DisappearAfter="100">
                                 <Items>
-                                    <asp:MenuItem Text="Entrar" Value="Nuevo elemento" NavigateUrl="~/SinIdentificar/Entrar.aspx"></asp:MenuItem>
-                                    <asp:MenuItem Text="Registrar" Value="Nuevo elemento" NavigateUrl="~/SinIdentificar/Registrar.aspx"></asp:MenuItem>
-                                    <asp:MenuItem Text="Buscar Usuarios" Value="Nuevo elemento" NavigateUrl="~/SinIdentificar/Buscador.aspx"></asp:MenuItem>
-                                    <asp:MenuItem Text="Ayuda" Value="Nuevo elemento" NavigateUrl="~/SinIdentificar/Ayuda.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="[Usuario]" Value="Nuevo elemento" NavigateUrl="~/Identificado/Configuracion.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="SubirFoto" Value="Nuevo Elemento" NavigateUrl="~/Identificado/SubirFoto.aspx"></asp:MenuItem>
                                 </Items>
                             </asp:Menu>
                         </asp:TableCell>
@@ -40,11 +37,9 @@
                 <asp:Image ID="Image1"  runat="server" ImageUrl="~/Imagenes/logo.png" />
             </div>
             <div id="Contenido">
-                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                    <ContentTemplate>
-                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder> <!--contenido -->
-                    </ContentTemplate>
-                </asp:UpdatePanel>
+                <asp:FileUpload ID="FileUpload1" runat="server" />
+                <asp:Button ID="Button1" runat="server" Text="Subir foto" OnClick="Button1_Click" /><br />
+                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
             </div>
             <div>
                 <footer><b>Copyright © 2015 </b><p id="facebook">f</p></footer>

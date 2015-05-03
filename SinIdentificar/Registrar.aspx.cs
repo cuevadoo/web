@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO
 
 public partial class SinIdentificar_Registrar : System.Web.UI.Page
 {
@@ -27,6 +28,8 @@ public partial class SinIdentificar_Registrar : System.Web.UI.Page
                     TextBox3.Text,aux1,aux2);
                 CAD.Usuario cadUser = new CAD.Usuario();
                 cadUser.create(user);
+                String path = Server.MapPath("~/Imagenes/Usuarios/" + user.Email + "/");
+                Directory.CreateDirectory(path);
             }catch(CAD.Exception){
                 Label10.Text = "Ya existe una cuenta con este email ";
             }
