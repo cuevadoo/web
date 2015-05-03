@@ -38,7 +38,8 @@
             </div>
             <div id="Contenido">
                 <asp:FileUpload ID="FileUpload1" runat="server" />
-                <asp:Button ID="Button1" runat="server" Text="Subir foto" OnClick="Button1_Click" />
+                <asp:Button ID="Button1" runat="server" Text="Subir foto" OnClick="Button1_Click" /><br />
+                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
             </div>
             <div>
                 <footer><b>Copyright © 2015 </b><p id="facebook">f</p></footer>
