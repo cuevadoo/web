@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.IO
+using System.IO;
 
 public partial class SinIdentificar_Registrar : System.Web.UI.Page
 {
