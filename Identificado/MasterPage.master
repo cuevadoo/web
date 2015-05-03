@@ -33,9 +33,6 @@
             </center>
         </div>
         <div id="Cuerpo">
-            <div id="centrar">
-                <asp:Image ID="Image1"  runat="server" ImageUrl="~/Imagenes/logo.png" />
-            </div>
             <div id="Contenido">
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
