@@ -30,6 +30,8 @@ public partial class SinIdentificar_Registrar : System.Web.UI.Page
                 cadUser.create(user);
                 String path = Server.MapPath("~/Imagenes/Usuarios/" + user.Email + "/");
                 Directory.CreateDirectory(path);
+                Session["User"] = user;
+                Response.Redirect("~/Identificado/Indice.aspx");
             }catch(CAD.Exception){
                 Label10.Text = "Ya existe una cuenta con este email ";
             }

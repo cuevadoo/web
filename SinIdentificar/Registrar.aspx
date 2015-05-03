@@ -141,7 +141,7 @@
                 <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';">términos y condiciones.</a>   
             <!--ventana-->
             <br/><br/>
-            <asp:Button ID="Button1" runat="server" Text="Registrar" cssclass="boton" OnClick="Button1_Click" Enabled="False"></asp:Button>
+            <asp:Button ID="Button1" runat="server" Text="Registrar" cssclass="boton" OnClick="Button1_Click" Enabled="False" CausesValidation="False"></asp:Button>
         </div>
     </center>
 </asp:Content>
