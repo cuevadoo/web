@@ -7,8 +7,6 @@ using System.Web.UI.WebControls;
 
 public partial class Identificado_Indice : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
+    protected void Page_Load(object sender, EventArgs e){
     }
 }

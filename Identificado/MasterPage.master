@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <link rel="stylesheet" type="text/css" href="~/estilo.css" media="screen" />
-    <link href="Imagenes/logoRecortado.png" type="image/x-icon" rel="shortcut icon" />
+    <link href="~/Imagenes/logoRecortado.png" type="image/x-icon" rel="shortcut icon" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Cuevadoo</title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -15,26 +15,26 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div id="Flotante">
-            <asp:Table ID="Table1" runat="server" style="margin-bottom: 0px">
-                <asp:TableRow ID="TableRow1" runat="server">
-                    <asp:TableCell ID="TableCell1" runat="server">
-                        <asp:Image ID="Image2" runat="server" Height="50px" ImageUrl="~/Imagenes/logoRecortado.png" Width="50px" />
-                    </asp:TableCell>
-                    <asp:TableCell ID="TableCell2" runat="server">
-                        <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="Default" DisappearAfter="100">
-                            <Items>
-                                <asp:MenuItem Text="Ingresar" Value="Nuevo elemento" NavigateUrl="~/SinIdentificar/index.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Registrar" Value="Nuevo elemento" NavigateUrl="~/Default.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Buscador" Value="Nuevo elemento" NavigateUrl="~/Identificado/Prueba.aspx"></asp:MenuItem>
-                            </Items>
-                        </asp:Menu>
-                    </asp:TableCell>
-                </asp:TableRow>
-            </asp:Table>
+            <center>
+                <asp:Table ID="Table1" runat="server" style="margin-bottom: 0px">
+                    <asp:TableRow ID="TableRow1" runat="server">
+                        <asp:TableCell ID="TableCell1" runat="server">
+                            <asp:ImageButton ID="ImageButton2" runat="server" Height="50px" ImageUrl="~/Imagenes/logoRecortado.png" Width="50px" OnClick="ImageButton2_Click" CausesValidation="False" TabIndex="99" />
+                        </asp:TableCell>
+                        <asp:TableCell ID="TableCell2" runat="server">
+                            <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="Default" DisappearAfter="100">
+                                <Items>
+                                    <asp:MenuItem Text="[Usuario]" Value="Nuevo elemento" NavigateUrl="~/Identificado/Configuracion.aspx"></asp:MenuItem>
+                                </Items>
+                            </asp:Menu>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
+            </center>
         </div>
         <div id="Cuerpo">
-            <div>
-                <center><asp:Image ID="Image1" runat="server" ImageUrl="~/Imagenes/logo.png" /></center>
+            <div id="centrar">
+                <asp:Image ID="Image1"  runat="server" ImageUrl="~/Imagenes/logo.png" />
             </div>
             <div id="Contenido">
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -44,9 +44,10 @@
                 </asp:UpdatePanel>
             </div>
             <div>
-                <footer>Copyright © 2015 <p id="facebook">f</p></footer>
+                <footer><b>Copyright © 2015 </b><p id="facebook">f</p></footer>
             </div>
         </div>
     </form>
 </body>
 </html>
+
