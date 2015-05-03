@@ -35,11 +35,11 @@
                 </asp:Table>
             </center>
         </div>
-        <div id="Cuerpo">
+        <div id="CuerpoS">
             <div id="centrar">
                 <asp:Image ID="Image1"  runat="server" ImageUrl="~/Imagenes/logo.png" />
             </div>
-            <div id="Contenido">
+            <div id="ContenidoS">
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                     <ContentTemplate>
                         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder> <!--contenido -->

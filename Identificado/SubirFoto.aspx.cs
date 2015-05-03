@@ -47,4 +47,5 @@ public partial class Identificado_SubirFoto : System.Web.UI.Page
             Label1.Text = "No se ha seleccionado un archivo";
         }
     }
+
 }

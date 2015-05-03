@@ -136,7 +136,7 @@
                         <li type="circle">Siempre valoramos tus comentarios o sugerencias acerca de Cuevadoo, pero debes entender que podríamos utilizarlos sin obligación de compensarte por ello (del mismo modo que tú no tienes obligación de ofrecerlos).</li>
                         </ul>
                         <p class="center"><a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><img src="../Imagenes/cerrar.jpg"/width="30px"></a></p>
-                </div>
+                        </div>
                     </div>
                 <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';">términos y condiciones.</a>   
             <!--ventana-->

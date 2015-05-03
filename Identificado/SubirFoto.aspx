@@ -9,6 +9,13 @@
     <link href="~/Imagenes/logoRecortado.png" type="image/x-icon" rel="shortcut icon" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Cuevadoo</title>
+    <script type="text/javascript">
+        function ci(photo,textbox) {
+            var img = document.getElementById(photo);
+            img.src = "";
+            img.src = "foto01.jpg";
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -32,14 +39,12 @@
                 </asp:Table>
             </center>
         </div>
-        <div id="Cuerpo">
-            <div id="centrar">
-                <asp:Image ID="Image1"  runat="server" ImageUrl="~/Imagenes/logo.png" />
-            </div>
-            <div id="Contenido">
+        <div id="CuerpoI">
+            <div id="ContenidoI">
+                <br /><br /><br />
                 <asp:FileUpload ID="FileUpload1" runat="server" />
-                <asp:Button ID="Button1" runat="server" Text="Subir foto" OnClick="Button1_Click" /><br />
-                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                <asp:Button ID="Button1" runat="server" Text="Subir foto" OnClick="Button1_Click" />
+                <asp:Label ID="Label1" runat="server" Text=""></asp:Label><br />
             </div>
             <div>
                 <footer><b>Copyright © 2015 </b><p id="facebook">f</p></footer>
