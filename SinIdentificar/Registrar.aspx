@@ -6,9 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <center>
         <div>
-            <asp:Label ID="Label1" runat="server" Text="BIENVENIDOS A CUEVADOO"></asp:Label>
-            <br />
-            <br />
+            <h3 class="titulo">BIENVENIDOS A CUEVADOO</h3>
         </div>
         <div>
             <asp:Table ID="Table1" runat="server">

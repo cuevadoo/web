@@ -5,7 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div>
         <center>
-        <p>SECCIÓN DE AYUDA</p></center>
+                <h3 class="titulo">SECCIÓN DE AYUDA</h3></center>
+</center>
         <p>Para cualquier reclamación o consulta sobre la página web de Cuevadoo y sus políticas asociadas, puede utilizar el siguiente formulario o puede ponerse en contacto mediante las otras opciones que abajo se muestran</p>
         <asp:Table ID="Table1" runat="server" Width="548px">
             <asp:TableRow ID="TableRow1" runat="server">
@@ -14,7 +15,7 @@
             </asp:TableRow>
             <asp:TableRow ID="TableRow2" runat="server">
                 <asp:TableCell ID="TableCell2" runat="server">
-                    <asp:TextBox ID="TextBox2" runat="server" Width="100%" Height="150px" CssClass="box" placeholder="Escribe aquí tu consulta"></asp:TextBox></asp:TableCell>
+                    <asp:TextBox ID="TextBox2" runat="server" Width="100%" Height="150px" CssClass="box" placeholder="Escribe aquí tu consulta" TextMode="MultiLine"></asp:TextBox></asp:TableCell>
             </asp:TableRow>
             <asp:TableRow ID="TableRow3" runat="server">
                 <asp:TableCell ID="TableCell3" runat="server"><asp:Button ID="Button1" runat="server" Text="Enviar" cssclass="boton" OnClick="Button1_Click"></asp:Button>

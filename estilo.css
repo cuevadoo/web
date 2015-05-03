@@ -203,7 +203,34 @@
     font-size: 18px; 
 }
 
+.titulo {
+  font-size: 25px; 
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  color: black;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-shadow: 4px 4px 6px rgba(0,0,0,0.5) ;
+}
+
+a:link
+{
+   text-decoration: none;
+}
+a:visited
+{
+   text-decoration: none;
+}
+
+li A:link {text-decoration:none;color:#a104f8;} 
+li A:visited {text-decoration:none;color:#a104f8;} 
+li A:active {text-decoration:none;color:#5ab533;} 
+li A:hover {text-decoration:underline;color:#5ab533;}
+
 #Menu1{
+    text-decoration:none;
     margin:5px;
     top:0px;
     padding-left:50px;
