@@ -17,7 +17,7 @@
                     <asp:TextBox ID="TextBox2" runat="server" Width="100%" Height="150px" CssClass="box" placeholder="Escribe aquí tu consulta"></asp:TextBox></asp:TableCell>
             </asp:TableRow>
             <asp:TableRow ID="TableRow3" runat="server">
-                <asp:TableCell ID="TableCell3" runat="server"><asp:Button ID="Button1" runat="server" Text="Enviar" cssclass="boton" OnClick="Button1_Click" Enabled="False"></asp:Button>
+                <asp:TableCell ID="TableCell3" runat="server"><asp:Button ID="Button1" runat="server" Text="Enviar" cssclass="boton" OnClick="Button1_Click"></asp:Button>
                     </asp:TableCell>   
             </asp:TableRow>
         </asp:Table>
