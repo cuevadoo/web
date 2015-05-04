@@ -87,16 +87,21 @@ public partial class Identificado_Indice : System.Web.UI.Page
         if(TextBox1==c){
             fade.Style["display"] = "block";
             light.Style["display"] = "block";
+            Label1.Text = "Hola2";
         }else{
+            Label1.Text = "Hola";
+            bool comp = true;
             foreach(Button b in lButton){
                 if(b==c){
                     fade.Style["display"] = "block";
                     light.Style["display"] = "block";
+                    comp = false;
                     break;
-                }else{
-                    fade.Style["display"] = "none";
-                    light.Style["display"] = "none";
                 }
+            }
+            if(comp){
+                fade.Style["display"] = "none";
+                light.Style["display"] = "none";
             }
         }
     }
