@@ -43,34 +43,44 @@
                         <asp:TextBox ID="TextBox3" runat="server" CssClass="box" placeholder="Localidad" Width="200px"></asp:TextBox></asp:TableCell>
                 </asp:TableRow>
             </asp:Table><br />
-<asp:Table runat="server" Width="650px">
-    <asp:TableRow runat="server">
+    <asp:Table runat="server" ID="Table2" Width="734px">
+    <asp:TableRow runat="server" HorizontalAlign="Center">
         <asp:TableCell runat="server"><p>Gustos Informáticos</p></asp:TableCell>
     </asp:TableRow>
-    <asp:TableRow runat="server">
+    <asp:TableRow runat="server" HorizontalAlign="Center">
         <asp:TableCell runat="server"><asp:RadioButtonList ID="RadioButtonList1" RepeatDirection="Horizontal" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged">
                 <asp:ListItem>MAC</asp:ListItem>
                 
+            
+
+
 <asp:ListItem>Windows</asp:ListItem>
                 
+
+
+
 <asp:ListItem>Linux</asp:ListItem>
             
+
+
+
 </asp:RadioButtonList>
 </asp:TableCell>
     </asp:TableRow>
     <asp:TableRow runat="server">
-        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="País de residencia" Width="100%"></asp:TextBox>
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Marcas de hardware favoritas. Separadas por comas y en mayúscula.Por ejemplo: HP,INTEL,NVIDIA" Width="100%"></asp:TextBox>
 </asp:TableCell>
     </asp:TableRow>
     <asp:TableRow runat="server">
-        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="País de residencia" Width="100%"></asp:TextBox>
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Lenguajes de programación favoritos. Separados por comas y en mayúscula.Por ejemplo:JAVA,C++,PYTHON" Width="100%"></asp:TextBox>
 </asp:TableCell>
     </asp:TableRow>
-    <asp:TableRow runat="server">
-        <asp:TableCell runat="server"></asp:TableCell>
+    <asp:TableRow runat="server" HorizontalAlign="Center">
+        <asp:TableCell runat="server"><p>Videojuegos</p></asp:TableCell>
     </asp:TableRow>
-    <asp:TableRow runat="server">
-        <asp:TableCell runat="server"></asp:TableCell>
+    <asp:TableRow runat="server" HorizontalAlign="Center">
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Género favorito con una mayúscula.Por ejemplo: Acción" Width="50%"></asp:TextBox>
+</asp:TableCell>
     </asp:TableRow>
     <asp:TableRow runat="server">
         <asp:TableCell runat="server"></asp:TableCell>
@@ -79,6 +89,13 @@
         <asp:TableCell runat="server"></asp:TableCell>
     </asp:TableRow>
                 </asp:Table></center>
-    </div>
+
+
+            
+
+            
+        </div>
+    
+
 </asp:Content>
 
