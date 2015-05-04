@@ -12,6 +12,7 @@ public partial class Identificado_MasterPage : System.Web.UI.MasterPage
             Response.Redirect("~/SinIdentificar/Entrar.aspx");
         }
         EN.Usuario aux = (EN.Usuario)Session["User"];
+        Session["User"] = aux;
         Menu1.Items[0].Text = aux.Nombre;
     }
     

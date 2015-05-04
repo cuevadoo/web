@@ -22,9 +22,8 @@ public partial class Ingresar : System.Web.UI.Page
                 EN.Usuario usuario = user.read(TextBox1.Text);
                 String hash = Hash.getHash(TextBox1.Text + TextBox2.Text);
                 if(hash==usuario.Pass){
-                    Session["User"] = user.read(TextBox1.Text);
+                    Session["User"] = usuario;
                     Response.Redirect("~/Identificado/Indice.aspx");
-                    
                 }
                 Label3.Text = "Combinación usuario-contraseña incorrecta";              
             }
