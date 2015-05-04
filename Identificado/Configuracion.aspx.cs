@@ -28,7 +28,7 @@ public partial class Identificado_Configuracion : System.Web.UI.Page
         System.Drawing.Bitmap bmpCrop = bmpImage.Clone(cropArea, bmpImage.PixelFormat);
         return (System.Drawing.Image)(bmpCrop);
     }
-    protected void Table2_Load(object sender, EventArgs e){
+    protected void Table1_Load(object sender, EventArgs e){
         EN.Usuario user =(EN.Usuario) Session["User"];
         string[] dirs = Directory.GetFiles(Server.MapPath("~/Imagenes/Usuarios/" + user.Email + "/"));
         TableRow row = new TableRow();
@@ -43,6 +43,6 @@ public partial class Identificado_Configuracion : System.Web.UI.Page
             cell.Controls.Add(ima);
             row.Cells.Add(cell);
         }
-        Table2.Rows.Add(row);
+        Table1.Rows.Add(row);
     }
 }

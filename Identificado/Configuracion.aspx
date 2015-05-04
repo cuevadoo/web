@@ -14,7 +14,7 @@
         <br />
         <div id="fade" class="FondoFoto" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"></div>
             <div id="light" class="ContenidoFoto">
-                <asp:Table OnLoad="Table2_Load" ID="Table2" runat="server"></asp:Table>
+                <asp:Table OnLoad="Table1_Load" ID="Table1" runat="server"></asp:Table>
             </div>  
     </div></center>
 
@@ -33,7 +33,7 @@
             <br />
             <p>La siguiente información no es obligatoria pero permite que tus amigos sepan donde vives y qué es lo que te gusta. Además facilitará la busqueda al resto de usuarios mediante el Buscador Avanzado de Cuevadoo©.</p>
             <center>
-            <asp:Table ID="Table1" runat="server">
+            <asp:Table ID="Table2" runat="server">
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server">
                         <asp:TextBox ID="TextBox1" runat="server" CssClass="box" placeholder="País de residencia" Width="200px"></asp:TextBox></asp:TableCell>
@@ -43,7 +43,7 @@
                         <asp:TextBox ID="TextBox3" runat="server" CssClass="box" placeholder="Localidad" Width="200px"></asp:TextBox></asp:TableCell>
                 </asp:TableRow>
             </asp:Table><br />
-    <asp:Table runat="server" ID="Table2" Width="734px">
+    <asp:Table runat="server" ID="Table3" Width="734px">
     <asp:TableRow runat="server" HorizontalAlign="Center">
         <asp:TableCell runat="server"><p>Gustos Informáticos</p></asp:TableCell>
     </asp:TableRow>
