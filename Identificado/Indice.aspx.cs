@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -36,6 +37,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
     }
     private void actualizarTabla(){
         Table1.Rows.Clear();
+        ArrayList lButton = new ArrayList();
         if (Session["BuscadorIS"]==null){
             TableRow row1 = new TableRow();
             TableCell t1 = new TableCell();
@@ -57,6 +59,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
                 aux1.Click+=new EventHandler(this.Button_Paginas);
                 TableCell aux2 = new TableCell();
                 aux2.Controls.Add(aux1);
+                lButton.Add(aux1);
                 Table1.Rows[0].Cells.Add(aux2);
                 for (int i=1;i<=cant;i++){
                     aux1 = new Button();
@@ -66,6 +69,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
                     aux1.Click += new EventHandler(this.Button_Paginas);
                     aux2 = new TableCell();
                     aux2.Controls.Add(aux1);
+                    lButton.Add(aux1);
                     Table1.Rows[0].Cells.Add(aux2);
                 }
                 aux1 = new Button();
@@ -75,7 +79,24 @@ public partial class Identificado_Indice : System.Web.UI.Page
                 aux1.Click += new EventHandler(this.Button_Paginas);
                 aux2 = new TableCell();
                 aux2.Controls.Add(aux1);
+                lButton.Add(aux1);
                 Table1.Rows[0].Cells.Add(aux2);
+            }
+        }
+        Control c=GetControl();
+        if(TextBox1==c){
+            fade.Style["display"] = "block";
+            light.Style["display"] = "block";
+        }else{
+            foreach(Button b in lButton){
+                if(b==c){
+                    fade.Style["display"] = "block";
+                    light.Style["display"] = "block";
+                    break;
+                }else{
+                    fade.Style["display"] = "none";
+                    light.Style["display"] = "none";
+                }
             }
         }
     }
@@ -84,5 +105,18 @@ public partial class Identificado_Indice : System.Web.UI.Page
     }
     protected void Button2_Click(object sender, EventArgs e){
 
+    }
+    private Control GetControl(){
+        string id = Page.Request.Params["__EVENTTARGET"];
+        if (!string.IsNullOrEmpty(id)){
+            return Page.FindControl(id) as Control;
+        }
+        foreach (var ctlID in Page.Request.Form.AllKeys){
+            Control c = Page.FindControl(ctlID) as Control;
+            if (c is Button){
+                return c;
+            }
+        }
+        return null;
     }
 }
