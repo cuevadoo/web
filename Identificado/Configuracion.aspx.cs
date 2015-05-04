@@ -9,8 +9,11 @@ public partial class Identificado_Configuracion : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e){
         EN.Usuario user=(EN.Usuario)Session["User"];
-        user.Foto = LabelFoto.Text;
     }
 
 
+    protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }
