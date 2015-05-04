@@ -5,6 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <center>
     <div>
+<<<<<<< HEAD
         <p>CONFIGURACIÓN DE PERFIL</p>
         <br />
         <p>Imagen de perfil</p>
@@ -76,6 +77,13 @@
         <asp:TableCell runat="server"></asp:TableCell>
     </asp:TableRow>
                 </asp:Table></center>
+=======
+        <asp:ImageMap ID="ImageMap1" runat="server" Height="300px" Width="300px" HotSpotMode="PostBack" ImageUrl="~/Imagenes/ImagenPerfil.jpg">
+            <asp:RectangleHotSpot Bottom="50" Left="0" Right="50" Top="0" AlternateText="Hola" PostBackValue="Adios" />
+        </asp:ImageMap>
+        <asp:Label ID="LabelFoto" runat="server" Text=""></asp:Label>
+    </div>
+>>>>>>> web/master
 
 
             
