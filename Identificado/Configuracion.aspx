@@ -1,6 +1,48 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Identificado/MasterPage.master" AutoEventWireup="true" CodeFile="Configuracion.aspx.cs" Inherits="Identificado_Configuracion" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <script type="text/javascript">
+        function aparecer() {
+            document.body.style.overflow = 'hidden';
+            document.getElementById('derecha').style.display = 'block';
+            document.getElementById('derechaOculto').style.display = 'block';
+            document.getElementById('izquierda').style.display = 'block';
+            document.getElementById('light1').style.display = 'block';
+            document.getElementById('light2').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+        }
+        function desaparecer() {
+            document.body.style.overflow = 'auto';
+            document.getElementById('derecha').style.display = 'none';
+            document.getElementById('derechaOculto').style.display = 'none';
+            document.getElementById('izquierda').style.display = 'none';
+            document.getElementById('light1').style.display = 'none';
+            document.getElementById('light2').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+        }
+        function desplazar(cantidad) {
+            var aux = document.getElementById('light2');
+                aux.scrollLeft+=cantidad;
+        }
+        function desplazarTiempoD(cantidad) {
+            desplazar(cantidad);
+            var aux = document.getElementById('derechaOculto').style;
+            if (aux.display == 'none') {
+                setTimeout(aux.display = 'block', 20);
+            } else {
+                setTimeout(aux.display = 'none', 20);
+            }
+        }
+        function desplazarTiempoI(cantidad) {
+            desplazar(-cantidad);
+            var aux = document.getElementById('izquierdaOculto').style;
+            if (aux.display == 'none') {
+                setTimeout(aux.display = 'block', 20);
+            } else {
+                setTimeout(aux.display = 'none', 20);
+            }
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <center>
@@ -8,14 +50,24 @@
         <p>CONFIGURACIÓN DE PERFIL</p>
         <br />
         <p>Imagen de perfil</p>
-        <asp:Image CssClass="Manita" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';" ID="ImageButton1" runat="server" Height="198px" Width="250px" />
+        <asp:Image CssClass="Manita" onclick = "aparecer()" ID="ImageButton1" runat="server" Height="198px" Width="250px" />
         <p>Esta imagen será visible para todos los usuarios de Cuevadoo</p>
         <p>Haz click en ella para cambiar tu foto de perfil</p>
         <br />
-        <div id="fade" class="FondoFoto" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"></div>
-            <div id="light" class="ContenidoFoto">
-                <asp:Table OnLoad="Table1_Load" ID="Table1" runat="server"></asp:Table>
-            </div>  
+        <!--Imagenes en ventana desplegable-->
+        <div id="fade" class="FondoFoto" onclick ="desaparecer()"></div>
+        <div id="izquierda" onmouseover="desplazarTiempoI(20)" class="BotonIzquierda"><
+            <div id="izquierdaOculto" class="BotonIzquierdaOculto"></div>
+        </div>
+        <div id="derecha" onmouseover="desplazarTiempoD(20)" class="BotonDerecha">>
+            <div id="derechaOculto" class="BotonDerechaOculto"></div>
+        </div>
+        <div id="light1" class="ContenidoFotoScroll">
+            <div id="light2" class="ContenidoFoto">
+                <asp:Table OnLoad="Table1_Load" ID="Table1" runat="server" Width="200%"></asp:Table>
+            </div>
+        </div>
+        <!--Imagenes en ventana desplegable-->
     </div></center>
 
         <div>
