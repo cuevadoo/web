@@ -4,6 +4,9 @@
     background-attachment: fixed;
     font-family: "ARIAL", serif;
 }
+.Manita{
+    cursor:pointer;
+}
 .tablaBuscador{
     background-color:#F6ECD9;
     padding:10px;
@@ -333,6 +336,32 @@ li A:hover {text-decoration:underline;color:#5ab533;}
     padding-bottom:7px;
     color: #333;
     z-index:1002;
+}
+.FondoFoto{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index:1001;
+    opacity:.85;
+    -moz-opacity: 0.75;
+    filter: alpha(opacity=75);
+}
+.ContenidoFoto{
+    display: none;
+    position: absolute;
+    top: 25%;
+    left:0;
+    width: 100%;
+    height: 50%;
+    padding: 16px;
+    background: #fff;
+    color: #333;
+    z-index:1002;
+    overflow: auto;
 }
 
   .overlay{

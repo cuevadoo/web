@@ -8,11 +8,14 @@
         <p>CONFIGURACIÓN DE PERFIL</p>
         <br />
         <p>Imagen de perfil</p>
-        <asp:ImageButton ID="ImageButton1" runat="server" Height="198px" Width="250px" />
+        <asp:Image CssClass="Manita" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';" ID="ImageButton1" runat="server" Height="198px" Width="250px" />
         <p>Esta imagen será visible para todos los usuarios de Cuevadoo</p>
         <p>Haz click en ella para cambiar tu foto de perfil</p>
         <br />
-
+        <div id="fade" class="FondoFoto" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"></div>
+            <div id="light" class="ContenidoFoto">
+                <asp:Table OnLoad="Table2_Load" ID="Table2" runat="server"></asp:Table>
+            </div>  
     </div></center>
 
         <div>
