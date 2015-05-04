@@ -25,7 +25,7 @@ public partial class SinIdentificar_Registrar : System.Web.UI.Page
                 }
                 String aux3 = Hash.getHash(TextBox5.Text + TextBox7.Text);
                 EN.Usuario user = new EN.Usuario(TextBox5.Text,aux3,TextBox1.Text,TextBox2.Text,
-                    TextBox3.Text,aux1,aux2);
+                    TextBox3.Text,aux1,aux2,null);
                 CAD.Usuario cadUser = new CAD.Usuario();
                 cadUser.create(user);
                 String path = Server.MapPath("~/Imagenes/Usuarios/" + user.Email + "/");
