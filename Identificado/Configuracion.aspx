@@ -117,17 +117,87 @@
         <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Género favorito con una mayúscula.Por ejemplo: Acción" Width="50%"></asp:TextBox>
 </asp:TableCell>
     </asp:TableRow>
-    <asp:TableRow runat="server">
+    <asp:TableRow runat="server" HorizontalAlign="Center">
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu videojuego favorito.Por ejemplo: The legend of Zelda" Width="50%"></asp:TextBox></asp:TableCell>
+    </asp:TableRow>
+    <asp:TableRow runat="server" HorizontalAlign="Center">
+        <asp:TableCell runat="server"><asp:RadioButtonList ID="RadioButtonList2" RepeatDirection="Horizontal" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged">
+                <asp:ListItem>Consolas SONY</asp:ListItem>
+                <asp:ListItem>Consolas Microsoft</asp:ListItem>
+                <asp:ListItem>Consolas Nintendo</asp:ListItem>
+            </asp:RadioButtonList></asp:TableCell>
+    </asp:TableRow>
+        <asp:TableRow runat="server" HorizontalAlign="Center">
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu desarrollador de juegos favorito.Por ejemplo: Blizzard" Width="50%"></asp:TextBox></asp:TableCell>
+    </asp:TableRow>
+        <asp:TableRow runat="server" HorizontalAlign="Center">
+        <asp:TableCell runat="server"><p>Películas y Series</p></asp:TableCell>
+    </asp:TableRow>
+         <asp:TableRow runat="server">
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu género cinematográfico favorito.Por ejemplo: Comedia" Width="50%"></asp:TextBox></asp:TableCell>
+    </asp:TableRow>
+         <asp:TableRow runat="server">
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu director favorito.Por ejemplo: Tarantino" Width="50%"></asp:TextBox></asp:TableCell>
+    </asp:TableRow>
+         <asp:TableRow runat="server">
+             <asp:TableCell runat="server"><asp:Label runat="server" Text="Década cinematográfica favorita "></asp:Label><asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:ListItem>50</asp:ListItem>
+                <asp:ListItem>60</asp:ListItem>
+                <asp:ListItem>70</asp:ListItem>
+                <asp:ListItem>80</asp:ListItem>
+                <asp:ListItem>90</asp:ListItem>
+                <asp:ListItem>00</asp:ListItem>
+            </asp:DropDownList>
+            </asp:TableCell>
+    </asp:TableRow>
+        <asp:TableRow runat="server">
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu actor favorito.Por ejemplo: Johnny Depp" Width="50%"></asp:TextBox></asp:TableCell>
+    </asp:TableRow>
+        <asp:TableRow runat="server">
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu película favorita.Por ejemplo: Pupl Fiction" Width="50%"></asp:TextBox></asp:TableCell>
+    </asp:TableRow>
+        <asp:TableRow runat="server">
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu género de serie favorito.Por ejemplo: Acción" Width="50%"></asp:TextBox></asp:TableCell>
+    </asp:TableRow>
+        <asp:TableRow runat="server">
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu productor de series favorito.Por ejemplo: Frank Darabont" Width="50%"></asp:TextBox></asp:TableCell>
+    </asp:TableRow>
+        <asp:TableRow runat="server">
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu serie favorita.Por ejemplo: The Office" Width="50%"></asp:TextBox></asp:TableCell>
+    </asp:TableRow>
+        <asp:TableRow runat="server">
+        <asp:TableCell runat="server">Música</asp:TableCell>
+    </asp:TableRow>
+        <asp:TableRow runat="server">
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu estilo musical favorito.Por ejemplo: Rock" Width="50%"></asp:TextBox></asp:TableCell>
+    </asp:TableRow>
+        <asp:TableRow runat="server">
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu grupo favorito.Por ejemplo: The Queen" Width="50%"></asp:TextBox></asp:TableCell>
+    </asp:TableRow>
+        <asp:TableRow runat="server">
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu artista favorito.Por ejemplo: Michael Jackson" Width="50%"></asp:TextBox></asp:TableCell>
+    </asp:TableRow>
+        <asp:TableRow runat="server">
+        <asp:TableCell runat="server"><asp:Label runat="server" Text="Década musical favorita "></asp:Label><asp:DropDownList ID="DropDownList2" runat="server">
+                <asp:ListItem>50</asp:ListItem>
+                <asp:ListItem>60</asp:ListItem>
+                <asp:ListItem>70</asp:ListItem>
+                <asp:ListItem>80</asp:ListItem>
+                <asp:ListItem>90</asp:ListItem>
+                <asp:ListItem>00</asp:ListItem>
+            </asp:DropDownList></asp:TableCell>
+    </asp:TableRow>
+        <asp:TableRow runat="server">
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Últimos conciertos a los que has asistido. Separados por comas.Por ejemplo: Justin Bieber,Abraham Mateo,Gemeliers" Width="100%"></asp:TextBox></asp:TableCell>
+    </asp:TableRow>
+        <asp:TableRow runat="server">
         <asp:TableCell runat="server"></asp:TableCell>
     </asp:TableRow>
-    <asp:TableRow runat="server">
-        <asp:TableCell runat="server"></asp:TableCell>
-    </asp:TableRow>
+        
                 </asp:Table></center>
 
 
             
-
             
         </div>
     
