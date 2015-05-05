@@ -32,7 +32,7 @@
                             </asp:Menu>
                         </asp:TableCell>
                         <asp:TableCell ID="TableCell3" runat="server">
-                           <asp:ImageButton ImageUrl="~/Imagenes/tuerca.png" ID="ImageButton1" runat="server"></asp:ImageButton> 
+                           <asp:ImageButton ImageUrl="~/Imagenes/tuerca.png" ID="ImageButton1" runat="server"></asp:ImageButton>                              
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
