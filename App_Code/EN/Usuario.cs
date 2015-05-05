@@ -18,8 +18,8 @@ namespace EN
         private String email;
         private Fecha edad;
         private bool sexo;
-
-        public Usuario(String email, String pass, String nombre, String apellido1, String apellido2, Fecha edad, bool sexo)
+        private String foto;
+        public Usuario(String email, String pass, String nombre, String apellido1, String apellido2, Fecha edad, bool sexo,String foto)
         {
             this.email = email;
             this.pass = pass;
@@ -28,6 +28,7 @@ namespace EN
             this.apellido2 = apellido2;
             this.edad = edad;
             this.sexo = sexo;
+            this.foto = foto;
         }
         protected Usuario(String email) 
         {
@@ -73,6 +74,11 @@ namespace EN
         {
             get { return pass; }
             set { pass = value; }
+        }
+        public String Foto
+        {
+            get { return foto; }
+            set { foto = value; }
         }
     }
 }

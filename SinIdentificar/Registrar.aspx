@@ -6,9 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <center>
         <div>
-            <asp:Label ID="Label1" runat="server" Text="BIENVENIDOS A CUEVADOO"></asp:Label>
-            <br />
-            <br />
+            <h3 class="titulo">BIENVENIDOS A CUEVADOO</h3>
         </div>
         <div>
             <asp:Table ID="Table1" runat="server">
@@ -138,12 +136,12 @@
                         <li type="circle">Siempre valoramos tus comentarios o sugerencias acerca de Cuevadoo, pero debes entender que podríamos utilizarlos sin obligación de compensarte por ello (del mismo modo que tú no tienes obligación de ofrecerlos).</li>
                         </ul>
                         <p class="center"><a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><img src="../Imagenes/cerrar.jpg"/width="30px"></a></p>
-                </div>
+                        </div>
                     </div>
                 <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';">términos y condiciones.</a>   
             <!--ventana-->
             <br/><br/>
-            <asp:Button ID="Button1" runat="server" Text="Registrar" cssclass="boton" OnClick="Button1_Click" Enabled="False"></asp:Button>
+            <asp:Button ID="Button1" runat="server" Text="Registrar" cssclass="boton" OnClick="Button1_Click" Enabled="False" CausesValidation="False"></asp:Button>
         </div>
     </center>
 </asp:Content>

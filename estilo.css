@@ -4,6 +4,9 @@
     background-attachment: fixed;
     font-family: "ARIAL", serif;
 }
+.Manita{
+    cursor:pointer;
+}
 .tablaBuscador{
     background-color:#F6ECD9;
     padding:10px;
@@ -178,9 +181,10 @@
     left:0;
     width:100%;
     height:65px;
+    z-index:1000;
 }
 
-#Cuerpo{
+#CuerpoS{
     background: rgba(70,130,180,0.8);
     background: -moz-linear-gradient(top, rgba(70,130,180,0) 100px, rgba(70,130,180,0.9) 250px);
     background: -webkit-gradient(left top, left bottom, color-stop(100px, rgba(70,130,180,0)), color-stop(250px, rgba(70,130,180,0.9)));
@@ -197,13 +201,53 @@
     -moz-border-radius: 3em;
     -webkit-border-radius: 3em;
 }
-
-#Contenido{
+#CuerpoI{
+    background: rgba(70,130,180,0.8);
+    margin-left:50px;
+    margin-right:50px;
+    margin-top:0px;
+    padding:20px;
+    border-radius: 3em;
+    -moz-border-radius: 3em;
+    -webkit-border-radius: 3em;
+}
+#ContenidoS{
     margin-top:40px;
     font-size: 18px; 
 }
+#ContenidoI{
+    margin-top:50px;
+    font-size: 18px; 
+}
+
+.titulo {
+  font-size: 25px; 
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  color: black;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-shadow: 4px 4px 6px rgba(0,0,0,0.5) ;
+}
+
+a:link
+{
+   text-decoration: none;
+}
+a:visited
+{
+   text-decoration: none;
+}
+
+li A:link {text-decoration:none;color:#a104f8;} 
+li A:visited {text-decoration:none;color:#a104f8;} 
+li A:active {text-decoration:none;color:#5ab533;} 
+li A:hover {text-decoration:underline;color:#5ab533;}
 
 #Menu1{
+    text-decoration:none;
     margin:5px;
     top:0px;
     padding-left:50px;
@@ -255,6 +299,119 @@
   text-align: center;
   width: 1.6em; 
 }
+.BuscadorFlotante{
+    position:fixed;
+    top:55px;
+    left:0px;
+    padding-top:10px;
+    padding-left:50px;
+    padding-bottom:7px;
+    z-index:1;
+    width:100%;
+    background: rgba(227,234,235,1);
+    background: -moz-linear-gradient(top, rgba(227,234,235,1) 0%, rgba(227,234,235,1) 5%, rgba(227,234,235,0) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(227,234,235,1)), color-stop(85%, rgba(227,234,235,1)), color-stop(100%, rgba(227,234,235,0)));
+    background: -webkit-linear-gradient(top, rgba(227,234,235,1) 0%, rgba(227,234,235,1) 85%, rgba(227,234,235,0) 100%);
+    background: -o-linear-gradient(top, rgba(227,234,235,1) 0%, rgba(227,234,235,1) 85%, rgba(227,234,235,0) 100%);
+    background: -ms-linear-gradient(top, rgba(227,234,235,1) 0%, rgba(227,234,235,1) 85%, rgba(227,234,235,0) 100%);
+    background: linear-gradient(to bottom, rgba(227,234,235,1) 0%, rgba(227,234,235,1) 85%, rgba(227,234,235,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3eaeb', endColorstr='#e3eaeb', GradientType=0 );
+}
+.FondoBuscador{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index:1001;
+}
+.ContenidoBuscador {
+    display: none;
+    position:fixed;
+    top:55px;
+    left:0px;
+    padding-top:10px;
+    padding-left:50px;
+    padding-bottom:7px;
+    color: #333;
+    z-index:1002;
+}
+.FondoFoto{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index:1001;
+    opacity:.85;
+    -moz-opacity: 0.85;
+    filter: alpha(opacity=85);
+}
+.ContenidoFoto{
+    width: 100%;
+    height: 218px;
+    overflow-x:scroll;
+    overflow-y:hidden;
+    z-index:1002;
+}
+.ContenidoFotoScroll{
+    display: none;
+    position: fixed;
+    top: 32%;
+    left:0;
+    width: 100%;
+    height: 200px;
+    overflow:hidden;
+    background: #fff;
+    z-index:1003;
+}
+.BotonIzquierda{
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 30px;
+    height: 100%;
+    background: #ccc;
+    z-index:1004;
+    opacity:.65;
+    -moz-opacity: 0.65;
+    filter: alpha(opacity=65);
+}
+.BotonIzquierdaOculto{
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 30px;
+    height: 100%;
+    z-index:1005;
+}
+.BotonDerecha{
+    display: none;
+    position: fixed;
+    top:0;
+    right:0;
+    width: 30px;
+    height: 100%;
+    background: #ccc;
+    z-index:1004;
+    opacity:.65;
+    -moz-opacity: 0.65;
+    filter: alpha(opacity=65);
+}
+.BotonDerechaOculto{
+    display: none;
+    position: fixed;
+    top:0;
+    right:0;
+    width: 30px;
+    height: 100%;
+    z-index:1005;
+}
 
   .overlay{
         display: none;
@@ -265,7 +422,7 @@
         height: 100%;
         background: #000;
         z-index:1001;
-  opacity:.85;
+        opacity:.85;
         -moz-opacity: 0.75;
         filter: alpha(opacity=75);
     }
@@ -280,7 +437,7 @@
         height: 50%;
         padding: 16px;
         background: #fff;
-  color: #333;
+        color: #333;
         z-index:1002;
         overflow: auto;
     }
