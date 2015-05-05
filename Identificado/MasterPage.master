@@ -26,8 +26,8 @@
                                 <Items>
                                     <asp:MenuItem Text="[Usuario]" Value="Nuevo elemento" NavigateUrl="~/Identificado/Configuracion.aspx"></asp:MenuItem>
                                     <asp:MenuItem Text="SubirFoto" Value="Nuevo Elemento" NavigateUrl="~/Identificado/SubirFoto.aspx"></asp:MenuItem>
-                                    <asp:MenuItem Text="Mensajes" Value="Nuevo Elemento"></asp:MenuItem>
-                                    <asp:MenuItem Text="Buscador avanzado" Value="Nuevo Elemento"></asp:MenuItem>                                  
+                                    <asp:MenuItem Text="Mensajes" Value="Nuevo Elemento" NavigateUrl="~/Identificado/Mensajes.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Buscador avanzado" Value="Nuevo Elemento" NavigateUrl="~/Identificado/BuscadorAvanzado.aspx"></asp:MenuItem>                                  
                                 </Items>
                             </asp:Menu>
                         </asp:TableCell>
