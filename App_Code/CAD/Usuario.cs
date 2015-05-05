@@ -42,7 +42,7 @@ namespace CAD
                 f.traducirSql((DateTime)data[0][5]);
                 user = new EN.Usuario((String)data[0][0], (String)data[0][1], (String)data[0][2],
                     (String)data[0][3], (String)data[0][4], f,(bool)data[0][6],s);
-            }catch(Exception ex){
+            }catch(System.Exception ex){
                 throw new Exception("Error al leer usuario");
             }
             return user;

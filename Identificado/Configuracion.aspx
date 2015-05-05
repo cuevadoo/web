@@ -5,7 +5,6 @@
         function aparecer() {
             document.body.style.overflow = 'hidden';
             document.getElementById('derecha').style.display = 'block';
-            document.getElementById('derechaOculto').style.display = 'block';
             document.getElementById('izquierda').style.display = 'block';
             document.getElementById('light1').style.display = 'block';
             document.getElementById('light2').style.display = 'block';
@@ -14,33 +13,21 @@
         function desaparecer() {
             document.body.style.overflow = 'auto';
             document.getElementById('derecha').style.display = 'none';
-            document.getElementById('derechaOculto').style.display = 'none';
             document.getElementById('izquierda').style.display = 'none';
             document.getElementById('light1').style.display = 'none';
             document.getElementById('light2').style.display = 'none';
             document.getElementById('fade').style.display = 'none';
         }
+        var ID;
         function desplazar(cantidad) {
             var aux = document.getElementById('light2');
-                aux.scrollLeft+=cantidad;
+            aux.scrollLeft += cantidad;
         }
-        function desplazarTiempoD(cantidad) {
-            desplazar(cantidad);
-            var aux = document.getElementById('derechaOculto').style;
-            if (aux.display == 'none') {
-                setTimeout(aux.display = 'block', 20);
-            } else {
-                setTimeout(aux.display = 'none', 20);
-            }
+        function desplazarTiempo(cantidad, tiempo) {
+            ID = setInterval(desplazar, tiempo, cantidad);
         }
-        function desplazarTiempoI(cantidad) {
-            desplazar(-cantidad);
-            var aux = document.getElementById('izquierdaOculto').style;
-            if (aux.display == 'none') {
-                setTimeout(aux.display = 'block', 20);
-            } else {
-                setTimeout(aux.display = 'none', 20);
-            }
+        function vaciar() {
+            clearInterval(ID);
         }
     </script>
 </asp:Content>
@@ -56,12 +43,8 @@
         <br />
         <!--Imagenes en ventana desplegable-->
         <div id="fade" class="FondoFoto" onclick ="desaparecer()"></div>
-        <div id="izquierda" onmouseover="desplazarTiempoI(20)" class="BotonIzquierda"><
-            <div id="izquierdaOculto" class="BotonIzquierdaOculto"></div>
-        </div>
-        <div id="derecha" onmouseover="desplazarTiempoD(20)" class="BotonDerecha">>
-            <div id="derechaOculto" class="BotonDerechaOculto"></div>
-        </div>
+        <div id="izquierda" onmouseout="vaciar()" onmouseover="desplazarTiempo(-2,5)" class="BotonIzquierda"><</div>
+        <div id="derecha" onmouseout="vaciar()" onmouseover="desplazarTiempo(2,5)" class="BotonDerecha">></div>
         <div id="light1" class="ContenidoFotoScroll">
             <div id="light2" class="ContenidoFoto">
                 <asp:Table OnLoad="Table1_Load" ID="Table1" runat="server" Width="200%"></asp:Table>
