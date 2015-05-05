@@ -51,6 +51,11 @@
             </div>
         </div>
         <!--Imagenes en ventana desplegable-->
+        <!--Editor de imagen-->
+        <div id="foto" class="">
+            <asp:ImageMap ID="ImageMap1" runat="server" OnClick="ImageMap1_Click"></asp:ImageMap>
+        </div>
+        <!--Editor de imagen-->
     </div></center>
 
         <div>
