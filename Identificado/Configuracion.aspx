@@ -82,7 +82,7 @@
         <asp:TableCell runat="server"><p>Gustos Informáticos</p></asp:TableCell>
     </asp:TableRow>
     <asp:TableRow runat="server" HorizontalAlign="Center">
-        <asp:TableCell runat="server"><asp:RadioButtonList ID="RadioButtonList1" RepeatDirection="Horizontal" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged">
+        <asp:TableCell runat="server"><asp:RadioButtonList ID="RadioButtonList1" RepeatDirection="Horizontal" runat="server">
                 <asp:ListItem>MAC</asp:ListItem>
                 <asp:ListItem>Windows</asp:ListItem>
                 <asp:ListItem>Linux</asp:ListItem>
@@ -108,7 +108,7 @@
         <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu videojuego favorito.Por ejemplo: The Legend of Zelda" Width="55%"></asp:TextBox></asp:TableCell>
     </asp:TableRow>
     <asp:TableRow runat="server" HorizontalAlign="Center">
-        <asp:TableCell runat="server"><asp:RadioButtonList ID="RadioButtonList2" RepeatDirection="Horizontal" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged">
+        <asp:TableCell runat="server"><asp:RadioButtonList ID="RadioButtonList2" RepeatDirection="Horizontal" runat="server">
                 <asp:ListItem>Consolas SONY</asp:ListItem>
                 <asp:ListItem>Consolas Microsoft</asp:ListItem>
                 <asp:ListItem>Consolas Nintendo</asp:ListItem>
@@ -182,7 +182,7 @@
         <asp:TableCell runat="server"><br /><p>*Los datos que introduzcas aquí serán publicos y visibles por todos los usuarios de Cuevadoo. Pulsando el botón "Guardar" estás de acuerdo con lo anterior citado y aceptas nuestra política.  </p></asp:TableCell>
     </asp:TableRow>
         <asp:TableRow runat="server">
-        <asp:TableCell runat="server"><br /><asp:Button ID="Button1" runat="server" Text="Guardar" cssclass="boton" OnClick="Button1_Click"></asp:Button></asp:TableCell>
+        <asp:TableCell runat="server"><br /><asp:Button ID="Button1" runat="server" Text="Guardar" cssclass="boton"></asp:Button></asp:TableCell>
     </asp:TableRow>
         
                 </asp:Table></center>

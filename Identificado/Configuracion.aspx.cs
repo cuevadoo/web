@@ -19,9 +19,6 @@ public partial class Identificado_Configuracion : System.Web.UI.Page
         }
     }
 
-    protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e){
-
-    }
 
     private static System.Drawing.Image cropImage(System.Drawing.Image img, System.Drawing.RectangleF cropArea){
         System.Drawing.Bitmap bmpImage = new System.Drawing.Bitmap(img);
@@ -50,8 +47,5 @@ public partial class Identificado_Configuracion : System.Web.UI.Page
         }
         Table1.Rows.Add(row);
     }
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-
-    }
+    
 }
