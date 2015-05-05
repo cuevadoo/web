@@ -47,12 +47,4 @@ public partial class Identificado_Configuracion : System.Web.UI.Page
         }
         Table1.Rows.Add(row);
     }
-
-    protected void DarleImagen(object sender, ImageClickEventArgs e){
-
-    }
-
-    protected void ImageMap1_Click(object sender, ImageMapEventArgs e){
-        String valor=e.PostBackValue;
-    }
 }
