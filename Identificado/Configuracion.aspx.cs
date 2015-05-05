@@ -50,4 +50,8 @@ public partial class Identificado_Configuracion : System.Web.UI.Page
         }
         Table1.Rows.Add(row);
     }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+
+    }
 }
