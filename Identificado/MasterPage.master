@@ -22,20 +22,27 @@
                             <asp:ImageButton ID="ImageButton2" runat="server" Height="50px" ImageUrl="~/Imagenes/logoRecortado.png" Width="50px" OnClick="ImageButton2_Click" CausesValidation="False" TabIndex="99" />
                         </asp:TableCell>
                         <asp:TableCell ID="TableCell2" runat="server">
-                            <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="Default" DisappearAfter="100">
+                            <asp:Menu ID="Menu1" CssClass="Menu" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="Default" DisappearAfter="100">
                                 <Items>
-                                    <asp:MenuItem Text="[Usuario]" Value="Nuevo elemento" NavigateUrl="~/Identificado/Configuracion.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="[Usuario]" Value="Nuevo elemento" NavigateUrl="~/Identificado/Perfil.aspx"></asp:MenuItem>
                                     <asp:MenuItem Text="SubirFoto" Value="Nuevo Elemento" NavigateUrl="~/Identificado/SubirFoto.aspx"></asp:MenuItem>
                                     <asp:MenuItem Text="Mensajes" Value="Nuevo Elemento" NavigateUrl="~/Identificado/Mensajes.aspx"></asp:MenuItem>
                                     <asp:MenuItem Text="Buscador avanzado" Value="Nuevo Elemento" NavigateUrl="~/Identificado/BuscadorAvanzado.aspx"></asp:MenuItem>                                  
                                 </Items>
                             </asp:Menu>
                         </asp:TableCell>
-                        <asp:TableCell ID="TableCell3" runat="server">
-                           <asp:ImageButton ImageUrl="~/Imagenes/tuerca.png" ID="ImageButton1" runat="server"></asp:ImageButton>                              
-                        </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
+                <div class="Herramienta">
+                    <asp:Image ID="Image1" CssClass="Manita" runat="server" ImageUrl="~/Imagenes/tuerca.png" onclick="document.getElementById('desplegable').style.display = 'block';document.getElementById('todo').style.display = 'block';"></asp:Image>
+                </div>
+                <div id="desplegable" class="Menu">
+                    <ul>
+                        <li><a href="Configuracion.aspx">Configuracion</a></li>
+                        <li><a href="CerrarSesion.aspx">CerrarSesion</a></li>
+                    </ul>
+                </div>
+                <div id="todo" class="FondoBuscador" onmouseover="document.getElementById('desplegable').style.display = 'none';document.getElementById('todo').style.display = 'none';"></div>
             </center>
         </div>
         <div id="CuerpoI">

@@ -7,6 +7,18 @@
 .Manita{
     cursor:pointer;
 }
+.Herramienta{
+    position:fixed;
+    top:0px;
+    right:0px;
+}
+#desplegable{
+    display:none;
+    position:fixed;
+    top:0px;
+    right:0px;
+    z-index:2000;
+}
 .tablaBuscador{
     background-color:#F6ECD9;
     padding:10px;
@@ -246,7 +258,7 @@ li A:visited {text-decoration:none;color:#a104f8;}
 li A:active {text-decoration:none;color:#5ab533;} 
 li A:hover {text-decoration:underline;color:#5ab533;}
 
-#Menu1{
+.Menu{
     text-decoration:none;
     margin:5px;
     top:0px;
@@ -280,7 +292,8 @@ li A:hover {text-decoration:underline;color:#5ab533;}
 	text-decoration:none;
 	text-shadow:0px 0px 0px #528ecc;
 }
-#Menu1 li{
+.Menu li{
+    list-style:none;
     font-size:24px;
     padding:5px;
     width:220px;
