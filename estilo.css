@@ -4,6 +4,9 @@
     background-attachment: fixed;
     font-family: "ARIAL", serif;
 }
+.Manita{
+    cursor:pointer;
+}
 .tablaBuscador{
     background-color:#F6ECD9;
     padding:10px;
@@ -333,6 +336,81 @@ li A:hover {text-decoration:underline;color:#5ab533;}
     padding-bottom:7px;
     color: #333;
     z-index:1002;
+}
+.FondoFoto{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index:1001;
+    opacity:.85;
+    -moz-opacity: 0.85;
+    filter: alpha(opacity=85);
+}
+.ContenidoFoto{
+    width: 100%;
+    height: 218px;
+    overflow-x:scroll;
+    overflow-y:hidden;
+    z-index:1002;
+}
+.ContenidoFotoScroll{
+    display: none;
+    position: fixed;
+    top: 32%;
+    left:0;
+    width: 100%;
+    height: 200px;
+    overflow:hidden;
+    background: #fff;
+    z-index:1003;
+}
+.BotonIzquierda{
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 30px;
+    height: 100%;
+    background: #ccc;
+    z-index:1004;
+    opacity:.65;
+    -moz-opacity: 0.65;
+    filter: alpha(opacity=65);
+}
+.BotonIzquierdaOculto{
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 30px;
+    height: 100%;
+    z-index:1005;
+}
+.BotonDerecha{
+    display: none;
+    position: fixed;
+    top:0;
+    right:0;
+    width: 30px;
+    height: 100%;
+    background: #ccc;
+    z-index:1004;
+    opacity:.65;
+    -moz-opacity: 0.65;
+    filter: alpha(opacity=65);
+}
+.BotonDerechaOculto{
+    display: none;
+    position: fixed;
+    top:0;
+    right:0;
+    width: 30px;
+    height: 100%;
+    z-index:1005;
 }
 
   .overlay{
