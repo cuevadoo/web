@@ -47,9 +47,18 @@ public partial class Identificado_Configuracion : System.Web.UI.Page
         }
         Table1.Rows.Add(row);
     }
-    
     protected void DarleImagen(object sender, ImageClickEventArgs e){
+        ImageButton ima = (ImageButton)sender;
+        EN.Usuario user = (EN.Usuario)Session["User"];
+        user.Foto = ima.ImageUrl;
+        new CAD.Usuario().update(user,user);
+        Session["User"] = user;
+        ImageButton1.ImageUrl = user.Foto;
+        //ImageMap1.ImageUrl = ima.ImageUrl;
+        //for(){
 
+        //}
+        //fondoFoto.Style["display"] = "block";
     }
 
     protected void ImageMap1_Click(object sender, ImageMapEventArgs e){

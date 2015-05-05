@@ -12,6 +12,8 @@
         }
         function desaparecer() {
             document.body.style.overflow = 'auto';
+            document.getElementById('ContentPlaceHolder1_fondoFoto').style.display = 'none';
+            document.getElementById('ContentPlaceHolder1_foto').style.display = 'none';
             document.getElementById('derecha').style.display = 'none';
             document.getElementById('izquierda').style.display = 'none';
             document.getElementById('light1').style.display = 'none';
@@ -52,8 +54,8 @@
         </div>
         <!--Imagenes en ventana desplegable-->
         <!--Editor de imagen-->
-        <div id="foto" class="">
-            <asp:ImageMap ID="ImageMap1" runat="server" OnClick="ImageMap1_Click"></asp:ImageMap>
+        <div runat="server" id="fondoFoto" class="ContenidoFoto2">
+            <asp:ImageMap CssClass="MenosOpaco" ID="ImageMap1" runat="server" OnClick="ImageMap1_Click" ImageUrl="~/Imagenes/logo bajo.png" HotSpotMode="PostBack"></asp:ImageMap>
         </div>
         <!--Editor de imagen-->
     </div></center>

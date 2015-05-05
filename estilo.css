@@ -283,7 +283,7 @@ li A:hover {text-decoration:underline;color:#5ab533;}
 #Menu1 li{
     font-size:24px;
     padding:5px;
-    width:180px;
+    width:220px;
     height:auto;
 }
 #facebook{
@@ -357,6 +357,25 @@ li A:hover {text-decoration:underline;color:#5ab533;}
     overflow-y:hidden;
     z-index:1002;
 }
+.ContenidoFoto2{
+    height:100%;
+    width:100%;
+    display: none;
+    background: #fff;
+    position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+    overflow:scroll;
+    z-index:1002;
+}
+.MenosOpaco{
+    opacity:.5;
+    -moz-opacity: 0.5;
+    filter: alpha(opacity=5);
+}
 .ContenidoFotoScroll{
     display: none;
     position: fixed;
@@ -375,20 +394,15 @@ li A:hover {text-decoration:underline;color:#5ab533;}
     left:0;
     width: 30px;
     height: 100%;
-    background: #ccc;
     z-index:1004;
-    opacity:.65;
-    -moz-opacity: 0.65;
-    filter: alpha(opacity=65);
-}
-.BotonIzquierdaOculto{
-    display: none;
-    position: fixed;
-    top:0;
-    left:0;
-    width: 30px;
-    height: 100%;
-    z-index:1005;
+    background: rgba(119,119,119,0.8);
+    background: -moz-linear-gradient(left, rgba(119,119,119,0.8) 0%, rgba(119,119,119,0.35) 75%, rgba(119,119,119,0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(119,119,119,0.8)), color-stop(75%, rgba(119,119,119,0.35)), color-stop(100%, rgba(119,119,119,0)));
+    background: -webkit-linear-gradient(left, rgba(119,119,119,0.8) 0%, rgba(119,119,119,0.35) 75%, rgba(119,119,119,0) 100%);
+    background: -o-linear-gradient(left, rgba(119,119,119,0.8) 0%, rgba(119,119,119,0.35) 75%, rgba(119,119,119,0) 100%);
+    background: -ms-linear-gradient(left, rgba(119,119,119,0.8) 0%, rgba(119,119,119,0.35) 75%, rgba(119,119,119,0) 100%);
+    background: linear-gradient(to right, rgba(119,119,119,0.8) 0%, rgba(119,119,119,0.35) 75%, rgba(119,119,119,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#777777', endColorstr='#777777', GradientType=1 );
 }
 .BotonDerecha{
     display: none;
@@ -397,20 +411,15 @@ li A:hover {text-decoration:underline;color:#5ab533;}
     right:0;
     width: 30px;
     height: 100%;
-    background: #ccc;
     z-index:1004;
-    opacity:.65;
-    -moz-opacity: 0.65;
-    filter: alpha(opacity=65);
-}
-.BotonDerechaOculto{
-    display: none;
-    position: fixed;
-    top:0;
-    right:0;
-    width: 30px;
-    height: 100%;
-    z-index:1005;
+    background: rgba(119,119,119,0);
+    background: -moz-linear-gradient(left, rgba(119,119,119,0) 0%, rgba(119,119,119,0.35) 25%, rgba(119,119,119,0.8) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(119,119,119,0)), color-stop(25%, rgba(119,119,119,0.35)), color-stop(100%, rgba(119,119,119,0.8)));
+    background: -webkit-linear-gradient(left, rgba(119,119,119,0) 0%, rgba(119,119,119,0.35) 25%, rgba(119,119,119,0.8) 100%);
+    background: -o-linear-gradient(left, rgba(119,119,119,0) 0%, rgba(119,119,119,0.35) 25%, rgba(119,119,119,0.8) 100%);
+    background: -ms-linear-gradient(left, rgba(119,119,119,0) 0%, rgba(119,119,119,0.35) 25%, rgba(119,119,119,0.8) 100%);
+    background: linear-gradient(to right, rgba(119,119,119,0) 0%, rgba(119,119,119,0.35) 25%, rgba(119,119,119,0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#777777', endColorstr='#777777', GradientType=1 );
 }
 
   .overlay{
