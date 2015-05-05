@@ -26,8 +26,13 @@
                                 <Items>
                                     <asp:MenuItem Text="[Usuario]" Value="Nuevo elemento" NavigateUrl="~/Identificado/Configuracion.aspx"></asp:MenuItem>
                                     <asp:MenuItem Text="SubirFoto" Value="Nuevo Elemento" NavigateUrl="~/Identificado/SubirFoto.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Mensajes" Value="Nuevo Elemento"></asp:MenuItem>
+                                    <asp:MenuItem Text="Buscador avanzado" Value="Nuevo Elemento"></asp:MenuItem>                                  
                                 </Items>
                             </asp:Menu>
+                        </asp:TableCell>
+                        <asp:TableCell ID="TableCell3" runat="server">
+                           <asp:ImageButton ImageUrl="~/Imagenes/tuerca.png" ID="ImageButton1" runat="server"></asp:ImageButton>                              
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
