@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <asp:Table class="justify" ID="Table1" border runat="server" Height="130px" Width="251px">
+    <asp:Table  class="justify" ID="Table1" border runat="server" Height="130px" Width="251px">
         <asp:TableRow runat="server">
             <asp:TableCell columnSpan="3" runat="server">
                 <h3 class="titulo">BIENVENIDOS A CUEVADOO</h3>
@@ -23,18 +23,23 @@
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow  runat="server">
-            <asp:TableCell columnSpan="2" runat="server">
+            <asp:TableCell runat="server">
                 <p> Este es un proyecto realizado por alumnos de grado en Ingeniería Informática por la Universidad de Alicante, España.  </p>
             </asp:TableCell>
-            <asp:TableCell  runat="server">
+            <asp:TableCell columnSpan="2" runat="server">
                 <p> del edificio Escuela Politécnica Superior, donde serás bien recibido para cualquier consulta. </p>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow runat="server">
             <asp:TableCell columnSpan="3" runat="server">
-                <img src="Imagenes/logo bajo.png"/>
+              <p> Breve explicación de la búsqueda de usuarios (cuando esté hecha) </p>
             </asp:TableCell>
         </asp:TableRow>
+        <asp:TableRow ID="TableRow1"  runat="server">
+            <asp:TableCell ID="TableCell1" columnSpan="2" runat="server">
+              <img src="Imagenes/logo bajo.png"/>
+            </asp:TableCell>
+            </asp:TableRow>
     </asp:Table>
 
 </asp:Content>
