@@ -49,11 +49,11 @@ namespace CAD
         }
         public void update(EN.Usuario deleted, EN.Usuario added){
             try{
-                String s = "Update Usuarios set Email='" + added.Email+"',Pass='"+added.Pass+
-                    "',Nombre='"+added.Nombre+"',Apellido1='"+added.Apellido1+"',Apellido2='"+added.Apellido2+
-                    "',Edad='"+added.Edad.imprimirSql()+"',Sexo='"+added.Sexo+"' where Email='"+deleted.Email+"'";
+                String s = "Update Usuarios set Email='" + added.Email+"', Contraseña='"+added.Pass+
+                    "', Nombre='"+added.Nombre+"', Apellido1='"+added.Apellido1+"', Apellido2='"+added.Apellido2+
+                    "', Edad='"+added.Edad.imprimirSql()+"', Sexo='"+added.Sexo+"', Imagen='"+added.Foto+"' WHERE Email='"+deleted.Email+"'";
                 conexion.ejecutarS(s);
-            }catch(System.Exception ex){
+            }catch(Exception ex){
                 throw new Exception("Error al modificar usuario");
             }
         }
