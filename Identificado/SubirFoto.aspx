@@ -10,10 +10,57 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Cuevadoo</title>
     <script type="text/javascript">
-        function ci(photo,textbox) {
-            var img = document.getElementById(photo);
-            img.src = "";
-            img.src = "foto01.jpg";
+        var aux = false;
+        var posX = 0;
+        var posY = 0;
+        var cuadrado;
+        function clickdown(event) {
+            if (aux) {
+                aux = false;
+            } else {
+                cuadrado=document.getElementById("recuadro");
+                cuadrado.style.display = "block";
+                posX = event.clientX;
+                posY = event.clientY;
+                cuadrado.style.height = "0px";
+                cuadrado.style.width = "0px";
+                cuadrado.style.top = posY+"px";
+                cuadrado.style.left = posX+"px";
+                aux = true;
+            }
+        }
+        function mover(event) {
+            if (aux) {
+                var X = event.clientX;
+                var Y = event.clientY;
+                if (parseInt(X) > parseInt(posX) && parseInt(Y) > parseInt(posY)) {
+                    cuadrado.style.top = posY + "px";
+                    cuadrado.style.left = posX + "px";
+                    cuadrado.style.height = (Y - posY)+"px";
+                    cuadrado.style.width = (X - posX)+"px";
+                }
+                if (parseInt(X) > parseInt(posX) && parseInt(Y) <= parseInt(posY)) {
+                    cuadrado.style.top = Y + "px";
+                    cuadrado.style.left = posX + "px";
+                    cuadrado.style.height = (posY - Y) + "px";
+                    cuadrado.style.width = (X - posX) + "px";
+                }
+                if (parseInt(X) <= parseInt(posX) && parseInt(Y) <= parseInt(posY)) {
+                    cuadrado.style.top = Y + "px";
+                    cuadrado.style.left = X + "px";
+                    cuadrado.style.height = (posY - Y) + "px";
+                    cuadrado.style.width = (posX - X) + "px";
+                }
+                if (parseInt(X) <= parseInt(posX) && parseInt(Y) > parseInt(posY)) {
+                    cuadrado.style.top = posY + "px";
+                    cuadrado.style.left = X + "px";
+                    cuadrado.style.height = (Y - posY) + "px";
+                    cuadrado.style.width = (posX - X) + "px";
+                }
+            }
+        }
+        function clickup() {
+            aux = false;
         }
     </script>
 </head>
@@ -58,6 +105,9 @@
                 <asp:Button ID="Button1" runat="server" Text="Subir foto" OnClick="Button1_Click" />
                 <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                 <br />
+                <div class="Manita" onmousedown="clickdown(event)" onmouseup="clickup()" onmousemove="mover(event)" style="height:700px;width:700px;position:absolute;">
+                    <div runat="server" id="recuadro" style="display:none;position:fixed;border: 1px solid #000;height:0px;width:0px"></div>
+                </div>
                 <asp:Image ID="Image2" runat="server" Height="700px" Width="700px" ImageUrl="~/Imagenes/logo.png" />
                 <br />
             </div>
