@@ -47,5 +47,22 @@ public partial class Identificado_SubirFoto : System.Web.UI.Page
             Label1.Text = "No se ha seleccionado un archivo";
         }
     }
+    
+    private static System.Drawing.Image cropImage(System.Drawing.Image img, System.Drawing.RectangleF cropArea){
+        System.Drawing.Bitmap bmpImage = new System.Drawing.Bitmap(img);
+        System.Drawing.Bitmap bmpCrop = bmpImage.Clone(cropArea, bmpImage.PixelFormat);
+        return (System.Drawing.Image)(bmpCrop);
+    }
 
+    protected void Button2_Click(object sender, EventArgs e){
+        String s = "T:"+ TextBox1.Text;
+        s += "-L:" + TextBox2.Text;
+        s += "-H:" + TextBox3.Text;
+        s += "-W:" + TextBox4.Text;
+        Label2.Text = s;
+        System.Drawing.Image i = System.Drawing.Image.FromFile(Server.MapPath("~/Imagenes/logo.png"));
+        System.Drawing.RectangleF f = new System.Drawing.RectangleF(Int32.Parse(TextBox2.Text)-78, Int32.Parse(TextBox1.Text)-163, Int32.Parse(TextBox4.Text), Int32.Parse(TextBox3.Text));
+        System.Drawing.Image i2 = cropImage(i, f);
+        i2.Save(Server.MapPath("~/Imagenes/logoR.png"), System.Drawing.Imaging.ImageFormat.Png);
+    }
 }

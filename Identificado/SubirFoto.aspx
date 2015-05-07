@@ -31,9 +31,17 @@
         }
         function mover(event) {
             if (aux) {
+                var t1 = document.getElementById("TextBox1");
+                var t2 = document.getElementById("TextBox2");
+                var t3 = document.getElementById("TextBox3");
+                var t4 = document.getElementById("TextBox4");
                 var X = event.clientX;
                 var Y = event.clientY;
                 if (parseInt(X) > parseInt(posX) && parseInt(Y) > parseInt(posY)) {
+                    t1.value = posY;
+                    t2.value = posX;
+                    t3.value = (Y - posY);
+                    t4.value = (X - posX);
                     cuadrado.style.top = posY + "px";
                     cuadrado.style.left = posX + "px";
                     cuadrado.style.height = (Y - posY)+"px";
@@ -105,10 +113,17 @@
                 <asp:Button ID="Button1" runat="server" Text="Subir foto" OnClick="Button1_Click" />
                 <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                 <br />
-                <div class="Manita" onmousedown="clickdown(event)" onmouseup="clickup()" onmousemove="mover(event)" style="height:700px;width:700px;position:absolute;">
+                <div class="Manita" onmousedown="clickdown(event)" onmouseup="clickup()" onmousemove="mover(event)" style="height:156px;width:627px;position:absolute;">
                     <div runat="server" id="recuadro" style="display:none;position:fixed;border: 1px solid #000;height:0px;width:0px"></div>
                 </div>
-                <asp:Image ID="Image2" runat="server" Height="700px" Width="700px" ImageUrl="~/Imagenes/logo.png" />
+                <asp:Image ID="Image2" runat="server" ImageUrl="~/Imagenes/logo.png" /><br />
+                <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" />
+                <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label><br />
+                <asp:TextBox ID="TextBox1" runat="server" Text="Hola"></asp:TextBox><br />
+                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox><br />
+                <asp:Image ID="Image3" runat="server" ImageUrl="~/Imagenes/logoR.png"/>
                 <br />
             </div>
             <div>
