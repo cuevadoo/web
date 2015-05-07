@@ -20,7 +20,7 @@
                     <asp:TextBox ID="TextBox2" runat="server" Width="100%" Height="150px" CssClass="box" placeholder="Escribe aquí tu consulta" TextMode="MultiLine"></asp:TextBox></asp:TableCell>
             </asp:TableRow>
             <asp:TableRow ID="TableRow3" runat="server">
-                <asp:TableCell ID="TableCell3" runat="server"></asp:Button>
+                <asp:TableCell ID="TableCell3" runat="server"><asp:Button ID="Button2" runat="server" Text="Enviar" cssclass="boton"></asp:Button>
                     </asp:TableCell>   
             </asp:TableRow>
         </asp:Table>

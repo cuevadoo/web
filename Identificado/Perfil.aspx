@@ -122,7 +122,7 @@
             </asp:RadioButtonList></asp:TableCell>
     </asp:TableRow>
         <asp:TableRow runat="server" HorizontalAlign="Center">
-        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu desarrollador de juegos favorito.Por ejemplo: Blizzard" Width="55%"></asp:TextBox></asp:TableCell>
+        <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu desarrolladora de juegos favorito.Por ejemplo: Blizzard" Width="55%"></asp:TextBox></asp:TableCell>
     </asp:TableRow>
         <asp:TableRow runat="server" HorizontalAlign="Center">
         <asp:TableCell runat="server"><p>Películas y Series</p></asp:TableCell>
