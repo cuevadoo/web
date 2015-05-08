@@ -3,9 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-
+    <center>
+    <div class="todo">
     <div runat="server" class="BuscadorFlotante">
-        &nbsp;<asp:TextBox onclick = "document.getElementById('ContentPlaceHolder1_light').style.display='block';document.getElementById('ContentPlaceHolder1_fade').style.display='block';document.getElementById('ContentPlaceHolder1_TextBox1').placeholder='Buscar amigo';document.getElementById('ContentPlaceHolder1_TextBox1').focus();document.getElementById('ContentPlaceHolder1_TextBox1').value='';" CssClass="box" placeholder="Buscar amigo" ID="TextBox3" runat="server" Width="776px"></asp:TextBox>
+        &nbsp;<center><asp:TextBox onclick = "document.getElementById('ContentPlaceHolder1_light').style.display='block';document.getElementById('ContentPlaceHolder1_fade').style.display='block';document.getElementById('ContentPlaceHolder1_TextBox1').placeholder='Buscar amigo';document.getElementById('ContentPlaceHolder1_TextBox1').focus();document.getElementById('ContentPlaceHolder1_TextBox1').value='';" CssClass="box" placeholder="Buscar amigo" ID="TextBox3" runat="server" Width="776px"></asp:TextBox></center>
         <div runat="server" id="fade" class="FondoBuscador" onclick = "document.getElementById('ContentPlaceHolder1_light').style.display='none';document.getElementById('ContentPlaceHolder1_fade').style.display='none';document.getElementById('ContentPlaceHolder1_TextBox1').value=''"></div>
         <div runat="server" id="light" class="ContenidoBuscador">
             &nbsp;<asp:TextBox CssClass="box" placeholder="" ID="TextBox1" runat="server" Width="776px" AutoPostBack="True" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
@@ -74,6 +75,7 @@
         pruebas<br />
         pruebas<br />
     </div>
-
+            </div>
+        </center>
 </asp:Content>
 
