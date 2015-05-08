@@ -148,7 +148,7 @@
         <asp:Image CssClass="Manita" onclick = "aparecer()" ID="ImageButton1" runat="server" Height="198px" Width="250px" />
         <p>Esta imagen será visible por todos los usuarios de Cuevadoo</p>
         <p>Haz click en ella para cambiar tu foto de perfil</p>
-        <asp:Label ID="Label2" runat="server" Text="mierda"></asp:Label>
+        <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
         <br />
         <!--Imagenes en ventana desplegable-->
         <div id="fade" class="FondoFoto" onclick ="desaparecer()"></div>
