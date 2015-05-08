@@ -255,8 +255,8 @@ a:visited
 
 li A:link {text-decoration:none;color:#a104f8;} 
 li A:visited {text-decoration:none;color:#a104f8;} 
-li A:active {text-decoration:none;color:#5ab533;} 
-li A:hover {text-decoration:underline;color:#5ab533;}
+li A:active {text-decoration:none;color:#C96FF9;} 
+li A:hover {text-decoration:underline;color:#C96FF9;}
 
 .Menu{
     text-decoration:none;
@@ -362,6 +362,7 @@ li A:hover {text-decoration:underline;color:#5ab533;}
     opacity:.85;
     -moz-opacity: 0.85;
     filter: alpha(opacity=85);
+    overflow:hidden;
 }
 .ContenidoFoto{
     width: 100%;
@@ -375,19 +376,48 @@ li A:hover {text-decoration:underline;color:#5ab533;}
     width:100%;
     display: none;
     background: #fff;
-    position: absolute;
+    position: fixed;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	margin: auto;
-    overflow:scroll;
+    z-index:1002;
+    opacity:.85;
+    -moz-opacity: 0.85;
+    filter: alpha(opacity=85);
+}
+.Foto{
+    display:none;
+    height:auto;
+    width:auto;
+    cursor:pointer;
+    position:fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+    z-index:1003;
+    overflow:hidden;
+}
+.Foto2{
+    cursor:pointer;
+    position:fixed;
+    display:none;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
     z-index:1002;
 }
-.MenosOpaco{
-    opacity:.5;
-    -moz-opacity: 0.5;
-    filter: alpha(opacity=5);
+.BotonesFoto{
+    position:fixed;
+    display:none;
+	top: 0;
+	right: 0;
+    z-index:1006;
 }
 .ContenidoFotoScroll{
     display: none;

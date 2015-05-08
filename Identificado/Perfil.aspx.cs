@@ -49,19 +49,38 @@ public partial class Identificado_Perfil : System.Web.UI.Page
     }
     protected void DarleImagen(object sender, ImageClickEventArgs e){
         ImageButton ima = (ImageButton)sender;
-        EN.Usuario user = (EN.Usuario)Session["User"];
-        user.Foto = ima.ImageUrl;
-        new CAD.Usuario().update(user,user);
-        Session["User"] = user;
-        ImageButton1.ImageUrl = user.Foto;
-        //ImageMap1.ImageUrl = ima.ImageUrl;
-        //for(){
-
-        //}
-        //fondoFoto.Style["display"] = "block";
+        Session["FotoParaRecortar"] = Server.MapPath(ima.ImageUrl);
+        System.Drawing.Image im = System.Drawing.Image.FromFile(Server.MapPath(ima.ImageUrl));
+        fondoFoto.Style["display"] = "block";
+        Foto.Style["display"] = "block";
+        Image1.Style["display"] = "block";
+        botones.Style["display"] = "block";
+        int alto = Int32.Parse(AltoVentana.Text);
+        int ancho = Int32.Parse(AnchoVentana.Text);
+        Image1.ImageUrl = ima.ImageUrl;
+        if(im.Height>=alto&&im.Width>=ancho){
+            Image1.Height = alto;
+            Image1.Width = ancho;
+        }
+        if(im.Height>=alto&&im.Width<ancho){
+            Image1.Height = alto;
+            Image1.Width = im.Width;
+        }
+        if(im.Height<alto&&im.Width<ancho){
+            Image1.Height = im.Height;
+            Image1.Width = im.Width;
+        }
+        if(im.Height<alto&&im.Width>=ancho){
+            Image1.Height = im.Height;
+            Image1.Width = ancho;
+        }
     }
-
-    protected void ImageMap1_Click(object sender, ImageMapEventArgs e){
-        String valor=e.PostBackValue;
+    protected void ImageButton2_Click(object sender, ImageClickEventArgs e){
+        Label2.Text = "H:"+Image1.Height + "-W:" + Image1.Width;
+        System.Drawing.Image i = System.Drawing.Image.FromFile((String)Session["FotoParaRecortar"]);
+        System.Drawing.RectangleF f = new System.Drawing.RectangleF(Int32.Parse(Left.Text), Int32.Parse(Top.Text), Int32.Parse(Ancho.Text), Int32.Parse(Alto.Text));
+        System.Drawing.Image i2 = cropImage(i, f);
+        EN.Usuario user=(EN.Usuario)Session["User"];
+        i2.Save(Server.MapPath("~/Imagenes/Usuarios/" + user.Email + "/prev.png"), System.Drawing.Imaging.ImageFormat.Png);
     }
 }
