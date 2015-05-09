@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <center>
     <div>
-    <asp:Table ID="Table1" runat="server">
+    <asp:Table ID="Table1" runat="server" border>
         <asp:TableRow runat="server" HorizontalAlign="Center">
             <asp:TableCell runat="server"><h3 class="titulo">CONFIGURACIÓN DE CUENTA</h3><br /></asp:TableCell>
         </asp:TableRow>
@@ -31,7 +31,7 @@
             <asp:TableCell  runat="server"><asp:TextBox ID="TextBox6" runat="server" CssClass="box" placeholder="Nueva contraseña" Width="100%"></asp:TextBox></asp:TableCell>
         </asp:TableRow>
         <asp:TableRow  runat="server">
-        <asp:TableCell runat="server"><br /><asp:Button ID="Button1" runat="server" Text="Guardar" cssclass="boton"></asp:Button></asp:TableCell>
+        <asp:TableCell runat="server"><br /><center><asp:Button ID="Button1" runat="server" Text="Guardar" cssclass="boton"></asp:Button></center></asp:TableCell>
     </asp:TableRow>
     </asp:Table>
     </div>
