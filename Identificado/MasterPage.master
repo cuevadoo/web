@@ -54,7 +54,38 @@
                 </asp:UpdatePanel>
             </div>
             <div>
-                <footer><b>Copyright © 2015 </b><p id="facebook">f</p></footer>
+                <center>
+                    
+                <asp:Table ID="Table2" runat="server" CssClass="center" Width="900px">
+                    <asp:TableRow>
+                        <asp:TableCell ColumnSpan="3">
+                            <hr />
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell VALIGN=top>
+                            <b class="tfooter">INFORMACIÓN</b><br />
+                           <a href="/SinIdentificar/Registrar.aspx" class="footer">Registrate</a><br /><a href="/SinIdentificar/Buscador.aspx" class="footer">Busca gente</a>
+                        </asp:TableCell>
+                        <asp:TableCell VALIGN=top>
+                            <b class="tfooter">SOBRE NOSOTROS</b><br />
+                            <a href="/Default.aspx" class="footer">¿Quien somos?</a><br /><a href="/SinIdentificar/Ayuda.aspx" class="footer">Ayuda</a>
+                        </asp:TableCell>
+                        <asp:TableCell>
+                            <b class="tfooter">CONTACTO</b><br />
+                            <a href="/SinIdentificar/Ayuda.aspx" class="footer">Rellenar formulario</a><br /><a href="#" class="footer">902 253 651</a><br /><a href="#" class="footer">cuevadoo@help.org</a>
+                        </asp:TableCell>
+                     </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell ColumnSpan="3" CssClass="left">
+                            <hr />
+                            <b>Copyright © 2015 </b><p id="facebook">f</p>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
+                    </center>
+           <footer></footer>
+            
             </div>
         </div>
     </form>
