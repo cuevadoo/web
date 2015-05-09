@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de RegistroActividad
+/// Descripción breve de Notificaciones
 /// </summary>
 namespace CAD
 {
