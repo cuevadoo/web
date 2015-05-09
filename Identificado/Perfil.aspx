@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Identificado/MasterPage.master" AutoEventWireup="true" CodeFile="Perfil.aspx.cs" Inherits="Identificado_Perfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-     <center>
-    <div class="todo">
+
     <script type="text/javascript">
         function TamVentana() {
             var Tamanyo = [0, 0];
@@ -195,7 +194,11 @@
 
         <div>
             <center><p style="text-decoration-line:underline">Datos personales</p></center>
-            <p>La siguiente información no es obligatoria pero permite que tus amigos sepan donde vives y qué es lo que te gusta. Además facilitará la busqueda al resto de usuarios mediante el Buscador Avanzado de Cuevadoo©.</p>
+            <center>
+            <div class="todo">
+                <p>La siguiente información no es obligatoria pero permite que tus amigos sepan donde vives y qué es lo que te gusta. Además facilitará la busqueda al resto de usuarios mediante el Buscador Avanzado de Cuevadoo©.</p>
+                </div>
+                </center>
             <center>
             <asp:Table ID="Table2" runat="server">
                 <asp:TableRow runat="server">
@@ -321,8 +324,5 @@
             
             
         </div>
-    
-        </div>
-        </center>
 </asp:Content>
 
