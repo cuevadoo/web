@@ -10,5 +10,6 @@ namespace EN
 {
     public class RegistroActividad
     {
+        
     }
 }
