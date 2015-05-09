@@ -41,8 +41,10 @@
 
 
 </asp:TableCell>
-                <asp:TableCell runat="server">
-<asp:Label ID="Label2" runat="server" Text="Conversación del chat........" BackColor="White"></asp:Label>
+                <asp:TableCell runat="server" Width="50%">
+<div style="background-color: #FFFFFF; width: 85%;"><br /><br /><br /><br /><br /><br />
+
+</div>
                 </asp:TableCell>
             </asp:TableRow>
 
