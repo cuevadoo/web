@@ -9,7 +9,7 @@
                 <asp:TableCell runat="server">
 </asp:TableCell>
                 <asp:TableCell runat="server"></asp:TableCell>
-                <asp:TableCell runat="server" columnSpan="2"><asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                <asp:TableCell runat="server" columnSpan="2"><asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" class="box">
         <asp:ListItem>Nombre</asp:ListItem>
         
 
@@ -34,7 +34,7 @@
                 <asp:TableCell runat="server"></asp:TableCell>
             </asp:TableRow>
             <asp:TableRow runat="server" HorizontalAlign="Center">
-                <asp:TableCell runat="server"><asp:DropDownList ID="DropDownNombre" runat="server" Enabled="true">
+                <asp:TableCell runat="server"><asp:DropDownList ID="DropDownNombre" runat="server" Enabled="true" class="box">
         <asp:ListItem>Nombre</asp:ListItem>
         
 <asp:ListItem>Primer Apellido</asp:ListItem>
@@ -43,7 +43,7 @@
     
 </asp:DropDownList>
 </asp:TableCell>
-                <asp:TableCell runat="server"><asp:DropDownList ID="DropDownResidencia" runat="server" Enabled="false">
+                <asp:TableCell runat="server"><asp:DropDownList ID="DropDownResidencia" runat="server" Enabled="false" class="box">
         <asp:ListItem>País</asp:ListItem>
         
 <asp:ListItem>C.Autónoma/Estado</asp:ListItem>
@@ -52,7 +52,7 @@
     
 </asp:DropDownList>
 </asp:TableCell>
-                <asp:TableCell runat="server"><asp:DropDownList ID="DropDownGInf" runat="server" Enabled="false">
+                <asp:TableCell runat="server"><asp:DropDownList ID="DropDownGInf" runat="server" Enabled="false" class="box">
         <asp:ListItem>SO</asp:ListItem>
         
 <asp:ListItem>Marca de Hardware</asp:ListItem>
@@ -61,7 +61,7 @@
     
 </asp:DropDownList>
 </asp:TableCell>
-                <asp:TableCell runat="server"><asp:DropDownList ID="DropDownVideojuegos" runat="server" Enabled="false">
+                <asp:TableCell runat="server"><asp:DropDownList ID="DropDownVideojuegos" runat="server" Enabled="false" class="box">
         <asp:ListItem>Género</asp:ListItem>
         
 <asp:ListItem>Videojuego</asp:ListItem>
@@ -72,7 +72,7 @@
     
 </asp:DropDownList>
 </asp:TableCell>
-                <asp:TableCell runat="server"><asp:DropDownList ID="DropDownPelisSeries" runat="server" Enabled="false">
+                <asp:TableCell runat="server"><asp:DropDownList ID="DropDownPelisSeries" runat="server" Enabled="false" class="box">
         <asp:ListItem>Género</asp:ListItem>
         
 <asp:ListItem>Director</asp:ListItem>
@@ -89,7 +89,7 @@
     
 </asp:DropDownList>
 </asp:TableCell>
-                <asp:TableCell runat="server"><asp:DropDownList ID="DropDownMusica" runat="server" Enabled="false">
+                <asp:TableCell runat="server"><asp:DropDownList ID="DropDownMusica" runat="server" Enabled="false" class="box">
         <asp:ListItem>Estilo</asp:ListItem>
         
 <asp:ListItem>Grupo</asp:ListItem>

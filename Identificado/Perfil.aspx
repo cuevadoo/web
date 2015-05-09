@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Identificado/MasterPage.master" AutoEventWireup="true" CodeFile="Perfil.aspx.cs" Inherits="Identificado_Perfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+     <center>
+    <div class="todo">
     <script type="text/javascript">
         function TamVentana() {
             var Tamanyo = [0, 0];
@@ -255,7 +257,7 @@
         <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu director favorito.Por ejemplo: Tarantino" Width="55%"></asp:TextBox></asp:TableCell>
     </asp:TableRow>
          <asp:TableRow runat="server">
-             <asp:TableCell runat="server"><asp:Label runat="server" Text="Década cinematográfica favorita "></asp:Label><asp:DropDownList ID="DropDownList1" runat="server">
+             <asp:TableCell runat="server"><asp:Label runat="server" Text="Década cinematográfica favorita "></asp:Label><asp:DropDownList ID="DropDownList1" runat="server" class="box">
                 <asp:ListItem Value="NULL">--</asp:ListItem>
                 <asp:ListItem>50</asp:ListItem>
                 <asp:ListItem>60</asp:ListItem>
@@ -293,7 +295,7 @@
         <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu artista favorito.Por ejemplo: Michael Jackson" Width="55%"></asp:TextBox></asp:TableCell>
     </asp:TableRow>
         <asp:TableRow runat="server">
-        <asp:TableCell runat="server"><asp:Label runat="server" Text="Década musical favorita "></asp:Label><asp:DropDownList ID="DropDownList2" runat="server">
+        <asp:TableCell runat="server"><asp:Label runat="server" Text="Década musical favorita "></asp:Label><asp:DropDownList ID="DropDownList2" runat="server" class="box">
                 <asp:ListItem Value="NULL">--</asp:ListItem>
                 <asp:ListItem>50</asp:ListItem>
                 <asp:ListItem>60</asp:ListItem>
@@ -307,7 +309,7 @@
         <asp:TableCell runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Últimos conciertos a los que has asistido. Separados por comas.Por ejemplo: Justin Bieber,Abraham Mateo" Width="100%"></asp:TextBox></asp:TableCell>
     </asp:TableRow>
         <asp:TableRow runat="server">
-        <asp:TableCell runat="server"><br /><p>*Los datos que introduzcas aquí serán publicos y visibles por todos los usuarios de Cuevadoo. Pulsando el botón "Guardar" estás de acuerdo con lo anterior citado y aceptas nuestra política.  </p></asp:TableCell>
+        <asp:TableCell runat="server"><br /><p class="justify">*Los datos que introduzcas aquí serán publicos y visibles por todos los usuarios de Cuevadoo. Pulsando el botón "Guardar" estás de acuerdo con lo anterior citado y aceptas nuestra política.  </p></asp:TableCell>
     </asp:TableRow>
         <asp:TableRow runat="server">
         <asp:TableCell runat="server"><br /><asp:Button ID="Button1" runat="server" Text="Guardar" cssclass="boton"></asp:Button></asp:TableCell>
@@ -320,6 +322,7 @@
             
         </div>
     
-
+        </div>
+        </center>
 </asp:Content>
 

@@ -170,6 +170,10 @@
     text-align: right;
 }
 
+.left {
+    text-align: left;
+}
+
 .justify{
     text-align: justify;
 }
@@ -498,3 +502,27 @@ li A:hover {text-decoration:underline;color:#C96FF9;}
     width: 900px;
     text-align: justify;
 }
+
+.tfooter {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  font: normal normal bold 21px/1 "Times New Roman", Times, serif;
+  color: black;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 3px rgba(0,0,0,0.5) ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+}
+
+.footer {
+    color:#BDBDBD;
+    font-weight: 700;
+    font-size: 13pt;
+}
+
