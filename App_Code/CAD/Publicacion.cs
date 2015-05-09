@@ -8,22 +8,22 @@ using System.Web;
 /// </summary>
 namespace CAD
 {
-    public class MensajeDifusion
+    public class Publicacion
     {
         private static Conexion conexion = new Conexion();
-        public void create(EN.MensajeDifusion mDifusion)
+        public void create(EN.Publicacion Publicacion)
         {
 
         }
-        public void delete(EN.MensajeDifusion mDifusion)
+        public void delete(EN.Publicacion Publicacion)
         {
 
         }
-        public EN.MensajeDifusion read(String email)
+        public EN.Publicacion read(String email)
         {
             return null;
         }
-        public void update(EN.MensajeDifusion deleted, EN.MensajeDifusion added)
+        public void update(EN.Publicacion deleted, EN.Publicacion added)
         {
 
         }
