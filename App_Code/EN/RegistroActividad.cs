@@ -20,7 +20,7 @@ namespace EN
             this.menprivado = menprivado;
         }
 
-        public MensajeDifusion Mendifusion
+        public Publicacion Publicacion
         {
             get { return publicacion; }
             set { publicacion = value; }
