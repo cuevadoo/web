@@ -10,6 +10,38 @@
     <title>Cuevadoo</title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        var tam = 0;
+        var id1;
+        var id2;
+        function camTam(num) {
+            if (tam < 300) {
+                tam = tam + num;
+                document.getElementById("chat").style.width = tam + "px";
+            } else {
+                clearInterval(id1);
+            }
+        }
+        function camTam2(num) {
+            if (tam > 20) {
+                tam = tam - num;
+                document.getElementById("chat").style.width = tam + "px";
+            } else {
+                clearInterval(id2);
+            }
+        }
+        function apChat() {
+            tam = 20;
+            clearInterval(id2);
+            id1 = setInterval(camTam, 1, 2);
+            document.getElementById("fondoChat").style.display = "block";
+        }
+        function desChat() {
+            clearInterval(id1);
+            id2 = setInterval(camTam2, 1, 4);
+            document.getElementById("fondoChat").style.display = "none";
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -33,6 +65,14 @@
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
+                <!--Chat desplegable-->
+                <div id="chat" onclick="apChat()" style="position:fixed;top:200px;left:0px;width:20px;height:500px;background-color:aqua;overflow:hidden;z-index:501">
+                    <div style="width:300px; height:100%;background-color:brown;z-index:502">
+                        <asp:Button ID="Button1" runat="server" Text="Button"></asp:Button>
+                    </div>
+                </div>
+                <div id="fondoChat" style="position:fixed;height:100%;width:100%;display:none;z-index:500" onmouseover="desChat()"></div>
+                <!--Chat desplegable-->
                 <div class="Herramienta">
                     <asp:Image ID="Image1" CssClass="Manita" runat="server" ImageUrl="~/Imagenes/tuerca.png" onclick="document.getElementById('desplegable').style.display = 'block';document.getElementById('todo').style.display = 'block';"></asp:Image>
                 </div>
