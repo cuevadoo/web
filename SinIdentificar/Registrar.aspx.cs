@@ -12,7 +12,6 @@ public partial class SinIdentificar_Registrar : System.Web.UI.Page
 
     }
     protected void Button1_Click(object sender, EventArgs e){
-        CompareValidator1.ValueToCompare=TextBox7.Text;
         RequiredFieldValidator1.Validate();
         if (RequiredFieldValidator1.IsValid){
             try {
@@ -26,20 +25,21 @@ public partial class SinIdentificar_Registrar : System.Web.UI.Page
                 String aux3 = Hash.getHash(TextBox5.Text + TextBox7.Text);
                 EN.Usuario user = new EN.Usuario(TextBox5.Text,aux3,TextBox1.Text,TextBox2.Text,
                     TextBox3.Text,aux1,aux2,null);
-                CAD.Usuario cadUser = new CAD.Usuario();
-                cadUser.create(user);
+                new CAD.Usuario().create(user);
                 String path = Server.MapPath("~/Imagenes/Usuarios/" + user.Email + "/");
                 Directory.CreateDirectory(path);
                 Session["User"] = user;
                 Response.Redirect("~/Identificado/Indice.aspx");
-            }catch(CAD.Exception){
-                Label10.Text = "Ya existe una cuenta con este email ";
+            }catch(CAD.Exception ex){
+
             }
-        }else{
-            Label10.Text = "Faltan los campos con asteriscos";
         }
     }
     protected void CheckBox1_CheckedChanged(object sender, EventArgs e){
         Button1.Enabled = CheckBox1.Checked;
+    }
+    protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args){
+        EN.Usuario user=new CAD.Usuario().read(args.Value.ToLower());
+
     }
 }

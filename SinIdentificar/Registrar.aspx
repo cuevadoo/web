@@ -102,14 +102,13 @@
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server">
                         <center>
-                            <asp:CompareValidator CssClass="warning" ControlToValidate="TextBox4" ID="CompareValidator1" runat="server" ErrorMessage="Las contraseñas no son iguales"></asp:CompareValidator>
+                            <asp:CompareValidator CssClass="warning" ControlToValidate="TextBox4" ControlToCompare="TextBox7" ID="CompareValidator1" runat="server" ErrorMessage="Las contraseñas no son iguales"></asp:CompareValidator>
                         </center>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server">
-                        <center>
-                            <asp:Label  CssClass="warning" ID="Label10" runat="server"></asp:Label>
+                        <center><asp:CustomValidator ControlToValidate="TextBox5" CssClass="warning" ID="CustomValidator1" runat="server" ErrorMessage="Ya existe una cuenta con este email" OnServerValidate="CustomValidator1_ServerValidate"></asp:CustomValidator>
                         </center>
                     </asp:TableCell>
                 </asp:TableRow>
