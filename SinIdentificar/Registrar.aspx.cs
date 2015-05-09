@@ -31,7 +31,7 @@ public partial class SinIdentificar_Registrar : System.Web.UI.Page
                 Session["User"] = user;
                 Response.Redirect("~/Identificado/Indice.aspx");
             }catch(CAD.Exception ex){
-
+                Label1.Visible = true;
             }
         }
     }
@@ -40,6 +40,11 @@ public partial class SinIdentificar_Registrar : System.Web.UI.Page
     }
     protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args){
         EN.Usuario user=new CAD.Usuario().read(args.Value.ToLower());
-
+        if(user!=null){
+            args.IsValid = false;
+        }
+    }
+    protected void CustomValidator2_ServerValidate(object source, ServerValidateEventArgs args){
+        //Cuando no sea correcta pones args.IsValid = false; y si es correcta nada
     }
 }
