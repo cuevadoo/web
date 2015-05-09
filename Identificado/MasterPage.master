@@ -11,7 +11,7 @@
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
     <script type="text/javascript">
-        var tam = 0;
+        var tam = 20;
         var id1;
         var id2;
         function camTam(num) {
@@ -31,7 +31,6 @@
             }
         }
         function apChat() {
-            tam = 20;
             clearInterval(id1);
             clearInterval(id2);
             id1 = setInterval(camTam, 1, 2);
