@@ -96,7 +96,7 @@
                 </asp:TableRow>
                 <asp:TableRow>
                     <asp:TableCell>
-                        <asp:CustomValidator CssClass="warning" ID="CustomValidator2" runat="server" ErrorMessage="Fecha no valida" OnServerValidate="CustomValidator2_ServerValidate"></asp:CustomValidator>
+                        <asp:CustomValidator CssClass="warning" ID="CustomValidator2" runat="server" ErrorMessage="Fecha no valida" ControlToValidate="TextBox9" OnServerValidate="CustomValidator2_ServerValidate"></asp:CustomValidator>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server">

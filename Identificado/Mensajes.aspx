@@ -3,7 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-   
+   <center>
+    <div class="todo">
     <div>
          <asp:Table ID="Table1" runat="server" Width="600px">
             <asp:TableRow ID="TableRow1" runat="server">
@@ -22,5 +23,7 @@
           </asp:Table>
 
     </div>
+        </div>
+        </center>
 </asp:Content>
 
