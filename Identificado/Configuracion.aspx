@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <center>
     <div>
-    <asp:Table ID="Table1" runat="server" border>
+    <asp:Table ID="Table1" runat="server">
         <asp:TableRow runat="server" HorizontalAlign="Center">
             <asp:TableCell runat="server"><h3 class="titulo">CONFIGURACIÓN DE CUENTA</h3><br /></asp:TableCell>
         </asp:TableRow>
