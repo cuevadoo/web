@@ -2,6 +2,17 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Registrar</title>
+    <script type="text/javascript">
+        function camBoton(){
+            var aux = document.getElementById("ContentPlaceHolder1_Button1");
+            if (aux.disabled == "") {
+                aux.disabled = "disabled"
+            } else {
+                aux.disabled = "";
+            }
+            
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <center>
@@ -83,6 +94,11 @@
                         </asp:Table>
                     </asp:TableCell>
                 </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:CustomValidator CssClass="warning" ID="CustomValidator2" runat="server" ErrorMessage="Fecha no valida" OnServerValidate="CustomValidator2_ServerValidate"></asp:CustomValidator>
+                    </asp:TableCell>
+                </asp:TableRow>
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server">
                         <asp:TextBox ID="TextBox7" runat="server" TextMode="Password" Width="100%" CssClass="box" placeholder="Contraseña"></asp:TextBox>
@@ -113,8 +129,7 @@
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
-            
-            <asp:CheckBox ID="CheckBox1" runat="server" Text="Acepto los " OnCheckedChanged="CheckBox1_CheckedChanged" AutoPostBack="True"></asp:CheckBox>
+            <asp:CheckBox ID="CheckBox1" runat="server" Text="Acepto los " onclick="camBoton()"></asp:CheckBox>
             <!--vetana-->
             <div id="fade" class="overlay" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"></div>
                 <div id="light" class="modal">
@@ -140,7 +155,8 @@
                 <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';">términos y condiciones.</a>   
             <!--ventana-->
             <br/><br/>
-            <asp:Button ID="Button1" runat="server" Text="Registrar" cssclass="boton" OnClick="Button1_Click" Enabled="False" CausesValidation="False"></asp:Button>
+            <asp:Button ID="Button1" runat="server" Text="Registrar" cssclass="boton" OnClick="Button1_Click" Enabled="False" CausesValidation="False"></asp:Button><br />
+            <asp:Label ID="Label1" runat="server" Text="No se ha podido crear la cuenta, intentelo mas tarde.<br />Si esto se repite envianos tu problema en ayuda." Visible="false"></asp:Label>
         </div>
     </center>
 </asp:Content>
