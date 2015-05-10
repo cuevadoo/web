@@ -24,8 +24,9 @@
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow runat="server">
-            <asp:TableCell columnSpan="3" runat="server">
-              <p> Breve explicación de la búsqueda de usuarios (cuando esté hecha) </p>
+            <asp:TableCell  columnSpan="3" runat="server">
+              <p> Regístrate, es sencillo. Con tu propia cuenta tendrás acceso al buscador avanzado, en el que podrás hacer una búsqueda acotada de gente basándote en sus gustos e intereses.  </p>
+                <img align="center" src="Imagenes/buscador captura.png" />
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow ID="TableRow1"  runat="server">
