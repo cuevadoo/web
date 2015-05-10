@@ -55,32 +55,92 @@ public partial class Identificado_Perfil : System.Web.UI.Page
         Foto.Style["display"] = "block";
         Image1.Style["display"] = "block";
         botones.Style["display"] = "block";
+        int[] aux = { Int32.Parse(AltoVentana.Text), Int32.Parse(AnchoVentana.Text) };
+        Session["Tamaño"] = aux;
         int alto = Int32.Parse(AltoVentana.Text);
         int ancho = Int32.Parse(AnchoVentana.Text);
         Image1.ImageUrl = ima.ImageUrl;
-        if(im.Height>=alto&&im.Width>=ancho){
+        int realHe = im.Height;
+        int realWi = im.Width;
+        if(realHe>=alto&&realWi>=ancho){
             Image1.Height = alto;
             Image1.Width = ancho;
         }
-        if(im.Height>=alto&&im.Width<ancho){
+        if(realHe>=alto&&realWi<ancho){
             Image1.Height = alto;
             Image1.Width = im.Width;
         }
-        if(im.Height<alto&&im.Width<ancho){
+        if(realHe<alto&&realWi<ancho){
             Image1.Height = im.Height;
             Image1.Width = im.Width;
         }
-        if(im.Height<alto&&im.Width>=ancho){
+        if(realHe<alto&&realWi>=ancho){
             Image1.Height = im.Height;
             Image1.Width = ancho;
         }
     }
     protected void ImageButton2_Click(object sender, ImageClickEventArgs e){
-        Label2.Text = "H:"+Image1.Height + "-W:" + Image1.Width;
-        System.Drawing.Image i = System.Drawing.Image.FromFile((String)Session["FotoParaRecortar"]);
-        System.Drawing.RectangleF f = new System.Drawing.RectangleF(Int32.Parse(Left.Text), Int32.Parse(Top.Text), Int32.Parse(Ancho.Text), Int32.Parse(Alto.Text));
-        System.Drawing.Image i2 = cropImage(i, f);
-        EN.Usuario user=(EN.Usuario)Session["User"];
-        i2.Save(Server.MapPath("~/Imagenes/Usuarios/" + user.Email + "/prev.png"), System.Drawing.Imaging.ImageFormat.Png);
+        try {
+            int[] AlAn =(int[]) Session["Tamaño"];
+            int alto = AlAn[0];
+            int ancho = AlAn[1];
+            String aux = Image1.Height.ToString();
+            int he = Int32.Parse(aux.Substring(0,aux.Length-2));
+            aux = Image1.Width.ToString();
+            int wi = Int32.Parse(aux.Substring(0,aux.Length-2));
+            System.Drawing.Image i = System.Drawing.Image.FromFile((String)Session["FotoParaRecortar"]);
+            float left=0, top=0, width=0, height=0;
+            if(he>=alto&&wi>=ancho){
+                float relaHe = i.Height/(float)alto;
+                float relaWi = i.Width/(float)ancho;
+                left = Int32.Parse(Left.Text) * relaWi;
+                top=Int32.Parse(Top.Text) * relaHe;
+                width = Int32.Parse(Ancho.Text) * relaWi;
+                height = Int32.Parse(Alto.Text) * relaHe;
+            }
+            if(he<alto&&wi<alto){
+                int relaHe = (alto - i.Height)/2;
+                int relaWi = (ancho - i.Width)/2;
+                left = Int32.Parse(Left.Text) - relaWi;
+                if(left<0){left = 0;}
+                top = Int32.Parse(Top.Text) - relaHe;
+                if(top<0){top = 0;}
+                width = Int32.Parse(Ancho.Text);
+                if (width>(i.Width - left)) { width = i.Width - left; }
+                height=Int32.Parse(Alto.Text);
+                if (height>(i.Height - top)) { height = i.Height - top; }
+            }
+            if(he>=alto&&wi<alto){
+                float relaHe = i.Height/(float)alto;
+                int relaWi = (ancho - i.Width)/2;
+                left = Int32.Parse(Left.Text) - relaWi;
+                if(left<0){left = 0;}
+                top=Int32.Parse(Top.Text) * relaHe;
+                width = Int32.Parse(Ancho.Text);
+                if (width>(i.Width - left)) { width = i.Width - left; }
+                height = Int32.Parse(Alto.Text) * relaHe;
+            }
+            if(he<alto&&wi>=alto){
+                int relaHe = (alto - i.Height)/2;
+                float relaWi = i.Width/(float)ancho;
+                left = Int32.Parse(Left.Text) * relaWi;
+                top = Int32.Parse(Top.Text) - relaHe;
+                if(top<0){top = 0;}
+                width = Int32.Parse(Ancho.Text) * relaWi;
+                height=Int32.Parse(Alto.Text);
+                if (height>(i.Height - top)) { height = i.Height - top; }
+            }
+
+            System.Drawing.RectangleF f = new System.Drawing.RectangleF(left, top, width, height);
+            System.Drawing.Image i2 = cropImage(i, f);
+            EN.Usuario user = (EN.Usuario)Session["User"];
+            i2.Save(Server.MapPath("~/Imagenes/Usuarios/" + user.Email + "/prev.png"), System.Drawing.Imaging.ImageFormat.Png);
+        }catch(Exception ex){}
+        finally{
+            fondoFoto.Style["display"] = "none";
+            Foto.Style["display"] = "none";
+            Image1.Style["display"] = "none";
+            botones.Style["display"] = "none";
+        }
     }
 }

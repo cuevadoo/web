@@ -9,7 +9,7 @@ public partial class Ingresar : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session["User"] = new EN.Usuario("","","Anonimo","","",new Fecha(),true,null);
+        Session["User"] = new EN.Usuario("a","","Anonimo","","",new Fecha(),true,null);
         Response.Redirect("~/Identificado/Indice.aspx");
     }
     protected void Button1_Click(object sender, EventArgs e)
