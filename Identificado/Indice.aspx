@@ -22,17 +22,12 @@
                 <asp:TableCell runat="server" Width="70%">
                     <asp:TextBox ID="TextBox2" runat="server" Width="80%" Height="60px" CssClass="box" placeholder="Cuéntale a tus amigos qué estás haciendo" TextMode="MultiLine" EnableViewState="True" EnableTheming="True"></asp:TextBox>
 </asp:TableCell>
-            <asp:TableCell Width="30%" HorizontalAlign="Center">
-                <p>CHAT</p>
-            </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow ID="TableRow2" runat="server" Width="50%">
                 <asp:TableCell ID="TableCell2" runat="server"><asp:Button ID="Button2" runat="server" Text="Enviar" cssclass="boton" OnClick="Button2_Click"></asp:Button>
                     
 
 
-</asp:TableCell>
-                <asp:TableCell runat="server" Width="50%"><asp:TextBox ID="TextBox4" runat="server" Width="80%" CssClass="box" placeholder="Amigos"></asp:TextBox>
 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow ID="TableRow3" runat="server">
@@ -41,22 +36,11 @@
 
 
 </asp:TableCell>
-                <asp:TableCell runat="server" Width="50%">
-<div style="background-color: #FFFFFF; width: 85%;"><br /><br /><br /><br /><br /><br />
-
-</div>
-                </asp:TableCell>
-            </asp:TableRow>
+</asp:TableRow>
 
 
-            <asp:TableRow runat="server">
-                <asp:TableCell runat="server"></asp:TableCell>
-                <asp:TableCell runat="server"><asp:TextBox ID="TextBox5" runat="server" Width="80%" CssClass="box" placeholder="Escribe aquí"></asp:TextBox></asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow runat="server">
-                <asp:TableCell runat="server"></asp:TableCell>
-                <asp:TableCell runat="server"><asp:Button ID="Button1" runat="server" Text="Enviar" cssclass="boton"></asp:Button></asp:TableCell>
-            </asp:TableRow>
+            
+           
 
 
         </asp:Table>
