@@ -81,19 +81,23 @@
                             <!--En este la informacion que se ve siempre-->
                         </div>
                         <div style="float:left;width:280px;height:100%;z-index:503">
-                            <!--Y en este la de despues de desplegar-->
-                            <br />
-                            <asp:Label ID="ChatUser" runat="server" Text="Alex Martinez" CssClass="tfooter"></asp:Label><br />
-                            <br />
+                            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                <ContentTemplate>
+                                    <!--Y en este la de despues de desplegar-->
+                                    <br />
+                                    <asp:Label ID="ChatUser" runat="server" Text="Alex Martinez" CssClass="tfooter"></asp:Label><br />
+                                    <br />
                             
-                            <div style="overflow-y:scroll; overflow-x:hidden;background:white;height:350px;" >
-                                <img src="../Imagenes/chat.png" />
-                            </div>
-                            <div>
-                            <asp:TextBox ID="TextBox1" runat="server" Width="258px" CssClass="boxchat"></asp:TextBox><br />
-                                <asp:Button ID="Button2" runat="server" Text="Enviar" CssClass="botonchat"></asp:Button>
-                            </div>
-                            
+                                    <div id="TextoChat" runat="server" style="overflow-y:scroll; overflow-x:hidden;background:white;height:350px;" >
+                                        <div class="ChatO">Hola</div><br />
+                                        <!--img src="../Imagenes/chat.png" /-->
+                                    </div>
+                                    <div>
+                                    <asp:TextBox ID="TextBox1" runat="server" Width="258px" CssClass="boxchat"></asp:TextBox><br />
+                                        <asp:Button ID="Button1" runat="server" Text="Enviar" CssClass="botonchat" OnClick="Button1_Click"></asp:Button>
+                                    </div>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
                         </div>
                     </div>
                 </div>
