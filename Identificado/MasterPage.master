@@ -88,6 +88,7 @@
                                     <div style="position:absolute;right:0px">
                                     <asp:Image ID="Image5" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
                                     </div>
+                                    <br />
                                     <asp:Label ID="ChatUser" runat="server" Text="Alex Martinez" CssClass="tfooter"></asp:Label><br />
                                     <br />
                             
