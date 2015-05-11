@@ -14,7 +14,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             if(user.Foto==null){
                 ImageButton1.ImageUrl = "~/Imagenes/ImagenPerfil.jpg";
             }else{
-                ImageButton1.ImageUrl = user.Foto;
+                ImageButton1.ImageUrl = "~/Imagenes/Usuarios/" + user.Email + "/prev.png";
             }
         }
     }
@@ -135,6 +135,9 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             System.Drawing.Image i2 = cropImage(i, f);
             EN.Usuario user = (EN.Usuario)Session["User"];
             i2.Save(Server.MapPath("~/Imagenes/Usuarios/" + user.Email + "/prev.png"), System.Drawing.Imaging.ImageFormat.Png);
+            EN.Usuario user2 = (EN.Usuario)Session["User"];
+            user2.Foto = (String)Session["FotoParaRecortar"];
+            Session["User"] = user2;
         }catch(Exception ex){}
         finally{
             fondoFoto.Style["display"] = "none";
