@@ -4,6 +4,22 @@
     background-attachment: fixed;
     font-family: "ARIAL", serif;
 }
+.ChatP{
+    float:right;
+    background-color:#befefc;
+    padding:7px;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+}
+.ChatO{
+    float:left;
+    background-color:#f8b461;
+    padding:7px;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+}
 .Manita{
     cursor:pointer;
 }

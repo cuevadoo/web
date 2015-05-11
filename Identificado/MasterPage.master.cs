@@ -19,4 +19,7 @@ public partial class Identificado_MasterPage : System.Web.UI.MasterPage
     protected void ImageButton2_Click(object sender, ImageClickEventArgs e){
         Response.Redirect("~/Identificado/Indice.aspx");
     }
+    protected void Button1_Click(object sender, EventArgs e){
+        TextoChat.InnerHtml += "<div class='ChatP'>"+TextBox1.Text+"</div><br />";
+    }
 }
