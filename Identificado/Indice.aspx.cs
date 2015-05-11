@@ -89,7 +89,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
             light.Style["display"] = "block";
             Label1.Text = "Hola2";
         }else{
-            Label1.Text = "Hola";
+            Label1.Text = "";
             bool comp = true;
             foreach(Button b in lButton){
                 if(b==c){
