@@ -72,19 +72,22 @@
                <!-- width=20--> <div id="chat" onmouseover="apChat()" style="position:fixed;top:200px;left:0px;width:20px;height:500px;overflow:hidden;z-index:501">
                     <div class="chatbackground" style="width:300px; height:100%;background-color:brown;overflow:hidden;z-index:502">
                         <div style="float:left;width:20px;height:100%;z-index:503">
+                            <br /><br />
                             <br /><asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/Imagenes/iconoventana.png" Width="20px"></asp:ImageButton>
                             <br /><br />
                             <br /><asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/iconomas.png"  Width="20px"></asp:ImageButton><br /><br /><br />
                             <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Imagenes/iconoX.png" Width="20px" ></asp:ImageButton>
-                           <br /><br /><br /><br /><br /><br />
-                            <asp:Image ID="Image5" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
+                           
+                            
                             <!--En este la informacion que se ve siempre-->
                         </div>
                         <div style="float:left;width:280px;height:100%;z-index:503">
                             <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                                 <ContentTemplate>
                                     <!--Y en este la de despues de desplegar-->
-                                    <br />
+                                    <div style="position:absolute;right:0px">
+                                    <asp:Image ID="Image5" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
+                                    </div>
                                     <asp:Label ID="ChatUser" runat="server" Text="Alex Martinez" CssClass="tfooter"></asp:Label><br />
                                     <br />
                             
