@@ -83,11 +83,11 @@
                         <div style="float:left;width:280px;height:100%;z-index:503">
                             <!--Y en este la de despues de desplegar-->
                             <br />
-                            <asp:Label ID="ChatUser" runat="server" Text="Chat" CssClass="tfooter"></asp:Label><br />
+                            <asp:Label ID="ChatUser" runat="server" Text="Leo Rodriguez" CssClass="tfooter"></asp:Label><br />
                             <br />
                             
                             <div style="overflow-y:scroll; overflow-x:hidden;background:white;height:350px;" >
-
+                                <img src="../Imagenes/chat.png" />
                             </div>
                             <div>
                             <asp:TextBox ID="TextBox1" runat="server" Width="258px" CssClass="boxchat"></asp:TextBox><br />
