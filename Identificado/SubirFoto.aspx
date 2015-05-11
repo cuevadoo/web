@@ -11,6 +11,7 @@
     <title>Cuevadoo</title>
 </head>
 <body>
+    <center>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div id="Flotante">
@@ -45,16 +46,17 @@
             </center>
         </div>
         <div id="CuerpoI">
-            <div id="ContenidoI">
-                <br /><br /><br />
+            <br /><br /><br />
+            <div id="ContenidoI" style="background-color:#d1cdcd;width:450px;height:35px">
+                
                 <asp:FileUpload ID="FileUpload1" runat="server" />
-                <asp:Button ID="Button1" runat="server" Text="Subir foto" OnClick="Button1_Click" />
+                <asp:Button ID="Button1" CssClass="botonBuscador" runat="server" Text="Subir foto" OnClick="Button1_Click" />
                 <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                
+            </div><br />
                 <br />
-                <br />
-            </div>
             <div>
-                <center>
+                <center></center>
                     
                 <asp:Table ID="Table2" runat="server" CssClass="center" Width="900px">
                     <asp:TableRow>
