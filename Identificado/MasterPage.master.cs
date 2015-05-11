@@ -20,6 +20,6 @@ public partial class Identificado_MasterPage : System.Web.UI.MasterPage
         Response.Redirect("~/Identificado/Indice.aspx");
     }
     protected void Button1_Click(object sender, EventArgs e){
-        TextoChat.InnerHtml += "<div class='ChatP'>" + TextBox1.Text + "</div><br />";
+        TextoChat.InnerHtml += "<div class='ChatP'>" + TextBox1.Text + "</div>";
     }
 }
