@@ -157,7 +157,7 @@
         <div id="derecha" onmouseout="vaciar()" onmouseover="desplazarTiempo(2,5)" class="BotonDerecha">></div>
         <div id="light1" class="ContenidoFotoScroll">
             <div id="light2" class="ContenidoFoto">
-                <asp:Table OnLoad="Table1_Load" ID="Table1" runat="server" Width="200%"></asp:Table>
+                <asp:Table OnLoad="Table1_Load" ID="Table1" runat="server"></asp:Table>
             </div>
         </div>
         <!--Imagenes en ventana desplegable-->

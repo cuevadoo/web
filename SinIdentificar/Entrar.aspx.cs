@@ -9,6 +9,7 @@ public partial class Ingresar : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        Form.DefaultButton = Button1.UniqueID;
         //Session["User"] = new EN.Usuario("a","","Anonimo","","",new Fecha(),true,null);
         //Response.Redirect("~/Identificado/Indice.aspx");
     }
