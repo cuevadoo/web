@@ -47,10 +47,10 @@
         </div>
         <div id="CuerpoI">
             <br /><br /><br />
-            <div id="ContenidoI" style="background-color:#3aacff;width:450px;height:30px">
+            <div id="ContenidoI" style="background-color:#d1cdcd;width:450px;height:35px">
                 
                 <asp:FileUpload ID="FileUpload1" runat="server" />
-                <asp:Button ID="Button1" runat="server" Text="Subir foto" OnClick="Button1_Click" />
+                <asp:Button ID="Button1" CssClass="botonBuscador" runat="server" Text="Subir foto" OnClick="Button1_Click" />
                 <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                 
             </div><br />

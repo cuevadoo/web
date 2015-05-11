@@ -11,14 +11,20 @@
     border-radius: 0.8em;
     -moz-border-radius: 0.8em;
     -webkit-border-radius: 0.8em;
+    text-align:right;
+    margin:3px 3px 3px 40px;
+    font-size:small;
 }
 .ChatO{
+    text-align:left;
     float:left;
     background-color:#f8b461;
     padding:7px;
     border-radius: 0.8em;
     -moz-border-radius: 0.8em;
     -webkit-border-radius: 0.8em;
+    margin:3px 40px 3px 3px;
+    font-size:small;
 }
 .Manita{
     cursor:pointer;
@@ -85,7 +91,7 @@
     font-size: 21px; 
 }
 
-.box {
+.box:enabled {
   display: inline-block;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -349,7 +355,7 @@ a:visited
 li A:link {text-decoration:none;color:#a104f8;} 
 li A:visited {text-decoration:none;color:#a104f8;} 
 li A:active {text-decoration:none;color:#C96FF9;} 
-li A:hover {text-decoration:underline;color:#C96FF9;}
+li A:hover {text-decoration:none;color:#C96FF9;}
 
 .Menu{
     text-decoration:none;
