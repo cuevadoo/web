@@ -16,11 +16,12 @@
         </asp:TableRow>
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">
-                <center><img src="Imagenes/ua_logo.png"/></center>
+                <center><img height="70 px"  src="Imagenes/ua_logo.png"/></center>
                 <p> Este es un proyecto realizado por alumnos de grado en Ingeniería Informática por la Universidad de Alicante, España.  </p>
             </asp:TableCell>
             <asp:TableCell runat="server">
-                <img width="125px" align="left" src="Imagenes/cueva.png" />Nuestra sede se encuentra en el Laboratorio L04 del edificio Escuela Politécnica Superior, donde serás bien recibido para cualquier consulta.
+                <img width="125px" height="70px" src="Imagenes/cueva.png" /></center>
+                <p>Nuestra sede se encuentra en el Laboratorio L04 del edificio Escuela Politécnica Superior.   </p>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow runat="server">
