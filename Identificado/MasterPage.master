@@ -89,7 +89,20 @@
                                     <br />
                             
                                     <div id="TextoChat" runat="server" style="overflow-y:scroll; overflow-x:hidden;background:white;height:350px;" >
-                                        <div class="ChatO">Hola</div><br />
+                                        <div class="ChatO">El 7 de mayo se sale</div><br />
+                                        <div class="ChatO">Yo aun estoy ahorrando para el gta 5</div><br />
+                                        <div class="ChatP">Tio descargatelo de pirate bay</div><br />
+                                        <div class="ChatO">Pero yo lo quiero para la play 4 no para el pc</div><br />
+                                        <div class="ChatO">Además yo tengo mac</div><br />
+                                        <div class="ChatP">Ah pues nada</div><br />
+                                        <div class="ChatP">En el pc si tienes una buena grafica tira</div><br />
+                                        <div class="ChatO">Y el Skyrim te lo pasaste al final o que?</div><br />
+                                        <div class="ChatP">Pero yo no tengo el Skyrim tio, era el Dark Souls</div><br />
+                                        <div class="ChatP">Dejate la coca macho</div><br />
+                                        <div class="ChatO">Que dices??</div><br />
+                                        <div class="ChatO">Si te vi comprándolo por Steam</div><br />
+                                        <div class="ChatP">Pues na, mañana te cuento</div><br />
+                                        <div class="ChatO">Y de paso acabamos el trabajo de HADA de una puta vez</div><br />
                                         <!--img src="../Imagenes/chat.png" /-->
                                     </div>
                                     <div>
