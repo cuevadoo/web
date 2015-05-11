@@ -138,6 +138,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             EN.Usuario user2 = (EN.Usuario)Session["User"];
             user2.Foto = (String)Session["FotoParaRecortar"];
             Session["User"] = user2;
+            new CAD.Usuario().update(user2,user2);
         }catch(Exception ex){}
         finally{
             fondoFoto.Style["display"] = "none";
