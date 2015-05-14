@@ -6,7 +6,7 @@ using System.Web;
 using System.Data;
 
 /// <summary>
-/// Descripción breve de Usuario
+/// Interacción con la tabla Usuario de la base de datos, podremos crear, leer, eliminar y cambiar valores de ésta
 /// </summary>
 namespace CAD
 {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de GustosFilm
+/// Manejo de los gustos filmográficos de un usuario en la base de datos
 /// </summary>
 namespace CAD
 {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de relaciones
+/// Clase para manejar las relaciones entre usuarios
 /// </summary>
 namespace CAD
 {

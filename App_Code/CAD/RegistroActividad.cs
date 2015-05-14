@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de Notificaciones
+/// Clase para mantener documentada la actividad de un usuario en la web
 /// </summary>
 namespace CAD
 {
