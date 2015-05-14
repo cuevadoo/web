@@ -16,22 +16,6 @@ namespace CAD
         //metodo para crear un nuevo Gusto en la tabla 
         public void create(EN.GustosOrdenadores ordenadores)
         {
-            string aux = null, aux1 = null, aux2 = null;
-
-            DataRowCollection data = conexion.ejecutarR("Select * from GustosOrdenadores where Email='" + ordenadores.Email + "'").Rows;
-            if (!System.DBNull.Value.Equals(data[0][0]))
-            {
-                aux = (String)data[0][0]; 
-            }
-            if (!System.DBNull.Value.Equals(data[0][1]))
-            {
-                aux1 = (String)data[0][1];
-            }
-            if (!System.DBNull.Value.Equals(data[0][2]))
-            {
-                aux2 = (String)data[0][2];
-            }
-
             try
             {
                 String s = "Inster into GustosOrdenadores(So,Marca,Lprog,Email) values ('"
@@ -47,22 +31,6 @@ namespace CAD
         //metodo para eliminar un Gusto ya existente en la tabla 
         public void delete(EN.GustosOrdenadores ordenadores)
         {
-            string aux = null, aux1 = null, aux2 = null;
-
-            DataRowCollection data = conexion.ejecutarR("Select * from GustosOrdenadores where Email='" + ordenadores.Email + "'").Rows;
-            if (!System.DBNull.Value.Equals(data[0][0]))
-            {
-                aux = (String)data[0][0];
-            }
-            if (!System.DBNull.Value.Equals(data[0][1]))
-            {
-                aux1 = (String)data[0][1];
-            }
-            if (!System.DBNull.Value.Equals(data[0][2]))
-            {
-                aux2 = (String)data[0][2];
-            }
-
             try
             {
                 conexion.ejecutarS("Delete from GustosOrdenadores where Email='" + ordenadores.Email + "'");
@@ -74,12 +42,6 @@ namespace CAD
         }
         //metodo para leer y devolver un gusto de la tabla
         public EN.GustosOrdenadores read(String email)
-        { 
-            //POR HACER 
-            return null;
-        }
-        //metodo para actualizar cualquier elemento de la tabla
-        public void update(EN.GustosOrdenadores deleted, EN.GustosOrdenadores added)
         {
             string aux = null, aux1 = null, aux2 = null;
 
@@ -96,7 +58,12 @@ namespace CAD
             {
                 aux2 = (String)data[0][2];
             }
-
+            //POR HACER 
+            return null;
+        }
+        //metodo para actualizar cualquier elemento de la tabla
+        public void update(EN.GustosOrdenadores deleted, EN.GustosOrdenadores added)
+        {
             try
             {
                 String s = "Update GustosOrdenadores set So='" + added.Sistemaoperativo +
