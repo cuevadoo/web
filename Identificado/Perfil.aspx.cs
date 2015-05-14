@@ -27,22 +27,19 @@ public partial class Identificado_Perfil : System.Web.UI.Page
     protected void Table1_Load(object sender, EventArgs e){
         EN.Usuario user =(EN.Usuario) Session["User"];
         String[] dirs = Directory.GetFiles(Server.MapPath("~/Imagenes/Usuarios/" + user.Email + "/"));
-        String thumbs="Thumb.db";
         TableRow row = new TableRow();
         foreach(String s in dirs){
-            if(s!=thumbs){
-                char[] aux = { '\\' };
-                String[] aux2 = s.Split(aux);
-                if(aux2[aux2.Length-1]!="Thumbs.db"){
-                    TableCell cell = new TableCell();
-                    ImageButton ima = new ImageButton();
-                    ima.Click += new ImageClickEventHandler(DarleImagen);
-                    ima.Height = 150;
-                    ima.Width = 150;
-                    ima.ImageUrl = "~/Imagenes/Usuarios/" + user.Email + "/" + aux2[aux2.Length - 1];
-                    cell.Controls.Add(ima);
-                    row.Cells.Add(cell);
-                }
+            char[] aux = { '\\' };
+            String[] aux2 = s.Split(aux);
+            if(aux2[aux2.Length-1]!="Thumbs.db"&&aux2[aux2.Length-1]!="prev.png"){
+                TableCell cell = new TableCell();
+                ImageButton ima = new ImageButton();
+                //ima.Click += new ImageClickEventHandler(DarleImagen);
+                ima.Height = 100;
+                ima.Width = 100;
+                ima.ImageUrl = "~/Imagenes/Usuarios/" + user.Email + "/" + aux2[aux2.Length - 1];
+                cell.Controls.Add(ima);
+                row.Cells.Add(cell);
             }
         }
         Table1.Rows.Add(row);

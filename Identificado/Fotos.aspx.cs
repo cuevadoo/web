@@ -15,7 +15,39 @@ public partial class Identificado_Fotos : System.Web.UI.Page
         EN.Usuario aux = (EN.Usuario)Session["User"];
         Menu1.Items[0].Text = aux.Nombre;
     }
-    
+
+    protected void Table3_Load(object sender, EventArgs e){
+        Table t = (Table)sender;
+        EN.Usuario user =(EN.Usuario) Session["User"];
+        String[] dirs = Directory.GetFiles(Server.MapPath("~/Imagenes/Usuarios/" + user.Email + "/"));
+        TableRow row = new TableRow();
+        int i=0;
+        foreach(String s in dirs){
+            char[] aux = { '\\' };
+            String[] aux2 = s.Split(aux);
+            if(aux2[aux2.Length-1]!="Thumbs.db"&&aux2[aux2.Length-1]!="prev.png"){
+                TableCell cell = new TableCell();
+                ImageButton ima = new ImageButton();
+                //ima.Click += new ImageClickEventHandler(DarleImagen);
+                ima.Height = 100;
+                ima.Width = 100;
+                ima.ImageUrl = "~/Imagenes/Usuarios/" + user.Email + "/" + aux2[aux2.Length - 1];
+                cell.Controls.Add(ima);
+                row.Cells.Add(cell);
+            }
+            if(i<=6){
+                i++;
+            }else{
+                i = 0;
+                t.Rows.Add(row);
+                row = new TableRow();
+            }
+        }
+        if(i<=6){
+            t.Rows.Add(row);
+        }
+    }
+
     protected void ImageButton2_Click(object sender, ImageClickEventArgs e){
         Response.Redirect("~/Identificado/Indice.aspx");
     }
