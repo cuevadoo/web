@@ -6,13 +6,14 @@ using System.Web;
 using System.Data;
 
 /// <summary>
-/// Descripción breve de GustosVideojuegos
+/// Clase para interactuar con la tabla de GustosVideojuegos en la BDs 
 /// </summary>
 namespace CAD
 {
     public class GustosVideojuegos
     {
         private static Conexion conexion = new Conexion();
+        //metodo para crear un nuevo Gusto en la tabla 
         public void create(EN.GustosVideojuegos videojuegos)
         {
             try
@@ -27,6 +28,7 @@ namespace CAD
                 throw new Exception("Error al crear el gusto");
             }
         }
+        //metodo para eliminar un Gusto ya existente en la tabla 
         public void delete(EN.GustosVideojuegos videojuegos)
         {
             try
@@ -38,6 +40,7 @@ namespace CAD
                 throw new Exception("Error al borrar gusto");
             }
         }
+        //metodo para leer y devolver un gusto de la tabla
         public EN.GustosVideojuegos read(String email)
         {
             string aux = null, aux1 = null, aux2 = null, aux3 = null;
@@ -62,6 +65,7 @@ namespace CAD
             //POR HACER
             return null;
         }
+        //metodo para actualizar cualquier elemento de la tabla
         public void update(EN.GustosVideojuegos deleted, EN.GustosVideojuegos added)
         {
             try
