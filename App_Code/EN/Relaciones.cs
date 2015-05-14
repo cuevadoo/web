@@ -12,22 +12,23 @@ namespace EN
     public class Relaciones
     {
         private Usuario usuario1;
-        private Usuario usuario2;
+        private String[] usuarios;
+        private bool aceptada;
 
-        public Usuario Usuario1
-        {
+        public Usuario Usuario1{
             get { return usuario1; }
             set { usuario1 = value; }
         }
-        public Usuario Usuario2
-        {
-            get { return usuario2; }
-            set { usuario2 = value; }
+
+        public String[] Usuario2{
+            get { return usuarios; }
+            set { usuarios = value; }
         }
 
-        public Relaciones(Usuario usuario1, Usuario usuario2){
+        public Relaciones(Usuario usuario1, String[] usuarios,bool aceptada){
             this.usuario1 = usuario1;
-            this.usuario2 = usuario2;
+            this.usuarios = usuarios;
+            this.aceptada = aceptada;
         }
 
     }
