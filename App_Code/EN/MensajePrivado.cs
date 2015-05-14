@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de MensajesPrivados
+/// En la siguiente EN vamos a tratar con los mensajes privados que podrán tener dos usuarios entre ellos.
 /// </summary>
 namespace EN
 {

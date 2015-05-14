@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI.WebControls;
 
 /// <summary>
-/// Descripción breve de Buscador
+/// En la siguiente EN vamos a tratar nuestro buscador de la red social
 /// </summary>
 namespace EN
 {

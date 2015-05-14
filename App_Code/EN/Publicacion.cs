@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de Publicación
+/// En la siguiente EN vamos a tratar con la posibilidad de realizar publicaciones en cualquier momento, para que todos tus amigos
+/// puedan verlo, mediante su respectivo registro de actividad.
 /// </summary>
 namespace EN
 {

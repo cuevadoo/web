@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de Notificaciones
+/// En la siguiente EN vamos a tratar el Registro de Actividad de nuestra red social, donde se mostraran las publicaciones de los usuarios
+/// y el aviso de los mensajes privados
 /// </summary>
 namespace EN
 {

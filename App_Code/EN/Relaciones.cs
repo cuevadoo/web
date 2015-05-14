@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de relaciones
+/// En la siguiente EN vamos a tratar con la creacion de relación entre dos usuarios. Donde se basará basicamente en poder agregar a 
+/// otros usuarios.
 /// </summary>
 namespace EN
 {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de GrupoAmigos
+/// En la siguiente EN vamos a tratar la creacion de uno o varios grupos de amigos.
 /// </summary>
 namespace EN
 {

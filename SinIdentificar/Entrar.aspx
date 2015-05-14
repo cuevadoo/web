@@ -5,6 +5,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <center>
+        <!--En el siguiente div englobamos todo lo relacionado con la parte de ingresar usuario. Donde creamos una tabla con 3 filas y 5
+            columnas. En la primera fila es donde tendremos que introducir nuestro email, y a continuación se observará si el email
+            es o no valido, mediante el elemento RequiredFieldValidator. En la segunda fila, será igual, pero en este caso tendrémos que
+            introducir la contraseña y el RequiredFieldValidator comparará la contraseña introducida, con la que se introdujo cuando se
+            realizó el registro -->
         <div>
             <asp:Table runat="server" Border="0">
                 <asp:TableRow runat="server">

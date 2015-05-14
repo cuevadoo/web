@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de GustosVideojuegos
+/// En la siguiente EN vamos a tratar los tipos de videojuegos y consolas que prefieren nuestro usuarios de la red social. Podremos 
+/// encontrar el genero de videojuegos que mas nos gusta, nuestro juego favorito y también nuestra consola favorita, incluyendo a una
+/// empresa dedicada a desarrollar videojuegos.
 /// </summary>
 namespace EN
 {

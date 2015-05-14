@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de Gustosmusicales
+/// En la siguiente EN vamos a tratar los gustos musicales de los usuarios de nuestra red social, donde tenemos aspectos como el estilo
+/// musical, artista favorito, o incluso conciertos a los cuales hayan asistido.
 /// </summary>
 namespace EN
 {

@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de GustosFilm
+/// En la siguiente EN vamos a tratar los gustos filmográficos que tienen los usuarios de nuestra red social. Donde podrán indicar cual
+/// es su genero favorito, su pelicula, su actor. Incluso también podrán indicar cual es su serie favorita.
 /// </summary>
 namespace EN
 {

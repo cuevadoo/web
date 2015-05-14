@@ -5,7 +5,8 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de Usuario
+/// En la siguiente EN vamos a tratar con el elemento principal de nuestra web, el cual es la clase Usuario, donde añadiremos todos 
+/// nuestros datos personales que aparecen a continuación.
 /// </summary>
 namespace EN
 {

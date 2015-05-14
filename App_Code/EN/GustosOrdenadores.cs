@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de Gustosordenadores
+/// En la siguiente EN vamos a tratar con los gustos informatios que tienen los usuarios, tanto software como hardware. Donde podremos
+/// encontrar el sistema favorito del usuario o el lenguaje de programacion favorito.
 /// </summary>
 namespace EN
 {

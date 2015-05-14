@@ -5,7 +5,8 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de Chat
+/// En la siguiente EN vamos a tratar el chat de nuestra red social, el cual nos servirá para que dos o más usuarios interactuen de una
+/// forma más cercana, pudiendose conocer mucho mejor.
 /// </summary>
 namespace EN
 {
