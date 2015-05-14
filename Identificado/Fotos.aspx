@@ -9,8 +9,55 @@
     <link href="~/Imagenes/logoRecortado.png" type="image/x-icon" rel="shortcut icon" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Cuevadoo</title>
+        <script type="text/javascript">
+            function aparecer() {
+                document.body.style.overflow = 'hidden';
+                document.getElementById('light').style.display = "block";
+                document.getElementById('fade').style.display = "block";
+            }
+            function desaparecer() {
+                document.body.style.overflow = 'auto';
+                document.getElementById('light').style.display = "none";
+                document.getElementById('fade').style.display = "none";
+            }
+            var tam = 20;
+            var id1;
+            var id2;
+            function camTam(num) {
+                if (tam < 300) {
+                    tam = tam + num;
+                    document.getElementById("chat").style.width = tam + "px";
+                } else {
+                    clearInterval(id1);
+                }
+            }
+            function camTam2(num) {
+                if (tam > 20) {
+                    tam = tam - num;
+                    document.getElementById("chat").style.width = tam + "px";
+                } else {
+                    clearInterval(id2);
+                }
+            }
+            function apChat() {
+                clearInterval(id1);
+                clearInterval(id2);
+                id1 = setInterval(camTam, 1, 2);
+                document.getElementById("fondoChat").style.display = "block";
+            }
+            function desChat() {
+                clearInterval(id1);
+                clearInterval(id2);
+                id2 = setInterval(camTam2, 1, 4);
+                document.getElementById("fondoChat").style.display = "none";
+            }
+    </script>
+
 </head>
 <body>
+
+
+
     <center>
         <form id="form1" runat="server">
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -28,7 +75,7 @@
                                 <asp:Menu ID="Menu1" CssClass="Menu" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="Default" DisappearAfter="100">
                                     <Items>
                                         <asp:MenuItem Text="[Usuario]" Value="Nuevo elemento" NavigateUrl="~/Identificado/Perfil.aspx"></asp:MenuItem>
-                                        <asp:MenuItem Text="SubirFoto" Value="Nuevo Elemento" NavigateUrl="~/Identificado/Fotos.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Fotos" Value="Nuevo Elemento" NavigateUrl="~/Identificado/Fotos.aspx"></asp:MenuItem>
                                         <asp:MenuItem Text="Mensajes" Value="Nuevo Elemento" NavigateUrl="~/Identificado/Mensajes.aspx"></asp:MenuItem>
                                         <asp:MenuItem Text="Buscador avanzado" Value="Nuevo Elemento" NavigateUrl="~/Identificado/BuscadorAvanzado.aspx"></asp:MenuItem>                                  
                                     </Items>
@@ -38,6 +85,46 @@
                     </asp:Table>
 
                     <!--Tabla con el menu basico-->
+
+                                    <!--Chat desplegable-->
+
+                <div id="chat" onmouseover="apChat()" style="position:fixed;top:200px;left:0px;width:20px;height:500px;overflow:hidden;z-index:501">
+                    <div class="chatbackground" style="width:300px; height:100%;background-color:brown;overflow:hidden;z-index:502">
+                        <div style="float:left;width:20px;height:100%;z-index:503">
+                            <br /><br />
+                            <br /><asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/Imagenes/iconoventana.png" Width="20px"></asp:ImageButton>
+                            <br /><br />
+                            <br /><asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/iconomas.png"  Width="20px"></asp:ImageButton><br /><br /><br />
+                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Imagenes/iconoX.png" Width="20px" ></asp:ImageButton>
+
+                            <!--En este la informacion que se ve siempre-->
+                        </div>
+                        <div style="float:left;width:280px;height:100%;z-index:503">
+                            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                <ContentTemplate>
+
+                                    <!--Y en este la de despues de desplegar-->
+                                    <div style="position:absolute;right:0px">
+                                    <asp:Image ID="Image5" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
+                                    </div>
+                                    <br />
+                                    <asp:Label ID="ChatUser" runat="server" Text="Alex Martinez" CssClass="tfooter"></asp:Label><br />
+                                    <br />
+                                    <div id="TextoChat" runat="server" style="overflow-y:scroll; overflow-x:hidden;background:white;height:350px;" >
+                                        <!--Contenido de la conversacion del chart-->
+                                    </div>
+                                    <div>
+                                    <asp:TextBox ID="TextBox1" runat="server" Width="258px" CssClass="boxchat"></asp:TextBox><br />
+                                        <asp:Button ID="Button2" runat="server" Text="Enviar" CssClass="botonchat" OnClick="Button1_Click"></asp:Button>
+                                    </div>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Chat desplegable-->
+
                     <!--Imagen de herramienta y menu desplegable-->
 
                     <div class="Herramienta">
@@ -59,7 +146,7 @@
                 <div id="ContenidoI">
 
                     <!--Botones para subir fotos-->
-
+                    <asp:Label ID="Label3" runat="server" Text="Sube tus fotos" CssClass="titulo"></asp:Label>
                     <div style="background-color:#d1cdcd;width:450px;height:35px">
                         <asp:FileUpload ID="FileUpload1" runat="server" />
                         <asp:Button ID="Button1" CssClass="botonBuscador" runat="server" Text="Subir foto" OnClick="Button1_Click" />
@@ -71,7 +158,7 @@
 
                     <br /><br />
                     <center>
-                        <asp:Label ID="Label2" runat="server" Text="Galeria de fotos"></asp:Label>
+                        <asp:Label ID="Label2" runat="server" Text="Galeria de fotos" CssClass="titulo"></asp:Label>
                         <asp:Table ID="Table3" runat="server" Width="800px"  OnLoad="Table3_Load"></asp:Table>
                     </center>
                     <!--Galeria de fotos dinamica-->

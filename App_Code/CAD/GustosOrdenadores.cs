@@ -25,7 +25,7 @@ namespace CAD
             }
             catch (System.Exception e)
             {
-                throw new Exception("Error al crear el gusto");
+                throw new Exception("Error al crear el gusto Ordenadores");
             }
         }
         //metodo para eliminar un Gusto ya existente en la tabla 
@@ -37,7 +37,7 @@ namespace CAD
             }
             catch (System.Exception e)
             {
-                throw new Exception("Error al borrar gusto");
+                throw new Exception("Error al borrar gusto Ordenadores");
             }
         }
         //metodo para leer y devolver un gusto de la tabla
@@ -73,7 +73,7 @@ namespace CAD
             }
             catch (Exception e)
             {
-                throw new Exception("Error al modificar el gusto");
+                throw new Exception("Error al modificar el gusto Ordenadores");
             }
         }
 
