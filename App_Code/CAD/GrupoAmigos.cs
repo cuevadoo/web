@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de GrupoAmigos
+/// Clase para gestionar "asociaciones" de usuarios que llamaremos Grupos de Amigos.
 /// </summary>
 namespace CAD
 {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de Buscador
+/// En esta clase implementa un sistema de búsqueda en la base de datos
 /// </summary>
 namespace CAD
 {

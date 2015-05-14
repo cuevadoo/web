@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de Chat
+/// Manejo de las notificaciones de los chats ?
 /// </summary>
 namespace CAD
 {

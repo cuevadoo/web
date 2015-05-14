@@ -56,23 +56,27 @@
             </div>
             <div id="CuerpoI">
                 <br /><br /><br />
+                <div id="ContenidoI">
 
-                <!--Botones para subir fotos-->
+                    <!--Botones para subir fotos-->
 
-                <div id="ContenidoI" style="background-color:#d1cdcd;width:450px;height:35px">
-                    <asp:FileUpload ID="FileUpload1" runat="server" />
-                    <asp:Button ID="Button1" CssClass="botonBuscador" runat="server" Text="Subir foto" OnClick="Button1_Click" />
-                    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                    <div style="background-color:#d1cdcd;width:450px;height:35px">
+                        <asp:FileUpload ID="FileUpload1" runat="server" />
+                        <asp:Button ID="Button1" CssClass="botonBuscador" runat="server" Text="Subir foto" OnClick="Button1_Click" />
+                        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                    </div>
+
+                    <!--Botones para subir fotos-->
+                    <!--Galeria de fotos dinamica-->
+
+                    <br /><br />
+                    <center>
+                        <asp:Label ID="Label2" runat="server" Text="Galeria de fotos"></asp:Label>
+                        <asp:Table ID="Table3" runat="server" Width="800px"  OnLoad="Table3_Load"></asp:Table>
+                    </center>
+                    <!--Galeria de fotos dinamica-->
+
                 </div>
-
-                <!--Botones para subir fotos-->
-                <br /><br />
-                <!--Galeria de fotos dinamica-->
-                
-                <asp:Label ID="Label2" runat="server" Text="Galeria de fotos"></asp:Label>
-                <asp:Table ID="Table3" runat="server"></asp:Table>
-
-                <!--Galeria de fotos dinamica-->
                 <div>
                     <!--Pie de pagina-->
                     <asp:Table ID="Table2" runat="server" CssClass="center" Width="900px">

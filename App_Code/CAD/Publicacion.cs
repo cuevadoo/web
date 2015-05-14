@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de MensajeDifusion
+/// Clase para manejar las publicaciones de los usuarios
 /// </summary>
 namespace CAD
 {

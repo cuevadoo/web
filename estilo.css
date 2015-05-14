@@ -4,6 +4,7 @@
     background-attachment: fixed;
     font-family: "ARIAL", serif;
 }
+
 .ChatP{
     clear:right;
     background-color:#befefc;
@@ -15,6 +16,7 @@
     margin:3px 3px 3px 40px;
     font-size:small;
 }
+
 .ChatO{
     text-align:left;
     clear:left;
@@ -26,14 +28,17 @@
     margin:3px 40px 3px 3px;
     font-size:small;
 }
+
 .Manita{
     cursor:pointer;
 }
+
 .Herramienta{
     position:fixed;
     top:0px;
     right:0px;
 }
+
 #desplegable{
     display:none;
     position:fixed;
@@ -41,6 +46,7 @@
     right:0px;
     z-index:2000;
 }
+
 .tablaBuscador{
     background-color:#F6ECD9;
     padding:10px;
@@ -48,6 +54,7 @@
     -moz-box-shadow: inset 0px 0px 7px 6px rgba(70,130,180,1);
     box-shadow: inset 0px 0px 7px 6px rgba(70,130,180,1);
 }
+
 .botonBuscador {
   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #bab1ba));
   background:-moz-linear-gradient(top, #ededed 5%, #bab1ba 100%);
@@ -71,6 +78,7 @@
   text-decoration:none;
   text-shadow:0px 1px 0px #e1e2ed;
 }
+
 .botonBuscador:hover {
   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bab1ba), color-stop(1, #ededed));
   background:-moz-linear-gradient(top, #bab1ba 5%, #ededed 100%);
@@ -81,10 +89,12 @@
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bab1ba', endColorstr='#ededed',GradientType=0);
   background-color:#bab1ba;
 }
+
 .botonBuscador:active {
   position:relative;
   top:1px;
 }
+
 .warning {
     color:red;
     font-weight:bold;
@@ -157,7 +167,7 @@ select[disabled] {
 }
 
 .boton:enabled {
-	-moz-box-shadow:inset 0px 0px 9px 7px #23395e;
+    -moz-box-shadow:inset 0px 0px 9px 7px #23395e;
 	-webkit-box-shadow:inset 0px 0px 9px 7px #23395e;
 	box-shadow:inset 0px 0px 9px 7px #23395e;
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2e466e), color-stop(1, #415989));
@@ -247,6 +257,7 @@ select[disabled] {
 	text-decoration:none;
 	text-shadow:0px 1px 2px #000000;
 }
+
 .botonchat:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #b8b8b8), color-stop(1, #f9f9f9));
 	background:-moz-linear-gradient(top, #b8b8b8 5%, #f9f9f9 100%);
@@ -257,25 +268,22 @@ select[disabled] {
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b8b8b8', endColorstr='#f9f9f9',GradientType=0);
 	background-color:#b8b8b8;
 }
+
 .botonchat:active {
 	position:relative;
 	top:1px;
 }
 
-
-.chatbackground
-{
-background: rgba(161,161,161,1);
-background: -moz-linear-gradient(-45deg, rgba(161,161,161,1) 0%, rgba(148,148,148,1) 12%, rgba(153,153,153,0.99) 32%, rgba(179,179,179,0.99) 55%, rgba(179,179,179,0.99) 74%, rgba(179,179,179,0.98) 89%, rgba(179,179,179,0.98) 100%);
-background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(161,161,161,1)), color-stop(12%, rgba(148,148,148,1)), color-stop(32%, rgba(153,153,153,0.99)), color-stop(55%, rgba(179,179,179,0.99)), color-stop(74%, rgba(179,179,179,0.99)), color-stop(89%, rgba(179,179,179,0.98)), color-stop(100%, rgba(179,179,179,0.98)));
-background: -webkit-linear-gradient(-45deg, rgba(161,161,161,1) 0%, rgba(148,148,148,1) 12%, rgba(153,153,153,0.99) 32%, rgba(179,179,179,0.99) 55%, rgba(179,179,179,0.99) 74%, rgba(179,179,179,0.98) 89%, rgba(179,179,179,0.98) 100%);
-background: -o-linear-gradient(-45deg, rgba(161,161,161,1) 0%, rgba(148,148,148,1) 12%, rgba(153,153,153,0.99) 32%, rgba(179,179,179,0.99) 55%, rgba(179,179,179,0.99) 74%, rgba(179,179,179,0.98) 89%, rgba(179,179,179,0.98) 100%);
-background: -ms-linear-gradient(-45deg, rgba(161,161,161,1) 0%, rgba(148,148,148,1) 12%, rgba(153,153,153,0.99) 32%, rgba(179,179,179,0.99) 55%, rgba(179,179,179,0.99) 74%, rgba(179,179,179,0.98) 89%, rgba(179,179,179,0.98) 100%);
-background: linear-gradient(135deg, rgba(161,161,161,1) 0%, rgba(148,148,148,1) 12%, rgba(153,153,153,0.99) 32%, rgba(179,179,179,0.99) 55%, rgba(179,179,179,0.99) 74%, rgba(179,179,179,0.98) 89%, rgba(179,179,179,0.98) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1a1a1', endColorstr='#b3b3b3', GradientType=1 );
+.chatbackground{
+    background: rgba(161,161,161,1);
+    background: -moz-linear-gradient(-45deg, rgba(161,161,161,1) 0%, rgba(148,148,148,1) 12%, rgba(153,153,153,0.99) 32%, rgba(179,179,179,0.99) 55%, rgba(179,179,179,0.99) 74%, rgba(179,179,179,0.98) 89%, rgba(179,179,179,0.98) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(161,161,161,1)), color-stop(12%, rgba(148,148,148,1)), color-stop(32%, rgba(153,153,153,0.99)), color-stop(55%, rgba(179,179,179,0.99)), color-stop(74%, rgba(179,179,179,0.99)), color-stop(89%, rgba(179,179,179,0.98)), color-stop(100%, rgba(179,179,179,0.98)));
+    background: -webkit-linear-gradient(-45deg, rgba(161,161,161,1) 0%, rgba(148,148,148,1) 12%, rgba(153,153,153,0.99) 32%, rgba(179,179,179,0.99) 55%, rgba(179,179,179,0.99) 74%, rgba(179,179,179,0.98) 89%, rgba(179,179,179,0.98) 100%);
+    background: -o-linear-gradient(-45deg, rgba(161,161,161,1) 0%, rgba(148,148,148,1) 12%, rgba(153,153,153,0.99) 32%, rgba(179,179,179,0.99) 55%, rgba(179,179,179,0.99) 74%, rgba(179,179,179,0.98) 89%, rgba(179,179,179,0.98) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(161,161,161,1) 0%, rgba(148,148,148,1) 12%, rgba(153,153,153,0.99) 32%, rgba(179,179,179,0.99) 55%, rgba(179,179,179,0.99) 74%, rgba(179,179,179,0.98) 89%, rgba(179,179,179,0.98) 100%);
+    background: linear-gradient(135deg, rgba(161,161,161,1) 0%, rgba(148,148,148,1) 12%, rgba(153,153,153,0.99) 32%, rgba(179,179,179,0.99) 55%, rgba(179,179,179,0.99) 74%, rgba(179,179,179,0.98) 89%, rgba(179,179,179,0.98) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1a1a1', endColorstr='#b3b3b3', GradientType=1 );
 }
-
-
 
 #centrar {
     text-align:center;
@@ -336,6 +344,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1a1a1', end
     -moz-border-radius: 3em;
     -webkit-border-radius: 3em;
 }
+
 #CuerpoI{
     background: rgba(70,130,180,0.8);
     margin-left:50px;
@@ -346,10 +355,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1a1a1', end
     -moz-border-radius: 3em;
     -webkit-border-radius: 3em;
 }
+
 #ContenidoS{
     margin-top:40px;
     font-size: 18px; 
 }
+
 #ContenidoI{
     margin-top:50px;
     font-size: 18px; 
@@ -367,18 +378,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1a1a1', end
   text-shadow: 4px 4px 6px rgba(0,0,0,0.5) ;
 }
 
-a:link
-{
+a:link{
    text-decoration: none;
 }
-a:visited
-{
+
+a:visited{
    text-decoration: none;
 }
 
 li A:link {text-decoration:none;color:#a104f8;} 
+
 li A:visited {text-decoration:none;color:#a104f8;} 
+
 li A:active {text-decoration:none;color:#C96FF9;} 
+
 li A:hover {text-decoration:none;color:#C96FF9;}
 
 .Menu{
@@ -415,6 +428,7 @@ li A:hover {text-decoration:none;color:#C96FF9;}
 	text-decoration:none;
 	text-shadow:0px 0px 0px #528ecc;
 }
+
 .Menu li{
     list-style:none;
     font-size:24px;
@@ -422,6 +436,7 @@ li A:hover {text-decoration:none;color:#C96FF9;}
     width:220px;
     height:auto;
 }
+
 #facebook{
   background: #5178D0;
   border-radius: 0.8em;
@@ -435,6 +450,7 @@ li A:hover {text-decoration:none;color:#C96FF9;}
   text-align: center;
   width: 1.6em; 
 }
+
 .BuscadorFlotante{
     position:fixed;
     top:55px;
@@ -453,6 +469,7 @@ li A:hover {text-decoration:none;color:#C96FF9;}
     background: linear-gradient(to bottom, rgba(227,234,235,1) 0%, rgba(227,234,235,1) 85%, rgba(227,234,235,0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3eaeb', endColorstr='#e3eaeb', GradientType=0 );
 }
+
 .FondoBuscador{
     display: none;
     position: fixed;
@@ -462,6 +479,7 @@ li A:hover {text-decoration:none;color:#C96FF9;}
     height: 100%;
     z-index:1001;
 }
+
 .ContenidoBuscador {
     display: none;
     position:fixed;
@@ -473,6 +491,7 @@ li A:hover {text-decoration:none;color:#C96FF9;}
     color: #333;
     z-index:1002;
 }
+
 .FondoFoto{
     display: none;
     position: fixed;
@@ -487,6 +506,7 @@ li A:hover {text-decoration:none;color:#C96FF9;}
     filter: alpha(opacity=85);
     overflow:hidden;
 }
+
 .ContenidoFoto{
     width: 100%;
     height: 218px;
@@ -494,6 +514,7 @@ li A:hover {text-decoration:none;color:#C96FF9;}
     overflow-y:hidden;
     z-index:1002;
 }
+
 .ContenidoFoto2{
     height:100%;
     width:100%;
@@ -510,6 +531,7 @@ li A:hover {text-decoration:none;color:#C96FF9;}
     -moz-opacity: 0.85;
     filter: alpha(opacity=85);
 }
+
 .Foto{
     display:none;
     height:auto;
@@ -524,6 +546,7 @@ li A:hover {text-decoration:none;color:#C96FF9;}
     z-index:1003;
     overflow:hidden;
 }
+
 .Foto2{
     cursor:pointer;
     position:fixed;
@@ -535,6 +558,7 @@ li A:hover {text-decoration:none;color:#C96FF9;}
 	margin: auto;
     z-index:1002;
 }
+
 .BotonesFoto{
     position:fixed;
     display:none;
@@ -542,6 +566,7 @@ li A:hover {text-decoration:none;color:#C96FF9;}
 	right: 0;
     z-index:1006;
 }
+
 .ContenidoFotoScroll{
     display: none;
     position: fixed;
@@ -553,6 +578,7 @@ li A:hover {text-decoration:none;color:#C96FF9;}
     background: #fff;
     z-index:1003;
 }
+
 .BotonIzquierda{
     display: none;
     position: fixed;
@@ -570,6 +596,7 @@ li A:hover {text-decoration:none;color:#C96FF9;}
     background: linear-gradient(to right, rgba(119,119,119,0.8) 0%, rgba(119,119,119,0.35) 75%, rgba(119,119,119,0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#777777', endColorstr='#777777', GradientType=1 );
 }
+
 .BotonDerecha{
     display: none;
     position: fixed;
@@ -588,34 +615,33 @@ li A:hover {text-decoration:none;color:#C96FF9;}
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#777777', endColorstr='#777777', GradientType=1 );
 }
 
-  .overlay{
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #000;
-        z-index:1001;
-        opacity:.85;
-        -moz-opacity: 0.75;
-        filter: alpha(opacity=75);
-    }
- 
-    
-    .modal {
-        display: none;
-        position: absolute;
-        top: 25%;
-        left: 25%;
-        width: 50%;
-        height: 50%;
-        padding: 16px;
-        background: #fff;
-        color: #333;
-        z-index:1002;
-        overflow: auto;
-    }
+.overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index:1001;
+    opacity:.85;
+    -moz-opacity: 0.75;
+    filter: alpha(opacity=75);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    padding: 16px;
+    background: #fff;
+    color: #333;
+    z-index:1002;
+    overflow: auto;
+}
 
 .todo {
     width: 900px;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de MensajePrivado
+/// Clase para manejar los mensajes privados enviados entre usuarios ( parte privada )
 /// </summary>
 namespace CAD
 {

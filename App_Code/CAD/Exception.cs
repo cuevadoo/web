@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Descripción breve de Exception
+/// Clase para el manejo de excepciones 
 /// </summary>
 namespace CAD
 {
