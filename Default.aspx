@@ -27,7 +27,6 @@
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow runat="server">
-            <!-- breve descripción del buscador avanzado ( parte privada ) con imagen de muestra -->
             <asp:TableCell  columnSpan="3" runat="server">
               <p> Regístrate, es sencillo. Con tu propia cuenta tendrás acceso al buscador avanzado, en el que podrás hacer una búsqueda acotada de gente basándote en sus gustos e intereses.  </p>
                 <img align="center" src="Imagenes/buscador captura.png" />
