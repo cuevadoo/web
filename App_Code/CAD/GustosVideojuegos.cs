@@ -29,13 +29,20 @@ namespace CAD
         }
         public void delete(EN.GustosVideojuegos videojuegos)
         {
-
+            try
+            {
+                conexion.ejecutarS("Delete from GustosVideojuegos where Email='" + videojuegos.Email + "'");
+            }
+            catch (System.Exception e)
+            {
+                throw new Exception("Error al borrar gusto");
+            }
         }
         public EN.GustosVideojuegos read(String email)
         {
             string aux = null, aux1 = null, aux2 = null, aux3 = null;
 
-            DataRowCollection data = conexion.ejecutarR("Select * from GustosOrdenadores where Email='" + videojuegos.Email + "'").Rows;
+            DataRowCollection data = conexion.ejecutarR("Select * from GustosVideojueos where Email='" + email + "'").Rows;
             if (!System.DBNull.Value.Equals(data[0][1]))
             {
                 aux = (String)data[0][1];
@@ -57,7 +64,17 @@ namespace CAD
         }
         public void update(EN.GustosVideojuegos deleted, EN.GustosVideojuegos added)
         {
-
+            try
+            {
+                String s = "Update GustosVideojuegos set Genero='" + added.Genero +
+                    "', JuegoFav='" + added.JuegoFav + "', ConsolaFav='" + added.ConsolaFav+ "', DesarrolladorFav='" + added.DesarrolladorFav + "', Email='" + added.Email
+                    + "' WHERE Email='" + deleted.Email + "'";
+                conexion.ejecutarS(s);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al modificar el gusto");
+            }
         }
     }
 }

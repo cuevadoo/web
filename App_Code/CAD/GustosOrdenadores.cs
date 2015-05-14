@@ -45,7 +45,7 @@ namespace CAD
         {
             string aux = null, aux1 = null, aux2 = null;
 
-            DataRowCollection data = conexion.ejecutarR("Select * from GustosOrdenadores where Email='" + ordenadores.Email + "'").Rows;
+            DataRowCollection data = conexion.ejecutarR("Select * from GustosOrdenadores where Email='" + email + "'").Rows;
             if (!System.DBNull.Value.Equals(data[0][0]))
             {
                 aux = (String)data[0][0];
