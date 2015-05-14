@@ -2,11 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-        <center>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server"> 
+        <center> 
+<!-- En esta clase se muestra y organiza la página por defecto que aparecerá al introducir la dirección de cuevadoo en el buscador -->
     <div class="todo">
             <center>
-
+<!-- creamos una serie de tablas para encuadrar distintos textos -->
     <asp:Table  class="justify" ID="Table1" cellspacing="30" runat="server" Height="130px" Width="900px">
         <asp:TableRow runat="server">
             <asp:TableCell columnSpan="3" runat="server">
@@ -16,6 +17,7 @@
         </asp:TableRow>
         <asp:TableRow runat="server">
             <asp:TableCell runat="server">
+                <!-- mostramos varias imagenes referentes a la universidad-->
                 <center><img height="70 px"  src="Imagenes/ua_logo.png"/></center>
                 <p> Este es un proyecto realizado por alumnos de grado en Ingeniería Informática por la Universidad de Alicante, España.  </p>
             </asp:TableCell>
@@ -25,6 +27,7 @@
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow runat="server">
+            <!-- breve descripción del buscador avanzado ( parte privada ) con imagen de muestra -->
             <asp:TableCell  columnSpan="3" runat="server">
               <p> Regístrate, es sencillo. Con tu propia cuenta tendrás acceso al buscador avanzado, en el que podrás hacer una búsqueda acotada de gente basándote en sus gustos e intereses.  </p>
                 <img align="center" src="Imagenes/buscador captura.png" />
@@ -32,6 +35,7 @@
         </asp:TableRow>
         <asp:TableRow ID="TableRow1"  runat="server">
             <asp:TableCell ID="TableCell1" columnSpan="3" runat="server">
+                <!-- logo de Cuevadoo sobre el footer de la página Default -->
               <center><img src="Imagenes/logo bajo.png"/></center>
             </asp:TableCell>
             </asp:TableRow>
