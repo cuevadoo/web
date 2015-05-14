@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 
-public partial class Identificado_SubirFoto : System.Web.UI.Page
+public partial class Identificado_Fotos : System.Web.UI.Page
 {
      protected void Page_Load(object sender, EventArgs e){
         if(Session["User"]==null){
