@@ -174,12 +174,13 @@
      <!--publicaciones-->
 
 </div>
-<br /><br />
-<div>
-    <center>
+<br /><br /> <center>
+<div style="width: 800px">
+   
 <p>Para conseguir más información sobre este usuario; agregarlo a tus amigos; enviarle mensajes y chatear con él, necesitas ser un usuario registrado de Cuevadoo</p>
-</center>
 </div>
+</center>
+
 
             
             
