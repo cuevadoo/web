@@ -15,11 +15,9 @@ namespace EN
         private String grupo;
         private String artista;
         private String concierto;
-        private byte decada;
-
-        
-
-        public GustosMusicales(String email,String estilo,String grupo,String artista,String concierto,byte decada):base(email){
+        private Byte decada;
+      
+        public GustosMusicales(String estilo,String grupo,String artista,String concierto,Byte decada,String email):base(email){
             this.estilo = estilo;
             this.grupo = grupo;
             this.artista = artista;
@@ -48,7 +46,7 @@ namespace EN
             get { return concierto; }
             set { concierto = value; }
         }
-        public byte Decada
+        public Byte Decada
         {
             get { return decada; }
             set { decada = value; }
