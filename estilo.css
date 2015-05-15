@@ -66,6 +66,7 @@
 }
 
 .BotonChat:hover {
+    width:100%;
 	-moz-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
 	box-shadow:inset 0px 1px 0px 0px #7a8eb9;
@@ -83,8 +84,9 @@
 	font-family:Arial;
 	font-size:16px;
 	font-weight:bold;
-	padding:6px 12px;
+    margin:0px;
 	text-decoration:none;
+    text-align:left;
 }
 
 .BotonChat:active {

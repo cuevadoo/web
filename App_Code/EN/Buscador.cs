@@ -45,7 +45,6 @@ namespace EN
                 String s =(String) num.Current;
                 aux = true;
                 TableRow row = new TableRow();
-                row.Cells.Add(new TableCell());
                 TableCell t = new TableCell();
                 Button label = new Button();
                 label.CssClass = "BotonChat";
@@ -78,14 +77,17 @@ namespace EN
                 String s =(String) num.Current;
                 aux = true;
                 TableRow row = new TableRow();
-                row.Cells.Add(new TableCell());
                 TableCell t = new TableCell();
+                t.BorderWidth = 0;
+                t.Width = 30;
+                t.Height = 30;
                 ImageButton image = new ImageButton();
                 image.ImageUrl = "~/Imagenes/Usuarios/daloalga2@gmail.com" + "/prev.png";
-                image.Height = 25;
-                image.Width = 25;
+                image.Height = 30;
+                image.Width = 30;
                 t.Controls.Add(image);
                 row.Cells.Add(t);
+                t = new TableCell();
                 Button label = new Button();
                 label.CssClass = "BotonChat";
                 label.Text = s;
