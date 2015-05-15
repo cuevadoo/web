@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <!--En el siguiente buscador ya se mostrará mucha mas información del usuario, incluyendo una foto de perfil. También podrás añadirlo
+        a amigos o enviarle un mensaje privado. En este buscador además añadimos la opción de elegir que quieres buscar, ya sea por nombre, 
+        residencia o gustos.-->
     <center>
         <div>
             <asp:Table ID="Table3" runat="server">
