@@ -58,13 +58,15 @@ namespace CAD
                  }
 
                  date.traducirSql((DateTime)data[0][3]);
-                 mPrivado = new EN.MensajePrivado((String)data[0][0], (String)data[0][1], s,
-                     date);
+
+                 mPrivado = new EN.MensajePrivado((String)data[0][0], (String)data[0][1], s,date);
+
              }catch(System.Exception ex){
                  throw new Exception("Error al leer usuario");
              }
              return mPrivado;*/
             return null;
+
         }
     }
 }
