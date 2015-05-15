@@ -43,9 +43,14 @@ namespace CAD
         //metodo para leer y devolver un gusto de la tabla
         public EN.GustosOrdenadores read(String email)
         {
+            EN.GustosOrdenadores ordenadores;
+
+            try{
+
             string aux = null, aux1 = null, aux2 = null;
 
             DataRowCollection data = conexion.ejecutarR("Select * from GustosOrdenadores where Usuario='" + email + "'").Rows;
+
             if (!System.DBNull.Value.Equals(data[0][0]))
             {
                 aux = (String)data[0][0];
@@ -58,8 +63,14 @@ namespace CAD
             {
                 aux2 = (String)data[0][2];
             }
-            //POR HACER 
-            return null;
+            ordenadores = new EN.GustosOrdenadores(aux, aux1, aux2, (String)data[0][3]);
+
+            }catch(System.Exception e){
+
+                throw new Exception("Error al leer el gusto");
+            }
+            return ordenadores;
+   
         }
         //metodo para actualizar cualquier elemento de la tabla
         public void update(EN.GustosOrdenadores deleted, EN.GustosOrdenadores added)
