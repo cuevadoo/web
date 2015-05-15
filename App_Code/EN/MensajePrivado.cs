@@ -14,14 +14,14 @@ namespace EN
 
         private String texto;
 
-        private Fecha fecha;
+        private Fecha date;
 
         public MensajePrivado(Fecha fecha, Usuario usuario1, Usuario usuario2, String texto)
         {
             this.usuario1 = usuario1;
             this.usuario2 = usuario2;
             this.texto = texto;
-            this.fecha = fecha;
+            this.date = fecha;
         }
 
         public Usuario Usuario1
@@ -36,10 +36,10 @@ namespace EN
             set { usuario2 = value; }
         }
 
-        public Fecha Edad
+        public Fecha Date
         {
-            get { return fecha; }
-            set { fecha = value; }
+            get { return date; }
+            set { date = value; }
         }
 
         public String Texto
