@@ -18,7 +18,7 @@ namespace CAD
         {
             try
             {
-               String s = "Inster into MensajePrivado(Usuario, Texto) values ('"
+               String s = "Inster into MensajePrivado(Usuario1, Usuario2, Texto, Fecha) values ('"
                 + mPrivado.Usuario1 + "','" + mPrivado.Usuario2 + "','" + mPrivado.Texto + "')" + mPrivado.Date.imprimirSql() + "')";
                conexion.ejecutarS(s);
             }
@@ -43,12 +43,12 @@ namespace CAD
         //método para leer un mensaje de la BDs
         public EN.Usuario read(String email)
         {
-          /*  EN.MensajePrivado mPrivado;
+           /* EN.MensajePrivado mPrivado;
 
              try{
 
-                 DataRowCollection data=conexion.ejecutarR("Select * from Usuarios where Usuario1='" + mPrivado.Usuario1 + "'and Usuario2='" + mPrivado.Usuario2 
-                + "'and Fecha='" + mPrivado.Date.imprimirSql() + "'").Rows;
+                 DataRowCollection data=conexion.ejecutarR("Select * from Usuarios where Usuario1='" + mPrivado.Usuario1 + "' and Usuario2='" + mPrivado.Usuario2 
+                + "' and Fecha='" + mPrivado.Date.imprimirSql() + "'").Rows;
 
                  Fecha date = new Fecha();
                  String s=null;
@@ -65,11 +65,6 @@ namespace CAD
              }
              return mPrivado;*/
             return null;
-        }
-        //método para cambiar un mensaje contenido en la BDs
-        public void update(EN.MensajePrivado deleted, EN.MensajePrivado added)
-        {
-
         }
     }
 }

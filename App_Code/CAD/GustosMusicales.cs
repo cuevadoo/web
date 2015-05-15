@@ -43,26 +43,40 @@ namespace CAD
         //metodo para leer y devolver un gusto de la tabla
         public EN.GustosMusicales read(String email)
         {
-            string aux = null, aux1 = null, aux2 = null, aux3=null;
+            EN.GustosMusicales gmusic;
+           
+            try{
+                String aux = null, aux1 = null, aux2 = null, aux3 = null;
+                byte aux4 = 0;
 
-            DataRowCollection data = conexion.ejecutarR("Select * from GustosMusicales where Usuario='" + email + "'").Rows;
-            if (!System.DBNull.Value.Equals(data[0][0]))
-            {
-                aux = (String)data[0][0];
-            }
-            if (!System.DBNull.Value.Equals(data[0][1]))
-            {
-                aux1 = (String)data[0][1];
-            }
-            if (!System.DBNull.Value.Equals(data[0][2]))
-            {
-                aux2 = (String)data[0][2];
-            }
-            if (!System.DBNull.Value.Equals(data[0][3]))
-            {
-                aux3 = (String)data[0][3];
-            }
-            return null;
+                DataRowCollection data = conexion.ejecutarR("Select * from GustosMusicales where Usuario='" + email + "'").Rows;
+                if (!System.DBNull.Value.Equals(data[0][0]))
+                {
+                    aux = (String)data[0][0];
+                }
+                if (!System.DBNull.Value.Equals(data[0][1]))
+                {
+                    aux1 = (String)data[0][1];
+                }
+                if (!System.DBNull.Value.Equals(data[0][2]))
+                {
+                    aux2 = (String)data[0][2];
+                }
+                if (!System.DBNull.Value.Equals(data[0][3]))
+                {
+                    aux3 = (String)data[0][3];
+                }
+                if ((Byte)data[0][4]!=0)
+                {
+                    aux4 = (Byte)data[0][4];
+                }
+                gmusic = new EN.GustosMusicales(aux, aux1, aux2, aux3, aux4, (String)data[0][5]);
+
+                }catch(System.Exception e){
+
+                    throw new Exception("Error al leer el gusto Musical");
+                }
+                return gmusic;
         }
         //metodo para actualizar cualquier elemento de la tabla
         public void update(EN.GustosMusicales deleted, EN.GustosMusicales added)

@@ -16,7 +16,7 @@ namespace EN
 
         private Fecha date;
 
-        public MensajePrivado(Fecha fecha, Usuario usuario1, Usuario usuario2, String texto)
+        public MensajePrivado(Usuario usuario1, Usuario usuario2, String texto, Fecha fecha)
         {
             this.usuario1 = usuario1;
             this.usuario2 = usuario2;
