@@ -18,7 +18,7 @@ namespace CAD
         {
             try
             {
-                String s = "Inster into GustosOrdenadores(So,Marca,Lprog,Email) values ('"
+                String s = "Inster into GustosOrdenadores(So,Marca,Lprog,Usuario) values ('"
                     + ordenadores.Sistemaoperativo + "','" + ordenadores.Marcashw + "','" + ordenadores.Lprogramacion +
                     "','" + ordenadores.Email + "')";
                 conexion.ejecutarS(s);
@@ -33,7 +33,7 @@ namespace CAD
         {
             try
             {
-                conexion.ejecutarS("Delete from GustosOrdenadores where Email='" + ordenadores.Email + "'");
+                conexion.ejecutarS("Delete from GustosOrdenadores where Usuario='" + ordenadores.Email + "'");
             }
             catch (System.Exception e)
             {
@@ -43,9 +43,14 @@ namespace CAD
         //metodo para leer y devolver un gusto de la tabla
         public EN.GustosOrdenadores read(String email)
         {
+            EN.GustosOrdenadores ordenadores;
+
+            try{
+
             string aux = null, aux1 = null, aux2 = null;
 
-            DataRowCollection data = conexion.ejecutarR("Select * from GustosOrdenadores where Email='" + email + "'").Rows;
+            DataRowCollection data = conexion.ejecutarR("Select * from GustosOrdenadores where Usuario='" + email + "'").Rows;
+
             if (!System.DBNull.Value.Equals(data[0][0]))
             {
                 aux = (String)data[0][0];
@@ -58,8 +63,14 @@ namespace CAD
             {
                 aux2 = (String)data[0][2];
             }
-            //POR HACER 
-            return null;
+            ordenadores = new EN.GustosOrdenadores(aux, aux1, aux2, (String)data[0][3]);
+
+            }catch(System.Exception e){
+
+                throw new Exception("Error al leer el gusto");
+            }
+            return ordenadores;
+   
         }
         //metodo para actualizar cualquier elemento de la tabla
         public void update(EN.GustosOrdenadores deleted, EN.GustosOrdenadores added)
@@ -67,8 +78,8 @@ namespace CAD
             try
             {
                 String s = "Update GustosOrdenadores set So='" + added.Sistemaoperativo +
-                    "', Marca='" + added.Marcashw + "', LProg='" + added.Lprogramacion + "', Email='" + added.Email 
-                    + "' WHERE Email='" + deleted.Email + "'";
+                    "', Marca='" + added.Marcashw + "', LProg='" + added.Lprogramacion + "', Usuario='" + added.Email 
+                    + "' WHERE Usuario='" + deleted.Email + "'";
                 conexion.ejecutarS(s);
             }
             catch (Exception e)

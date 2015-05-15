@@ -19,7 +19,7 @@ namespace CAD
         {
             try
             {
-                String s = "Inster into GustosMusicales(Estilo,Grupo,Artista,Concierto,Decada,Email) values ('" 
+                String s = "Inster into GustosMusicales(Estilo,Grupo,Artista,Concierto,Decada,Usuario) values ('" 
                     + gmusic.Estilo + "','" + gmusic.Grupo + "','" + gmusic.Artista + "','" + gmusic.Concierto + "'," + gmusic.Decada + ",'" + gmusic.Email + "')";
                 conexion.ejecutarS(s);
             }
@@ -33,7 +33,7 @@ namespace CAD
         {
             try
             {
-                conexion.ejecutarS("Delete from GustosMusicales where Email='" + gmusic.Email + "'");
+                conexion.ejecutarS("Delete from GustosMusicales where Usuario='" + gmusic.Email + "'");
             }
             catch (System.Exception e)
             {
@@ -45,7 +45,7 @@ namespace CAD
         {
             string aux = null, aux1 = null, aux2 = null, aux3=null;
 
-            DataRowCollection data = conexion.ejecutarR("Select * from GustosMusicales where Email='" + email + "'").Rows;
+            DataRowCollection data = conexion.ejecutarR("Select * from GustosMusicales where Usuario='" + email + "'").Rows;
             if (!System.DBNull.Value.Equals(data[0][0]))
             {
                 aux = (String)data[0][0];
@@ -70,7 +70,7 @@ namespace CAD
             try
             {
                 String s = "Update Gustosgmusic set Estilo='" + added.Estilo +"',set Grupo='"+added.Grupo+"',set Artista='"+added.Artista+
-                    "', set Concierto='"+added.Concierto+"', set Decada="+added.Decada+", Email='" + added.Email
+                    "', set Concierto='"+added.Concierto+"', set Decada="+added.Decada+", Usuario='" + added.Email
                     + "' WHERE Email='" + deleted.Email + "'";
                 conexion.ejecutarS(s);
             }

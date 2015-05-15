@@ -43,6 +43,10 @@ namespace CAD
         //metodo para leer y devolver un gusto de la tabla
         public EN.GustosVideojuegos read(String email)
         {
+            EN.GustosVideojuegos videojuegos;
+
+            try{
+
             string aux = null, aux1 = null, aux2 = null, aux3 = null;
 
             DataRowCollection data = conexion.ejecutarR("Select * from GustosVideojueos where Email='" + email + "'").Rows;
@@ -62,8 +66,15 @@ namespace CAD
             {
                 aux3 = (String)data[0][4];
             }
-            //POR HACER
-            return null;
+            videojuegos = new EN.GustosVideojuegos((String)data[0][0], aux, aux1, aux2, aux3);
+
+            }
+            catch (System.Exception e)
+            {
+
+                throw new Exception("Error al leer el gusto");
+            }
+            return videojuegos;
         }
         //metodo para actualizar cualquier elemento de la tabla
         public void update(EN.GustosVideojuegos deleted, EN.GustosVideojuegos added)
