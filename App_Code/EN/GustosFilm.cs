@@ -20,7 +20,7 @@ namespace EN
         private String Sdirector;
         private String serie;
 
-        public GustosFilm(String email,String genero,String director,byte decada,String actor,String pelicula,String Sgenero,String Sdirector,String serie):base(email){
+        public GustosFilm(String genero,String director,byte decada,String actor,String pelicula,String Sgenero,String Sdirector,String serie,String email):base(email){
             this.genero = genero;
             this.director = director;
             this.decada = decada;

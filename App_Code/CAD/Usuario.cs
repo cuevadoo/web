@@ -31,7 +31,7 @@ namespace CAD
             }
         }
         public EN.Usuario read(String email){
-            EN.Usuario user;
+            EN.Usuario user=null;
             try{
                 DataRowCollection data=conexion.ejecutarR("Select * from Usuarios where Email='"+email+"'").Rows;
                 Fecha f = new Fecha();

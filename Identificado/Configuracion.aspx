@@ -3,6 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <!--Aqui nos encargaremos de configurar y poder reemplazar la información de nuestro usuario. Ya sea el nombre de usuario, apellidos, 
+        email y la contraseña -->
     <center>
         <div>
             <asp:Table ID="Table1" runat="server">
