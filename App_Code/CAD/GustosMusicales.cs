@@ -66,7 +66,7 @@ namespace CAD
                 {
                     aux3 = (String)data[0][3];
                 }
-                if ((Byte)[0][4]!=0)
+                if ((Byte)data[0][4]!=0)
                 {
                     aux4 = (Byte)data[0][4];
                 }
