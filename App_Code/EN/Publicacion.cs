@@ -9,12 +9,12 @@ using System.Web;
 /// </summary>
 namespace EN
 {
-    public class Publicacion
+    public class Publicacion:Usuario
     {
         private String mensaje;
-        
-        
-        public Publicacion(String mensaje)
+
+
+        public Publicacion(String mensaje,String email): base(email)
         {
             this.mensaje = mensaje;
             
