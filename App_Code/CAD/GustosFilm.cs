@@ -42,7 +42,7 @@ namespace CAD
             EN.GustosFilm pelis;
             try
             {
-                string aux = null, aux1 = null,aux3 = null, aux4 = null, aux5 = null, aux6 = null, aux7 = null, aux8 = null;
+                string aux = null, aux1 = null,aux3 = null, aux4 = null, aux5 = null, aux6 = null, aux7 = null;
                 byte aux2 = 0;
                 DataRowCollection data = conexion.ejecutarR("Select * from GustosFilm where Email='" + email + "'").Rows;
                 if (!System.DBNull.Value.Equals(data[0][0]))
@@ -77,7 +77,7 @@ namespace CAD
                 {
                     aux7 = (String)data[0][7];
                 }
-                pelis = new EN.GustosFilm(aux, aux1, aux2, aux3, aux4, aux5, aux6, aux7,(String)data[0][9]);
+                pelis = new EN.GustosFilm(aux, aux1, aux2, aux3, aux4, aux5, aux6, aux7,(String)data[0][8]);
             }
             catch(System.Exception ex) {
                 throw new Exception("Error al leer gusto");
