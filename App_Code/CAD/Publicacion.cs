@@ -45,6 +45,7 @@ namespace CAD
             try
             {
                 DataRowCollection data = conexion.ejecutarR("Select * from Publicacion where Usuario='" + email + "'").Rows;
+                Publi = new EN.Publicacion((String)data[0][0], (DateTime)data[0][1], (String)data[0][2]);
             }
             catch (System.Exception e)
             {

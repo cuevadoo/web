@@ -12,11 +12,12 @@ namespace EN
     public class Publicacion:Usuario
     {
         private String mensaje;
-
-
-        public Publicacion(String mensaje,String email): base(email)
+        private DateTime dateTime;
+ 
+        public Publicacion(String mensaje,DateTime date,String email): base(email)
         {
             this.mensaje = mensaje;
+            this.date = date;
             
         }
 
@@ -26,5 +27,10 @@ namespace EN
             set { mensaje = value; }
         }
 
-    }
+
+        public DateTime date {
+            get { return date; }
+            set { date = value; }
+        }
+        }
 }
