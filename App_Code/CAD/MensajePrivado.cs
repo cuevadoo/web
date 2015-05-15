@@ -15,9 +15,9 @@ namespace CAD
         {
             try
             {
-                String s = "Inster into MensajePrivado(Usuario, Texto) values ('"
-                    + mPrivado.Usuario + "','" + mPrivado.Texto + "')";
-                conexion.ejecutarS(s);
+           //     String s = "Inster into MensajePrivado(Usuario, Texto) values ('"
+             //       + mPrivado.Usuario + "','" + mPrivado.Texto + "')";
+              //  conexion.ejecutarS(s);
             }
             catch (System.Exception e)
             {
@@ -28,7 +28,7 @@ namespace CAD
         {
             try
             {
-                conexion.ejecutarS("Delete from MensajePrivado where Email='" + mPrivado.Email + "'");
+           //     conexion.ejecutarS("Delete from MensajePrivado where Email='" + mPrivado.Email + "'");
             }
             catch (System.Exception e)
             {
