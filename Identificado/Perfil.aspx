@@ -272,7 +272,7 @@
                     <asp:TableCell runat="server">
                         <asp:Label runat="server" Text="Década cinematográfica favorita "></asp:Label>
                         <asp:DropDownList ID="DropDownList1" runat="server" class="box">
-                            <asp:ListItem Value="NULL">--</asp:ListItem>
+                            <asp:ListItem Value="0">--</asp:ListItem>
                             <asp:ListItem>50</asp:ListItem>
                             <asp:ListItem>60</asp:ListItem>
                             <asp:ListItem>70</asp:ListItem>
@@ -331,7 +331,7 @@
                     <asp:TableCell runat="server">
                         <asp:Label runat="server" Text="Década musical favorita "></asp:Label>
                         <asp:DropDownList ID="DropDownList2" runat="server" class="box">
-                            <asp:ListItem Value="NULL">--</asp:ListItem>
+                            <asp:ListItem Value="0">--</asp:ListItem>
                             <asp:ListItem>50</asp:ListItem>
                             <asp:ListItem>60</asp:ListItem>
                             <asp:ListItem>70</asp:ListItem>
