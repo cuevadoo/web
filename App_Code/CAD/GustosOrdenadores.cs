@@ -18,7 +18,7 @@ namespace CAD
         {
             try
             {
-                String s = "Inster into GustosOrdenadores(So,Marca,Lprog,Email) values ('"
+                String s = "Inster into GustosOrdenadores(So,Marca,Lprog,Usuario) values ('"
                     + ordenadores.Sistemaoperativo + "','" + ordenadores.Marcashw + "','" + ordenadores.Lprogramacion +
                     "','" + ordenadores.Email + "')";
                 conexion.ejecutarS(s);
@@ -33,7 +33,7 @@ namespace CAD
         {
             try
             {
-                conexion.ejecutarS("Delete from GustosOrdenadores where Email='" + ordenadores.Email + "'");
+                conexion.ejecutarS("Delete from GustosOrdenadores where Usuario='" + ordenadores.Email + "'");
             }
             catch (System.Exception e)
             {
@@ -45,7 +45,7 @@ namespace CAD
         {
             string aux = null, aux1 = null, aux2 = null;
 
-            DataRowCollection data = conexion.ejecutarR("Select * from GustosOrdenadores where Email='" + email + "'").Rows;
+            DataRowCollection data = conexion.ejecutarR("Select * from GustosOrdenadores where Usuario='" + email + "'").Rows;
             if (!System.DBNull.Value.Equals(data[0][0]))
             {
                 aux = (String)data[0][0];
@@ -67,8 +67,8 @@ namespace CAD
             try
             {
                 String s = "Update GustosOrdenadores set So='" + added.Sistemaoperativo +
-                    "', Marca='" + added.Marcashw + "', LProg='" + added.Lprogramacion + "', Email='" + added.Email 
-                    + "' WHERE Email='" + deleted.Email + "'";
+                    "', Marca='" + added.Marcashw + "', LProg='" + added.Lprogramacion + "', Usuario='" + added.Email 
+                    + "' WHERE Usuario='" + deleted.Email + "'";
                 conexion.ejecutarS(s);
             }
             catch (Exception e)
