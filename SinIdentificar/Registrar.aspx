@@ -2,7 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Registrar</title>
-    <script type="text/javascript">
+            <!--Conjunto de funciones para mostrar un div central y oscurecer el resto de la pagina. En nuestro caso es para que aparezcan
+    los terminos y condiciones-->  
+    <script type="text/javascript">     
         function aparecer() {
             document.body.style.overflow = 'hidden';
             document.getElementById('light').style.display = "block";
@@ -23,11 +25,14 @@
         }
     </script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">  
     <center>
         <div>
             <h3 class="titulo">BIENVENIDOS A CUEVADOO</h3>
         </div>
+        <!--En el siguiente div vamos a englobar en una tabla todos los campos relacionados con el registro. Ya sea el nombre, apellidos,
+            contraseña, etc. Destacariamos que todos los campos tienen que estar rellenados, y para que el boton de registrar se active
+            tendremos que marcar el boton de Aceptar los terminos. -->
         <div>
             <asp:Table ID="Table1" runat="server">
                 <asp:TableRow runat="server">
@@ -76,6 +81,7 @@
                 </asp:TableRow>
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server">
+                        <!-- Comprobamos que el email sea valido, sino mostrará el mensaje de error-->
                         <center>
                             <asp:RegularExpressionValidator CssClass="warning" ID="RegularExpressionValidator1" runat="server" ErrorMessage="El email es incorrecto" ControlToValidate="TextBox5" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                         </center>
@@ -83,6 +89,9 @@
                 </asp:TableRow>
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server">
+                        <!--Para la decha de nacimiento tenemos 3 campos por rellenar, el dia, el mes y el año. Para estos tres campos
+                            hemos comprobado tambien que todos los datos sean correctos. En caso de error, mostrará el mensaje de
+                            Fecha no valida -->
                         <center>Fecha de Nacimiento:</center>
                         <asp:Table ID="Table2" runat="server">
                             <asp:TableRow ID="TableRow1" runat="server">
@@ -126,6 +135,8 @@
                 </asp:TableRow>
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server">
+                        <!--Aqui comparamos que las dos contraseñas introducidas (la del campo de Contraseña y Confirmar contraseña) sean 
+                            iguales. En caso contrario se mostrará el mensaje de error.-->
                         <center>
                             <asp:CompareValidator CssClass="warning" ControlToValidate="TextBox4" ControlToCompare="TextBox7" ID="CompareValidator1" runat="server" ErrorMessage="Las contraseñas no son iguales"></asp:CompareValidator>
                         </center>
@@ -133,6 +144,8 @@
                 </asp:TableRow>
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server">
+                        <!--En este caso se compara que el email no se repita. Para que no te deje la pagina crearte dos o mas cuentas
+                            con un solo email -->
                         <center><asp:CustomValidator ControlToValidate="TextBox5" CssClass="warning" ID="CustomValidator1" runat="server" ErrorMessage="Ya existe una cuenta con este email" OnServerValidate="CustomValidator1_ServerValidate"></asp:CustomValidator>
                         </center>
                     </asp:TableCell>
@@ -140,8 +153,8 @@
             </asp:Table>
             <asp:CheckBox ID="CheckBox1" runat="server" Text="Acepto los " onclick="camBoton()"></asp:CheckBox>
             
-            <!--vetana-->
-
+            <!--En esta parte es donde se mostrarán los términos y condiciones de nuestra web. Utilizando las funciones que anteriormente
+                hemos visto en la parte superior-->
             <div id="fade" class="overlay" onclick = "desaparecer()"></div>
                 <div id="light" class="modal">
                     <div class="justify" id="lpeque">
@@ -162,9 +175,7 @@
                         <p class="center"><a href = "javascript:void(0)" onclick = "desaparecer()"><img src="../Imagenes/cerrar.jpg" width="30px"/></a></p>
                     </div>
                 </div>
-            <a href = "javascript:void(0)" onclick = "aparecer()">términos y condiciones.</a>   
-            
-            <!--ventana-->
+            <a href = "javascript:void(0)" onclick = "aparecer()">términos y condiciones.</a>               
 
             <br/><br/>
             <asp:Button ID="Button1" runat="server" Text="Registrar" cssclass="boton" OnClick="Button1_Click" Enabled="False" CausesValidation="False"></asp:Button><br />

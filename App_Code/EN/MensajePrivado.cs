@@ -10,19 +10,36 @@ namespace EN
 {
     public class MensajePrivado
     {
-        private Usuario usuario;
+        private Usuario usuario1, usuario2;
 
         private String texto;
 
-        public MensajePrivado(Usuario usuario, String texto)
+        private Fecha fecha;
+
+        public MensajePrivado(Fecha fecha, Usuario usuario1, Usuario usuario2, String texto)
         {
-            this.usuario = usuario;
+            this.usuario1 = usuario1;
+            this.usuario2 = usuario2;
             this.texto = texto;
+            this.fecha = fecha;
         }
-        public Usuario Usuario
+
+        public Usuario Usuario1
         {
-            get { return usuario; }
-            set { usuario = value; }
+            get { return usuario1; }
+            set { usuario1 = value; }
+        }
+
+        public Usuario Usuario2
+        {
+            get { return usuario2; }
+            set { usuario2 = value; }
+        }
+
+        public Fecha Edad
+        {
+            get { return fecha; }
+            set { fecha = value; }
         }
 
         public String Texto
