@@ -3,6 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <!--Aqui aparecerá el registro de actividad de tus amigos, donde también podrás realizar tus propias publicaciones. También encontramos
+        otro buscador en la parte superior-->
     <center>
         <div class="todo">
             <div runat="server" class="BuscadorFlotante">
