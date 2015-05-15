@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
 
 /// <summary>
 /// Clase para manejar las relaciones entre usuarios
@@ -12,21 +13,52 @@ namespace CAD
     {
         private static Conexion conexion = new Conexion();
 
-        public void create(EN.Relaciones relaciones)
-        {
- 
+        public EN.Relaciones read(String email){
+            EN.Relaciones relacion=null;
+            try{
+                DataRowCollection data=conexion.ejecutarR("Select * from Amigos where Usuario1 ='"+email+"' OR Usuario2 = '"+email+"'").Rows;
+                EN.Relaciones rel = new EN.Relaciones(email);
+                foreach(DataRow r in data){
+                    if(r[0]==email){
+                        rel.add((String)r[1],(bool)r[2]);
+                    }else{
+                        rel.add((String)r[0],(bool)r[2]);
+                    }
+                }
+                relacion = rel;
+            }catch(System.Exception ex){
+                throw new Exception("Error al leer las relaciones");
+            }
+            return relacion;
         }
-        public void delete(EN.Relaciones relaciones)
-        { 
-        
-        }
-        public EN.Relaciones read(String email)
-        {
-            return null;
-        }
-        public void update(EN.Relaciones deleted, EN.Relaciones added)
-        {
-
+        /// <summary>
+        /// Este funcinoa como el create, el delete y el update
+        /// </summary>
+        public void update(EN.Relaciones added,EN.Relaciones deleted){
+            try {
+                if(added.Usuario1!=deleted.Usuario1){
+                    //Cambiar el email de todas las entradas
+                    String s = "Update Amigos set Usuario1='"+added.Usuario1+"' where Usuario1='"+deleted.Usuario1+"';"+
+                        "Update Amigos set Usuario2='"+added.Usuario1+"' where Usuario2='"+deleted.Usuario1+"';";
+                    conexion.ejecutarS(s);
+                }
+                EN.Relaciones aux = read(added.Usuario1);
+                EN.Relaciones[] aux2 = added.diferencias(aux);
+                foreach(String user in aux2[0].Usuarios){
+                    //Borrar una relacion
+                    conexion.ejecutarS("Delete from Amigos where Usuario1='" + user + "' OR Usuario2='"+user+"'");
+                }
+                foreach(String user in aux2[1].Usuarios){
+                    //Añadir una relacion
+                    conexion.ejecutarS("Insert into Amigos values('"+aux2[1].Usuario1+"','"+aux+"','False')");
+                }
+                foreach (bool aceptada in aux2[2].Aceptada){
+                    //Modificar si ha sido aceptada
+                    conexion.ejecutarS("Update Amigos set Aceptada='" + aceptada + "' where Usuario1='" + aux2[2].Usuario1 + "'");
+                }
+            }catch(System.Exception ex){
+                throw new Exception("Error al cambiar alguna relacion");
+            }
         }
     }
 }

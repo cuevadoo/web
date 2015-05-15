@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Web;
 
@@ -11,25 +12,72 @@ namespace EN
 {
     public class Relaciones
     {
-        private Usuario usuario1;
-        private String[] usuarios;
-        private bool aceptada;
+        private String usuario1;
+        private ArrayList usuarios;
+        private ArrayList aceptada;
+        private ArrayList tuya;
 
-        public Usuario Usuario1{
+        public String Usuario1{
             get { return usuario1; }
             set { usuario1 = value; }
         }
 
-        public String[] Usuario2{
+        public ArrayList Usuarios{
             get { return usuarios; }
             set { usuarios = value; }
         }
-
-        public Relaciones(Usuario usuario1, String[] usuarios,bool aceptada){
-            this.usuario1 = usuario1;
-            this.usuarios = usuarios;
-            this.aceptada = aceptada;
+        
+        public ArrayList Aceptada{
+            get { return aceptada; }
+            set { aceptada = value; }
         }
 
+        public Relaciones(String usuario1){
+            this.usuario1 = usuario1;
+        }
+
+        public void add(String email,bool aceptada){
+            usuarios.Add(email);
+            this.aceptada.Add(aceptada);
+        }
+
+        public void remove(String email) {
+            int aux = usuarios.IndexOf(email);
+            usuarios.RemoveAt(aux);
+            aceptada.RemoveAt(aux);
+        }
+
+        public bool isUsuario(String email){
+            return usuarios.Contains(email);
+        }
+
+        public bool isAceptada(String email){
+            int aux = usuarios.IndexOf(email);
+            return (bool) aceptada[aux];
+        }
+        /// <summary>
+        /// El primer elemento del vector son los usuarios quitados y el segundo los agregados y el tercero los modificados 
+        /// al objeto que llama al metodo
+        /// </summary>
+        public EN.Relaciones[] diferencias(Relaciones rel) {
+            Relaciones[] retu = new Relaciones[3];
+            retu[0] = new Relaciones(usuario1);
+            retu[1] = new Relaciones(usuario1);
+            foreach(String aux in usuarios){
+                if(!rel.isUsuario(aux)){
+                    retu[0].add(aux,true);
+                }
+            }
+            foreach(String aux in rel.usuarios){
+                if(!isUsuario(aux)){
+                    retu[1].add(aux,false);
+                }else{
+                    if(rel.isAceptada(aux)!=isAceptada(aux)){
+                        retu[2].add(aux,rel.isAceptada(aux));
+                    }
+                }
+            }
+            return retu;
+        }
     }
 }

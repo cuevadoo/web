@@ -140,6 +140,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <!--Esto nos mostrará el perfil basico del usuario que encontraremos si realizamos la busqueda sin estar registrados -->
     <center>
     <div>
         <h3 class="titulo"><asp:Label ID="LabelNombreUsuario" runat="server" Text="Nombre de usuario"></asp:Label></h3>
