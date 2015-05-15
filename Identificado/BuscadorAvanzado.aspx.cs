@@ -7,46 +7,36 @@ using System.Web.UI.WebControls;
 
 public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
+    protected void Page_Load(object sender, EventArgs e){
         actualizarTabla();
     }
-    protected void TextBox1_TextChanged(object sender, EventArgs e)
-    {
-        if (TextBox1.Text.Length >= 3)
-        {
+    protected void TextBox1_TextChanged(object sender, EventArgs e){
+        if (TextBox1.Text.Length >= 3){
             CAD.Usuario user = new CAD.Usuario();
             Session["BuscadorSin"] = new EN.Buscador(user.buscar(TextBox1.Text));
             actualizarTabla();
         }
     }
-    protected void Button_Paginas(object sender, EventArgs e)
-    {
+    protected void Button_Paginas(object sender, EventArgs e){
         Button but = (Button)sender;
-        if (Session["BuscadorSin"] == null)
-        {
+        if (Session["BuscadorSin"] == null){
             actualizarTabla();
-        }
-        else
-        {
+        }else{
             EN.Buscador busca = (EN.Buscador)Session["BuscadorSin"];
-            switch (but.ID)
-            {
-                case "<": busca--; busca.actualizaSin(Table1.Rows); break;
-                case ">": busca++; busca.actualizaSin(Table1.Rows); break;
+            switch (but.ID){
+                case "<": busca--; busca.actualizaCon(Table1.Rows); break;
+                case ">": busca++; busca.actualizaCon(Table1.Rows); break;
                 default:
                     busca.Pagina = Int32.Parse(but.ID) - 1;
-                    busca.actualizaSin(Table1.Rows);
+                    busca.actualizaCon(Table1.Rows);
                     break;
             }
             actualizarTabla();
         }
     }
-    private void actualizarTabla()
-    {
+    private void actualizarTabla(){
         Table1.Rows.Clear();
-        if (Session["BuscadorSin"] == null)
-        {
+        if (Session["BuscadorSin"] == null){
             TableRow row1 = new TableRow();
             TableCell t1 = new TableCell();
             Label label1 = new Label();
@@ -54,14 +44,11 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
             t1.Controls.Add(label1);
             row1.Cells.Add(t1);
             Table2.Rows.Add(row1);
-        }
-        else
-        {
+        }else{
             EN.Buscador b = (EN.Buscador)Session["BuscadorSin"];
-            b.actualizaSin(Table2.Rows);
+            b.actualizaCon(Table2.Rows);
             int cant = b.Max;
-            if (cant != 1)
-            {
+            if (cant != 1){
                 Table1.Rows.Add(new TableRow());
                 Button aux1 = new Button();
                 aux1.ID = "<";
@@ -71,8 +58,7 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
                 TableCell aux2 = new TableCell();
                 aux2.Controls.Add(aux1);
                 Table1.Rows[0].Cells.Add(aux2);
-                for (int i = 1; i <= cant; i++)
-                {
+                for (int i = 1; i <= cant; i++){
                     aux1 = new Button();
                     aux1.ID = "" + i;
                     aux1.Text = "" + i;
@@ -93,8 +79,7 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
             }
         }
     }
-    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-    {
+    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e){
 
     }
 }

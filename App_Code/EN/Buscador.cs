@@ -45,9 +45,51 @@ namespace EN
                 String s =(String) num.Current;
                 aux = true;
                 TableRow row = new TableRow();
-                row.Cells.Add(new TableCell());
                 TableCell t = new TableCell();
-                Label label = new Label();
+                Button label = new Button();
+                label.CssClass = "BotonChat";
+                label.Text = s;
+                t.Controls.Add(label);
+                row.Cells.Add(t);
+                rows.Add(row);
+            }
+            if (aux){
+                rows.Remove(row1);
+            }
+            return rows;
+        }
+        public TableRowCollection actualizaCon(TableRowCollection rows) {
+            rows.Clear();
+            TableRow row1 = new TableRow();
+            TableCell t1 = new TableCell();
+            Label label1 = new Label();
+            label1.Text = "No se han encontrado Usuarios con ese nombre";
+            t1.Controls.Add(label1);
+            row1.Cells.Add(t1);
+            rows.Add(row1);
+            bool aux = false;
+            int cont = lista.Count-pagina*10;
+            if(cont>10){
+                cont = 10;
+            }
+            IEnumerator num = lista.GetEnumerator(pagina*10,cont);
+            while (num.MoveNext()){
+                String s =(String) num.Current;
+                aux = true;
+                TableRow row = new TableRow();
+                TableCell t = new TableCell();
+                t.BorderWidth = 0;
+                t.Width = 30;
+                t.Height = 30;
+                ImageButton image = new ImageButton();
+                image.ImageUrl = "~/Imagenes/Usuarios/daloalga2@gmail.com" + "/prev.png";
+                image.Height = 30;
+                image.Width = 30;
+                t.Controls.Add(image);
+                row.Cells.Add(t);
+                t = new TableCell();
+                Button label = new Button();
+                label.CssClass = "BotonChat";
                 label.Text = s;
                 t.Controls.Add(label);
                 row.Cells.Add(t);
