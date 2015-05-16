@@ -14,7 +14,7 @@ public partial class SinIdentificar_Buscador : System.Web.UI.Page
     protected void TextBox1_TextChanged(object sender, EventArgs e){
         if(TextBox1.Text.Length>=3){
             CAD.Usuario user=new CAD.Usuario();
-            Session["BuscadorSin"] = new EN.Buscador(user.buscar(TextBox1.Text));
+            Session["BuscadorSin"] = new EN.Buscador(new CAD.Buscador().buscarSin, TextBox1.Text);
             actualizarTabla();
         }
     }

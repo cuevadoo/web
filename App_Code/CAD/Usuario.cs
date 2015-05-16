@@ -57,29 +57,5 @@ namespace CAD
                 throw new Exception("Error al modificar usuario");
             }
         }
-        public object[] buscar(String nombre) {
-            object[] obj=new object[2];
-            String image = "";
-            try{
-                String s = "Select Nombre,Apellido1,Apellido2 From Usuarios Where Nombre Like '"+
-                    nombre+"%' OR Apellido1 Like '"+nombre+"%' OR Apellido2 Like '"+nombre+"%'";
-                DataRowCollection data=conexion.ejecutarR(s).Rows;
-                ArrayList l = new ArrayList();
-                try {
-                    int i=0;
-                    while(true){
-                        String aux = data[i][0]+" "+data[i][1]+" "+data[i][2];
-                        l.Add(aux);
-                        i++;
-                    }
-                }catch(System.Exception ex){
-                    obj[0] = image;
-                    obj[1] = l;
-                }
-            }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
-            }
-            return obj;
-        }
     }
 }

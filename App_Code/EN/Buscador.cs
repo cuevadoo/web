@@ -11,15 +11,17 @@ using System.Web.UI.WebControls;
 namespace EN
 {
     public class Buscador{
+        public delegate object[] del(String s);
         private int pagina;
         private int max;
         private ArrayList lista;
-        private String imageRute;
+        private ArrayList imageRute;
 
-        public Buscador(object[] obj){
+        public Buscador(del d,String s){
+            object[] obj = d(s);
             pagina=0;
             if (obj.Length == 2){
-                imageRute = (String)obj[0];
+                imageRute = (ArrayList)obj[0];
                 lista = (ArrayList)obj[1];
                 max = ((lista.Count-1)/10);
             }else{
