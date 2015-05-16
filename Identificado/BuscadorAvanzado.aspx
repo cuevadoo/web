@@ -60,7 +60,8 @@
                             <asp:ListItem>Género</asp:ListItem>
                             <asp:ListItem>Director</asp:ListItem>
                             <asp:ListItem>Década</asp:ListItem>
-                            <asp:ListItem></asp:ListItem>
+                            <asp:ListItem>Pelicula</asp:ListItem>
+                            <asp:ListItem>Género de Serie</asp:ListItem>
                             <asp:ListItem>Actor</asp:ListItem>
                             <asp:ListItem>Productor de Series</asp:ListItem>
                             <asp:ListItem>Serie</asp:ListItem>

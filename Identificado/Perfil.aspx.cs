@@ -144,4 +144,8 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             botones.Style["display"] = "none";
         }
     }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+
+    }
 }
