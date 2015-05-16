@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using EN;
 
 public partial class Identificado_Perfil : System.Web.UI.Page
 {
@@ -146,6 +147,45 @@ public partial class Identificado_Perfil : System.Web.UI.Page
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
+        try
+        {
+            Usuario user = (Usuario)Session["User"];
+            Residencia r = new Residencia(null,null,null,user.Email);
+            GustosOrdenadores gi = new GustosOrdenadores(null,null,null,user.Email);
+            GustosVideojuegos gv = new GustosVideojuegos(null,null,null,null,user.Email);
+            GustosFilm gf = new GustosFilm(null,null,(byte) 0,null,null,null,null,null,user.Email);
+            GustosMusicales gm = new GustosMusicales(null,null,null,null,(byte)0,user.Email);
+            //new CAD.GustosFilm().create(lo que sea);
+            if (TextBoxPais.Text!=null){r.Pais = TextBoxPais.Text;}
+            if (TextBoxActor.Text != null) { gf.Actor=TextBoxActor.Text;}
+            if(TextBoxArtista.Text!=null){gm.Artista=TextBoxArtista.Text;}
+            if(TextBoxCAutonoma.Text!=null){r.Cautonoma=TextBoxCAutonoma.Text;}
+            if(TextBoxConciertos.Text!=null){gm.Concierto=TextBoxConciertos.Text;}
+            if(TextBoxDesarrolladora.Text!=null){gv.DesarrolladorFav=TextBoxDesarrolladora.Text;}
+            if(TextBoxDirector.Text!=null){gf.Director=TextBoxDirector.Text;}
+            if(TextBoxEstilo.Text!=null){gm.Estilo=TextBoxEstilo.Text;}
+            if(TextBoxGeneroC.Text!=null){gf.Genero=TextBoxGeneroC.Text;}
+            if(TextBoxGeneroS.Text!=null){gf.S_genero1=TextBoxGeneroS.Text;}
+            if(TextBoxGeneroV.Text!=null){gv.Genero=TextBoxGeneroV.Text;}
+            if (TextBoxGrupo.Text != null) { gm.Grupo = TextBoxGrupo.Text; }
+            if (TextBoxHardware.Text != null) { gi.Marcashw = TextBoxHardware.Text; }
+            if (TextBoxLenguajeP.Text != null) { gi.Lprogramacion = TextBoxLenguajeP.Text; }
+            if (TextBoxLocalidad.Text != null) { r.Localidad = TextBoxLocalidad.Text; }
+            if (TextBoxPeli.Text != null) { gf.Pelicula = TextBoxPeli.Text; }
+            if (TextBoxProductor.Text != null) { gf.S_director1 = TextBoxProductor.Text; }
+            if (TextBoxSerie.Text != null) { gf.Serie = TextBoxSerie.Text; }
+            if (TextBoxVideojuego.Text != null) { gv.JuegoFav = TextBoxVideojuego.Text; }
 
+            new CAD.Residencia().create(r);
+            new CAD.GustosOrdenadores().create(gi);
+            new CAD.GustosVideojuegos().create(gv);
+            new CAD.GustosFilm().create(gf);
+            new CAD.GustosMusicales().create(gm);
+        }
+        catch (System.Exception ex)
+        {
+            
+        }
+        
     }
 }
