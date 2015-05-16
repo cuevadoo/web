@@ -9,14 +9,15 @@ using System.Web;
 /// </summary>
 namespace EN
 {
-    public class Publicacion
+    public class Publicacion:Usuario
     {
         private String mensaje;
-        
-        
-        public Publicacion(String mensaje)
+        private DateTime dateTime;
+ 
+        public Publicacion(String mensaje,DateTime date,String email): base(email)
         {
             this.mensaje = mensaje;
+            this.date = date;
             
         }
 
@@ -26,5 +27,10 @@ namespace EN
             set { mensaje = value; }
         }
 
-    }
+
+        public DateTime date {
+            get { return date; }
+            set { date = value; }
+        }
+        }
 }
