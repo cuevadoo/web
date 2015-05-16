@@ -147,8 +147,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        try
-        {
+        try{
             Usuario user = (Usuario)Session["User"];
             Residencia r = new Residencia(null,null,null,user.Email);
             GustosOrdenadores gi = new GustosOrdenadores(null,null,null,user.Email);
@@ -181,11 +180,13 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             new CAD.GustosVideojuegos().create(gv);
             new CAD.GustosFilm().create(gf);
             new CAD.GustosMusicales().create(gm);
+            LabelAviso.Text = "Los cambios se han guardado correctamente";
         }
         catch (System.Exception ex)
         {
-            
+            LabelAviso.Text = "No se han podido guardar los cambios. Inténtelo de nuevo más tarde";
         }
         
     }
+   
 }

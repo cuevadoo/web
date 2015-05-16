@@ -352,13 +352,20 @@
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
-                        <br />
-                        <asp:Button ID="Button1" runat="server" Text="Guardar" cssclass="boton"></asp:Button>
+                    <asp:TableCell>
+                    <asp:Label ID="LabelAviso" runat="server" Text=""></asp:Label>
                     </asp:TableCell>
                 </asp:TableRow>
+                <asp:TableRow runat="server">
+                    <asp:TableCell runat="server">
+                        <br />
+                        <asp:Button ID="Button1" runat="server" Text="Guardar" cssclass="boton" OnClick="Button1_Click"></asp:Button>
+                    </asp:TableCell>
+                </asp:TableRow>
+
             </asp:Table>
         </center>
     </div>
+    
 </asp:Content>
 
