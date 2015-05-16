@@ -41,9 +41,9 @@ namespace CAD
             }
         }
         //método para leer un mensaje de la BDs
-        public EN.Usuario read(String email)
+        public EN.MensajePrivado read(String email)
         {
-           /* EN.MensajePrivado mPrivado;
+            EN.MensajePrivado mPrivado;
 
              try{
 
@@ -59,13 +59,12 @@ namespace CAD
 
                  date.traducirSql((DateTime)data[0][3]);
 
-                 mPrivado = new EN.MensajePrivado((String)data[0][0], (String)data[0][1], s,date);
+                 mPrivado = new EN.MensajePrivado((EN.Usuario)data[0][0], (EN.Usuario)data[0][1], s,date);
 
-             }catch(System.Exception ex){
+             }catch(System.Exception e){
                  throw new Exception("Error al leer usuario");
              }
-             return mPrivado;*/
-            return null;
+             return mPrivado;
 
         }
     }
