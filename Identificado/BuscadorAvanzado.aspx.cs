@@ -79,6 +79,29 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
         }
     }
     protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e){
-
+        DropDownNombre.Enabled = false;
+        DropDownResidencia.Enabled = false;
+        DropDownGInf.Enabled = false;
+        DropDownVideojuegos.Enabled = false;
+        DropDownPelisSeries.Enabled = false;
+        DropDownMusica.Enabled = false;
+        if(DropDownList1.SelectedValue=="Nombre"){
+            DropDownNombre.Enabled = true;
+        }
+        if(DropDownList1.SelectedValue=="Residencia"){
+            DropDownResidencia.Enabled = true;
+        }
+        if(DropDownList1.SelectedValue=="Gustos Informáticos"){
+            DropDownGInf.Enabled = true;
+        }
+        if(DropDownList1.SelectedValue=="Videojuegos"){
+            DropDownVideojuegos.Enabled = true;
+        }
+        if(DropDownList1.SelectedValue=="Pelis y Series"){
+            DropDownPelisSeries.Enabled = true;
+        }
+        if(DropDownList1.SelectedValue=="Música"){
+            DropDownMusica.Enabled = true;
+        }
     }
 }

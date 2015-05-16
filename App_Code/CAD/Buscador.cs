@@ -225,7 +225,7 @@ namespace CAD{
             return obj;
         }
 
-        public object[] buscarDecada(String nombre) {
+        public object[] buscarDecadaF(String nombre) {
             object[] obj=new object[2];
             try{
                 String s = "Select Usuario From GustosFilm Where Decada Like '%" +
@@ -359,7 +359,7 @@ namespace CAD{
             return obj;
         }
 
-        public object[] buscarDecada(String nombre) {
+        public object[] buscarDecadaM(String nombre) {
             object[] obj=new object[2];
             try{
                 String s = "Select Usuario From GustosMusicales Where Decada Like '%" +

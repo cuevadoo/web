@@ -13,7 +13,7 @@
                     <asp:TableCell runat="server"></asp:TableCell>
                     <asp:TableCell runat="server"></asp:TableCell>
                     <asp:TableCell runat="server" columnSpan="2">
-                        <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" class="box">
+                        <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" class="box" AutoPostBack="True">
                             <asp:ListItem>Nombre</asp:ListItem>
                             <asp:ListItem>Residencia</asp:ListItem>
                             <asp:ListItem>Gustos Informáticos</asp:ListItem>
