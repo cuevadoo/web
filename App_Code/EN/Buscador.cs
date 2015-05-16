@@ -15,13 +15,13 @@ namespace EN
         private int pagina;
         private int max;
         private ArrayList lista;
-        private ArrayList imageRute;
+        private ArrayList email;
 
         public Buscador(del d,String s){
             object[] obj = d(s);
             pagina=0;
             if (obj.Length == 2){
-                imageRute = (ArrayList)obj[0];
+                email = (ArrayList)obj[0];
                 lista = (ArrayList)obj[1];
                 max = ((lista.Count-1)/10);
             }else{
@@ -75,6 +75,7 @@ namespace EN
                 cont = 10;
             }
             IEnumerator num = lista.GetEnumerator(pagina*10,cont);
+            int i = 0;
             while (num.MoveNext()){
                 String s =(String) num.Current;
                 aux = true;
@@ -84,7 +85,7 @@ namespace EN
                 t.Width = 30;
                 t.Height = 30;
                 ImageButton image = new ImageButton();
-                image.ImageUrl = "~/Imagenes/Usuarios/daloalga2@gmail.com" + "/prev.png";
+                image.ImageUrl = "~/Imagenes/Usuarios/"+ email[i] + "/prev.png";
                 image.Height = 30;
                 image.Width = 30;
                 t.Controls.Add(image);
@@ -96,6 +97,7 @@ namespace EN
                 t.Controls.Add(label);
                 row.Cells.Add(t);
                 rows.Add(row);
+                i++;
             }
             if (aux){
                 rows.Remove(row1);

@@ -23,7 +23,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
         if (Session["BuscadorIS"]==null){
             actualizarTabla();
         }else{
-            EN.Buscador busca = (EN.Buscador)Session["BuscadorSin"];
+            EN.Buscador busca = (EN.Buscador)Session["BuscadorIS"];
             switch(but.ID){
                 case "<": busca--;busca.actualizaSin(Table1.Rows);break;
                 case ">": busca++;busca.actualizaSin(Table1.Rows);break;
