@@ -47,23 +47,23 @@ namespace CAD
 
             try{
 
-            string aux = null, aux1 = null, aux2 = null;
+                string aux = null, aux1 = null, aux2 = null;
 
-            DataRowCollection data = conexion.ejecutarR("Select * from GustosOrdenadores where Usuario='" + email + "'").Rows;
+                DataRowCollection data = conexion.ejecutarR("Select * from GustosOrdenadores where Usuario='" + email + "'").Rows;
 
-            if (!System.DBNull.Value.Equals(data[0][0]))
-            {
-                aux = (String)data[0][0];
-            }
-            if (!System.DBNull.Value.Equals(data[0][1]))
-            {
-                aux1 = (String)data[0][1];
-            }
-            if (!System.DBNull.Value.Equals(data[0][2]))
-            {
-                aux2 = (String)data[0][2];
-            }
-            ordenadores = new EN.GustosOrdenadores(aux, aux1, aux2, (String)data[0][3]);
+                if (!System.DBNull.Value.Equals(data[0][0]))
+                {
+                    aux = (String)data[0][0];
+                }
+                if (!System.DBNull.Value.Equals(data[0][1]))
+                {
+                    aux1 = (String)data[0][1];
+                }
+                if (!System.DBNull.Value.Equals(data[0][2]))
+                {
+                    aux2 = (String)data[0][2];
+                }
+                ordenadores = new EN.GustosOrdenadores(aux, aux1, aux2, (String)data[0][3]);
 
             }catch(System.Exception e){
 

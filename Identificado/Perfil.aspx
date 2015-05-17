@@ -189,6 +189,7 @@
     </center>
     <div>
         <center>
+            <hr width="900px">
             <p style="text-decoration-line:underline">Datos personales</p>
             <div class="todo">
                 <p>La siguiente información no es obligatoria pero permite que tus amigos sepan donde vives y qué es lo que te gusta. Además facilitará la busqueda al resto de usuarios mediante el Buscador Avanzado de Cuevadoo©.</p>
@@ -205,6 +206,7 @@
                 </asp:TableRow>
             </asp:Table>
             <br />
+            <hr width="900px">
             <asp:Table runat="server" ID="Table3" Width="734px" Style="text-align:center">
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell runat="server"><p>Gustos Informáticos</p></asp:TableCell>
@@ -228,8 +230,9 @@
                         <asp:TextBox ID="TextBoxLenguajeP" runat="server" CssClass="box" placeholder="Lenguajes de programación favoritos. Separados por comas y en mayúscula.Por ejemplo:JAVA,C++,PYTHON" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
+
                 <asp:TableRow runat="server" HorizontalAlign="Center">
-                    <asp:TableCell runat="server"><p>Videojuegos</p></asp:TableCell>
+                    <asp:TableCell runat="server"><hr width="900px"><p>Videojuegos</p></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell runat="server">
@@ -257,7 +260,7 @@
                 </asp:TableRow>
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell runat="server">
-                        <p>Películas y Series</p>
+                        <hr width="900px"><p>Películas y Series</p>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server">
@@ -309,6 +312,7 @@
                 </asp:TableRow>
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server">
+                        <hr width="900px">
                         <p>Música</p>
                     </asp:TableCell>
                 </asp:TableRow>

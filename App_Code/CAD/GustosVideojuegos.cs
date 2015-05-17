@@ -46,27 +46,26 @@ namespace CAD
             EN.GustosVideojuegos videojuegos;
 
             try{
+                string aux = null, aux1 = null, aux2 = null, aux3 = null;
 
-            string aux = null, aux1 = null, aux2 = null, aux3 = null;
-
-            DataRowCollection data = conexion.ejecutarR("Select * from GustosVideojueos where Email='" + email + "'").Rows;
-            if (!System.DBNull.Value.Equals(data[0][1]))
-            {
-                aux = (String)data[0][1];
-            }
-            if (!System.DBNull.Value.Equals(data[0][2]))
-            {
-                aux1 = (String)data[0][2];
-            }
-            if (!System.DBNull.Value.Equals(data[0][3]))
-            {
-                aux2 = (String)data[0][3];
-            }
-            if (!System.DBNull.Value.Equals(data[0][4]))
-            {
-                aux3 = (String)data[0][4];
-            }
-            videojuegos = new EN.GustosVideojuegos((String)data[0][0], aux, aux1, aux2, aux3);
+                DataRowCollection data = conexion.ejecutarR("Select * from GustosVideojueos where Email='" + email + "'").Rows;
+                if (!System.DBNull.Value.Equals(data[0][1]))
+                {
+                    aux = (String)data[0][1];
+                }
+                if (!System.DBNull.Value.Equals(data[0][2]))
+                {
+                    aux1 = (String)data[0][2];
+                }
+                if (!System.DBNull.Value.Equals(data[0][3]))
+                {
+                    aux2 = (String)data[0][3];
+                }
+                if (!System.DBNull.Value.Equals(data[0][4]))
+                {
+                    aux3 = (String)data[0][4];
+                }
+                videojuegos = new EN.GustosVideojuegos((String)data[0][0], aux, aux1, aux2, aux3);
 
             }
             catch (System.Exception e)
