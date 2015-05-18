@@ -197,10 +197,13 @@
             <asp:Table ID="Table2" runat="server">
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server">
+                        <center><asp:Label ID="Label1" runat="server"></asp:Label><br /></center>
                         <asp:TextBox ID="TextBoxPais" runat="server" CssClass="box" placeholder="País de residencia" Width="200px"></asp:TextBox></asp:TableCell>
                     <asp:TableCell runat="server" >
+                        <center><asp:Label ID="Label3" runat="server"></asp:Label><br /></center>
                         <asp:TextBox ID="TextBoxCAutonoma" runat="server" CssClass="box" placeholder="Comunidad autónoma o Estado" Width="200px"  ></asp:TextBox></asp:TableCell>
                     <asp:TableCell runat="server">
+                        <center><asp:Label ID="Label4" runat="server"></asp:Label><br /></center>
                         <asp:TextBox ID="TextBoxLocalidad" runat="server" CssClass="box" placeholder="Localidad" Width="200px"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>

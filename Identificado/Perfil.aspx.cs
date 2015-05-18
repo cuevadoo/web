@@ -12,30 +12,32 @@ public partial class Identificado_Perfil : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e){
         EN.Usuario user = (EN.Usuario) Session["User"];
         if(user!=null){
-            if(user.Foto==null){
-                ImageButton1.ImageUrl = "~/Imagenes/ImagenPerfil.jpg";
-            }else{
-                ImageButton1.ImageUrl = "~/Imagenes/Usuarios/" + user.Email + "/prev.png";
-            }
-        }
-
-        //Declaración de las variables para cada gusto
-        EN.Residencia r = new CAD.Residencia().read(user.Email);
+                if(user.Foto==null){
+                    ImageButton1.ImageUrl = "~/Imagenes/ImagenPerfil.jpg";
+                }else{
+                    ImageButton1.ImageUrl = "~/Imagenes/Usuarios/" + user.Email + "/prev.png";
+                }
+            
+            try
+            {
+                //Declaración de las variables para cada gusto
+                EN.Residencia r = new CAD.Residencia().read(user.Email);
         
-        //Residencia
-        if (r.Pais != null)
-        {
-            TextBoxPais.Text = r.Pais;
-        }
-        if (r.Cautonoma != null)
-        {
-            TextBoxCAutonoma.Text = r.Cautonoma;
-        }
-        if (r.Localidad != null)
-        {
-            TextBoxLocalidad.Text = r.Localidad;
-        }
-
+                //Residencia
+                    if (r.Pais != null)
+                    {
+                        Label1.Text = r.Pais;
+                    }
+                    if (r.CAutonoma != null)
+                    {
+                        Label3.Text = r.CAutonoma;
+                    }
+                    if (r.Localidad != null)
+                    {
+                        Label4.Text = r.Localidad;
+                    }
+            }catch(CAD.Exception ex){}
+        }   
     }
     private static System.Drawing.Image cropImage(System.Drawing.Image img, System.Drawing.RectangleF cropArea){
         System.Drawing.Bitmap bmpImage = new System.Drawing.Bitmap(img);
@@ -176,7 +178,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             if (TextBoxPais.Text!=null){r.Pais = TextBoxPais.Text;}
             if (TextBoxActor.Text != null) { gf.Actor=TextBoxActor.Text;}
             if(TextBoxArtista.Text!=null){gm.Artista=TextBoxArtista.Text;}
-            if(TextBoxCAutonoma.Text!=null){r.Cautonoma=TextBoxCAutonoma.Text;}
+            if(TextBoxCAutonoma.Text!=null){r.CAutonoma=TextBoxCAutonoma.Text;}
             if(TextBoxConciertos.Text!=null){gm.Concierto=TextBoxConciertos.Text;}
             if(TextBoxDesarrolladora.Text!=null){gv.DesarrolladorFav=TextBoxDesarrolladora.Text;}
             if(TextBoxDirector.Text!=null){gf.Director=TextBoxDirector.Text;}
@@ -193,13 +195,23 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             if (TextBoxSerie.Text != null) { gf.Serie = TextBoxSerie.Text; }
             if (TextBoxVideojuego.Text != null) { gv.JuegoFav = TextBoxVideojuego.Text; }
             
-            new CAD.Residencia().read(user.Email);
-            new CAD.Residencia().create(r);
+            /*new CAD.Residencia().read(user.Email);
+            new CAD.Residencia().create(r);*/
+            //funcionaba con las 2 lineas
+
+            try
+            {
+                new CAD.Residencia().create(r);
+            }
+            catch (CAD.Exception)
+            {
+                new CAD.Residencia().update(r, r);
+            }
+            LabelAviso.Text = "Los cambios se han guardado correctamente";
             //new CAD.GustosOrdenadores().create(gi);
             //new CAD.GustosVideojuegos().create(gv);
             //new CAD.GustosFilm().create(gf);
             //new CAD.GustosMusicales().create(gm);
-            LabelAviso.Text = "Los cambios se han guardado correctamente";
         }
         catch (CAD.Exception ex)
         {

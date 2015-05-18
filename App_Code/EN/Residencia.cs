@@ -32,7 +32,7 @@ namespace EN
             get { return pais; }
             set { pais = value; }
         }
-        public String Cautonoma
+        public String CAutonoma
         {
             get { return cautonoma; }
             set { cautonoma = value; }

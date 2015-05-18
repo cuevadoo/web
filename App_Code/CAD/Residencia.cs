@@ -20,7 +20,7 @@ namespace CAD
             try
             {
                 String s = "Insert into Residencia(Pais,CAutonoma,Localidad,Usuario) values ('"
-                    + res.Pais + "','" + res.Cautonoma + "','" + res.Localidad + "','" + res.Email + "')";
+                    + res.Pais + "','" + res.CAutonoma + "','" + res.Localidad + "','" + res.Email + "')";
                 conexion.ejecutarS(s);
             }
             catch (System.Exception e)
@@ -78,8 +78,44 @@ namespace CAD
         {
             try
             {
-                String s = "Update Residencia set Pais='" + added.Pais + "',set CAutonoma='" + added.Cautonoma + "',set Localidad='" + added.Localidad + ", Usuario='" + added.Email
-                    + "' WHERE Email='" + deleted.Email + "'";
+                bool entra=false;
+                String s = "Update Residencia set ";
+                     if(added.Pais!=null){
+                        s += "Pais='" + added.Pais + "'";
+                        entra = true;
+                    }
+
+                    if(entra==true)
+                    {
+                    s+=",";
+                    entra = false;
+                    }
+
+                    if(added.Localidad!=null){
+                        s += "Localidad='" + added.Localidad + "'";
+                        entra = true;
+                    }
+                    if (entra == true)
+                    {
+                        s += ",";
+                        entra = false;
+                    }
+                    if (added.CAutonoma != null)
+                    {
+                        s += "CAutonoma='" + added.CAutonoma + "'";
+                        entra = true;
+                    }
+                    if (entra == true)
+                    {
+                        s += ",";
+                        entra = false;
+                    }
+
+                    if(added.Email!=null){
+                        s += "Email='" + added.Email + "'";
+                    }
+                
+                s+="' WHERE Usuario='" + deleted.Email + "'";
                 conexion.ejecutarS(s);
             }
             catch (System.Exception e)
