@@ -19,13 +19,13 @@ namespace CAD
         {
             try
             {
-                String s = "Inster into GustosMusicales(Estilo,Grupo,Artista,Concierto,Decada,Usuario) values ('" 
+                String s = "Insert into GustosMusicales(Estilo,Grupo,Artista,Concierto,Decada,Usuario) values ('" 
                     + gmusic.Estilo + "','" + gmusic.Grupo + "','" + gmusic.Artista + "','" + gmusic.Concierto + "'," + gmusic.Decada + ",'" + gmusic.Email + "')";
                 conexion.ejecutarS(s);
             }
             catch (System.Exception e)
             {
-                throw new Exception("Error al crear el gusto musical");
+                throw new Exception("Error al crear el gusto Musical");
             }
         }
         //metodo para eliminar un Gusto ya existente en la tabla 
@@ -37,7 +37,7 @@ namespace CAD
             }
             catch (System.Exception e)
             {
-                throw new Exception("Error al borrar gusto musical");
+                throw new Exception("Error al borrar gusto Musical");
             }
         }
         //metodo para leer y devolver un gusto de la tabla
@@ -90,7 +90,7 @@ namespace CAD
             }
             catch (Exception e)
             {
-                throw new Exception("Error al modificar el gusto musical");
+                throw new Exception("Error al modificar el gusto Musical");
             }
         }
     }

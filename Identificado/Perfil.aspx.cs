@@ -27,7 +27,6 @@ public partial class Identificado_Perfil : System.Web.UI.Page
                     if (r.Pais != null)
                     {
                         TextBoxPais.Attributes["placeholder"] = r.Pais;
-                     
                     }
                     if (r.CAutonoma != null)
                     {
@@ -38,6 +37,35 @@ public partial class Identificado_Perfil : System.Web.UI.Page
                         TextBoxLocalidad.Attributes["placeholder"] = r.Localidad;
                     }
             }catch(CAD.Exception ex){}
+
+            //Gustos Musicales
+            EN.GustosMusicales gm = new CAD.GustosMusicales().read(user.Email);
+
+            try
+            {
+                if (gm.Artista != null)
+                {
+                    TextBoxArtista.Attributes["placeholder"] = gm.Artista;
+                }
+                if (gm.Concierto != null)
+                {
+                    TextBoxConciertos.Attributes["placeholder"] = gm.Concierto;
+                }
+                if (gm.Decada != null)
+                {
+                    DropDownListDecadaM.Attributes["placeholder"] = gm.Decada + "";
+                }
+                if (gm.Estilo != null)
+                {
+                    TextBoxEstilo.Attributes["placeholder"] = gm.Estilo;
+                }
+                if (gm.Grupo != null)
+                {
+                    TextBoxGrupo.Attributes["placeholder"] = gm.Grupo;
+                }
+            }
+            catch (CAD.Exception ex) { }
+
         }   
     }
     private static System.Drawing.Image cropImage(System.Drawing.Image img, System.Drawing.RectangleF cropArea){
@@ -206,7 +234,16 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             }
             catch (CAD.Exception)
             {
-                new CAD.Residencia().update(r, r);
+                //new CAD.Residencia().update(r, r);
+            }
+            LabelAviso.Text = "Los cambios se han guardado correctamente";
+            try
+            {
+                new CAD.GustosMusicales().create(gm);
+            }
+            catch (CAD.Exception)
+            {
+                //new CAD.GustosMusicales().update(r, r);
             }
             LabelAviso.Text = "Los cambios se han guardado correctamente";
             //new CAD.GustosOrdenadores().create(gi);
