@@ -104,6 +104,7 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
         Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarNombre, TextBox1.Text);
         actualizarTabla();
     }
+
     protected void Button_Paginas(object sender, EventArgs e){
         Button but = (Button)sender;
         if (Session["BuscadorSin"] == null){

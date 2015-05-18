@@ -28,6 +28,11 @@ namespace EN
 
             }
         }
+        protected void Redirect(object sender, EventArgs e){
+            Button b = (Button)sender;
+            HttpContext.Current.Session["PerfilOtro"] = new CAD.Usuario().read(b.Style["email"]);
+            HttpContext.Current.Response.Redirect("~/Identificado/PerfilOtros.aspx");
+        }
         public TableRowCollection actualizaSin(TableRowCollection rows){
             rows.Clear();
             TableRow row1 = new TableRow();
@@ -43,6 +48,7 @@ namespace EN
                 cont = 10;
             }
             IEnumerator num = lista.GetEnumerator(pagina*10,cont);
+            int i = 0;
             while (num.MoveNext()){
                 String s =(String) num.Current;
                 aux = true;
@@ -51,9 +57,12 @@ namespace EN
                 Button label = new Button();
                 label.CssClass = "BotonChat";
                 label.Text = s;
+                label.Style["email"] = "" + email[i];
+                label.Click += new EventHandler(Redirect);
                 t.Controls.Add(label);
                 row.Cells.Add(t);
                 rows.Add(row);
+                i++;
             }
             if (aux){
                 rows.Remove(row1);
@@ -81,10 +90,9 @@ namespace EN
                 aux = true;
                 TableRow row = new TableRow();
                 TableCell t = new TableCell();
-                t.BorderWidth = 0;
                 t.Width = 30;
                 t.Height = 30;
-                ImageButton image = new ImageButton();
+                Image image = new Image();
                 image.ImageUrl = "~/Imagenes/Usuarios/"+ email[i] + "/prev.png";
                 image.Height = 30;
                 image.Width = 30;
@@ -94,6 +102,8 @@ namespace EN
                 Button label = new Button();
                 label.CssClass = "BotonChat";
                 label.Text = s;
+                label.Style["email"] = ""+email[i];
+                label.Click += new EventHandler(Redirect);
                 t.Controls.Add(label);
                 row.Cells.Add(t);
                 rows.Add(row);
