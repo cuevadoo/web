@@ -18,7 +18,7 @@ namespace CAD
         {
             try
             {
-                String s = "Insert into GustosOrdenadores(So,Marca,Lprog,Usuario) values ('"
+                String s = "Insert into GustosOrdenadores(Sistemaoperativo,Marcashw,Lprogramacion,Usuario) values ('"
                     + ordenadores.Sistemaoperativo + "','" + ordenadores.Marcashw + "','" + ordenadores.Lprogramacion +
                     "','" + ordenadores.Email + "')";
                 conexion.ejecutarS(s);
@@ -45,9 +45,9 @@ namespace CAD
         {
             EN.GustosOrdenadores ordenadores;
 
-            try{
-
-                string aux = null, aux1 = null, aux2 = null;
+            try
+            {
+                String aux = null, aux1 = null, aux2 = null;
 
                 DataRowCollection data = conexion.ejecutarR("Select * from GustosOrdenadores where Usuario='" + email + "'").Rows;
 
@@ -63,11 +63,14 @@ namespace CAD
                 {
                     aux2 = (String)data[0][2];
                 }
+
                 ordenadores = new EN.GustosOrdenadores(aux, aux1, aux2, (String)data[0][3]);
 
-            }catch(System.Exception e){
+            }
+            catch (System.Exception e)
+            {
 
-                throw new Exception("Error al leer el gusto Ordenadores");
+                throw new Exception("Error al leer los datos de GustosOrdenadores");
             }
             return ordenadores;
    

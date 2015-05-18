@@ -213,11 +213,7 @@
                 </asp:TableRow>
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell runat="server">
-                        <asp:RadioButtonList ID="RadioButtonListSO" RepeatDirection="Horizontal" runat="server">
-                            <asp:ListItem>MAC</asp:ListItem>
-                            <asp:ListItem>Windows</asp:ListItem>
-                            <asp:ListItem>Linux</asp:ListItem>
-                        </asp:RadioButtonList>
+                        <asp:TextBox ID="TextBoxSO" runat="server" CssClass="box" placeholder="Sistemas operativos: Windows, Linux, MAC" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server">

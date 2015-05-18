@@ -38,7 +38,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
                     }
             }catch(CAD.Exception ex){}
 
-            //Gustos Musicales
+            /*//Gustos Musicales
             EN.GustosMusicales gm = new CAD.GustosMusicales().read(user.Email);
 
             try
@@ -62,6 +62,25 @@ public partial class Identificado_Perfil : System.Web.UI.Page
                 if (gm.Grupo != null)
                 {
                     TextBoxGrupo.Attributes["placeholder"] = gm.Grupo;
+                }
+            }
+            catch (CAD.Exception ex) { }*/
+
+            //Gustos informaticos
+            try
+            {
+                EN.GustosOrdenadores gi = new CAD.GustosOrdenadores().read(user.Email);
+                if (gi.Sistemaoperativo != null)
+                {
+                    TextBoxSO.Attributes["placeholder"] = gi.Sistemaoperativo;
+                }
+                if (gi.Marcashw != null)
+                {
+                    TextBoxHardware.Attributes["placeholder"] = gi.Marcashw;
+                }
+                if (gi.Lprogramacion != null)
+                {
+                    TextBoxLenguajeP.Attributes["placeholder"] = gi.Lprogramacion;
                 }
             }
             catch (CAD.Exception ex) { }
@@ -218,16 +237,14 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             if (TextBoxGrupo.Text != null) { gm.Grupo = TextBoxGrupo.Text; }
             if (TextBoxHardware.Text != null) { gi.Marcashw = TextBoxHardware.Text; }
             if (TextBoxLenguajeP.Text != null) { gi.Lprogramacion = TextBoxLenguajeP.Text; }
+            if (TextBoxSO.Text != null) { gi.Sistemaoperativo = TextBoxSO.Text; }
             if (TextBoxLocalidad.Text != null) { r.Localidad = TextBoxLocalidad.Text; }
             if (TextBoxPeli.Text != null) { gf.Pelicula = TextBoxPeli.Text; }
             if (TextBoxProductor.Text != null) { gf.S_director1 = TextBoxProductor.Text; }
             if (TextBoxSerie.Text != null) { gf.Serie = TextBoxSerie.Text; }
             if (TextBoxVideojuego.Text != null) { gv.JuegoFav = TextBoxVideojuego.Text; }
             
-            /*new CAD.Residencia().read(user.Email);
-            new CAD.Residencia().create(r);*/
-            //funcionaba con las 2 lineas
-
+            //llamadas residencia 
             try
             {
                 new CAD.Residencia().create(r);
@@ -237,6 +254,8 @@ public partial class Identificado_Perfil : System.Web.UI.Page
                 //new CAD.Residencia().update(r, r);
             }
             LabelAviso.Text = "Los cambios se han guardado correctamente";
+
+            /*//llamadas gustosMusica 
             try
             {
                 new CAD.GustosMusicales().create(gm);
@@ -244,6 +263,17 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             catch (CAD.Exception)
             {
                 //new CAD.GustosMusicales().update(r, r);
+            }
+            LabelAviso.Text = "Los cambios se han guardado correctamente";*/
+
+            //llamadas ordenadores 
+            try
+            {
+                new CAD.GustosOrdenadores().create(gi);
+            }
+            catch (CAD.Exception)
+            {
+                //new CAD.GustosOrdenadores().update(gi, gi);
             }
             LabelAviso.Text = "Los cambios se han guardado correctamente";
             //new CAD.GustosOrdenadores().create(gi);
