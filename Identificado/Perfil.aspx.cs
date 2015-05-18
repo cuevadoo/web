@@ -85,6 +85,31 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             }
             catch (CAD.Exception ex) { }
 
+            //Gustos Videojuegos
+
+            try
+            {
+                EN.GustosVideojuegos gv = new CAD.GustosVideojuegos().read(user.Email);
+                if (gv.Genero != null)
+                {
+                    TextBoxGeneroV.Attributes["placeholder"] = gv.Genero;
+                }
+                if (gv.ConsolaFav != null)
+                {
+                    RadioButtonListConsola.Attributes["placeholder"] = gv.ConsolaFav;
+                }
+                if (gv.JuegoFav != null)
+                {
+                    TextBoxVideojuego.Attributes["placeholder"] = gv.JuegoFav;
+                }
+                if (gv.DesarrolladorFav != null)
+                {
+                    TextBoxDesarrolladora.Attributes["placeholder"] = gv.DesarrolladorFav;
+                }
+            }
+            catch (CAD.Exception ex) { }
+
+            
         }   
     }
     private static System.Drawing.Image cropImage(System.Drawing.Image img, System.Drawing.RectangleF cropArea){
@@ -223,26 +248,39 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             GustosFilm gf = new GustosFilm(null,null,(byte) 0,null,null,null,null,null,user.Email);
             GustosMusicales gm = new GustosMusicales(null,null,null,null,(byte)0,user.Email);
             //new CAD.GustosFilm().create(lo que sea);
+            //residencia
             if (TextBoxPais.Text!=null){r.Pais = TextBoxPais.Text;}
+            if (TextBoxCAutonoma.Text != null) { r.CAutonoma = TextBoxCAutonoma.Text; }
+            if (TextBoxLocalidad.Text != null) { r.Localidad = TextBoxLocalidad.Text; }
+
+            //ordenadores
+            if (TextBoxSO.Text != null) { gi.Sistemaoperativo = TextBoxSO.Text; }
+            if (TextBoxHardware.Text != null) { gi.Marcashw = TextBoxHardware.Text; }
+            if (TextBoxLenguajeP.Text != null) { gi.Lprogramacion = TextBoxLenguajeP.Text; }
+
+            //videojuegos
+            if (TextBoxGeneroV.Text != null) { gv.Genero = TextBoxGeneroV.Text; }
+            if (RadioButtonListConsola.Text != null) { gv.ConsolaFav = RadioButtonListConsola.Text; }
+            if (TextBoxVideojuego.Text != null) { gv.JuegoFav = TextBoxVideojuego.Text; }
+            if (TextBoxDesarrolladora.Text != null) { gv.DesarrolladorFav = TextBoxDesarrolladora.Text; }
+
+
             if (TextBoxActor.Text != null) { gf.Actor=TextBoxActor.Text;}
             if(TextBoxArtista.Text!=null){gm.Artista=TextBoxArtista.Text;}
-            if(TextBoxCAutonoma.Text!=null){r.CAutonoma=TextBoxCAutonoma.Text;}
             if(TextBoxConciertos.Text!=null){gm.Concierto=TextBoxConciertos.Text;}
             if(TextBoxDesarrolladora.Text!=null){gv.DesarrolladorFav=TextBoxDesarrolladora.Text;}
             if(TextBoxDirector.Text!=null){gf.Director=TextBoxDirector.Text;}
             if(TextBoxEstilo.Text!=null){gm.Estilo=TextBoxEstilo.Text;}
             if(TextBoxGeneroC.Text!=null){gf.Genero=TextBoxGeneroC.Text;}
             if(TextBoxGeneroS.Text!=null){gf.S_genero1=TextBoxGeneroS.Text;}
-            if(TextBoxGeneroV.Text!=null){gv.Genero=TextBoxGeneroV.Text;}
             if (TextBoxGrupo.Text != null) { gm.Grupo = TextBoxGrupo.Text; }
-            if (TextBoxHardware.Text != null) { gi.Marcashw = TextBoxHardware.Text; }
-            if (TextBoxLenguajeP.Text != null) { gi.Lprogramacion = TextBoxLenguajeP.Text; }
-            if (TextBoxSO.Text != null) { gi.Sistemaoperativo = TextBoxSO.Text; }
-            if (TextBoxLocalidad.Text != null) { r.Localidad = TextBoxLocalidad.Text; }
             if (TextBoxPeli.Text != null) { gf.Pelicula = TextBoxPeli.Text; }
             if (TextBoxProductor.Text != null) { gf.S_director1 = TextBoxProductor.Text; }
             if (TextBoxSerie.Text != null) { gf.Serie = TextBoxSerie.Text; }
-            if (TextBoxVideojuego.Text != null) { gv.JuegoFav = TextBoxVideojuego.Text; }
+            if (TextBoxGeneroV.Text != null) { gv.Genero = TextBoxGeneroV.Text; }
+
+
+
             
             //llamadas residencia 
             try
@@ -275,6 +313,17 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             {
                 //new CAD.GustosOrdenadores().update(gi, gi);
             }
+
+            //llamadas videojuegos 
+            try
+            {
+                new CAD.GustosVideojuegos().create(gv);
+            }
+            catch (CAD.Exception)
+            {
+                //new CAD.GustosVideojuegos().update(gv, gv);
+            }
+
             LabelAviso.Text = "Los cambios se han guardado correctamente";
             //new CAD.GustosOrdenadores().create(gi);
             //new CAD.GustosVideojuegos().create(gv);

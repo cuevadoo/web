@@ -18,7 +18,7 @@ namespace CAD
         {
             try
             {
-                String s = "Insert into GustosVideojuegos(Genero,JuegoFav,ConsolaFav,DesarrolladorFav,Email) values ('"
+                String s = "Insert into ustosVideojuegos(Genero,JuegoFav,ConsolaFav,DesarrolladorFav,Email) values ('"
                     + videojuegos.Genero + "','" + videojuegos.JuegoFav + "','" + videojuegos.ConsolaFav +
                     "','" + videojuegos.DesarrolladorFav +  "','" + videojuegos.Email + "')";
                 conexion.ejecutarS(s);
