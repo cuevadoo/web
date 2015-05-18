@@ -16,9 +16,9 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
             }else{
                 UserImage1.ImageUrl = "~/Imagenes/Usuarios/" + user.Email + "/prev.png";
             }
-            //Declaración de las variables para cada gusto
-        
+
             //Residencia
+
             try{
                 EN.Residencia r = new CAD.Residencia().read(user.Email);
                 if (r.Pais != null){
@@ -31,9 +31,9 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
                     LabelLocalidad.Text = r.Localidad;
                 }
             }catch(CAD.Exception ex){}
-        
             
             //Gustos informaticos
+
             try{
                 EN.GustosOrdenadores gi = new CAD.GustosOrdenadores().read(user.Email);
                 if (gi.Sistemaoperativo != null){
@@ -48,6 +48,7 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
             }catch(CAD.Exception ex){}
             
             //Gustos Videojuegos
+
             try{
                 EN.GustosVideojuegos gv = new CAD.GustosVideojuegos().read(user.Email);
                 if (gv.Genero != null){
@@ -63,7 +64,9 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
                     LabelDesarrolladora.Text = gv.DesarrolladorFav;
                 }
             }catch(CAD.Exception ex){}
+
             //Gustos Pelis y Series
+
             try{
                 EN.GustosFilm gf = new CAD.GustosFilm().read(user.Email);
                 if (gf.Actor != null){
@@ -91,7 +94,9 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
                     LabelSerie.Text = gf.Serie;
                 }
             }catch(CAD.Exception ex){}
+
             //Gustos Musicales
+
             try{
                 EN.GustosMusicales gm = new CAD.GustosMusicales().read(user.Email);
                 if (gm.Artista != null){

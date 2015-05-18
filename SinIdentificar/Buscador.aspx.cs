@@ -14,8 +14,8 @@ public partial class SinIdentificar_Buscador : System.Web.UI.Page
     
     protected void Redirect(object sender, EventArgs e){
         Button b = (Button)sender;
-        HttpContext.Current.Session["PerfilOtro"] = new CAD.Usuario().read(b.Style["email"]);
-        HttpContext.Current.Response.Redirect("~/Identificado/PerfilOtros.aspx");
+        HttpContext.Current.Session["PerfilOtroPublic"] = new CAD.Usuario().read(b.Style["email"]);
+        HttpContext.Current.Response.Redirect("~/SinIdentificar/PerfilOtros.aspx");
     }
 
     protected void TextBox1_TextChanged(object sender, EventArgs e){
