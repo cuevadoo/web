@@ -78,12 +78,24 @@ namespace CAD
         {
             try
             {
+                EN.Residencia resi;
+                resi=read(deleted.Email);
+
+
+                //pais,comunidad,localidad
                 bool entra=false;
                 String s = "Update Residencia set ";
-                     if(added.Pais!=null){
-                        s += "Pais='" + added.Pais + "'";
-                        entra = true;
-                    }
+                String x="";
+                if (resi.Pais != x && added.CAutonoma != x)
+                {
+                    s += "Pais='" + resi.Pais + "'";
+                    entra = true;
+                }
+                else
+                {
+                    s += "Pais='" + added.Pais + "'";
+                    entra = true;
+                }
 
                     if(entra==true)
                     {
@@ -91,29 +103,39 @@ namespace CAD
                     entra = false;
                     }
 
-                    if(added.Localidad != null){
-                        s += "Localidad='" + added.Localidad + "'";
+                    if (resi.CAutonoma != x)
+                    {
+                        s += "CAutonoma='" + resi.CAutonoma + "'";
                         entra = true;
                     }
-                    if (entra == true)
-                    {
-                        s += ",";
-                        entra = false;
-                    }
-                    if (added.CAutonoma != null)
+                    else
                     {
                         s += "CAutonoma='" + added.CAutonoma + "'";
                         entra = true;
                     }
-                    if (entra == true)
+
+                   /* if (entra == true)
                     {
                         s += ",";
                         entra = false;
+                    }*/
+
+                    if (resi.Localidad!=x)
+                    {
+                        s += "Localidad='" + resi.Localidad + "'";
+                        entra = true;
                     }
 
-                    if(added.Email!=null){
-                        s += "Email='" + added.Email + "'";
-                    }
+                    /*if (entra == true)
+                    {
+                        s += ",";
+                        entra = false;
+                    }*/
+
+                    //if (resi.Email == null)
+                    //{
+                       // s += "Email='" + added.Email + "'";
+                    //}
                 
                 s+=" WHERE Usuario='" + deleted.Email + "'";
                 conexion.ejecutarS(s);

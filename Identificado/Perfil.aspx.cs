@@ -249,9 +249,9 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             GustosMusicales gm = new GustosMusicales(null,null,null,null,(byte)0,user.Email);
             //new CAD.GustosFilm().create(lo que sea);
             //residencia
-            if (TextBoxPais.Text!=null){r.Pais = TextBoxPais.Text;}
-            if (TextBoxCAutonoma.Text != null) { r.CAutonoma = TextBoxCAutonoma.Text; }
-            if (TextBoxLocalidad.Text != null) { r.Localidad = TextBoxLocalidad.Text; }
+            if (TextBoxPais.Text != null) { r.Pais = TextBoxPais.Text; } else {TextBoxPais.Text = "";}
+            if (TextBoxCAutonoma.Text != null) { r.CAutonoma = TextBoxCAutonoma.Text; }else{TextBoxCAutonoma.Text = "";}
+            if (TextBoxLocalidad.Text != null) { r.Localidad = TextBoxLocalidad.Text; } else { TextBoxLocalidad.Text = ""; }
 
             //ordenadores
             if (TextBoxSO.Text != null) { gi.Sistemaoperativo = TextBoxSO.Text; }
@@ -289,7 +289,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             }
             catch (CAD.Exception)
             {
-                //new CAD.Residencia().update(r, r);
+                new CAD.Residencia().update(r, r);
             }
             LabelAviso.Text = "Los cambios se han guardado correctamente";
 
