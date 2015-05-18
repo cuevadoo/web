@@ -12,6 +12,7 @@ namespace EN
 {
     public class Buscador{
         public delegate object[] del(String s);
+        public delegate void del2(object sender, EventArgs e);
         private int pagina;
         private int max;
         private ArrayList lista;
@@ -28,12 +29,7 @@ namespace EN
 
             }
         }
-        protected void Redirect(object sender, EventArgs e){
-            Button b = (Button)sender;
-            HttpContext.Current.Session["PerfilOtro"] = new CAD.Usuario().read(b.Style["email"]);
-            HttpContext.Current.Response.Redirect("~/Identificado/PerfilOtros.aspx");
-        }
-        public TableRowCollection actualizaSin(TableRowCollection rows){
+        public TableRowCollection actualizaSin(TableRowCollection rows,del2 modulo){
             rows.Clear();
             TableRow row1 = new TableRow();
             TableCell t1 = new TableCell();
@@ -58,7 +54,7 @@ namespace EN
                 label.CssClass = "BotonChat";
                 label.Text = s;
                 label.Style["email"] = "" + email[i];
-                label.Click += new EventHandler(Redirect);
+                label.Click += new EventHandler(modulo);
                 t.Controls.Add(label);
                 row.Cells.Add(t);
                 rows.Add(row);
@@ -69,7 +65,7 @@ namespace EN
             }
             return rows;
         }
-        public TableRowCollection actualizaCon(TableRowCollection rows) {
+        public TableRowCollection actualizaCon(TableRowCollection rows,del2 modulo) {
             rows.Clear();
             TableRow row1 = new TableRow();
             TableCell t1 = new TableCell();
@@ -103,7 +99,7 @@ namespace EN
                 label.CssClass = "BotonChat";
                 label.Text = s;
                 label.Style["email"] = ""+email[i];
-                label.Click += new EventHandler(Redirect);
+                label.Click += new EventHandler(modulo);
                 t.Controls.Add(label);
                 row.Cells.Add(t);
                 rows.Add(row);

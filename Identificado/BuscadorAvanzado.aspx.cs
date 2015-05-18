@@ -104,6 +104,12 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
         Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarNombre, TextBox1.Text);
         actualizarTabla();
     }
+    
+    protected void Redirect(object sender, EventArgs e){
+        Button b = (Button)sender;
+        HttpContext.Current.Session["PerfilOtro"] = new CAD.Usuario().read(b.Style["email"]);
+        HttpContext.Current.Response.Redirect("~/Identificado/PerfilOtros.aspx");
+    }
 
     protected void Button_Paginas(object sender, EventArgs e){
         Button but = (Button)sender;
@@ -112,11 +118,11 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
         }else{
             EN.Buscador busca = (EN.Buscador)Session["BuscadorCon"];
             switch (but.ID){
-                case "<": busca--; busca.actualizaCon(Table1.Rows); break;
-                case ">": busca++; busca.actualizaCon(Table1.Rows); break;
+                case "<": busca--; busca.actualizaCon(Table1.Rows,Redirect); break;
+                case ">": busca++; busca.actualizaCon(Table1.Rows, Redirect); break;
                 default:
                     busca.Pagina = Int32.Parse(but.ID) - 1;
-                    busca.actualizaCon(Table1.Rows);
+                    busca.actualizaCon(Table1.Rows, Redirect);
                     break;
             }
             actualizarTabla();
@@ -134,7 +140,7 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
             Table2.Rows.Add(row1);
         }else{
             EN.Buscador b = (EN.Buscador)Session["BuscadorCon"];
-            b.actualizaCon(Table2.Rows);
+            b.actualizaCon(Table2.Rows, Redirect);
             int cant = b.Max;
             if (cant != 1){
                 Table1.Rows.Add(new TableRow());

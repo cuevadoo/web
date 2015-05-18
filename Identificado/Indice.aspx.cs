@@ -11,6 +11,13 @@ public partial class Identificado_Indice : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e){
         actualizarTabla();
     }
+    
+    protected void Redirect(object sender, EventArgs e){
+        Button b = (Button)sender;
+        HttpContext.Current.Session["PerfilOtro"] = new CAD.Usuario().read(b.Style["email"]);
+        HttpContext.Current.Response.Redirect("~/SinIdentificar/PerfilOtros.aspx");
+    }
+
     protected void TextBox1_TextChanged(object sender, EventArgs e){
         if(TextBox1.Text.Length>=3){
             CAD.Usuario user=new CAD.Usuario();
@@ -18,6 +25,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
             actualizarTabla();
         }
     }
+
     protected void Button_Paginas(object sender, EventArgs e){
         Button but=(Button) sender;
         if (Session["BuscadorIS"]==null){
@@ -25,11 +33,11 @@ public partial class Identificado_Indice : System.Web.UI.Page
         }else{
             EN.Buscador busca = (EN.Buscador)Session["BuscadorIS"];
             switch(but.ID){
-                case "<": busca--;busca.actualizaSin(Table1.Rows);break;
-                case ">": busca++;busca.actualizaSin(Table1.Rows);break;
+                case "<": busca--; busca.actualizaSin(Table1.Rows, Redirect); break;
+                case ">": busca++; busca.actualizaSin(Table1.Rows, Redirect); break;
                 default:
                     busca.Pagina=Int32.Parse(but.ID)-1;
-                    busca.actualizaSin(Table1.Rows);
+                    busca.actualizaSin(Table1.Rows, Redirect);
                     break;
             }
             actualizarTabla();
@@ -48,7 +56,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
             Table2.Rows.Add(row1);
         }else{
             EN.Buscador b =(EN.Buscador)Session["BuscadorIS"];
-            b.actualizaSin(Table2.Rows);
+            b.actualizaSin(Table2.Rows, Redirect);
             int cant=b.Max;
             if(cant!=1){
                 Table1.Rows.Add(new TableRow());
