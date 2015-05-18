@@ -17,7 +17,7 @@ namespace CAD
         {
             try
             {
-                String s = "Inster into GustosFilm(Genero,Director,Decada,Actor,Pelicula,SGenero,SDirector,Serie,Usuario) values ('"
+                String s = "Insert into GustosFilm(Genero,Director,Decada,Actor,Pelicula,SGenero,SDirector,Serie,Usuario) values ('"
                     + gfilm.Genero + "','" + gfilm.Director + "'," + gfilm.Decada + ",'" + gfilm.Actor + "'," + gfilm.Pelicula + ",'" + gfilm.S_genero1 + "','" + gfilm.S_director1 + "','" + gfilm.Serie + "','" + gfilm.Email + "')";
                 conexion.ejecutarS(s);
             }
@@ -34,7 +34,7 @@ namespace CAD
             }
             catch (System.Exception e)
             {
-                throw new Exception("Error al borrar gusto film");
+                throw new Exception("Error al borrar gusto filmografico");
             }   
         }
         public EN.GustosFilm read(String email)
@@ -80,7 +80,7 @@ namespace CAD
                 pelis = new EN.GustosFilm(aux, aux1, aux2, aux3, aux4, aux5, aux6, aux7,(String)data[0][8]);
             }
             catch(System.Exception ex) {
-                throw new Exception("Error al leer gusto");
+                throw new Exception("Error al leer gusto filmográfico");
             }
             return pelis;
         }
@@ -96,7 +96,7 @@ namespace CAD
             }
             catch (Exception e)
             {
-                throw new Exception("Error al modificar el gusto filmografico");
+                throw new Exception("Error al modificar el gusto filmográfico");
             }
 
         }

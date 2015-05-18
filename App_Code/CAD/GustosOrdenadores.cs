@@ -18,7 +18,7 @@ namespace CAD
         {
             try
             {
-                String s = "Inster into GustosOrdenadores(So,Marca,Lprog,Usuario) values ('"
+                String s = "Insert into GustosOrdenadores(So,Marca,Lprog,Usuario) values ('"
                     + ordenadores.Sistemaoperativo + "','" + ordenadores.Marcashw + "','" + ordenadores.Lprogramacion +
                     "','" + ordenadores.Email + "')";
                 conexion.ejecutarS(s);
@@ -67,7 +67,7 @@ namespace CAD
 
             }catch(System.Exception e){
 
-                throw new Exception("Error al leer el gusto");
+                throw new Exception("Error al leer el gusto Ordenadores");
             }
             return ordenadores;
    

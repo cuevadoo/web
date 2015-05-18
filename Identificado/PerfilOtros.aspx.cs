@@ -23,8 +23,12 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
                     Button1.Text = "Ya es tu amigo";
                     Button1.Enabled = false;
                 }else{
-                    Button1.Text = "Solicitud enviada";
-                    Button1.Enabled = false;
+                    if(rel.isTuya(user.Email)){
+                        Button1.Text = "Solicitud enviada";
+                        Button1.Enabled = false;
+                    }else{
+                        Button1.Text = "Aceptar solicitud";
+                    }
                 }
             }
             //Residencia
@@ -129,14 +133,23 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
     }
 
     protected void Button1_Click(object sender, EventArgs e){
-        EN.Relaciones re = (EN.Relaciones)Session["Relaciones"];
-        EN.Relaciones aux = re.clonar();
+        EN.Relaciones rel = (EN.Relaciones)Session["Relaciones"];
         EN.Usuario user = (EN.Usuario)Session["PerfilOtro"];
-        Session["Relaciones"] = re;
-        re.add(user.Email, false);
-        new CAD.Relaciones().update(re,aux);
-        Button b = (Button)sender;
-        b.Enabled = false;
-        b.Text = "Solicitud enviada";
+        if(rel.isUsuario(user.Email)&&!rel.isAceptada(user.Email)&&!rel.isTuya(user.Email)){
+            EN.Relaciones aux = rel.clonar();
+            rel.aceptar(user.Email);
+            Button1.Text = "Ya es tu amigo";
+            Button1.Enabled = false;
+            new CAD.Relaciones().update(rel, aux);
+            Session["Relaciones"] = rel;
+        }else{
+            EN.Relaciones aux = rel.clonar();
+            rel.add(user.Email);
+            new CAD.Relaciones().update(rel,aux);
+            Button b = (Button)sender;
+            b.Enabled = false;
+            b.Text = "Solicitud enviada";
+            Session["Relaciones"] = rel;
+        }
     }
 }
