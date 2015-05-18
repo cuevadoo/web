@@ -20,9 +20,9 @@ namespace CAD
                 EN.Relaciones rel = new EN.Relaciones(email);
                 foreach(DataRow r in data){
                     if((String)r[0]==email){
-                        rel.add((String)r[1],(bool)r[2]);
+                        rel.add((String)r[1],(bool)r[2],true);
                     }else{
-                        rel.add((String)r[0],(bool)r[2]);
+                        rel.add((String)r[0],(bool)r[2],false);
                     }
                 }
                 relacion = rel;
@@ -52,9 +52,10 @@ namespace CAD
                     //Añadir una relacion
                     conexion.ejecutarS("Insert into Amigos values('"+aux2[1].Usuario1+"','"+user+"','False')");
                 }
-                foreach (bool aceptada in aux2[2].Aceptada){
+                foreach (String user in aux2[2].Usuarios){
                     //Modificar si ha sido aceptada
-                    conexion.ejecutarS("Update Amigos set Aceptada='" + aceptada + "' where Usuario1='" + aux2[2].Usuario1 + "'");
+                    conexion.ejecutarS("Update Amigos set Aceptada='" + aux2[2].isAceptada(user) + "' where Usuario1='"+ 
+                        user + "' AND Usuario2='" + aux2[2].Usuario1 + "'");
                 }
             }catch(System.Exception ex){
                 throw new Exception("Error al cambiar alguna relacion");
