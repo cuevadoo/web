@@ -87,7 +87,7 @@ namespace CAD
 
                     if(entra==true)
                     {
-                    s+="','";
+                    s+=",'";
                     entra = false;
                     }
 
@@ -97,7 +97,7 @@ namespace CAD
                     }
                     if (entra == true)
                     {
-                        s += "','";
+                        s += ",'";
                         entra = false;
                     }
                     if (added.CAutonoma != null)
@@ -107,7 +107,7 @@ namespace CAD
                     }
                     if (entra == true)
                     {
-                        s += "','";
+                        s += ",'";
                         entra = false;
                     }
 
