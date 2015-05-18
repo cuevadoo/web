@@ -19,7 +19,7 @@ namespace CAD
         {
             try
             {
-                String s = "Inster into Residencia(Pais,CAutonoma,Localidad,Usuario) values ('"
+                String s = "Insert into Residencia(Pais,CAutonoma,Localidad,Usuario) values ('"
                     + res.Pais + "','" + res.Cautonoma + "','" + res.Localidad + "','" + res.Email + "')";
                 conexion.ejecutarS(s);
             }
@@ -49,7 +49,7 @@ namespace CAD
             {
                 String aux = null, aux1 = null, aux2 = null;
 
-                DataRowCollection data = conexion.ejecutarR("Select * from GustosMusicales where Usuario='" + email + "'").Rows;
+                DataRowCollection data = conexion.ejecutarR("Select * from Residencia where Usuario='" + email + "'").Rows;
 
                 if (!System.DBNull.Value.Equals(data[0][0]))
                 {
@@ -78,11 +78,11 @@ namespace CAD
         {
             try
             {
-                String s = "Update Gustosgmusic set Pais='" + added.Pais + "',set CAutonoma='" + added.Cautonoma + "',set Localidad='" + added.Localidad + ", Usuario='" + added.Email
+                String s = "Update Residencia set Pais='" + added.Pais + "',set CAutonoma='" + added.Cautonoma + "',set Localidad='" + added.Localidad + ", Usuario='" + added.Email
                     + "' WHERE Email='" + deleted.Email + "'";
                 conexion.ejecutarS(s);
             }
-            catch (Exception e)
+            catch (System.Exception e)
             {
                 throw new Exception("Error al modificar la residencia");
             }

@@ -10,7 +10,13 @@ namespace CAD
 {
     public class Exception:System.Exception
     {
-        String mensaje;
+        private String mensaje;
+
+        public String Mensaje
+        {
+            get { return mensaje; }
+        }
+
         public Exception(String mensaje){
             this.mensaje = mensaje;
         }

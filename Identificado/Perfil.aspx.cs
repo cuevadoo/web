@@ -18,6 +18,24 @@ public partial class Identificado_Perfil : System.Web.UI.Page
                 ImageButton1.ImageUrl = "~/Imagenes/Usuarios/" + user.Email + "/prev.png";
             }
         }
+
+        //Declaración de las variables para cada gusto
+        EN.Residencia r = new CAD.Residencia().read(user.Email);
+        
+        //Residencia
+        if (r.Pais != null)
+        {
+            TextBoxPais.Text = r.Pais;
+        }
+        if (r.Cautonoma != null)
+        {
+            TextBoxCAutonoma.Text = r.Cautonoma;
+        }
+        if (r.Localidad != null)
+        {
+            TextBoxLocalidad.Text = r.Localidad;
+        }
+
     }
     private static System.Drawing.Image cropImage(System.Drawing.Image img, System.Drawing.RectangleF cropArea){
         System.Drawing.Bitmap bmpImage = new System.Drawing.Bitmap(img);
@@ -174,19 +192,24 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             if (TextBoxProductor.Text != null) { gf.S_director1 = TextBoxProductor.Text; }
             if (TextBoxSerie.Text != null) { gf.Serie = TextBoxSerie.Text; }
             if (TextBoxVideojuego.Text != null) { gv.JuegoFav = TextBoxVideojuego.Text; }
-
+            
+            new CAD.Residencia().read(user.Email);
             new CAD.Residencia().create(r);
-            new CAD.GustosOrdenadores().create(gi);
-            new CAD.GustosVideojuegos().create(gv);
-            new CAD.GustosFilm().create(gf);
-            new CAD.GustosMusicales().create(gm);
+            //new CAD.GustosOrdenadores().create(gi);
+            //new CAD.GustosVideojuegos().create(gv);
+            //new CAD.GustosFilm().create(gf);
+            //new CAD.GustosMusicales().create(gm);
             LabelAviso.Text = "Los cambios se han guardado correctamente";
+        }
+        catch (CAD.Exception ex)
+        {
+            LabelAviso.Text = ex.Mensaje;//ver el error
         }
         catch (System.Exception ex)
         {
-            LabelAviso.Text = "No se han podido guardar los cambios. Inténtelo de nuevo más tarde";
+           LabelAviso.Text = "ERROR. No se han podido guardar los cambios. Inténtelo de nuevo más tarde";
         }
-        
+       
     }
    
 }
