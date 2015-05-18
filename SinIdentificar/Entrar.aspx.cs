@@ -20,9 +20,7 @@ public partial class Ingresar : System.Web.UI.Page
         if (RequiredFieldValidator1.IsValid) {
             try
             {
-                
-                CAD.Usuario user = new CAD.Usuario();
-                EN.Usuario usuario = user.read(TextBox1.Text);
+                EN.Usuario usuario = new CAD.Usuario().read(TextBox1.Text);
                 String hash = Hash.getHash(TextBox1.Text + TextBox2.Text);
                 if(hash==usuario.Pass){
                     Session["User"] = usuario;

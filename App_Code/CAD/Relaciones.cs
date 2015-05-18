@@ -19,7 +19,7 @@ namespace CAD
                 DataRowCollection data=conexion.ejecutarR("Select * from Amigos where Usuario1 ='"+email+"' OR Usuario2 = '"+email+"'").Rows;
                 EN.Relaciones rel = new EN.Relaciones(email);
                 foreach(DataRow r in data){
-                    if(r[0]==email){
+                    if((String)r[0]==email){
                         rel.add((String)r[1],(bool)r[2]);
                     }else{
                         rel.add((String)r[0],(bool)r[2]);
@@ -50,7 +50,7 @@ namespace CAD
                 }
                 foreach(String user in aux2[1].Usuarios){
                     //Añadir una relacion
-                    conexion.ejecutarS("Insert into Amigos values('"+aux2[1].Usuario1+"','"+aux+"','False')");
+                    conexion.ejecutarS("Insert into Amigos values('"+aux2[1].Usuario1+"','"+user+"','False')");
                 }
                 foreach (bool aceptada in aux2[2].Aceptada){
                     //Modificar si ha sido aceptada

@@ -10,6 +10,7 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e){
         EN.Usuario user = (EN.Usuario)Session["PerfilOtro"];
+        EN.Relaciones rel = (EN.Relaciones) Session["Relaciones"];
         if(user!=null){
             if (user.Foto == null){
                 UserImage1.ImageUrl = "~/Imagenes/ImagenPerfil.jpg";
@@ -17,6 +18,15 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
                 UserImage1.ImageUrl = "~/Imagenes/Usuarios/" + user.Email + "/prev.png";
             }
 
+            if(rel.isUsuario(user.Email)){
+                if(rel.isAceptada(user.Email)){
+                    Button1.Text = "Ya es tu amigo";
+                    Button1.Enabled = false;
+                }else{
+                    Button1.Text = "Solicitud enviada";
+                    Button1.Enabled = false;
+                }
+            }
             //Residencia
 
             try{
@@ -116,5 +126,17 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
                 }
             }catch(CAD.Exception ex){}
         }
+    }
+
+    protected void Button1_Click(object sender, EventArgs e){
+        EN.Relaciones re = (EN.Relaciones)Session["Relaciones"];
+        EN.Relaciones aux = re.clonar();
+        EN.Usuario user = (EN.Usuario)Session["PerfilOtro"];
+        Session["Relaciones"] = re;
+        re.add(user.Email, false);
+        new CAD.Relaciones().update(re,aux);
+        Button b = (Button)sender;
+        b.Enabled = false;
+        b.Text = "Solicitud enviada";
     }
 }

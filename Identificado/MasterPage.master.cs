@@ -14,6 +14,8 @@ public partial class Identificado_MasterPage : System.Web.UI.MasterPage
         EN.Usuario aux = (EN.Usuario)Session["User"];
         Session["User"] = aux;
         Menu1.Items[0].Text = aux.Nombre;
+        EN.Relaciones relaciones = new CAD.Relaciones().read(aux.Email);
+        Session["Relaciones"] = relaciones;
     }
     
     protected void ImageButton2_Click(object sender, ImageClickEventArgs e){

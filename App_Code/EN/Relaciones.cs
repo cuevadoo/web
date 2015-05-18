@@ -32,8 +32,16 @@ namespace EN
             set { aceptada = value; }
         }
 
+        public ArrayList Tuya{
+            get { return tuya; }
+            set { tuya = value; }
+        }
+
         public Relaciones(String usuario1){
             this.usuario1 = usuario1;
+            usuarios = new ArrayList();
+            aceptada = new ArrayList();
+            tuya = new ArrayList();
         }
 
         public void add(String email,bool aceptada){
@@ -63,13 +71,14 @@ namespace EN
             Relaciones[] retu = new Relaciones[3];
             retu[0] = new Relaciones(usuario1);
             retu[1] = new Relaciones(usuario1);
-            foreach(String aux in usuarios){
-                if(!rel.isUsuario(aux)){
+            retu[2] = new Relaciones(usuario1);
+            foreach(String aux in rel.usuarios){
+                if(!isUsuario(aux)){
                     retu[0].add(aux,true);
                 }
             }
-            foreach(String aux in rel.usuarios){
-                if(!isUsuario(aux)){
+            foreach(String aux in usuarios){
+                if(!rel.isUsuario(aux)){
                     retu[1].add(aux,false);
                 }else{
                     if(rel.isAceptada(aux)!=isAceptada(aux)){
@@ -78,6 +87,13 @@ namespace EN
                 }
             }
             return retu;
+        }
+        public Relaciones clonar(){
+            EN.Relaciones r = new Relaciones(Usuario1);
+            r.Usuarios = new ArrayList(Usuarios);
+            r.Aceptada = new ArrayList(Aceptada);
+            r.Tuya = new ArrayList(Tuya);
+            return r;
         }
     }
 }

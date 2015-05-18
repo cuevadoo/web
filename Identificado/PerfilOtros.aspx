@@ -12,8 +12,12 @@
 
         <asp:Table ID="Table4" runat="server">
             <asp:TableRow runat="server">
-                <asp:TableCell runat="server"><asp:Button ID="Button1" runat="server" Text="Añadir amigo" CssClass="boton"></asp:Button></asp:TableCell>
-                <asp:TableCell runat="server"><asp:Button ID="Button2" runat="server" Text="Enviar mensaje" CssClass="boton"></asp:Button></asp:TableCell>
+                <asp:TableCell runat="server">
+                    <asp:Button ID="Button1" runat="server" Text="Añadir amigo" CssClass="boton" OnClick="Button1_Click"></asp:Button>
+                </asp:TableCell>
+                <asp:TableCell runat="server">
+                    <asp:Button ID="Button2" runat="server" Text="Enviar mensaje" CssClass="boton"></asp:Button>
+                </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
     <div>
