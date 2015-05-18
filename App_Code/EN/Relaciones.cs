@@ -44,15 +44,32 @@ namespace EN
             tuya = new ArrayList();
         }
 
-        public void add(String email,bool aceptada){
+        public void add(String email){
+            usuarios.Add(email);
+            this.aceptada.Add(false);
+            this.tuya.Add(true);
+        }
+        
+        public void add(String email, bool aceptada, bool tuya){
             usuarios.Add(email);
             this.aceptada.Add(aceptada);
+            this.tuya.Add(tuya);
         }
 
         public void remove(String email) {
             int aux = usuarios.IndexOf(email);
             usuarios.RemoveAt(aux);
             aceptada.RemoveAt(aux);
+            tuya.RemoveAt(aux);
+        }
+
+        public void aceptar(String email){
+            if(!isTuya(email)){
+                if(!isAceptada(email)){
+                    int aux = usuarios.IndexOf(email);
+                    aceptada[aux] = true;
+                }
+            }
         }
 
         public bool isUsuario(String email){
@@ -63,6 +80,12 @@ namespace EN
             int aux = usuarios.IndexOf(email);
             return (bool) aceptada[aux];
         }
+
+        public bool isTuya(String email){
+            int aux = usuarios.IndexOf(email);
+            return (bool)tuya[aux];
+        }
+
         /// <summary>
         /// El primer elemento del vector son los usuarios quitados y el segundo los agregados y el tercero los modificados 
         /// al objeto que llama al metodo
@@ -74,15 +97,15 @@ namespace EN
             retu[2] = new Relaciones(usuario1);
             foreach(String aux in rel.usuarios){
                 if(!isUsuario(aux)){
-                    retu[0].add(aux,true);
+                    retu[0].add(aux);
                 }
             }
             foreach(String aux in usuarios){
                 if(!rel.isUsuario(aux)){
-                    retu[1].add(aux,false);
+                    retu[1].add(aux);
                 }else{
                     if(rel.isAceptada(aux)!=isAceptada(aux)){
-                        retu[2].add(aux,rel.isAceptada(aux));
+                        retu[2].add(aux,isAceptada(aux),rel.isTuya(aux));
                     }
                 }
             }

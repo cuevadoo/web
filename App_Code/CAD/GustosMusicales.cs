@@ -19,7 +19,7 @@ namespace CAD
         {
             try
             {
-                String s = "Inster into GustosMusicales(Estilo,Grupo,Artista,Concierto,Decada,Usuario) values ('" 
+                String s = "Insert into GustosMusicales(Estilo,Grupo,Artista,Concierto,Decada,Usuario) values ('" 
                     + gmusic.Estilo + "','" + gmusic.Grupo + "','" + gmusic.Artista + "','" + gmusic.Concierto + "'," + gmusic.Decada + ",'" + gmusic.Email + "')";
                 conexion.ejecutarS(s);
             }
