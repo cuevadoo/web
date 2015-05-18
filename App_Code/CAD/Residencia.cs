@@ -87,32 +87,32 @@ namespace CAD
 
                     if(entra==true)
                     {
-                    s+=",";
+                    s+="','";
                     entra = false;
                     }
 
                     if(added.Localidad!=null){
-                        s += "Localidad='" + added.Localidad + "'";
+                        s += "'Localidad='" + added.Localidad + "'";
                         entra = true;
                     }
                     if (entra == true)
                     {
-                        s += ",";
+                        s += "','";
                         entra = false;
                     }
                     if (added.CAutonoma != null)
                     {
-                        s += "CAutonoma='" + added.CAutonoma + "'";
+                        s += "'CAutonoma='" + added.CAutonoma + "'";
                         entra = true;
                     }
                     if (entra == true)
                     {
-                        s += ",";
+                        s += "','";
                         entra = false;
                     }
 
                     if(added.Email!=null){
-                        s += "Email='" + added.Email + "'";
+                        s += "'Email='" + added.Email + "'";
                     }
                 
                 s+="' WHERE Usuario='" + deleted.Email + "'";
