@@ -18,7 +18,7 @@ namespace CAD
         {
             try
             {
-                String s = "Inster into GustosVideojuegos(Genero,JuegoFav,ConsolaFav,DesarrolladorFav,Email) values ('"
+                String s = "Insert into GustosVideojuegos(Genero,JuegoFav,ConsolaFav,DesarrolladorFav,Email) values ('"
                     + videojuegos.Genero + "','" + videojuegos.JuegoFav + "','" + videojuegos.ConsolaFav +
                     "','" + videojuegos.DesarrolladorFav +  "','" + videojuegos.Email + "')";
                 conexion.ejecutarS(s);
@@ -37,7 +37,7 @@ namespace CAD
             }
             catch (System.Exception e)
             {
-                throw new Exception("Error al borrar gusto");
+                throw new Exception("Error al borrar gusto Videojuego");
             }
         }
         //metodo para leer y devolver un gusto de la tabla
@@ -87,7 +87,7 @@ namespace CAD
             }
             catch (Exception e)
             {
-                throw new Exception("Error al modificar el gusto");
+                throw new Exception("Error al modificar el gusto Videojuego");
             }
         }
     }

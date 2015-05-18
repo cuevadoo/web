@@ -91,7 +91,7 @@ namespace CAD
                     entra = false;
                     }
 
-                    if(added.Localidad!=null){
+                    if(added.Localidad != null){
                         s += "Localidad='" + added.Localidad + "'";
                         entra = true;
                     }
@@ -115,7 +115,7 @@ namespace CAD
                         s += "Email='" + added.Email + "'";
                     }
                 
-                s+="' WHERE Usuario='" + deleted.Email + "'";
+                s+=" WHERE Usuario='" + deleted.Email + "'";
                 conexion.ejecutarS(s);
             }
             catch (System.Exception e)

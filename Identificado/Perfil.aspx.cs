@@ -26,15 +26,16 @@ public partial class Identificado_Perfil : System.Web.UI.Page
                 //Residencia
                     if (r.Pais != null)
                     {
-                        Label1.Text = r.Pais;
+                        TextBoxPais.Attributes["placeholder"] = r.Pais;
+                     
                     }
                     if (r.CAutonoma != null)
                     {
-                        Label3.Text = r.CAutonoma;
+                        TextBoxCAutonoma.Attributes["placeholder"] = r.CAutonoma;
                     }
                     if (r.Localidad != null)
                     {
-                        Label4.Text = r.Localidad;
+                        TextBoxLocalidad.Attributes["placeholder"] = r.Localidad;
                     }
             }catch(CAD.Exception ex){}
         }   
