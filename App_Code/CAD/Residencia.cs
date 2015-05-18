@@ -92,7 +92,7 @@ namespace CAD
                     }
 
                     if(added.Localidad!=null){
-                        s += "'Localidad='" + added.Localidad + "'";
+                        s += "Localidad='" + added.Localidad + "'";
                         entra = true;
                     }
                     if (entra == true)
@@ -102,7 +102,7 @@ namespace CAD
                     }
                     if (added.CAutonoma != null)
                     {
-                        s += "'CAutonoma='" + added.CAutonoma + "'";
+                        s += "CAutonoma='" + added.CAutonoma + "'";
                         entra = true;
                     }
                     if (entra == true)
@@ -112,7 +112,7 @@ namespace CAD
                     }
 
                     if(added.Email!=null){
-                        s += "'Email='" + added.Email + "'";
+                        s += "Email='" + added.Email + "'";
                     }
                 
                 s+="' WHERE Usuario='" + deleted.Email + "'";
