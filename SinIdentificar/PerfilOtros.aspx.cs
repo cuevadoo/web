@@ -21,8 +21,8 @@ public partial class SinIdentificar_PerfilOtros : System.Web.UI.Page
                 if (r.Pais != null){
                     LabelPais.Text = r.Pais;
                 }
-                if (r.Cautonoma != null){
-                    LabelCAutonoma.Text = r.Cautonoma;
+                if (r.CAutonoma != null){
+                    LabelCAutonoma.Text = r.CAutonoma;
                 }
                 if (r.Localidad != null){
                     LabelLocalidad.Text = r.Localidad;
