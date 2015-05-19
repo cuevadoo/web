@@ -108,6 +108,45 @@ public partial class Identificado_Perfil : System.Web.UI.Page
                 }
             }
             catch (CAD.Exception ex) { }
+
+            //Gustos Film
+            try
+            {
+                EN.GustosFilm gf = new CAD.GustosFilm().read(user.Email);
+                if (gf.Actor != null)
+                {
+                    TextBoxActor.Attributes["placeholder"] = gf.Actor;
+                }
+                if (gf.Decada != null)
+                {
+                    DropDownListDecadaC.Attributes["placeholder"] = gf.Decada + "";
+                }
+                if (gf.Director != null)
+                {
+                    TextBoxDirector.Attributes["placeholder"] = gf.Director;
+                }
+                if (gf.Genero != null)
+                {
+                    TextBoxGeneroC.Attributes["placeholder"] = gf.Genero;
+                }
+                if (gf.Pelicula != null)
+                {
+                    TextBoxPeli.Attributes["placeholder"] = gf.Pelicula;
+                }
+                if (gf.S_director1 != null)
+                {
+                    TextBoxProductor.Attributes["placeholder"] = gf.S_director1;
+                }
+                if (gf.S_genero1 != null)
+                {
+                    TextBoxGeneroS.Attributes["placeholder"] = gf.S_genero1;
+                }
+                if (gf.Serie != null)
+                {
+                    TextBoxSerie.Attributes["placeholder"] = gf.Serie;
+                }
+            }
+            catch (CAD.Exception ex) { }   
         
         }
     }
@@ -311,11 +350,10 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             
             //Crear o actualizar Gustos Videojuegos segun corresponda
             try{ new CAD.GustosVideojuegos().create(gv); }catch (CAD.Exception){ new CAD.GustosVideojuegos().update(gv, gv); }
-            /*
+            
             //Crear o actualizar Gustos Filmograficos segun corresponda
-
             try{ new CAD.GustosFilm().create(gf); }catch (CAD.Exception){ new CAD.GustosFilm().update(gf, gf); }
-
+            /*
             //Crear o actualizar Gustos Musicales segun corresponda
 
             try{ new CAD.GustosMusicales().create(gm); }catch (CAD.Exception){ new CAD.GustosMusicales().update(gm, gm); }
