@@ -29,14 +29,14 @@ namespace CAD{
                 }
                 s += ",";
 
-                /*esto no es correcto cambiarlo luego
-                if (gfilm.Decada != null){
+                
+                if (gfilm.Decada != 0){
                     s += " '" + gfilm.Decada + "' ";
                 }else{
                     s += " NULL ";
                 }
                 s += ",";
-                 * */
+
 
                 if (gfilm.Actor != null){
                     s += " '" + gfilm.Actor + "' ";
@@ -144,15 +144,13 @@ namespace CAD{
                     entra = true;
                 }
 
-                /*
-                if (added.Decada != null){
+                if (added.Decada != 0){
                     if(entra){
                        s+=", ";
                     }
                     s += "Decada='" + added.Decada + "'";
                     entra = true;
                 }
-                 * */
 
                 if (added.Actor != null){
                     if (entra){
