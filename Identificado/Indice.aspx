@@ -19,19 +19,33 @@
             <div>
                 <br /><br />
                 <asp:Table ID="Table3" runat="server" Width="100%">
-                    <asp:TableRow runat="server">
-                        <asp:TableCell runat="server" Width="70%">
-                            <asp:TextBox ID="TextBox2" runat="server" Width="80%" Height="60px" CssClass="box" placeholder="Cuéntale a tus amigos qué estás haciendo" TextMode="MultiLine" EnableViewState="True" EnableTheming="True"></asp:TextBox>
+                    <asp:TableRow>
+                        <asp:TableCell Width="650px" Height="180px">
+                            <asp:Table ID="TableEstatica" runat="server" Width="100%">
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:TextBox ID="TextBox2" style="max-width:600px;max-height:60px" Wrap="true" runat="server" Width="600px" Height="60px" CssClass="box" placeholder="Cuéntale a tus amigos qué estás haciendo" TextMode="MultiLine" EnableViewState="True" EnableTheming="True"></asp:TextBox>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <asp:Button ID="Button2" runat="server" Text="Enviar" cssclass="boton" OnClick="Button2_Click"></asp:Button>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                                <asp:TableRow>
+                                    <asp:TableCell>
+                                        <p class="titulo">REGISTRO DE ACTIVIDAD</p>
+                                    </asp:TableCell>
+                                </asp:TableRow>
+                            </asp:Table>
+                        </asp:TableCell>
+                        <asp:TableCell RowSpan="2">
+                            <asp:Table ID="TableAmigos" OnLoad="TableAmigos_Load" runat="server" style="text-wrap:normal;table-layout:fixed;overflow-y:scroll;overflow-x:hidden;" Width="250px" Height="580px"></asp:Table>
                         </asp:TableCell>
                     </asp:TableRow>
-                    <asp:TableRow ID="TableRow2" runat="server" Width="50%">
-                        <asp:TableCell ID="TableCell2" runat="server">
-                            <asp:Button ID="Button2" runat="server" Text="Enviar" cssclass="boton" OnClick="Button2_Click"></asp:Button>
-                        </asp:TableCell>
-                    </asp:TableRow>
-                    <asp:TableRow ID="TableRow3" runat="server">
-                        <asp:TableCell ID="TableCell3" runat="server">
-                            <asp:Label ID="Label1" runat="server" Text="REGISTRO DE ACTIVIDAD"></asp:Label>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Table ID="TableDinamica" runat="server"></asp:Table>
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>

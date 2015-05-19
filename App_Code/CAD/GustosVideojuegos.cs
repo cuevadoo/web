@@ -18,7 +18,7 @@ namespace CAD
         {
             try
             {
-                String s = "Insert into GustosVideojuegos(Genero,JuegoFav,ConsolaFav,DesarrolladorFav,Email) values (";
+                String s = "Insert into GustosVideojuegos(Genero,JuegoFav,ConsolaFav,DesarrolladorFav,Usuario) values (";
                 if (videojuegos.Genero != null)
                 {
                     s += " '" + videojuegos.Genero + "' ";
@@ -45,6 +45,7 @@ namespace CAD
                 {
                     s += " NULL ";
                 }
+                s += ",";
                 if (videojuegos.DesarrolladorFav != null)
                 {
                     s += " '" + videojuegos.DesarrolladorFav + "' ";

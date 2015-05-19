@@ -21,16 +21,16 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
             if (DropDownNombre.SelectedIndex == 2){
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarApellido2, TextBox1.Text);
             }
-        }/*
+        }
         if(DropDownResidencia.Enabled){
             if(DropDownResidencia.SelectedIndex == 0){
-                //Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador(), TextBox1.Text);
+                Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarPais, TextBox1.Text);
             }
             if(DropDownResidencia.SelectedIndex == 1){
-                //Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador(), TextBox1.Text);
+                Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarCAutonoma, TextBox1.Text);
             }
             if(DropDownResidencia.SelectedIndex == 2){
-                //Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador(), TextBox1.Text);
+                Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarLocalidad, TextBox1.Text);
             }
         }
         if(DropDownGInf.Enabled){
@@ -100,7 +100,7 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
             if (DropDownMusica.SelectedIndex == 4){
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarConcierto, TextBox1.Text);
             }
-        }*/
+        }
         actualizarTabla();
     }
     
