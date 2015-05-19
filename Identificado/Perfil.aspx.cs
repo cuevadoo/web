@@ -247,95 +247,80 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             GustosVideojuegos gv = new GustosVideojuegos(null,null,null,null,user.Email);
             GustosFilm gf = new GustosFilm(null,null,(byte) 0,null,null,null,null,null,user.Email);
             GustosMusicales gm = new GustosMusicales(null,null,null,null,(byte)0,user.Email);
-            //new CAD.GustosFilm().create(lo que sea);
-            //residencia
-            if (TextBoxPais.Text != null) { r.Pais = TextBoxPais.Text; } else {TextBoxPais.Text = "";}
-            if (TextBoxCAutonoma.Text != null) { r.CAutonoma = TextBoxCAutonoma.Text; }else{TextBoxCAutonoma.Text = "";}
-            if (TextBoxLocalidad.Text != null) { r.Localidad = TextBoxLocalidad.Text; } else { TextBoxLocalidad.Text = ""; }
 
-            //ordenadores
-            if (TextBoxSO.Text != null) { gi.Sistemaoperativo = TextBoxSO.Text; }
-            if (TextBoxHardware.Text != null) { gi.Marcashw = TextBoxHardware.Text; }
-            if (TextBoxLenguajeP.Text != null) { gi.Lprogramacion = TextBoxLenguajeP.Text; }
+            ////////////////
+            // Residencia //
+            ////////////////
 
-            //videojuegos
-            if (TextBoxGeneroV.Text != null) { gv.Genero = TextBoxGeneroV.Text; }
-            if (RadioButtonListConsola.Text != null) { gv.ConsolaFav = RadioButtonListConsola.Text; }
-            if (TextBoxVideojuego.Text != null) { gv.JuegoFav = TextBoxVideojuego.Text; }
-            if (TextBoxDesarrolladora.Text != null) { gv.DesarrolladorFav = TextBoxDesarrolladora.Text; }
+            if (TextBoxPais.Text != "") { r.Pais = TextBoxPais.Text; }
+            if (TextBoxCAutonoma.Text != "") { r.CAutonoma = TextBoxCAutonoma.Text; }
+            if (TextBoxLocalidad.Text != "") { r.Localidad = TextBoxLocalidad.Text; }
 
+            ////////////////////////
+            // Gustos Ordenadores //
+            ////////////////////////
 
-            if (TextBoxActor.Text != null) { gf.Actor=TextBoxActor.Text;}
-            if(TextBoxArtista.Text!=null){gm.Artista=TextBoxArtista.Text;}
-            if(TextBoxConciertos.Text!=null){gm.Concierto=TextBoxConciertos.Text;}
-            if(TextBoxDesarrolladora.Text!=null){gv.DesarrolladorFav=TextBoxDesarrolladora.Text;}
-            if(TextBoxDirector.Text!=null){gf.Director=TextBoxDirector.Text;}
-            if(TextBoxEstilo.Text!=null){gm.Estilo=TextBoxEstilo.Text;}
-            if(TextBoxGeneroC.Text!=null){gf.Genero=TextBoxGeneroC.Text;}
-            if(TextBoxGeneroS.Text!=null){gf.S_genero1=TextBoxGeneroS.Text;}
-            if (TextBoxGrupo.Text != null) { gm.Grupo = TextBoxGrupo.Text; }
-            if (TextBoxPeli.Text != null) { gf.Pelicula = TextBoxPeli.Text; }
-            if (TextBoxProductor.Text != null) { gf.S_director1 = TextBoxProductor.Text; }
-            if (TextBoxSerie.Text != null) { gf.Serie = TextBoxSerie.Text; }
-            if (TextBoxGeneroV.Text != null) { gv.Genero = TextBoxGeneroV.Text; }
+            if (TextBoxSO.Text != "") { gi.Sistemaoperativo = TextBoxSO.Text; }
+            if (TextBoxHardware.Text != "") { gi.Marcashw = TextBoxHardware.Text; }
+            if (TextBoxLenguajeP.Text != "") { gi.Lprogramacion = TextBoxLenguajeP.Text; }
 
+            ////////////////////////
+            // Gustos Videojuegos //
+            ////////////////////////
 
+            if (TextBoxGeneroV.Text != "") { gv.Genero = TextBoxGeneroV.Text; }
+            if (RadioButtonListConsola.SelectedValue != "") { gv.ConsolaFav = RadioButtonListConsola.SelectedValue; }
+            if (TextBoxVideojuego.Text != "") { gv.JuegoFav = TextBoxVideojuego.Text; }
+            if (TextBoxDesarrolladora.Text != "") { gv.DesarrolladorFav = TextBoxDesarrolladora.Text; }
+
+            //////////////////////////
+            // Gustos Filmograficos //
+            //////////////////////////
+
+            if (TextBoxGeneroC.Text != "") { gf.Genero = TextBoxGeneroC.Text; }
+            if (TextBoxDirector.Text != "") { gf.Director = TextBoxDirector.Text; }
+            if (DropDownListDecadaC.SelectedValue != "--") { gf.Decada = Byte.Parse(DropDownListDecadaC.SelectedValue); }
+            if (TextBoxActor.Text != "") { gf.Actor = TextBoxActor.Text; }
+            if (TextBoxPeli.Text != "") { gf.Pelicula = TextBoxPeli.Text; }
+            if (TextBoxGeneroS.Text != "") { gf.S_genero1 = TextBoxGeneroS.Text; }
+            if (TextBoxProductor.Text != "") { gf.S_director1 = TextBoxProductor.Text; }
+            if (TextBoxSerie.Text != "") { gf.Serie = TextBoxSerie.Text; }
+
+            //////////////////////
+            // Gustos Musicales //
+            //////////////////////
+
+            if (TextBoxEstilo.Text != "") { gm.Estilo = TextBoxEstilo.Text; }
+            if (TextBoxGrupo.Text != "") { gm.Grupo = TextBoxGrupo.Text; }
+            if (TextBoxArtista.Text != "") { gm.Artista = TextBoxArtista.Text; }
+            if (DropDownListDecadaM.SelectedValue != "--") { gm.Decada = Byte.Parse(DropDownListDecadaM.SelectedValue); }
+            if (TextBoxConciertos.Text != "") { gm.Concierto = TextBoxConciertos.Text; }
 
             
-            //llamadas residencia 
-            try
-            {
-                new CAD.Residencia().create(r);
-            }
-            catch (CAD.Exception)
-            {
-                new CAD.Residencia().update(r, r);
-            }
-            LabelAviso.Text = "Los cambios se han guardado correctamente";
+            //Crear o actualizar Residencia segun corresponda
 
-            /*//llamadas gustosMusica 
-            try
-            {
-                new CAD.GustosMusicales().create(gm);
-            }
-            catch (CAD.Exception)
-            {
-                //new CAD.GustosMusicales().update(r, r);
-            }
-            LabelAviso.Text = "Los cambios se han guardado correctamente";*/
+            try{ new CAD.Residencia().create(r); }catch (CAD.Exception){ new CAD.Residencia().update(r, r); }
+            /*
+            //Crear o actualizar Gustos Ordenadores segun corresponda
 
-            //llamadas ordenadores 
-            try
-            {
-                new CAD.GustosOrdenadores().create(gi);
-            }
-            catch (CAD.Exception)
-            {
-                //new CAD.GustosOrdenadores().update(gi, gi);
-            }
+            try{ new CAD.GustosOrdenadores().create(gi); }catch (CAD.Exception){ new CAD.GustosOrdenadores().update(gi, gi); }
+            
+            //Crear o actualizar Gustos Videojuegos segun corresponda
+            
+            try{ new CAD.GustosVideojuegos().create(gv); }catch (CAD.Exception){ new CAD.GustosVideojuegos().update(gv, gv); }
+            
+            //Crear o actualizar Gustos Filmograficos segun corresponda
 
-            //llamadas videojuegos 
-            try
-            {
-                new CAD.GustosVideojuegos().create(gv);
-            }
-            catch (CAD.Exception)
-            {
-                //new CAD.GustosVideojuegos().update(gv, gv);
-            }
+            try{ new CAD.GustosFilm().create(gf); }catch (CAD.Exception){ new CAD.GustosFilm().update(gf, gf); }
+
+            //Crear o actualizar Gustos Musicales segun corresponda
+
+            try{ new CAD.GustosMusicales().create(gm); }catch (CAD.Exception){ new CAD.GustosMusicales().update(gm, gm); }
+            */
 
             LabelAviso.Text = "Los cambios se han guardado correctamente";
-            //new CAD.GustosOrdenadores().create(gi);
-            //new CAD.GustosVideojuegos().create(gv);
-            //new CAD.GustosFilm().create(gf);
-            //new CAD.GustosMusicales().create(gm);
-        }
-        catch (CAD.Exception ex)
-        {
-            LabelAviso.Text = ex.Mensaje;//ver el error
-        }
-        catch (System.Exception ex)
-        {
+
+        }catch (System.Exception ex){
            LabelAviso.Text = "ERROR. No se han podido guardar los cambios. Inténtelo de nuevo más tarde";
         }
        

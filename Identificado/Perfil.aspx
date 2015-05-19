@@ -190,7 +190,7 @@
     <div>
         <center>
             <hr width="900px">
-            <p style="text-decoration-line:underline">Datos personales</p>
+            <p style="text-decoration-line:underline">Lugar de residencia</p>
             <div class="todo">
                 <p>La siguiente información no es obligatoria pero permite que tus amigos sepan donde vives y qué es lo que te gusta. Además facilitará la busqueda al resto de usuarios mediante el Buscador Avanzado de Cuevadoo©.</p>
             </div>
