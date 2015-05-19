@@ -304,13 +304,12 @@ public partial class Identificado_Perfil : System.Web.UI.Page
 
             
             //Crear o actualizar Residencia segun corresponda
-
             try{ new CAD.Residencia().create(r); }catch (CAD.Exception){ new CAD.Residencia().update(r, r); }
-            /*
-            //Crear o actualizar Gustos Ordenadores segun corresponda
-
-            try{ new CAD.GustosOrdenadores().create(gi); }catch (CAD.Exception){ new CAD.GustosOrdenadores().update(gi, gi); }
             
+            //Crear o actualizar Gustos Ordenadores segun corresponda
+            try{ new CAD.GustosOrdenadores().create(gi); }catch (CAD.Exception){ new CAD.GustosOrdenadores().update(gi, gi); }
+
+            /*
             //Crear o actualizar Gustos Videojuegos segun corresponda
             
             try{ new CAD.GustosVideojuegos().create(gv); }catch (CAD.Exception){ new CAD.GustosVideojuegos().update(gv, gv); }

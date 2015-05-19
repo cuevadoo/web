@@ -18,9 +18,28 @@ namespace CAD
         {
             try
             {
-                String s = "Insert into GustosOrdenadores(Sistemaoperativo,Marcashw,Lprogramacion,Usuario) values ('"
-                    + ordenadores.Sistemaoperativo + "','" + ordenadores.Marcashw + "','" + ordenadores.Lprogramacion +
-                    "','" + ordenadores.Email + "')";
+                String s = "Insert into GustosOrdenadores(Sistemaoperativo,Marcashw,Lprogramacion,Usuario) values (";
+                if (ordenadores.Sistemaoperativo != null)
+                {
+                    s += " '" + ordenadores.Sistemaoperativo + "' ";
+                }else{
+                    s += " NULL ";
+                }
+                s+=",";
+                if (ordenadores.Marcashw != null)
+                {
+                    s += " '" + ordenadores.Marcashw + "' ";
+                }else{
+                    s += " NULL ";
+                }
+                s+=",";
+                if (ordenadores.Lprogramacion != null)
+                {
+                    s += " '" + ordenadores.Lprogramacion + "' ";
+                }else{
+                    s += " NULL ";
+                }
+                s += ",'" + ordenadores.Email + "')";
                 conexion.ejecutarS(s);
             }
             catch (System.Exception e)
@@ -80,10 +99,34 @@ namespace CAD
         {
             try
             {
-                String s = "Update GustosOrdenadores set So='" + added.Sistemaoperativo +
-                    "', Marca='" + added.Marcashw + "', LProg='" + added.Lprogramacion + "', Usuario='" + added.Email 
-                    + "' WHERE Usuario='" + deleted.Email + "'";
-                conexion.ejecutarS(s);
+                bool entra = false;
+                String s = "Update GustosOrdenadores set ";
+                if (added.Sistemaoperativo != null)
+                {
+                    s += "Sistemaoperativo='" + added.Sistemaoperativo + "'";
+                    entra = true;
+                }
+                if (added.Marcashw != null)
+                {
+                    if (entra)
+                    {
+                        s += ", ";
+                    }
+                    s += "Marcashw='" + added.Marcashw + "'";
+                    entra = true;
+                }
+                if (added.Lprogramacion != null)
+                {
+                    if (entra)
+                    {
+                        s += ", ";
+                    }
+                    s += "Lprogramacion='" + added.Lprogramacion + "'";
+                    entra = true;
+                }
+                s += " WHERE Usuario='" + deleted.Email + "'";
+                if (entra)
+                { conexion.ejecutarS(s); }
             }
             catch (Exception e)
             {

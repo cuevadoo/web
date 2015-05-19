@@ -93,9 +93,11 @@ namespace CAD{
                         s+=", ";
                     }
                     s += "Localidad='" + added.Localidad + "'";
+                    entra = true;
                 }
                 s +=" WHERE Usuario='" + deleted.Email + "'";
-                conexion.ejecutarS(s);
+                if(entra)
+                {conexion.ejecutarS(s);}
             }catch (System.Exception e){
                 throw new Exception("Error al modificar la residencia");
             }
