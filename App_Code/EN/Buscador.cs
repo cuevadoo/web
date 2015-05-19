@@ -89,7 +89,12 @@ namespace EN
                 t.Width = 30;
                 t.Height = 30;
                 Image image = new Image();
-                image.ImageUrl = "~/Imagenes/Usuarios/"+ email[i] + "/prev.png";
+                if(new CAD.Usuario().read((String)email[i]).Foto==null){
+                    image.ImageUrl = "~/Imagenes/ImagenPerfil.jpg";
+                }else{
+                    image.ImageUrl = "~/Imagenes/Usuarios/"+ email[i] + "/prev.png";
+                }
+                
                 image.Height = 30;
                 image.Width = 30;
                 t.Controls.Add(image);

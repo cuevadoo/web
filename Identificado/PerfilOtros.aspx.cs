@@ -12,6 +12,7 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
         EN.Usuario user = (EN.Usuario)Session["PerfilOtro"];
         EN.Relaciones rel = (EN.Relaciones) Session["Relaciones"];
         if(user!=null){
+            LabelNombreUsuario.Text = user.Nombre + " " + user.Apellido1 + " " + user.Apellido2;
             if (user.Foto == null){
                 UserImage1.ImageUrl = "~/Imagenes/ImagenPerfil.jpg";
             }else{
