@@ -18,9 +18,43 @@ namespace CAD
         {
             try
             {
-                String s = "Insert into ustosVideojuegos(Genero,JuegoFav,ConsolaFav,DesarrolladorFav,Email) values ('"
-                    + videojuegos.Genero + "','" + videojuegos.JuegoFav + "','" + videojuegos.ConsolaFav +
-                    "','" + videojuegos.DesarrolladorFav +  "','" + videojuegos.Email + "')";
+                String s = "Insert into GustosVideojuegos(Genero,JuegoFav,ConsolaFav,DesarrolladorFav,Email) values (";
+                if (videojuegos.Genero != null)
+                {
+                    s += " '" + videojuegos.Genero + "' ";
+                }
+                else
+                {
+                    s += " NULL ";
+                }
+                s += ",";
+                if (videojuegos.JuegoFav != null)
+                {
+                    s += " '" + videojuegos.JuegoFav + "' ";
+                }
+                else
+                {
+                    s += " NULL ";
+                }
+                s += ",";
+                if (videojuegos.ConsolaFav != null)
+                {
+                    s += " '" + videojuegos.ConsolaFav + "' ";
+                }
+                else
+                {
+                    s += " NULL ";
+                }
+                if (videojuegos.DesarrolladorFav != null)
+                {
+                    s += " '" + videojuegos.DesarrolladorFav + "' ";
+                }
+                else
+                {
+                    s += " NULL ";
+                }
+
+                s += ",'" + videojuegos.Email + "')";
                 conexion.ejecutarS(s);
             }
             catch (System.Exception e)
@@ -80,10 +114,44 @@ namespace CAD
         {
             try
             {
-                String s = "Update GustosVideojuegos set Genero='" + added.Genero +
-                    "', JuegoFav='" + added.JuegoFav + "', ConsolaFav='" + added.ConsolaFav+ "', DesarrolladorFav='" + added.DesarrolladorFav + "', Email='" + added.Email
-                    + "' WHERE Email='" + deleted.Email + "'";
-                conexion.ejecutarS(s);
+                bool entra = false;
+                String s = "Update GustosVideojuegos set ";
+                if (added.Genero != null)
+                {
+                    s += "Genero='" + added.Genero + "'";
+                    entra = true;
+                }
+                if (added.JuegoFav != null)
+                {
+                    if (entra)
+                    {
+                        s += ", ";
+                    }
+                    s += "JuegoFav='" + added.JuegoFav + "'";
+                    entra = true;
+                }
+                if (added.ConsolaFav != null)
+                {
+                    if (entra)
+                    {
+                        s += ", ";
+                    }
+                    s += "ConsolaFav='" + added.ConsolaFav + "'";
+                    entra = true;
+                }
+                if (added.DesarrolladorFav != null)
+                {
+                    if (entra)
+                    {
+                        s += ", ";
+                    }
+                    s += "DesarrolladorFav='" + added.DesarrolladorFav + "'";
+                    entra = true;
+                }
+
+                s += " WHERE Usuario='" + deleted.Email + "'";
+                if (entra)
+                { conexion.ejecutarS(s); }
             }
             catch (Exception e)
             {

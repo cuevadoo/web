@@ -87,7 +87,6 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             catch (CAD.Exception ex) { }
 
             //Gustos Videojuegos
-
             try
             {
                 EN.GustosVideojuegos gv = new CAD.GustosVideojuegos().read(user.Email);
@@ -309,11 +308,10 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             //Crear o actualizar Gustos Ordenadores segun corresponda
             try{ new CAD.GustosOrdenadores().create(gi); }catch (CAD.Exception){ new CAD.GustosOrdenadores().update(gi, gi); }
 
-            /*
+            
             //Crear o actualizar Gustos Videojuegos segun corresponda
-            
             try{ new CAD.GustosVideojuegos().create(gv); }catch (CAD.Exception){ new CAD.GustosVideojuegos().update(gv, gv); }
-            
+            /*
             //Crear o actualizar Gustos Filmograficos segun corresponda
 
             try{ new CAD.GustosFilm().create(gf); }catch (CAD.Exception){ new CAD.GustosFilm().update(gf, gf); }
