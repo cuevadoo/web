@@ -37,15 +37,15 @@
             document.getElementById("ContentPlaceHolder1_AnchoVentana").value = "" + Tam[0];
             document.getElementById("ContentPlaceHolder1_AltoVentana").value = "" + Tam[1];
         };
-        function aparecer() {
+        function aparecer2() {
             document.body.style.overflow = 'hidden';
             document.getElementById('derecha').style.display = 'block';
             document.getElementById('izquierda').style.display = 'block';
             document.getElementById('light1').style.display = 'block';
             document.getElementById('light2').style.display = 'block';
-            document.getElementById('fade').style.display = 'block';
+            document.getElementById('fade2').style.display = 'block';
         }
-        function desaparecer() {
+        function desaparecer2() {
             document.body.style.overflow = 'auto';
             document.getElementById('ContentPlaceHolder1_Foto').style.display = 'none';
             document.getElementById('ContentPlaceHolder1_fondoFoto').style.display = 'none';
@@ -53,7 +53,7 @@
             document.getElementById('izquierda').style.display = 'none';
             document.getElementById('light1').style.display = 'none';
             document.getElementById('light2').style.display = 'none';
-            document.getElementById('fade').style.display = 'none';
+            document.getElementById('fade2').style.display = 'none';
         }
         var ID;
         function desplazar(cantidad) {
@@ -146,7 +146,7 @@
             <h3 class="titulo">CONFIGURACIÓN DE PERFIL</h3>
             <br />
             <p style="text-decoration: underline">Imagen de perfil</p>
-            <asp:Image CssClass="Manita" onclick = "aparecer()" ID="ImageButton1" runat="server" Height="198px" Width="250px" />
+            <asp:Image CssClass="Manita" onclick = "aparecer2()" ID="ImageButton1" runat="server" Height="198px" Width="250px" />
             <p>Esta imagen será visible por todos los usuarios de Cuevadoo</p>
             <p>Haz click en ella para cambiar tu foto de perfil</p>
             <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
@@ -154,7 +154,7 @@
 
             <!--Imagenes en ventana desplegable-->
 
-            <div id="fade" class="FondoFoto" onclick ="desaparecer()"></div>
+            <div id="fade2" class="FondoFoto" onclick ="desaparecer2()"></div>
             <div id="izquierda" onmouseout="vaciar()" onmouseover="desplazarTiempo(-2,5)" class="BotonIzquierda"><</div>
             <div id="derecha" onmouseout="vaciar()" onmouseover="desplazarTiempo(2,5)" class="BotonDerecha">></div>
             <div id="light1" class="ContenidoFotoScroll">

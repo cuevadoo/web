@@ -38,7 +38,8 @@ public partial class Identificado_Perfil : System.Web.UI.Page
                     }
             }catch(CAD.Exception ex){}
 
-            /*//Gustos Musicales
+            /*
+            //Gustos Musicales
             EN.GustosMusicales gm = new CAD.GustosMusicales().read(user.Email);
 
             try
@@ -108,9 +109,8 @@ public partial class Identificado_Perfil : System.Web.UI.Page
                 }
             }
             catch (CAD.Exception ex) { }
-
-            
-        }   
+        
+        }
     }
     private static System.Drawing.Image cropImage(System.Drawing.Image img, System.Drawing.RectangleF cropArea){
         System.Drawing.Bitmap bmpImage = new System.Drawing.Bitmap(img);
@@ -128,7 +128,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             if(aux2[aux2.Length-1]!="Thumbs.db"&&aux2[aux2.Length-1]!="prev.png"){
                 TableCell cell = new TableCell();
                 ImageButton ima = new ImageButton();
-                //ima.Click += new ImageClickEventHandler(DarleImagen);
+                ima.Click += new ImageClickEventHandler(DarleImagen);
                 ima.Height = 100;
                 ima.Width = 100;
                 ima.ImageUrl = "~/Imagenes/Usuarios/" + user.Email + "/" + aux2[aux2.Length - 1];
