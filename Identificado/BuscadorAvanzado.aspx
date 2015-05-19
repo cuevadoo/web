@@ -82,8 +82,12 @@
     </center>
     <div id="centrar">
         <asp:TextBox CssClass="box" placeholder="Inserte dato de búsqueda" ID="TextBox1" runat="server" Width="776px" AutoPostBack="True" OnTextChanged="TextBox1_TextChanged"></asp:TextBox><br />
-        <br />
-        <center>    
+        <center>
+            <asp:UpdateProgress runat="server" AssociatedUpdatePanelID="UpdatePanel1" DisplayAfter="500" DynamicLayout="False">
+                <ProgressTemplate>
+                    Se esta realizando la busqueda
+                </ProgressTemplate>
+            </asp:UpdateProgress>
             <asp:Table CssClass="tablaBuscador" ID="Table2" runat="server" Width="800px"></asp:Table>
             <asp:Table ID="Table1" runat="server"></asp:Table>
         </center>

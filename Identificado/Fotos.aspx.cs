@@ -21,7 +21,15 @@ public partial class Identificado_Fotos : System.Web.UI.Page
         EN.Usuario user =(EN.Usuario) Session["User"];
         String[] dirs = Directory.GetFiles(Server.MapPath("~/Imagenes/Usuarios/" + user.Email + "/"));
         TableRow row = new TableRow();
-        int i=0;
+        int i;
+        for (i=0;i<=6;i++){
+            TableCell cell = new TableCell();
+            cell.Width = 102;
+            row.Cells.Add(cell);
+        }
+        t.Rows.Add(row);
+        row = new TableRow();
+        i=0;
         foreach(String s in dirs){
             char[] aux = { '\\' };
             String[] aux2 = s.Split(aux);
@@ -68,7 +76,7 @@ public partial class Identificado_Fotos : System.Web.UI.Page
                     EN.Usuario user = (EN.Usuario)Session["User"];
                     String path = Server.MapPath("~/Imagenes/Usuarios/" + user.Email + "/");
                     File.WriteAllBytes(path + DateTime.Now.ToBinary() + ".jpg", bytes);
-                    Label1.Text = "Se ha subido correctamente";
+                    Response.Redirect("~/Identificado/Fotos.aspx");
                 }catch(Exception ex){
                     Label1.Text = "No se ha podido subir la imagen";
                 }

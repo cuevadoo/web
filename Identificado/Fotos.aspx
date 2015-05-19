@@ -85,45 +85,44 @@
                     </asp:Table>
 
                     <!--Tabla con el menu basico-->
+                    <!--Chat desplegable-->
 
-                                    <!--Chat desplegable-->
+                    <div id="chat" onmouseover="apChat()" style="position:fixed;top:200px;left:0px;width:20px;height:500px;overflow:hidden;z-index:501">
+                        <div class="chatbackground" style="width:300px; height:100%;background-color:brown;overflow:hidden;z-index:502">
+                            <div style="float:left;width:20px;height:100%;z-index:503">
+                                <br /><br />
+                                <br /><asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/Imagenes/iconoventana.png" Width="20px"></asp:ImageButton>
+                                <br /><br />
+                                <br /><asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/iconomas.png"  Width="20px"></asp:ImageButton><br /><br /><br />
+                                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Imagenes/iconoX.png" Width="20px" ></asp:ImageButton>
 
-                <div id="chat" onmouseover="apChat()" style="position:fixed;top:200px;left:0px;width:20px;height:500px;overflow:hidden;z-index:501">
-                    <div class="chatbackground" style="width:300px; height:100%;background-color:brown;overflow:hidden;z-index:502">
-                        <div style="float:left;width:20px;height:100%;z-index:503">
-                            <br /><br />
-                            <br /><asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/Imagenes/iconoventana.png" Width="20px"></asp:ImageButton>
-                            <br /><br />
-                            <br /><asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/iconomas.png"  Width="20px"></asp:ImageButton><br /><br /><br />
-                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Imagenes/iconoX.png" Width="20px" ></asp:ImageButton>
+                                <!--En este la informacion que se ve siempre-->
+                            </div>
+                            <div style="float:left;width:280px;height:100%;z-index:503">
+                                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                    <ContentTemplate>
 
-                            <!--En este la informacion que se ve siempre-->
-                        </div>
-                        <div style="float:left;width:280px;height:100%;z-index:503">
-                            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                                <ContentTemplate>
-
-                                    <!--Y en este la de despues de desplegar-->
-                                    <div style="position:absolute;right:0px">
-                                    <asp:Image ID="Image5" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
-                                    </div>
-                                    <br />
-                                    <asp:Label ID="ChatUser" runat="server" Text="Alex Martinez" CssClass="tfooter"></asp:Label><br />
-                                    <br />
-                                    <div id="TextoChat" runat="server" style="overflow-y:scroll; overflow-x:hidden;background:white;height:350px;" >
-                                        <!--Contenido de la conversacion del chart-->
-                                    </div>
-                                    <div>
-                                    <asp:TextBox ID="TextBox1" runat="server" Width="258px" CssClass="boxchat"></asp:TextBox><br />
-                                        <asp:Button ID="Button2" runat="server" Text="Enviar" CssClass="botonchat" OnClick="Button1_Click"></asp:Button>
-                                    </div>
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
+                                        <!--Y en este la de despues de desplegar-->
+                                        <div style="position:absolute;right:0px">
+                                        <asp:Image ID="Image5" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
+                                        </div>
+                                        <br />
+                                        <asp:Label ID="ChatUser" runat="server" Text="Alex Martinez" CssClass="tfooter"></asp:Label><br />
+                                        <br />
+                                        <div id="TextoChat" runat="server" style="overflow-y:scroll; overflow-x:hidden;background:white;height:350px;" >
+                                            <!--Contenido de la conversacion del chat-->
+                                        </div>
+                                        <div>
+                                        <asp:TextBox ID="TextBox1" runat="server" Width="258px" CssClass="boxchat"></asp:TextBox><br />
+                                            <asp:Button ID="Button2" runat="server" Text="Enviar" CssClass="botonchat" OnClick="Button1_Click"></asp:Button>
+                                        </div>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <!--Chat desplegable-->
+                    
+                    <!--Chat desplegable-->
 
                     <!--Imagen de herramienta y menu desplegable-->
 
@@ -159,7 +158,7 @@
                     <br /><br />
                     <center>
                         <asp:Label ID="Label2" runat="server" Text="Galeria de fotos" CssClass="titulo"></asp:Label>
-                        <asp:Table ID="Table3" runat="server" Width="800px"  OnLoad="Table3_Load"></asp:Table>
+                        <asp:Table ID="Table3"  style="table-layout:fixed;" runat="server" Width="800px" OnLoad="Table3_Load"></asp:Table>
                     </center>
                     <!--Galeria de fotos dinamica-->
 

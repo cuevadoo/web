@@ -19,14 +19,18 @@ namespace EN
         private ArrayList email;
 
         public Buscador(del d,String s){
-            object[] obj = d(s);
-            pagina=0;
-            if (obj.Length == 2){
-                email = (ArrayList)obj[0];
-                lista = (ArrayList)obj[1];
+            try {
+                object[] obj = d(s);
+                pagina=0;
+                if (obj.Length == 2){
+                    email = (ArrayList)obj[0];
+                    lista = (ArrayList)obj[1];
+                    max = ((lista.Count-1)/10);
+                }
+            }catch(System.Exception ex){
+                email = new ArrayList();
+                lista = new ArrayList();
                 max = ((lista.Count-1)/10);
-            }else{
-
             }
         }
         public TableRowCollection actualizaSin(TableRowCollection rows,del2 modulo){
