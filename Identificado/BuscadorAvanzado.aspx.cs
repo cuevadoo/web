@@ -11,7 +11,7 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
         actualizarTabla();
     }
     protected void TextBox1_TextChanged(object sender, EventArgs e){
-        /*if(DropDownNombre.Enabled){
+        if(DropDownNombre.Enabled){
             if (DropDownNombre.SelectedIndex == 0){
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarNombre, TextBox1.Text);
             }
@@ -21,7 +21,7 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
             if (DropDownNombre.SelectedIndex == 2){
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarApellido2, TextBox1.Text);
             }
-        }
+        }/*
         if(DropDownResidencia.Enabled){
             if(DropDownResidencia.SelectedIndex == 0){
                 //Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador(), TextBox1.Text);
@@ -101,7 +101,6 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarConcierto, TextBox1.Text);
             }
         }*/
-        Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarNombre, TextBox1.Text);
         actualizarTabla();
     }
     

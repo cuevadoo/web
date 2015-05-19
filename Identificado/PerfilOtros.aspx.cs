@@ -9,6 +9,7 @@ using System.IO;
 public partial class Identificado_PerfilOtros : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e){
+        EN.Usuario tuUser = (EN.Usuario)Session["User"];
         EN.Usuario user = (EN.Usuario)Session["PerfilOtro"];
         EN.Relaciones rel = (EN.Relaciones) Session["Relaciones"];
         if(user!=null){
@@ -30,6 +31,11 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
                     }else{
                         Button1.Text = "Aceptar solicitud";
                     }
+                }
+            }else{
+                if(tuUser.Email==user.Email){
+                    Button1.Text = "Eres tu";
+                    Button1.Enabled = false;
                 }
             }
             //Residencia

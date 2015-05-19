@@ -170,6 +170,12 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             Image1.Width = ancho;
         }
     }
+    protected void ImageButton3_Click(object sender, ImageClickEventArgs e) {
+        fondoFoto.Style["display"] = "none";
+        Foto.Style["display"] = "none";
+        Image1.Style["display"] = "none";
+        botones.Style["display"] = "none";
+    }
     protected void ImageButton2_Click(object sender, ImageClickEventArgs e){
         try {
             int[] AlAn =(int[]) Session["Tamaño"];

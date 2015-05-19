@@ -181,7 +181,7 @@
             </div>
             <div runat="server" id="botones" class="BotonesFoto">
                 <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Imagenes/tuerca.png" OnClick="ImageButton2_Click"></asp:ImageButton>
-                <asp:ImageButton ID="ImageButton3" runat="server"></asp:ImageButton>
+                <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/tuerca.png" OnClick="ImageButton3_Click"></asp:ImageButton>
             </div>
 
         <!--Editor de imagen-->
