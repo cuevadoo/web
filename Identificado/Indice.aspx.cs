@@ -18,6 +18,42 @@ public partial class Identificado_Indice : System.Web.UI.Page
         HttpContext.Current.Response.Redirect("~/Identificado/PerfilOtros.aspx");
     }
 
+    protected void TableAmigos_Load(object sender, EventArgs e) {
+        EN.Relaciones rel = (EN.Relaciones)Session["Relaciones"];
+        Table t = (Table)sender;
+        t.Rows.Clear();
+        TableRow row = new TableRow();
+        row.Height = 30;
+        TableCell cell = new TableCell();
+        cell.Text = "<p class='titulo' style='text-align:center;'>Amigos</p>";
+        row.Cells.Add(cell);
+        t.Rows.Add(row);
+        System.Collections.ArrayList array = rel.Usuarios;
+        bool entrado = true;
+        foreach(String user in array){
+            if(rel.isAceptada(user)){
+                row = new TableRow();
+                cell = new TableCell();
+                Button label = new Button();
+                label.CssClass = "BotonChat";
+                EN.Usuario en = new CAD.Usuario().read(user);
+                label.Text = en.Nombre + " " + en.Apellido1 + " " + en.Apellido2;
+                label.Style["email"] = "" + user;
+                label.Click += new EventHandler(this.Redirect);
+                cell.Controls.Add(label);
+                row.Cells.Add(cell);
+                t.Rows.Add(row);
+                entrado = false;
+            }
+        }
+        if(entrado){
+            row = new TableRow();
+            cell = new TableCell();
+            row.Cells.Add(cell);
+            t.Rows.Add(row);
+        }
+    }
+
     protected void TextBox1_TextChanged(object sender, EventArgs e){
         if(TextBox1.Text.Length>=3){
             CAD.Usuario user=new CAD.Usuario();
@@ -33,11 +69,11 @@ public partial class Identificado_Indice : System.Web.UI.Page
         }else{
             EN.Buscador busca = (EN.Buscador)Session["BuscadorIS"];
             switch(but.ID){
-                case "<": busca--; busca.actualizaSin(Table1.Rows, Redirect); break;
-                case ">": busca++; busca.actualizaSin(Table1.Rows, Redirect); break;
+                case "<": busca--; busca.actualizaCon(Table1.Rows, Redirect); break;
+                case ">": busca++; busca.actualizaCon(Table1.Rows, Redirect); break;
                 default:
                     busca.Pagina=Int32.Parse(but.ID)-1;
-                    busca.actualizaSin(Table1.Rows, Redirect);
+                    busca.actualizaCon(Table1.Rows, Redirect);
                     break;
             }
             actualizarTabla();
@@ -56,7 +92,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
             Table2.Rows.Add(row1);
         }else{
             EN.Buscador b =(EN.Buscador)Session["BuscadorIS"];
-            b.actualizaSin(Table2.Rows, Redirect);
+            b.actualizaCon(Table2.Rows, Redirect);
             int cant=b.Max;
             if(cant!=1){
                 Table1.Rows.Add(new TableRow());
@@ -95,9 +131,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
         if(TextBox1==c){
             fade.Style["display"] = "block";
             light.Style["display"] = "block";
-            Label1.Text = "Hola2";
         }else{
-            Label1.Text = "";
             bool comp = true;
             foreach(Button b in lButton){
                 if(b==c){

@@ -51,7 +51,7 @@ namespace CAD{
                     nombre+"%' OR Apellido1 Like '"+nombre+"%' OR Apellido2 Like '"+nombre+"%'";
                 obj=meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -67,7 +67,7 @@ namespace CAD{
                     nombre+"%'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -79,7 +79,7 @@ namespace CAD{
                     nombre+"%'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -91,7 +91,50 @@ namespace CAD{
                     nombre+"%'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error buscar");
+            }
+            return obj;
+        }
+
+        ///////////////////////////
+        // Busquedas de Residencia //
+        ///////////////////////////
+
+        public object[] buscarPais(String nombre) {
+            object[] obj=new object[2];
+            try{
+                String s = "Select Usuario From Residencia Where Pais Like '%" +
+                    nombre+"%'";
+                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
+                obj = meterDatos(conexion.ejecutarR(s).Rows);
+            }catch(System.Exception ex){
+                throw new Exception("Error al buscar");
+            }
+            return obj;
+        }
+
+        public object[] buscarCAutonoma(String nombre) {
+            object[] obj=new object[2];
+            try{
+                String s = "Select Usuario From Residencia Where CAutonoma Like '%" +
+                    nombre+"%'";
+                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
+                obj = meterDatos(conexion.ejecutarR(s).Rows);
+            }catch(System.Exception ex){
+                throw new Exception("Error al buscar");
+            }
+            return obj;
+        }
+
+        public object[] buscarLocalidad(String nombre) {
+            object[] obj=new object[2];
+            try{
+                String s = "Select Usuario From Residencia Where Localidad Like '%" +
+                    nombre + "%'";
+                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
+                obj = meterDatos(conexion.ejecutarR(s).Rows);
+            }catch(System.Exception ex){
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -108,7 +151,7 @@ namespace CAD{
                 s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -121,7 +164,7 @@ namespace CAD{
                 s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -134,7 +177,7 @@ namespace CAD{
                 s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -151,7 +194,7 @@ namespace CAD{
                 s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -164,7 +207,7 @@ namespace CAD{
                 s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -177,7 +220,7 @@ namespace CAD{
                 s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -190,7 +233,7 @@ namespace CAD{
                 s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -207,7 +250,7 @@ namespace CAD{
                 s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -220,7 +263,7 @@ namespace CAD{
                 s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -233,7 +276,7 @@ namespace CAD{
                 s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -246,7 +289,7 @@ namespace CAD{
                 s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -259,7 +302,7 @@ namespace CAD{
                 s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -272,7 +315,7 @@ namespace CAD{
                 s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -285,7 +328,7 @@ namespace CAD{
                 s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
@@ -298,7 +341,7 @@ namespace CAD{
                 s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
                 obj = meterDatos(conexion.ejecutarR(s).Rows);
             }catch(System.Exception ex){
-                throw new Exception("Error al leer usuario");
+                throw new Exception("Error al buscar");
             }
             return obj;
         }
