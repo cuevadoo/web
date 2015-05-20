@@ -128,7 +128,7 @@ namespace CAD
         public void update(EN.GustosMusicales deleted, EN.GustosMusicales added)
         {
 
-             try{
+            /* try{
                 bool entra = false;
                 String s = "Update GustosFilm set ";
                 if (added.Genero != null){
@@ -205,7 +205,7 @@ namespace CAD
                 { conexion.ejecutarS(s); }
             }catch (Exception e){
                 throw new Exception("Error al modificar el gusto filmográfico");
-            }
+            }*/
    
            /* try
             {
