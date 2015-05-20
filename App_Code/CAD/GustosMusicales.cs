@@ -128,96 +128,52 @@ namespace CAD
         public void update(EN.GustosMusicales deleted, EN.GustosMusicales added)
         {
 
-            /* try{
+             try{
+
                 bool entra = false;
                 String s = "Update GustosFilm set ";
-                if (added.Genero != null){
-                    s += "Genero='" + added.Genero + "'";
+                if (added.Estilo != null){
+                    s += "Estilo='" + added.Estilo + "'";
                     entra = true;
                 }
 
-                if (added.Director != null){
+                if (added.Grupo != null){
                     if (entra){
                         s += ", ";
                     }
-                    s += "Director='" + added.Director + "'";
+                    s += "Grupo='" + added.Grupo + "'";
+                    entra = true;
+                }
+
+                if (added.Artista != null){
+                    if(entra){
+                       s+=", ";
+                    }
+                    s += "Artista='" + added.Artista + "'";
+                    entra = true;
+                }
+
+                if (added.Concierto != null){
+                    if (entra){
+                        s += ", ";
+                    }
+                    s += "Concierto='" + added.Concierto + "'";
                     entra = true;
                 }
 
                 if (added.Decada != 0){
-                    if(entra){
-                       s+=", ";
+                    if (entra){
+                        s += ", ";
                     }
                     s += "Decada='" + added.Decada + "'";
                     entra = true;
-                }
-
-                if (added.Actor != null){
-                    if (entra){
-                        s += ", ";
-                    }
-                    s += "Actor='" + added.Actor + "'";
-                    entra = true;
-                }
-
-                if (added.Pelicula != null){
-                    if (entra){
-                        s += ", ";
-                    }
-                    s += "Pelicula='" + added.Pelicula + "'";
-                    entra = true;
-                }
-
-                if (added.S_genero1 != null){
-                    if (entra){
-                        s += ", ";
-                    }
-                    s += "SGenero='" + added.S_genero1 + "'";
-                    entra = true;
-                }
-
-                if (added.S_genero1 != null){
-                    if (entra){
-                        s += ", ";
-                    }
-                    s += "SGenero='" + added.S_genero1 + "'";
-                    entra = true;
-                }
-
-                if (added.S_director1 != null){
-                    if (entra){
-                        s += ", ";
-                    }
-                    s += "SDirector='" + added.S_director1 + "'";
-                    entra = true;
-                }
-
-                if (added.Serie != null){
-                    if (entra){
-                        s += ", ";
-                    }
-                    s += "Serie='" + added.Serie + "'";
-                    entra = true;
-                }
-
+                }           
                 s += " WHERE Usuario='" + deleted.Email + "'";
                 if (entra)
                 { conexion.ejecutarS(s); }
             }catch (Exception e){
-                throw new Exception("Error al modificar el gusto filmográfico");
-            }*/
-   
-           /* try
-            {
-                String s = "Update Gustosgmusic set Estilo='" + added.Estilo +"',set Grupo='"+added.Grupo+"',set Artista='"+added.Artista+
-                    "', set Concierto='"+added.Concierto+"', set Decada="+added.Decada+", Usuario='" + added.Email
-                    + "' WHERE Email='" + deleted.Email + "'";
-                conexion.ejecutarS(s);
+                throw new Exception("Error al modificar el gusto musical");
             }
-            catch (Exception e)
-            {
-                throw new Exception("Error al modificar el gusto Musical");
-            }*/
         }
     }
 }

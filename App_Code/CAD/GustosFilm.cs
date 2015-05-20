@@ -131,6 +131,8 @@ namespace CAD{
             try{
                 bool entra = false;
                 String s = "Update GustosFilm set ";
+                //(Genero,Director,Decada,Actor,Pelicula,SGenero,SDirector,Serie,Usuario)
+
                 if (added.Genero != null){
                     s += "Genero='" + added.Genero + "'";
                     entra = true;
@@ -165,14 +167,6 @@ namespace CAD{
                         s += ", ";
                     }
                     s += "Pelicula='" + added.Pelicula + "'";
-                    entra = true;
-                }
-
-                if (added.S_genero1 != null){
-                    if (entra){
-                        s += ", ";
-                    }
-                    s += "SGenero='" + added.S_genero1 + "'";
                     entra = true;
                 }
 
