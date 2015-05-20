@@ -22,7 +22,8 @@ namespace CAD
                 if (ordenadores.Sistemaoperativo != null)
                 {
                     s += " '" + ordenadores.Sistemaoperativo + "' ";
-                }else{
+                }else
+                {
                     s += " NULL ";
                 }
                 s+=",";

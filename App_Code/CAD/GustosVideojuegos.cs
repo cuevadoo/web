@@ -22,8 +22,7 @@ namespace CAD
                 if (videojuegos.Genero != null)
                 {
                     s += " '" + videojuegos.Genero + "' ";
-                }
-                else
+                }else
                 {
                     s += " NULL ";
                 }
@@ -31,8 +30,7 @@ namespace CAD
                 if (videojuegos.JuegoFav != null)
                 {
                     s += " '" + videojuegos.JuegoFav + "' ";
-                }
-                else
+                }else
                 {
                     s += " NULL ";
                 }
@@ -60,7 +58,7 @@ namespace CAD
             }
             catch (System.Exception e)
             {
-                throw new Exception("Error al crear el gusto");
+                throw new Exception("Error al crear el gusto Videojuegos");
             }
         }
         //metodo para eliminar un Gusto ya existente en la tabla 
