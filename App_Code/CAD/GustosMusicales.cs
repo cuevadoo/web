@@ -19,8 +19,54 @@ namespace CAD
         {
             try
             {
-                String s = "Insert into GustosMusicales(Estilo,Grupo,Artista,Concierto,Decada,Usuario) values ('" 
-                    + gmusic.Estilo + "','" + gmusic.Grupo + "','" + gmusic.Artista + "','" + gmusic.Concierto + "'," + gmusic.Decada + ",'" + gmusic.Email + "')";
+                String s = "Insert into GustosMusicales(Estilo,Grupo,Artista,Concierto,Decada,Usuario) values (";
+
+                if (gmusic.Estilo != null)
+                {
+                    s += " '" + gmusic.Estilo + "' ";
+                }
+                else
+                {
+                    s += " NULL ";
+                }
+                s += ",";
+                if (gmusic.Grupo != null)
+                {
+                    s += " '" + gmusic.Grupo + "' ";
+                }
+                else
+                {
+                    s += " NULL ";
+                }
+                s += ",";
+                if (gmusic.Artista != null)
+                {
+                    s += " '" + gmusic.Artista + "' ";
+                }
+                else
+                {
+                    s += " NULL ";
+                }
+                s += ",";
+                if (gmusic.Concierto != null)
+                {
+                    s += " '" + gmusic.Concierto + "' ";
+                }
+                else
+                {
+                    s += " NULL ";
+                }
+                s += ",";
+                if (gmusic.Decada != 0)
+                {
+                    s += " '" + gmusic.Decada + "' ";
+                }
+                else
+                {
+                    s += " NULL ";
+                }
+
+                s += ",'" + gmusic.Email + "')";
                 conexion.ejecutarS(s);
             }
             catch (System.Exception e)
@@ -81,7 +127,87 @@ namespace CAD
         //metodo para actualizar cualquier elemento de la tabla
         public void update(EN.GustosMusicales deleted, EN.GustosMusicales added)
         {
-            try
+
+             try{
+                bool entra = false;
+                String s = "Update GustosFilm set ";
+                if (added.Genero != null){
+                    s += "Genero='" + added.Genero + "'";
+                    entra = true;
+                }
+
+                if (added.Director != null){
+                    if (entra){
+                        s += ", ";
+                    }
+                    s += "Director='" + added.Director + "'";
+                    entra = true;
+                }
+
+                if (added.Decada != 0){
+                    if(entra){
+                       s+=", ";
+                    }
+                    s += "Decada='" + added.Decada + "'";
+                    entra = true;
+                }
+
+                if (added.Actor != null){
+                    if (entra){
+                        s += ", ";
+                    }
+                    s += "Actor='" + added.Actor + "'";
+                    entra = true;
+                }
+
+                if (added.Pelicula != null){
+                    if (entra){
+                        s += ", ";
+                    }
+                    s += "Pelicula='" + added.Pelicula + "'";
+                    entra = true;
+                }
+
+                if (added.S_genero1 != null){
+                    if (entra){
+                        s += ", ";
+                    }
+                    s += "SGenero='" + added.S_genero1 + "'";
+                    entra = true;
+                }
+
+                if (added.S_genero1 != null){
+                    if (entra){
+                        s += ", ";
+                    }
+                    s += "SGenero='" + added.S_genero1 + "'";
+                    entra = true;
+                }
+
+                if (added.S_director1 != null){
+                    if (entra){
+                        s += ", ";
+                    }
+                    s += "SDirector='" + added.S_director1 + "'";
+                    entra = true;
+                }
+
+                if (added.Serie != null){
+                    if (entra){
+                        s += ", ";
+                    }
+                    s += "Serie='" + added.Serie + "'";
+                    entra = true;
+                }
+
+                s += " WHERE Usuario='" + deleted.Email + "'";
+                if (entra)
+                { conexion.ejecutarS(s); }
+            }catch (Exception e){
+                throw new Exception("Error al modificar el gusto filmográfico");
+            }
+   
+           /* try
             {
                 String s = "Update Gustosgmusic set Estilo='" + added.Estilo +"',set Grupo='"+added.Grupo+"',set Artista='"+added.Artista+
                     "', set Concierto='"+added.Concierto+"', set Decada="+added.Decada+", Usuario='" + added.Email
@@ -91,7 +217,7 @@ namespace CAD
             catch (Exception e)
             {
                 throw new Exception("Error al modificar el gusto Musical");
-            }
+            }*/
         }
     }
 }
