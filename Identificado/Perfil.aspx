@@ -243,9 +243,9 @@
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell runat="server">
                         <asp:RadioButtonList ID="RadioButtonListConsola" RepeatDirection="Horizontal" runat="server">
-                            <asp:ListItem>Consolas SONY</asp:ListItem>
-                            <asp:ListItem>Consolas Microsoft</asp:ListItem>
-                            <asp:ListItem>Consolas Nintendo</asp:ListItem>
+                            <asp:ListItem>ConsolasSONY</asp:ListItem>
+                            <asp:ListItem>ConsolasMicrosoft</asp:ListItem>
+                            <asp:ListItem>ConsolasNintendo</asp:ListItem>
                         </asp:RadioButtonList>
                     </asp:TableCell>
                 </asp:TableRow>

@@ -18,7 +18,7 @@ namespace CAD
         {
             try
             {
-                String s = "Insert into GustosVideojuegos(Genero,JuegoFav,ConsolaFav,DesarrolladorFav,Usuario) values (";
+                String s = "Insert into GustosVideojuegos(Genero,Juegofav,Consolafav,Desarrolladorfav,Usuario) values (";
                 if (videojuegos.Genero != null)
                 {
                     s += " '" + videojuegos.Genero + "' ";
