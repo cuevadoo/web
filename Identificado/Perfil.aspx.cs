@@ -38,9 +38,9 @@ public partial class Identificado_Perfil : System.Web.UI.Page
                     }
             }catch(CAD.Exception ex){}
 
-            /*
+            
             //Gustos Musicales
-            EN.GustosMusicales gm = new CAD.GustosMusicales().read(user.Email);
+            /*EN.GustosMusicales gm = new CAD.GustosMusicales().read(user.Email);
 
             try
             {
@@ -353,11 +353,11 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             
             //Crear o actualizar Gustos Filmograficos segun corresponda
             try{ new CAD.GustosFilm().create(gf); }catch (CAD.Exception){ new CAD.GustosFilm().update(gf, gf); }
-            /*
+            
+            
             //Crear o actualizar Gustos Musicales segun corresponda
-
-            try{ new CAD.GustosMusicales().create(gm); }catch (CAD.Exception){ new CAD.GustosMusicales().update(gm, gm); }
-            */
+            //try{ new CAD.GustosMusicales().create(gm); }catch (CAD.Exception){ new CAD.GustosMusicales().update(gm, gm); }
+            
 
             LabelAviso.Text = "Los cambios se han guardado correctamente";
 

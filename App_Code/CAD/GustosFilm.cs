@@ -92,7 +92,7 @@ namespace CAD{
             try{
                 string aux = null, aux1 = null,aux3 = null, aux4 = null, aux5 = null, aux6 = null, aux7 = null;
                 byte aux2 = 0;
-                DataRowCollection data = conexion.ejecutarR("Select * from GustosFilm where Email='" + email + "'").Rows;
+                DataRowCollection data = conexion.ejecutarR("Select * from GustosFilm where Usuario='" + email + "'").Rows;
                 if (!System.DBNull.Value.Equals(data[0][0])){
                     aux = (String)data[0][0];
                 }
