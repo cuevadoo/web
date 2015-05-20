@@ -13,6 +13,7 @@ namespace CAD{
         private static Conexion conexion = new Conexion();
         public void create(EN.GustosFilm gfilm){
             try{
+
                 String s = "Insert into GustosFilm(Genero,Director,Decada,Actor,Pelicula,SGenero,SDirector,Serie,Usuario) values (";
 
                 if (gfilm.Genero != null){
@@ -131,7 +132,6 @@ namespace CAD{
             try{
                 bool entra = false;
                 String s = "Update GustosFilm set ";
-                //(Genero,Director,Decada,Actor,Pelicula,SGenero,SDirector,Serie,Usuario)
 
                 if (added.Genero != null){
                     s += "Genero='" + added.Genero + "'";
