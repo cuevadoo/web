@@ -39,8 +39,8 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             }catch(CAD.Exception ex){}
 
             
-            //Gustos Musicales
-            /*EN.GustosMusicales gm = new CAD.GustosMusicales().read(user.Email);
+          /*  //Gustos Musicales
+            EN.GustosMusicales gm = new CAD.GustosMusicales().read(user.Email);
 
             try
             {

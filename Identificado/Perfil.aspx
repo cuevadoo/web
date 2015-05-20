@@ -265,7 +265,7 @@
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server">
-                    <asp:TableCell ID="TextBoxDirector" runat="server"><asp:TextBox runat="server" CssClass="box" placeholder="Tu director favorito.Por ejemplo: Tarantino" Width="55%"></asp:TextBox></asp:TableCell>
+                    <asp:TableCell runat="server"><asp:TextBox ID="TextBoxDirector" runat="server" CssClass="box" placeholder="Tu director favorito.Por ejemplo: Tarantino" Width="55%"></asp:TextBox></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server">
                     <asp:TableCell runat="server">
