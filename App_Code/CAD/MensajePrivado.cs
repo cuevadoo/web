@@ -18,10 +18,19 @@ namespace CAD
         {
             try
             {
-               String s = "Inster into MensajePrivado(Usuario1, Usuario2, Texto, Fecha) values ('"
-                + mPrivado.Usuario1 + "','" + mPrivado.Usuario2 + "','" + mPrivado.Texto + "')" + mPrivado.Date.imprimirSql() + "')";
-               conexion.ejecutarS(s);
+                String s = "Inster into MensajePrivado(Usuario1, Usuario2, Texto, Fecha) values ('"
+                 + mPrivado.Usuario1 + "','" + mPrivado.Usuario2 + "'";
+                      
+                 if (mPrivado.Texto != null)
+                {
+                    s += ",'" + mPrivado.Texto + "' ";
+                }else{
+                    s += " NULL ";
+                }
+                s += ",'" + mPrivado.Date.imprimirSql() + "')";
+                conexion.ejecutarS(s);
             }
+
             catch (System.Exception e)
             {
                 throw new Exception("Error al crear el mensaje privado");
@@ -47,7 +56,7 @@ namespace CAD
 
              try{
 
-                 DataRowCollection data=conexion.ejecutarR("Select * from Usuarios where Usuario1='" + mPrivado.Usuario1 + "' and Usuario2='" + mPrivado.Usuario2 
+                 DataRowCollection data=conexion.ejecutarR("Select * from Usuarios where Usuario1=' " + mPrivado.Usuario1 + "' and Usuario2=' " + mPrivado.Usuario2 
                 + "' and Fecha='" + mPrivado.Date.imprimirSql() + "'").Rows;
 
                  Fecha date = new Fecha();
