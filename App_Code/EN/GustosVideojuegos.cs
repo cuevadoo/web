@@ -43,7 +43,7 @@ namespace EN
         public String DesarrolladorFav
         {
             get { return desarrolladorFav; }
-            set { consolaFav = value; }
+            set { desarrolladorFav = value; }
         }
     }
 }
