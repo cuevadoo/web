@@ -52,7 +52,7 @@ namespace CAD
                 {
                     s += " NULL ";
                 }
-
+                
                 s += ",'" + videojuegos.Email + "')";
                 conexion.ejecutarS(s);
             }

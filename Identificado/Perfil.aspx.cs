@@ -39,33 +39,39 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             }catch(CAD.Exception ex){}
 
             
-          /*  //Gustos Musicales
+            //Gustos Musicales
             EN.GustosMusicales gm = new CAD.GustosMusicales().read(user.Email);
 
             try
             {
-                if (gm.Artista != null)
-                {
-                    TextBoxArtista.Attributes["placeholder"] = gm.Artista;
-                }
-                if (gm.Concierto != null)
-                {
-                    TextBoxConciertos.Attributes["placeholder"] = gm.Concierto;
-                }
-                if (gm.Decada != null)
-                {
-                    DropDownListDecadaM.Attributes["placeholder"] = gm.Decada + "";
-                }
                 if (gm.Estilo != null)
                 {
                     TextBoxEstilo.Attributes["placeholder"] = gm.Estilo;
                 }
+
                 if (gm.Grupo != null)
                 {
                     TextBoxGrupo.Attributes["placeholder"] = gm.Grupo;
                 }
+                
+                if (gm.Artista != null)
+                {
+                    TextBoxArtista.Attributes["placeholder"] = gm.Artista;
+                }
+
+                if (gm.Concierto != null)
+                {
+                    TextBoxConciertos.Attributes["placeholder"] = gm.Concierto;
+                }
+
+                if (gm.Decada != null)
+                {
+                    DropDownListDecadaM.Attributes["placeholder"] = gm.Decada + "";
+                }
+
+
             }
-            catch (CAD.Exception ex) { }*/
+            catch (CAD.Exception ex) { }
 
             //Gustos informaticos
             try
@@ -337,8 +343,9 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             if (TextBoxEstilo.Text != "") { gm.Estilo = TextBoxEstilo.Text; }
             if (TextBoxGrupo.Text != "") { gm.Grupo = TextBoxGrupo.Text; }
             if (TextBoxArtista.Text != "") { gm.Artista = TextBoxArtista.Text; }
-            if (DropDownListDecadaM.SelectedValue != "--") { gm.Decada = Byte.Parse(DropDownListDecadaM.SelectedValue); }
             if (TextBoxConciertos.Text != "") { gm.Concierto = TextBoxConciertos.Text; }
+            if (DropDownListDecadaM.SelectedValue != "--") { gm.Decada = Byte.Parse(DropDownListDecadaM.SelectedValue); }
+            
 
             
             //Crear o actualizar Residencia segun corresponda
@@ -356,7 +363,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             
             
             //Crear o actualizar Gustos Musicales segun corresponda
-            //try{ new CAD.GustosMusicales().create(gm); }catch (CAD.Exception){ new CAD.GustosMusicales().update(gm, gm); }
+            try{ new CAD.GustosMusicales().create(gm); }catch (CAD.Exception){ new CAD.GustosMusicales().update(gm, gm); }
             
 
             LabelAviso.Text = "Los cambios se han guardado correctamente";
