@@ -159,4 +159,9 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
             Session["Relaciones"] = rel;
         }
     }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+               
+    }
+
 }

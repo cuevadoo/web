@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 public partial class Identificado_CerrarSesion : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e){
-        Session["User"] = null;
+        Session.Clear();
         Response.Redirect("~/Default.aspx");
     }
 }
