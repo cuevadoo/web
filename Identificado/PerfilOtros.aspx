@@ -1,6 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Identificado/MasterPage.master" AutoEventWireup="true" CodeFile="PerfilOtros.aspx.cs" Inherits="Identificado_PerfilOtros" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <script type="text/javascript">
+        function ap_des() {
+            var id = document.getElementById("mensaje");
+            if (id.style.display == "none") {
+                id.style.display = "block";
+                document.getElementById("Button2").value = "Cerrar ventana";
+            } else {
+                id.style.display = "none";
+                document.getElementById("Button2").value = "Enviar mensaje";
+            }
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <center>
@@ -16,25 +28,23 @@
                     <asp:Button ID="Button1" runat="server" Text="Añadir amigo" CssClass="boton" OnClick="Button1_Click"></asp:Button>
                 </asp:TableCell>
                 <asp:TableCell runat="server">
-                    <asp:Button ID="Button2" runat="server" Text="Enviar mensaje" CssClass="boton"></asp:Button>
+                    <input id="Button2" type="button" value="Enviar mensaje" class="boton" onclick="ap_des()"/>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
         <!--enviar mensaje-->
-            <div>
+            <div id="mensaje" style="display:none;">
                 <center>
                     <asp:Table ID="TableEstatica" runat="server" Width="100%" HorizontalAlign="Center">
                         <asp:TableRow HorizontalAlign="Center">
                             <asp:TableCell>
                                 <asp:TextBox ID="TextBox1" style="max-width:600px;max-height:60px" Wrap="true" runat="server" Width="600px" Height="60px" CssClass="box" placeholder="Escribe el mensaje" TextMode="MultiLine" EnableViewState="True" EnableTheming="True"></asp:TextBox>
-                            
-</asp:TableCell>
+                            </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow HorizontalAlign="Center">
                             <asp:TableCell>
-                                <asp:Button ID="Button3" runat="server" Text="Enviar" cssclass="boton" OnClick="Button2_Click"></asp:Button>
-                            
-</asp:TableCell>
+                                <asp:Button ID="Button3" runat="server" Text="Enviar" cssclass="boton" OnClick="Button3_Click"></asp:Button>
+                            </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
                 </center>
