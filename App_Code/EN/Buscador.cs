@@ -22,11 +22,9 @@ namespace EN
             try {
                 object[] obj = d(s);
                 pagina=0;
-                if (obj.Length == 2){
-                    email = (ArrayList)obj[0];
-                    lista = (ArrayList)obj[1];
-                    max = ((lista.Count-1)/10);
-                }
+                email = (ArrayList)obj[0];
+                lista = (ArrayList)obj[1];
+                max = ((lista.Count-1)/10);
             }catch(System.Exception ex){
                 email = new ArrayList();
                 lista = new ArrayList();

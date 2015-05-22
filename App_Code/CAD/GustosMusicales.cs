@@ -112,9 +112,9 @@ namespace CAD
                 {
                     aux3 = (String)data[0][3];
                 }
-                if ((Byte)data[0][4]!=0)
+                if (!System.DBNull.Value.Equals(data[0][4]))
                 {
-                    aux4 = (Byte)data[0][4];
+                    aux4 = Byte.Parse(data[0][4].ToString());
                 }
                 gmusic = new EN.GustosMusicales(aux, aux1, aux2, aux3, aux4, (String)data[0][5]);
 

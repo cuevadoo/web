@@ -100,8 +100,9 @@ namespace CAD{
                 if (!System.DBNull.Value.Equals(data[0][1])){
                     aux1 = (String)data[0][1];
                 }
-                if ((Byte)data[0][2]!=0){
-                    aux2 = (Byte)data[0][2];
+                if (!System.DBNull.Value.Equals(data[0][2]))
+                {
+                    aux2 = Byte.Parse(data[0][2].ToString());
                 }
                 if (!System.DBNull.Value.Equals(data[0][3])){
                     aux3 = (String)data[0][3];

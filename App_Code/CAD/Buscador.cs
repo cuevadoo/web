@@ -13,10 +13,35 @@ namespace CAD{
         private static Conexion conexion = new Conexion();
         
         ///////////////////////////////////////////
-        // Modulo para meter los datos, comun al //
-        // resto de los modulos de esta clase    //
+        // Modulos para meter los datos, comunes //
+        // al resto de los modulos de esta clase //
         ///////////////////////////////////////////
 
+        public object[] meterDatos(DataRow data, DataRow busqueda,ref object[] obj) {
+            try{
+                ArrayList nom,email;
+                if(obj[0]==null){
+                    nom = new ArrayList();
+                    email = new ArrayList();
+                    obj[0] = email;
+                    obj[1] = nom;
+                }else{
+                    email = (ArrayList) obj[0];
+                    nom = (ArrayList) obj[1];
+                }
+                try {
+                    String aux = data[2] + " " + data[3] + " " + data[4] + " (" + busqueda[1] + ")";
+                    nom.Add(aux);
+                    email.Add(data[0]);
+                }catch(System.Exception ex){
+                    obj[0] = email;
+                    obj[1] = nom;
+                }
+            }catch(System.Exception ex){
+                throw ex;
+            }
+            return obj;
+        }
         public object[] meterDatos(DataRowCollection data) {
             object[] obj=new object[2];
             try{
@@ -25,7 +50,7 @@ namespace CAD{
                 try {
                     int i=0;
                     while(true){
-                        String aux = data[i][2]+" "+data[i][3]+" "+data[i][4];
+                        String aux = data[i][2] + " " + data[i][3] + " " + data[i][4];
                         nom.Add(aux);
                         email.Add(data[i][0]);
                         i++;
@@ -45,7 +70,7 @@ namespace CAD{
         /////////////////////
 
         public object[] buscarSin(String nombre) {
-            object[] obj=new object[2];
+            object[] obj;
             try{
                 String s = "Select * From Usuarios Where Nombre Like '"+
                     nombre+"%' OR Apellido1 Like '"+nombre+"%' OR Apellido2 Like '"+nombre+"%'";
@@ -61,7 +86,7 @@ namespace CAD{
         ///////////////////////////
 
         public object[] buscarNombre(String nombre) {
-            object[] obj=new object[2];
+            object[] obj;
             try{
                 String s = "Select * From Usuarios Where Nombre Like '"+
                     nombre+"%'";
@@ -73,7 +98,7 @@ namespace CAD{
         }
 
         public object[] buscarApellido1(String nombre) {
-            object[] obj=new object[2];
+            object[] obj;
             try{
                 String s = "Select * From Usuarios Where Apellido1 Like '"+
                     nombre+"%'";
@@ -85,7 +110,7 @@ namespace CAD{
         }
 
         public object[] buscarApellido2(String nombre) {
-            object[] obj=new object[2];
+            object[] obj;
             try{
                 String s = "Select * From Usuarios Where Apellido2 Like '"+
                     nombre+"%'";
@@ -101,12 +126,18 @@ namespace CAD{
         ///////////////////////////
 
         public object[] buscarPais(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From Residencia Where Pais Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From Residencia Where Pais Like '%" + nombre+"%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -114,12 +145,18 @@ namespace CAD{
         }
 
         public object[] buscarCAutonoma(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From Residencia Where CAutonoma Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From Residencia Where CAutonoma Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -127,12 +164,18 @@ namespace CAD{
         }
 
         public object[] buscarLocalidad(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From Residencia Where Localidad Like '%" +
-                    nombre + "%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From Residencia Where Localidad Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -144,12 +187,18 @@ namespace CAD{
         /////////////////////////////////////
 
         public object[] buscarSO(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosOrdenadores Where Sistemaoperativo Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosOrdenadores Where Sistemaoperativo Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -157,12 +206,18 @@ namespace CAD{
         }
 
         public object[] buscarMarcashw(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosOrdenadores Where Marcashw Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosOrdenadores Where Marcashw Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -170,12 +225,18 @@ namespace CAD{
         }
 
         public object[] buscarLprogramacion(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosOrdenadores Where Lprogramacion Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosOrdenadores Where Lprogramacion Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -187,12 +248,18 @@ namespace CAD{
         /////////////////////////////////////
 
         public object[] buscarGeneroV(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosVideojuegos Where Genero Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosVideojuegos Where Genero Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -200,12 +267,18 @@ namespace CAD{
         }
 
         public object[] buscarJuegofav(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosVideojuegos Where Juegofav Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosVideojuegos Where Juegofav Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -213,12 +286,18 @@ namespace CAD{
         }
 
         public object[] buscarConsolafav(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosVideojuegos Where Consolafav Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosVideojuegos Where Consolafav Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -226,12 +305,18 @@ namespace CAD{
         }
 
         public object[] buscarDesarrolladorfav(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosVideojuegos Where Desarrolladorfav Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosVideojuegos Where Desarrolladorfav Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -243,12 +328,18 @@ namespace CAD{
         ///////////////////////////////////////
 
         public object[] buscarGeneroF(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosFilm Where Genero Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosFilm Where Genero Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -256,12 +347,18 @@ namespace CAD{
         }
 
         public object[] buscarDirector(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosFilm Where Director Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosFilm Where Director Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -269,12 +366,18 @@ namespace CAD{
         }
 
         public object[] buscarDecadaF(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosFilm Where Decada Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosFilm Where Decada Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -282,12 +385,18 @@ namespace CAD{
         }
 
         public object[] buscarActor(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosFilm Where Actor Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosFilm Where Actor Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -295,12 +404,18 @@ namespace CAD{
         }
 
         public object[] buscarPelicula(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosFilm Where Pelicula Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosFilm Where Pelicula Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -308,12 +423,18 @@ namespace CAD{
         }
 
         public object[] buscarSGenero(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosFilm Where SGenero Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosFilm Where SGenero Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -321,12 +442,18 @@ namespace CAD{
         }
 
         public object[] buscarSDirector(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosFilm Where SDirector Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosFilm Where SDirector Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -334,12 +461,18 @@ namespace CAD{
         }
 
         public object[] buscarSerie(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosFilm Where Serie Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosFilm Where Serie Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al buscar");
             }
@@ -351,12 +484,18 @@ namespace CAD{
         ///////////////////////////////////
 
         public object[] buscarEstilo(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosMusicales Where Estilo Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosMusicales Where Estilo Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al leer usuario");
             }
@@ -364,12 +503,18 @@ namespace CAD{
         }
 
         public object[] buscarGrupo(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosMusicales Where Grupo Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosMusicales Where Grupo Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al leer usuario");
             }
@@ -377,12 +522,18 @@ namespace CAD{
         }
 
         public object[] buscarArtista(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosMusicales Where Artista Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosMusicales Where Artista Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al leer usuario");
             }
@@ -390,12 +541,18 @@ namespace CAD{
         }
 
         public object[] buscarConcierto(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosMusicales Where Concierto Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosMusicales Where Concierto Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al leer usuario");
             }
@@ -403,12 +560,18 @@ namespace CAD{
         }
 
         public object[] buscarDecadaM(String nombre) {
-            object[] obj=new object[2];
+            object[] obj = new object[2];
             try{
-                String s = "Select Usuario From GustosMusicales Where Decada Like '%" +
-                    nombre+"%'";
-                s = "Select * from Usuarios where Email='" + (String)conexion.ejecutarR(s).Rows[0][0] + "'";
-                obj = meterDatos(conexion.ejecutarR(s).Rows);
+                String s = "Select Usuario,Pais From GustosMusicales Where Decada Like '%" + nombre + "%'";
+                DataRowCollection row = conexion.ejecutarR(s).Rows;
+                try {
+                    int i = 0;
+                    while(true){
+                        s = "Select * from Usuarios where Email='" + (String)row[i][0] + "'";
+                        meterDatos(conexion.ejecutarR(s).Rows[0], row[i] , ref obj);
+                        i++;
+                    }
+                }catch(System.Exception ex){}
             }catch(System.Exception ex){
                 throw new Exception("Error al leer usuario");
             }

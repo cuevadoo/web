@@ -26,133 +26,135 @@ public partial class Identificado_Perfil : System.Web.UI.Page
                 //Residencia
                     if (r.Pais != null)
                     {
-                        TextBoxPais.Attributes["placeholder"] = r.Pais;
+                        TextBoxPais.Attributes["placeholder"] ="Pais: " + r.Pais;
                     }
                     if (r.CAutonoma != null)
                     {
-                        TextBoxCAutonoma.Attributes["placeholder"] = r.CAutonoma;
+                        TextBoxCAutonoma.Attributes["placeholder"] ="Comunidad: " + r.CAutonoma;
                     }
                     if (r.Localidad != null)
                     {
-                        TextBoxLocalidad.Attributes["placeholder"] = r.Localidad;
+                        TextBoxLocalidad.Attributes["placeholder"] ="Localidad: " + r.Localidad;
                     }
             }catch(CAD.Exception ex){}
 
-            
-            //Gustos Musicales
-            EN.GustosMusicales gm = new CAD.GustosMusicales().read(user.Email);
-
-            try
-            {
-                if (gm.Estilo != null)
-                {
-                    TextBoxEstilo.Attributes["placeholder"] = gm.Estilo;
-                }
-
-                if (gm.Grupo != null)
-                {
-                    TextBoxGrupo.Attributes["placeholder"] = gm.Grupo;
-                }
-                
-                if (gm.Artista != null)
-                {
-                    TextBoxArtista.Attributes["placeholder"] = gm.Artista;
-                }
-
-                if (gm.Concierto != null)
-                {
-                    TextBoxConciertos.Attributes["placeholder"] = gm.Concierto;
-                }
-
-                if (gm.Decada != null)
-                {
-                    DropDownListDecadaM.Attributes["placeholder"] = gm.Decada + "";
-                }
-
-
-            }
-            catch (CAD.Exception ex) { }
-
             //Gustos informaticos
+
             try
             {
                 EN.GustosOrdenadores gi = new CAD.GustosOrdenadores().read(user.Email);
                 if (gi.Sistemaoperativo != null)
                 {
-                    TextBoxSO.Attributes["placeholder"] = gi.Sistemaoperativo;
+                    TextBoxSO.Attributes["placeholder"] = "Sistemas operativos: " + gi.Sistemaoperativo;
                 }
                 if (gi.Marcashw != null)
                 {
-                    TextBoxHardware.Attributes["placeholder"] = gi.Marcashw;
+                    TextBoxHardware.Attributes["placeholder"] = "Marcas de hardware favoritas: " + gi.Marcashw;
                 }
                 if (gi.Lprogramacion != null)
                 {
-                    TextBoxLenguajeP.Attributes["placeholder"] = gi.Lprogramacion;
+                    TextBoxLenguajeP.Attributes["placeholder"] = "Lenguajes de programacion favoritos: " + gi.Lprogramacion;
                 }
             }
             catch (CAD.Exception ex) { }
 
             //Gustos Videojuegos
+
             try
             {
                 EN.GustosVideojuegos gv = new CAD.GustosVideojuegos().read(user.Email);
                 if (gv.Genero != null)
                 {
-                    TextBoxGeneroV.Attributes["placeholder"] = gv.Genero;
-                }
-                if (gv.ConsolaFav != null)
-                {
-                    RadioButtonListConsola.Attributes["placeholder"] = gv.ConsolaFav;
+                    TextBoxGeneroV.Attributes["placeholder"] = "Genero favorito: " + gv.Genero;
                 }
                 if (gv.JuegoFav != null)
                 {
-                    TextBoxVideojuego.Attributes["placeholder"] = gv.JuegoFav;
+                    TextBoxVideojuego.Attributes["placeholder"] = "Juego favorito: " + gv.JuegoFav;
+                }
+                if (gv.ConsolaFav != null)
+                {
+                    RadioButtonListConsola.SelectedValue = "" + gv.ConsolaFav;
                 }
                 if (gv.DesarrolladorFav != null)
                 {
-                    TextBoxDesarrolladora.Attributes["placeholder"] = gv.DesarrolladorFav;
+                    TextBoxDesarrolladora.Attributes["placeholder"] = "Desarrolladora de juegos favorita: " + gv.DesarrolladorFav;
                 }
             }
             catch (CAD.Exception ex) { }
 
             //Gustos Film
+
             try
             {
                 EN.GustosFilm gf = new CAD.GustosFilm().read(user.Email);
-                if (gf.Actor != null)
+                if (gf.Genero != null)
                 {
-                    TextBoxActor.Attributes["placeholder"] = gf.Actor;
-                }
-                if (gf.Decada != null)
-                {
-                    DropDownListDecadaC.Attributes["placeholder"] = gf.Decada + "";
+                    TextBoxGeneroC.Attributes["placeholder"] = "Género cinematográfico favorito: " + gf.Genero;
                 }
                 if (gf.Director != null)
                 {
-                    TextBoxDirector.Attributes["placeholder"] = gf.Director;
+                    TextBoxDirector.Attributes["placeholder"] = "Director favorito: " + gf.Director;
                 }
-                if (gf.Genero != null)
+                if (gf.Actor != null)
                 {
-                    TextBoxGeneroC.Attributes["placeholder"] = gf.Genero;
+                    TextBoxActor.Attributes["placeholder"] = "Actor favorito: " + gf.Actor;
+                }
+                if (gf.Decada != 0)
+                {
+                    DropDownListDecadaC.SelectedValue = gf.Decada + "";
                 }
                 if (gf.Pelicula != null)
                 {
-                    TextBoxPeli.Attributes["placeholder"] = gf.Pelicula;
+                    TextBoxPeli.Attributes["placeholder"] = "Película favorita: " + gf.Pelicula;
                 }
                 if (gf.S_director1 != null)
                 {
-                    TextBoxProductor.Attributes["placeholder"] = gf.S_director1;
+                    TextBoxProductor.Attributes["placeholder"] = "Género de serie favorito: " + gf.S_director1;
                 }
                 if (gf.S_genero1 != null)
                 {
-                    TextBoxGeneroS.Attributes["placeholder"] = gf.S_genero1;
+                    TextBoxGeneroS.Attributes["placeholder"] = "Productor de series favorito: " + gf.S_genero1;
                 }
                 if (gf.Serie != null)
                 {
-                    TextBoxSerie.Attributes["placeholder"] = gf.Serie;
+                    TextBoxSerie.Attributes["placeholder"] = "Serie favorita: " + gf.Serie;
                 }
             }
-            catch (CAD.Exception ex) { }   
+            catch (CAD.Exception ex) { }  
+            
+            //Gustos Musicales
+
+            try
+            {
+                EN.GustosMusicales gm = new CAD.GustosMusicales().read(user.Email);
+                if (gm.Estilo != null)
+                {
+                    TextBoxEstilo.Attributes["placeholder"] = "Estilo musical favorito: " + gm.Estilo;
+                }
+
+                if (gm.Grupo != null)
+                {
+                    TextBoxGrupo.Attributes["placeholder"] = "Grupo favorito: " + gm.Grupo;
+                }
+                
+                if (gm.Artista != null)
+                {
+                    TextBoxArtista.Attributes["placeholder"] = "Artista favorito: " + gm.Artista;
+                }
+
+                if (gm.Concierto != null)
+                {
+                    TextBoxConciertos.Attributes["placeholder"] = "Últimos conciertos a los que has asistido: " + gm.Concierto;
+                }
+
+                if (gm.Decada != 0)
+                {
+                    DropDownListDecadaM.SelectedValue = gm.Decada + "";
+                }
+
+
+            }
+            catch (CAD.Exception ex) { } 
         
         }
     }
