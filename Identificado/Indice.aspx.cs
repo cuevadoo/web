@@ -55,11 +55,9 @@ public partial class Identificado_Indice : System.Web.UI.Page
     }
 
     protected void TextBox1_TextChanged(object sender, EventArgs e){
-        if(TextBox1.Text.Length>=3){
-            CAD.Usuario user=new CAD.Usuario();
-            Session["BuscadorIS"] = new EN.Buscador(new CAD.Buscador().buscarSin, TextBox1.Text);
-            actualizarTabla();
-        }
+        CAD.Usuario user=new CAD.Usuario();
+        Session["BuscadorIS"] = new EN.Buscador(new CAD.Buscador().buscarSin, TextBox1.Text);
+        actualizarTabla();
     }
 
     protected void Button_Paginas(object sender, EventArgs e){

@@ -81,7 +81,7 @@ namespace CAD
             try{
                 string aux = null, aux1 = null, aux2 = null, aux3 = null;
 
-                DataRowCollection data = conexion.ejecutarR("Select * from GustosVideojueos where Email='" + email + "'").Rows;
+                DataRowCollection data = conexion.ejecutarR("Select * from GustosVideojuegos where Usuario='" + email + "'").Rows;
                 if (!System.DBNull.Value.Equals(data[0][1]))
                 {
                     aux = (String)data[0][1];
@@ -98,7 +98,7 @@ namespace CAD
                 {
                     aux3 = (String)data[0][4];
                 }
-                videojuegos = new EN.GustosVideojuegos((String)data[0][0], aux, aux1, aux2, aux3);
+                videojuegos = new EN.GustosVideojuegos(aux, aux1, aux2, aux3,(String)data[0][0]);
 
             }
             catch (System.Exception e)
