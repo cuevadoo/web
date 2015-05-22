@@ -23,16 +23,18 @@
         <!--enviar mensaje-->
             <div>
                 <center>
-                    <asp:Table ID="TableEstatica" runat="server" Width="100%">
-                        <asp:TableRow>
+                    <asp:Table ID="TableEstatica" runat="server" Width="100%" HorizontalAlign="Center">
+                        <asp:TableRow HorizontalAlign="Center">
                             <asp:TableCell>
                                 <asp:TextBox ID="TextBox1" style="max-width:600px;max-height:60px" Wrap="true" runat="server" Width="600px" Height="60px" CssClass="box" placeholder="Escribe el mensaje" TextMode="MultiLine" EnableViewState="True" EnableTheming="True"></asp:TextBox>
-                            </asp:TableCell>
+                            
+</asp:TableCell>
                         </asp:TableRow>
-                        <asp:TableRow>
+                        <asp:TableRow HorizontalAlign="Center">
                             <asp:TableCell>
                                 <asp:Button ID="Button3" runat="server" Text="Enviar" cssclass="boton" OnClick="Button2_Click"></asp:Button>
-                            </asp:TableCell>
+                            
+</asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
                 </center>
