@@ -131,7 +131,7 @@ namespace CAD
              try{
 
                 bool entra = false;
-                String s = "Update GustosFilm set ";
+                String s = "Update GustosMusicales set ";
                 if (added.Estilo != null){
                     s += "Estilo='" + added.Estilo + "'";
                     entra = true;
