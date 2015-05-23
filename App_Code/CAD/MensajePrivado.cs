@@ -50,31 +50,24 @@ namespace CAD
             }
         }
         //método para leer un mensaje de la BDs
-        public EN.MensajePrivado read(EN.MensajePrivado mPrivado)
+        public ArrayList read(String email)
         {
-            EN.MensajePrivado mensaje;
-
-             try{
-
-                 DataRowCollection data=conexion.ejecutarR("Select * from Usuarios where Usuario1=' " + mPrivado.Usuario1 + "' and Usuario2=' " + mPrivado.Usuario2 
-                + "' and Fecha='" + mPrivado.Date.imprimirSql() + "'").Rows;
-
-                 Fecha date = new Fecha();
-                 String s=null;
-
-                 if(!System.DBNull.Value.Equals(data[0][2])){
-                     s = (String)data[0][2];
+            ArrayList array = new ArrayList();
+            try{
+                DataRowCollection data = conexion.ejecutarR("Select * from MensajePrivado where Usuario2= '" + email + "' ").Rows;
+                 foreach (DataRow row in data){
+                     Fecha date = new Fecha();
+                     String s=null;
+                     if(!System.DBNull.Value.Equals(row[2])){
+                         s = (String)row[2];
+                     }
+                     date.traducirSql((DateTime)row[3]);
+                     array.Add(new EN.MensajePrivado((String)row[0], (String)row[1], s,date));
                  }
-
-                 date.traducirSql((DateTime)data[0][3]);
-
-                 mensaje = new EN.MensajePrivado((String)data[0][0], (String)data[0][1], s,date);
-
              }catch(System.Exception e){
-                 throw new Exception("Error al leer el mensaje privado");
+                 throw new Exception("Error al leer el mensajes privados");
              }
-             return mensaje;
-
+            return array;
         }
     }
 }
