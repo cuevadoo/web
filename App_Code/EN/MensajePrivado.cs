@@ -10,13 +10,13 @@ namespace EN
 {
     public class MensajePrivado
     {
-        private Usuario usuario1, usuario2;
+        private String usuario1, usuario2;
 
         private String texto;
 
         private Fecha date;
 
-        public MensajePrivado(Usuario usuario1, Usuario usuario2, String texto, Fecha fecha)
+        public MensajePrivado(String usuario1, String usuario2, String texto, Fecha fecha)
         {
             this.usuario1 = usuario1;
             this.usuario2 = usuario2;
@@ -24,13 +24,13 @@ namespace EN
             this.date = fecha;
         }
 
-        public Usuario Usuario1
+        public String Usuario1
         {
             get { return usuario1; }
             set { usuario1 = value; }
         }
 
-        public Usuario Usuario2
+        public String Usuario2
         {
             get { return usuario2; }
             set { usuario2 = value; }

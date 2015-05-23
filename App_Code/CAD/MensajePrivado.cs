@@ -18,14 +18,14 @@ namespace CAD
         {
             try
             {
-                String s = "Inster into MensajePrivado(Usuario1, Usuario2, Texto, Fecha) values ('"
+                String s = "Insert into MensajePrivado(Usuario1, Usuario2, Texto, Fecha) values ('"
                  + mPrivado.Usuario1 + "','" + mPrivado.Usuario2 + "'";
                       
                  if (mPrivado.Texto != null)
                 {
                     s += ",'" + mPrivado.Texto + "' ";
                 }else{
-                    s += " NULL ";
+                    s += ", NULL ";
                 }
                 s += ",'" + mPrivado.Date.imprimirSql() + "')";
                 conexion.ejecutarS(s);
@@ -46,7 +46,7 @@ namespace CAD
             }
             catch (System.Exception e)
             {
-                throw new Exception("Error al el mensaje privado");
+                throw new Exception("Error al borrar mensaje privado");
             }
         }
         //método para leer un mensaje de la BDs
@@ -68,7 +68,7 @@ namespace CAD
 
                  date.traducirSql((DateTime)data[0][3]);
 
-                 mensaje = new EN.MensajePrivado((EN.Usuario)data[0][0], (EN.Usuario)data[0][1], s,date);
+                 mensaje = new EN.MensajePrivado((String)data[0][0], (String)data[0][1], s,date);
 
              }catch(System.Exception e){
                  throw new Exception("Error al leer el mensaje privado");

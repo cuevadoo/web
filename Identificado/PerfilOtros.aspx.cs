@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using EN;
 
 public partial class Identificado_PerfilOtros : System.Web.UI.Page
 {
@@ -160,7 +161,18 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
         }
     }
     protected void Button3_Click(object sender, EventArgs e){
-               
+        Usuario Usuario1 = (Usuario)Session["User"];
+        Usuario Usuario2 = (Usuario)Session["PerfilOtro"];
+        try {
+            
+            if (TextBoxMensaje.Text != "") {
+                String texto = TextBoxMensaje.Text;
+                Fecha fecha = new Fecha(DateTime.Now);
+                new CAD.MensajePrivado().create(new EN.MensajePrivado(Usuario1.Email,Usuario2.Email,texto,fecha));
+            }
+        }catch(CAD.Exception ex){
+            LabelError.Text = "No se pudo enviar el mensaje";
+        }
     }
 
 }

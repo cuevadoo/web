@@ -38,12 +38,17 @@
                     <asp:Table ID="TableEstatica" runat="server" Width="100%" HorizontalAlign="Center">
                         <asp:TableRow HorizontalAlign="Center">
                             <asp:TableCell>
-                                <asp:TextBox ID="TextBox1" style="max-width:600px;max-height:60px" Wrap="true" runat="server" Width="600px" Height="60px" CssClass="box" placeholder="Escribe el mensaje" TextMode="MultiLine" EnableViewState="True" EnableTheming="True"></asp:TextBox>
+                                <asp:TextBox ID="TextBoxMensaje" style="max-width:600px;max-height:60px" Wrap="true" runat="server" Width="600px" Height="60px" CssClass="box" placeholder="Escribe el mensaje" TextMode="MultiLine" EnableViewState="True" EnableTheming="True"></asp:TextBox>
                             </asp:TableCell>
                         </asp:TableRow>
                         <asp:TableRow HorizontalAlign="Center">
                             <asp:TableCell>
                                 <asp:Button ID="Button3" runat="server" Text="Enviar" cssclass="boton" OnClick="Button3_Click"></asp:Button>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow HorizontalAlign="Center">
+                            <asp:TableCell>
+                                <asp:Label runat="server" ID="LabelError" Text=""></asp:Label>
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
