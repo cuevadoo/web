@@ -17,7 +17,8 @@
         }
         function camBoton(){
             var aux = document.getElementById("ContentPlaceHolder1_Button1");
-            if (aux.disabled == "") {
+            
+            if (document.getElementById("ContentPlaceHolder1_CheckBox1").checked == false) {
                 aux.disabled = "disabled"
             } else {
                 aux.disabled = "";

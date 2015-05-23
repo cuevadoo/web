@@ -101,7 +101,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
                 }
                 if (gf.Decada != 0)
                 {
-                    DropDownListDecadaC.SelectedValue = gf.Decada + "";
+                    DecadaC.Text = "   " + gf.Decada;
                 }
                 if (gf.Pelicula != null)
                 {
@@ -149,7 +149,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
 
                 if (gm.Decada != 0)
                 {
-                    DropDownListDecadaM.SelectedValue = gm.Decada + "";
+                    DecadaM.Text = "   " + gm.Decada;
                 }
 
 
@@ -346,7 +346,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             if (TextBoxGrupo.Text != "") { gm.Grupo = TextBoxGrupo.Text; }
             if (TextBoxArtista.Text != "") { gm.Artista = TextBoxArtista.Text; }
             if (TextBoxConciertos.Text != "") { gm.Concierto = TextBoxConciertos.Text; }
-            if (DropDownListDecadaM.SelectedValue != "--") { gm.Decada = Byte.Parse(DropDownListDecadaM.SelectedValue); }
+            if (DropDownListDecadaM.SelectedValue != "--") { gm.Decada = Byte.Parse(DropDownListDecadaM.SelectedItem.Value); }
             
 
             

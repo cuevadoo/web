@@ -189,18 +189,18 @@
     </center>
     <div>
         <center>
-            <hr width="900px">
+            <hr width="900px"/>
             <p style="text-decoration-line:underline">Lugar de residencia</p>
             <div class="todo">
                 <p>La siguiente información no es obligatoria pero permite que tus amigos sepan donde vives y qué es lo que te gusta. Además facilitará la busqueda al resto de usuarios mediante el Buscador Avanzado de Cuevadoo©.</p>
             </div>
             <asp:Table ID="Table2" runat="server">
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxPais" runat="server" CssClass="box" placeholder="País de residencia" Width="200px"></asp:TextBox></asp:TableCell>
-                    <asp:TableCell runat="server" >
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxCAutonoma" runat="server" CssClass="box" placeholder="Comunidad autónoma o Estado" Width="200px"  ></asp:TextBox></asp:TableCell>
-                    <asp:TableCell runat="server">
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxLocalidad" runat="server" CssClass="box" placeholder="Localidad" Width="200px"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
@@ -208,40 +208,40 @@
             <br />
             <hr width="900px">
             <asp:Table runat="server" ID="Table3" Width="734px" Style="text-align:center">
-                <asp:TableRow runat="server" HorizontalAlign="Center">
-                    <asp:TableCell runat="server"><p>Gustos Informáticos</p></asp:TableCell>
+                <asp:TableRow HorizontalAlign="Center">
+                    <asp:TableCell><p>Gustos Informáticos</p></asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server" HorizontalAlign="Center">
-                    <asp:TableCell runat="server">
+                <asp:TableRow HorizontalAlign="Center">
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxSO" runat="server" CssClass="box" placeholder="Sistemas operativos: Windows, Linux, MAC" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxHardware" runat="server" CssClass="box" placeholder="Marcas de hardware favoritas. Separadas por comas y en mayúscula.Por ejemplo: HP,INTEL,NVIDIA" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxLenguajeP" runat="server" CssClass="box" placeholder="Lenguajes de programación favoritos. Separados por comas y en mayúscula.Por ejemplo:JAVA,C++,PYTHON" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
 
-                <asp:TableRow runat="server" HorizontalAlign="Center">
-                    <asp:TableCell runat="server"><hr width="900px"><p>Videojuegos</p></asp:TableCell>
+                <asp:TableRow HorizontalAlign="Center">
+                    <asp:TableCell><hr width="900px"><p>Videojuegos</p></asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server" HorizontalAlign="Center">
-                    <asp:TableCell runat="server">
+                <asp:TableRow HorizontalAlign="Center">
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxGeneroV" runat="server" CssClass="box" placeholder="Género favorito con una mayúscula.Por ejemplo: Acción" Width="55%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server" HorizontalAlign="Center">
-                    <asp:TableCell runat="server">
+                <asp:TableRow HorizontalAlign="Center">
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxVideojuego" runat="server" CssClass="box" placeholder="Tu videojuego favorito.Por ejemplo: The Legend of Zelda" Width="55%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server" HorizontalAlign="Center">
-                    <asp:TableCell runat="server">
+                <asp:TableRow HorizontalAlign="Center">
+                    <asp:TableCell>
                         <asp:RadioButtonList ID="RadioButtonListConsola" RepeatDirection="Horizontal" runat="server">
                             <asp:ListItem>ConsolasSONY</asp:ListItem>
                             <asp:ListItem>ConsolasMicrosoft</asp:ListItem>
@@ -249,26 +249,28 @@
                         </asp:RadioButtonList>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server" HorizontalAlign="Center">
-                    <asp:TableCell runat="server">
+                <asp:TableRow HorizontalAlign="Center">
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxDesarrolladora" runat="server" CssClass="box" placeholder="Tu desarrolladora de juegos favorito.Por ejemplo: Blizzard" Width="55%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server" HorizontalAlign="Center">
-                    <asp:TableCell runat="server">
+                <asp:TableRow HorizontalAlign="Center">
+                    <asp:TableCell>
                         <hr width="900px"><p>Películas y Series</p>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxGeneroC" runat="server" CssClass="box" placeholder="Tu género cinematográfico favorito.Por ejemplo: Comedia" Width="55%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server"><asp:TextBox ID="TextBoxDirector" runat="server" CssClass="box" placeholder="Tu director favorito.Por ejemplo: Tarantino" Width="55%"></asp:TextBox></asp:TableCell>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:TextBox ID="TextBoxDirector" runat="server" CssClass="box" placeholder="Tu director favorito.Por ejemplo: Tarantino" Width="55%"></asp:TextBox>
+                    </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <asp:Label runat="server" Text="Década cinematográfica favorita "></asp:Label>
                         <asp:DropDownList ID="DropDownListDecadaC" runat="server" class="box">
                             <asp:ListItem Value="0">--</asp:ListItem>
@@ -279,56 +281,57 @@
                             <asp:ListItem>90</asp:ListItem>
                             <asp:ListItem>00</asp:ListItem>
                         </asp:DropDownList>
+                        <asp:Label ID="DecadaC" runat="server"></asp:Label>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxActor" runat="server" CssClass="box" placeholder="Tu actor favorito.Por ejemplo: Johnny Depp" Width="55%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxPeli" runat="server" CssClass="box" placeholder="Tu película favorita.Por ejemplo: Pupl Fiction" Width="55%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxGeneroS" runat="server" CssClass="box" placeholder="Tu género de serie favorito.Por ejemplo: Acción" Width="55%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxProductor" runat="server" CssClass="box" placeholder="Tu productor de series favorito.Por ejemplo: Frank Darabont" Width="55%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxSerie" runat="server" CssClass="box" placeholder="Tu serie favorita.Por ejemplo: The Office" Width="55%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <hr width="900px">
                         <p>Música</p>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxEstilo" runat="server" CssClass="box" placeholder="Tu estilo musical favorito.Por ejemplo: Rock" Width="55%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxGrupo" runat="server" CssClass="box" placeholder="Tu grupo favorito.Por ejemplo: The Queen" Width="55%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <asp:TextBox ID="TextBoxArtista" runat="server" CssClass="box" placeholder="Tu artista favorito.Por ejemplo: Michael Jackson" Width="55%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <asp:Label runat="server" Text="Década musical favorita "></asp:Label>
                         <asp:DropDownList ID="DropDownListDecadaM" runat="server" class="box">
                             <asp:ListItem Value="0">--</asp:ListItem>
@@ -339,25 +342,27 @@
                             <asp:ListItem>90</asp:ListItem>
                             <asp:ListItem>00</asp:ListItem>
                         </asp:DropDownList>
+                        <asp:Label ID="DecadaM" runat="server"></asp:Label>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server"><asp:TextBox ID="TextBoxConciertos" runat="server" CssClass="box" placeholder="Últimos conciertos a los que has asistido. Separados por comas.Por ejemplo: Justin Bieber,Abraham Mateo" Width="100%"></asp:TextBox>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:TextBox ID="TextBoxConciertos" runat="server" CssClass="box" placeholder="Últimos conciertos a los que has asistido. Separados por comas.Por ejemplo: Justin Bieber,Abraham Mateo" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <br />
                         <p class="justify">*Los datos que introduzcas aquí serán publicos y visibles por todos los usuarios de Cuevadoo. Pulsando el botón "Guardar" estás de acuerdo con lo anterior citado y aceptas nuestra política.  </p>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
+                <asp:TableRow>
                     <asp:TableCell>
                     <asp:Label ID="LabelAviso" runat="server" Text=""></asp:Label>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow>
+                    <asp:TableCell>
                         <br />
                         <asp:Button ID="Button1" runat="server" Text="Guardar" cssclass="boton" OnClick="Button1_Click"></asp:Button>
                     </asp:TableCell>
