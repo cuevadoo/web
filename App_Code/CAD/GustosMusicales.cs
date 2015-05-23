@@ -130,7 +130,7 @@ namespace CAD
 
              try{
 
-                bool entra = false;
+                 bool entra = false;
                 String s = "Update GustosMusicales set ";
                 if (added.Estilo != null){
                     s += "Estilo='" + added.Estilo + "'";
@@ -165,7 +165,7 @@ namespace CAD
                     if (entra){
                         s += ", ";
                     }
-                    s += "Decada='" + added.Decada + "'";
+                    s += "Decada= " + added.Decada + "";
                     entra = true;
                 }           
                 s += " WHERE Usuario='" + deleted.Email + "'";

@@ -10,6 +10,9 @@ public partial class SinIdentificar_Registrar : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e){
         Form.DefaultButton = Button1.UniqueID;
+        if(CheckBox1.Checked){
+            Button1.Enabled = true;
+        }
     }
     protected void Button1_Click(object sender, EventArgs e){
         Page.Validate();
