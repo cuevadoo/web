@@ -24,4 +24,38 @@ public partial class Identificado_MasterPage : System.Web.UI.MasterPage
     protected void Button1_Click(object sender, EventArgs e){
         TextoChat.InnerHtml += "<div class='ChatP'>" + TextBox1.Text + "</div>";
     }
+       protected void TableAmigos_Load(object sender, EventArgs e) {
+        EN.Relaciones rel = (EN.Relaciones)Session["Relaciones"];
+        Table t = (Table)sender;
+        t.Rows.Clear();
+        TableRow row = new TableRow();
+        row.Height = 30;
+        TableCell cell = new TableCell();
+        cell.Text = "<p class='titulo' style='text-align:center;'>Amigos</p>";
+        row.Cells.Add(cell);
+        t.Rows.Add(row);
+        System.Collections.ArrayList array = rel.Usuarios;
+        bool entrado = true;
+        foreach(String user in array){
+            if(rel.isAceptada(user)){
+                row = new TableRow();
+                cell = new TableCell();
+                Button label = new Button();
+                label.CssClass = "BotonChat";
+                EN.Usuario en = new CAD.Usuario().read(user);
+                label.Text = en.Nombre + " " + en.Apellido1 + " " + en.Apellido2;
+                label.Style["email"] = "" + user;
+                cell.Controls.Add(label);
+                row.Cells.Add(cell);
+                t.Rows.Add(row);
+                entrado = false;
+            }
+        }
+        if(entrado){
+            row = new TableRow();
+            cell = new TableCell();
+            row.Cells.Add(cell);
+            t.Rows.Add(row);
+        }
+    }
 }

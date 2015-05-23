@@ -115,11 +115,19 @@
                                 </ContentTemplate>
                             </asp:UpdatePanel>
                         </div>
-                        <div id="PestañasAbiertas" style="float:left;width:280px;height:100%;z-index:503">
+                        <div id="PestañasAbiertas" style="float:left;width:280px;height:100%;z-index:504">
                             <!--Cosas-->
                         </div>
-                        <div id="NuevosChats" style="float:left;width:280px;height:100%;z-index:503">
-                            <!--Cosas-->
+                        <div id="NuevosChats" style="float:left;width:280px;height:100%;z-index:505">
+                             <asp:Table ID="TableAmigos2" OnLoad="TableAmigos_Load" runat="server" style="table-layout:fixed;overflow-y:scroll;overflow-x:hidden;border:dotted;" Width="250px" Height="450px"></asp:Table>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell>
+                            <asp:Table ID="TableDinamica" runat="server"></asp:Table>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
                         </div>
 
                         <!--Y en este la de despues de desplegar-->
