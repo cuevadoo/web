@@ -11,39 +11,29 @@ using System.Web;
 namespace EN
 {
     public class Chat{
-        private static ArrayList usuarios = new ArrayList();
-        private Usuario user1;
-        private Usuario user2;
+        private String user1;
+        private String user2;
         private ArrayList mensajesU1 = new ArrayList();
         private ArrayList mensajesU2 = new ArrayList();
         private bool admitida = false;
-        public Chat(Usuario user){
+        public Chat(String user){
             user1 = user;
         }
-        public static void conect(Usuario user){
-            usuarios.Add(user);
-        }
-        public static void disconect(Usuario user){
-            usuarios.Remove(user);
-        }
-        public static bool conected(Usuario user){
-            if(usuarios.Contains(user)){
-                return true;
-            }
-            return false;
-        }
-        public void conectarChat(Usuario user){
+
+        public void conectarChat(String user){
             user2 = user;
         }
-        public void escribir(Usuario user,String s){
+
+        public void escribir(String user,String chat){
             if (user1 == user){
-                mensajesU1.Add(s);
+                mensajesU1.Add(chat);
             }
             else {
-                mensajesU2.Add(s);
+                mensajesU2.Add(chat);
             }
         }
-        public ArrayList[] actualizar(Usuario user) {
+
+        public ArrayList[] actualizar(String user) {
             ArrayList[] aux = new ArrayList[2];
             if (user1 == user){
                 aux[0] = mensajesU1;
@@ -55,6 +45,14 @@ namespace EN
 
             }
             return aux;
+        }
+
+        public String User1{
+            get { return user1; }
+        }
+        
+        public String User2{
+            get { return user2; }
         }
     }
 }

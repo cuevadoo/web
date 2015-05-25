@@ -12,9 +12,9 @@ namespace EN
     public class Publicacion:Usuario
     {
         private String mensaje;
-        private DateTime dateTime;
+        private Fecha date;
  
-        public Publicacion(String mensaje,DateTime date,String email): base(email)
+        public Publicacion(Fecha date,String mensaje,String usuario): base(usuario)
         {
             this.mensaje = mensaje;
             this.date = date;
@@ -28,7 +28,7 @@ namespace EN
         }
 
 
-        public DateTime date {
+        public Fecha Date {
             get { return date; }
             set { date = value; }
         }
