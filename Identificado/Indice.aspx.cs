@@ -153,6 +153,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
                 String texto = TextBoxPublicacion.Text;
                 Fecha fecha = new Fecha(DateTime.Now);
                 new CAD.Publicacion().create(new EN.Publicacion(fecha,texto,Usuario.Email));
+                LabelError.Text = "Publicación enviada";
             }
         }
         catch (CAD.Exception ex)
