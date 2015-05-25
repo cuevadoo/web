@@ -26,7 +26,6 @@
                     <asp:TableCell runat="server"></asp:TableCell>
                     <asp:TableCell runat="server"></asp:TableCell>
                 </asp:TableRow>
-                <!--se mostrará como disponible únicamente el subcampo que activemos en el desplegable superior--> 
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell runat="server">
                         <asp:DropDownList ID="DropDownNombre" runat="server" Enabled="true" class="box">
