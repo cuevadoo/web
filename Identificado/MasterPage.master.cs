@@ -98,7 +98,7 @@ public partial class Identificado_MasterPage : System.Web.UI.MasterPage{
                 EN.Usuario en = new CAD.Usuario().read(chat.User2);
                 label.Text = en.Nombre + " " + en.Apellido1 + " " + en.Apellido2;
                 label.Style["email"] = "" + chat.User2;
-                label.Click += new EventHandler(this.HacerChat);
+                //label.Click += new EventHandler(this.HacerChat);
                 cell.Controls.Add(label);
                 row.Cells.Add(cell);
                 row.Height = 30;

@@ -175,7 +175,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
         return null;
     }
     protected void TablePublicaciones_Load(object sender, EventArgs e){
-        EN.Usuario user = (EN.Usuario)Session["User"];
+       EN.Usuario user = (EN.Usuario)Session["User"];
         ArrayList list = new CAD.Publicacion().read(user.Email);
         Table t = (Table)sender;
         TableRow row;
