@@ -174,26 +174,24 @@ public partial class Identificado_Indice : System.Web.UI.Page
         }
         return null;
     }
-    protected void TablePublicaciones_Load(object sender, EventArgs e)
-    {
+    protected void TablePublicaciones_Load(object sender, EventArgs e){
         EN.Usuario user = (EN.Usuario)Session["User"];
-        ArrayList list = new CAD.Publicacion().read();
+        ArrayList list = new CAD.Publicacion().read(user.Email);
         Table t = (Table)sender;
-
-        foreach (EN.MensajePrivado m in list)
-        {
-            Table1.CssClass = "center";
-            TableRow row = new TableRow();
-            TableCell cell = new TableCell();
+        TableRow row;
+        TableCell cell;
+        foreach (EN.Publicacion p in list){
+            t.CssClass = "center";
+            row = new TableRow();
+            cell = new TableCell();
             Label texto = new Label();
-            //Llamar al CAD de usuario para sacar nombre
-            EN.Usuario user2 = new CAD.Usuario().read(m.Usuario1);
+            EN.Usuario user2 = new CAD.Usuario().read(p.Email);
             texto.Text = user2.Nombre + " " + user2.Apellido1 + " " + user2.Apellido2;
             cell.Controls.Add(texto);
             row.Cells.Add(cell);
             cell = new TableCell();
             texto = new Label();
-            texto.Text = m.Texto;
+            texto.Text = p.Mensaje;
             cell.Controls.Add(texto);
             row.Cells.Add(cell);
             t.Rows.Add(row);

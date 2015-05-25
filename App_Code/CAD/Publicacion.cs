@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Web;
 using System.Data;
@@ -34,26 +35,32 @@ namespace CAD
             }
             catch (System.Exception e)
             {
-                throw new Exception("Error al crear una publicacion");
+                throw new Exception("Error al borrar una publicacion");
             }    
         }
-        //metodo para leer y devolver una publicación de la tabla
-        public EN.Publicacion read(String email)
-        {
-            EN.Publicacion Publi;
+        //metodo para leer y devolver todas las publicaciones para un usuario
+        public ArrayList read(String email){
+
+            ArrayList list = new ArrayList();
+            EN.Publicacion publi;
             Fecha date = new Fecha();
-            
-            try
-            {
-                DataRowCollection data = conexion.ejecutarR("Select * from Publicacion where Usuario='" + email + "'").Rows;
-                date.traducirSql((DateTime)data[0][0]);
-                Publi = new EN.Publicacion(date, (String)data[0][1], (String)data[0][2]);
+            EN.Relaciones aux = new Relaciones().read(email);
+            try{
+                foreach(String s in aux.Usuarios){
+                    if(aux.isAceptada(s)){
+                        DataRowCollection data = conexion.ejecutarR("Select * from Publicacion where Usuario='" + s + "'").Rows;
+                        foreach(DataRow row in data){
+                            date.traducirSql((DateTime)row[0]);
+                            publi = new EN.Publicacion(date, (String)row[1], (String)row[2]);
+                            list.Add(publi);
+                        }
+                    }
+                }
             }
-            catch (System.Exception e)
-            {
-                throw new Exception("Error al leer la publicacion");
+            catch (System.Exception e){
+                throw new Exception("Error al leer las publicaciones");
             }
-            return Publi;
+            return list;
         }
     }
 }
