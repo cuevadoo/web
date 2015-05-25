@@ -11,15 +11,25 @@
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
     <script type="text/javascript">
+        function apDisp() {
+            document.getElementById('NuevosChats').style.display = "none";
+            document.getElementById('PestañasAbiertas').style.display = "block";
+            document.getElementById('Chat').style.display = "none";
+        }
+        function apAmigos() {
+            document.getElementById('NuevosChats').style.display = "block";
+            document.getElementById('PestañasAbiertas').style.display = "none";
+            document.getElementById('Chat').style.display = "none";
+        }
         function aparecer() {
-            document.body.style.overflow = 'hidden';
-            document.getElementById('light').style.display = "block";
-            document.getElementById('fade').style.display = "block";
+            document.body.style.overflow = "hidden";
+            document.getElementById("light").style.display = "block";
+            document.getElementById("fade").style.display = "block";
         }
         function desaparecer() {
             document.body.style.overflow = 'auto';
-            document.getElementById('light').style.display = "none";
-            document.getElementById('fade').style.display = "none";
+            document.getElementById("light").style.display = "none";
+            document.getElementById("fade").style.display = "none";
         }
         var tam = 20;
         var id1;
@@ -29,6 +39,7 @@
                 tam = tam + num;
                 document.getElementById("chat").style.width = tam + "px";
             } else {
+                document.getElementById("ChatAbierto").checked = true;
                 clearInterval(id1);
             }
         }
@@ -44,13 +55,12 @@
             clearInterval(id1);
             clearInterval(id2);
             id1 = setInterval(camTam, 1, 2);
-            document.getElementById("fondoChat").style.display = "block";
         }
         function desChat() {
             clearInterval(id1);
             clearInterval(id2);
             id2 = setInterval(camTam2, 1, 4);
-            document.getElementById("fondoChat").style.display = "none";
+            document.getElementById("ChatAbierto").checked = false;
         }
     </script>
 </head>
@@ -81,26 +91,30 @@
 
                 <div id="chat" onmouseover="apChat()" style="position:fixed;top:200px;left:0px;width:20px;height:500px;overflow:hidden;z-index:501">
                     <div class="chatbackground" style="width:300px; height:100%;background-color:brown;overflow:hidden;z-index:502">
+                        
+                        <!--Necesario para saber si el chat esta abierto-->
+                        <div style="display:none">
+                            <asp:CheckBox ID="ChatAbierto" runat="server"/>
+                        </div>
 
                         <!--En este la informacion que se ve siempre-->
 
                         <div style="float:left;width:20px;height:100%;z-index:503">
                             <br /><br />
-                            <br /><asp:Image CssClass="Manita" ID="Image4" runat="server" ImageUrl="~/Imagenes/iconoventana.png" Width="20px"></asp:Image>
+                            <br /><asp:Image CssClass="Manita" ID="Image4" runat="server" ImageUrl="~/Imagenes/iconoventana.png" onclick="apDisp()" Width="20px"></asp:Image>
                             <br /><br />
-                            <br /><asp:Image CssClass="Manita" ID="Image3" runat="server" ImageUrl="~/Imagenes/iconomas.png"  Width="20px"></asp:Image><br /><br /><br />
+                            <br /><asp:Image CssClass="Manita" ID="Image3" runat="server" ImageUrl="~/Imagenes/iconomas.png" onclick="apAmigos()" Width="20px"></asp:Image><br /><br /><br />
                             <asp:Image CssClass="Manita" ID="Image5" runat="server" ImageUrl="~/Imagenes/iconoX.png" Width="20px" ></asp:Image>
                         </div>
 
                         <!--En este la informacion que se ve siempre-->
                         <!--Y en este la de despues de desplegar-->
 
-                        <div id="Chat" style="float:left;width:280px;height:100%;z-index:503">
+                        <div id="Chat" style="float:left;width:280px;height:100%;z-index:503;display:none">
                             <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                                 <ContentTemplate>
-
                                     <div style="position:absolute;right:0px">
-                                    <asp:Image CssClass="Manita" ID="Image6" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
+                                        <asp:Image CssClass="Manita" ID="Image6" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
                                     </div>
                                     <br />
                                     <asp:Label ID="ChatUser" runat="server" Text="Alex Martinez" CssClass="tfooter"></asp:Label><br />
@@ -115,19 +129,16 @@
                                 </ContentTemplate>
                             </asp:UpdatePanel>
                         </div>
-                        <div id="PestañasAbiertas" style="float:left;width:280px;height:100%;z-index:504">
-                            <!--Cosas-->
+                        <div id="PestañasAbiertas" style="float:left;width:280px;height:100%;z-index:503;display:block">
+                            <div style="position:absolute;right:0px">
+                                <asp:Image CssClass="Manita" ID="Image2" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
+                            </div>
                         </div>
-                        <div id="NuevosChats" style="float:left;width:280px;height:100%;z-index:505">
-                             <asp:Table ID="TableAmigos2" OnLoad="TableAmigos_Load" runat="server" style="table-layout:fixed;overflow-y:scroll;overflow-x:hidden;border:dotted;" Width="250px" Height="450px"></asp:Table>
-                        </asp:TableCell>
-                    </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            <asp:Table ID="TableDinamica" runat="server"></asp:Table>
-                        </asp:TableCell>
-                    </asp:TableRow>
-                </asp:Table>
+                        <div id="NuevosChats" style="float:left;width:280px;height:100%;z-index:503;display:none">
+                            <div style="position:absolute;right:0px">
+                                <asp:Image CssClass="Manita" ID="Image7" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
+                            </div>
+                            <asp:Table ID="TableAmigos2" OnLoad="TableAmigos_Load" runat="server" style="table-layout:fixed;overflow-y:scroll;overflow-x:hidden;border:dotted;" Width="250px" Height="450px"></asp:Table>
                         </div>
 
                         <!--Y en este la de despues de desplegar-->
