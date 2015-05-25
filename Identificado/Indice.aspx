@@ -40,7 +40,7 @@
                             </asp:Table>
                         </asp:TableCell>
                         <asp:TableCell RowSpan="2">
-                            <asp:Table ID="TableAmigos" OnLoad="TableAmigos_Load" runat="server" style="table-layout:fixed;overflow-y:scroll;overflow-x:hidden;border:dotted;" Width="250px" Height="580px"></asp:Table>
+                            <asp:Table ID="TableAmigos" OnLoad="TableAmigos_Load" runat="server"  CssClass="tablaBuscador" style="table-layout:fixed;overflow-y:scroll;overflow-x:scroll;" Width="250px" Height="580px"></asp:Table>
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
