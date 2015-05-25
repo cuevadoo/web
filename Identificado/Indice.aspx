@@ -49,7 +49,7 @@
                     </asp:TableRow>
                     <asp:TableRow>
                         <asp:TableCell VerticalAlign="Top">
-                            <asp:Table ID="TablePublicaciones" OnLoad="TablePublicaciones_Load" runat="server" style="table-layout:fixed;text-wrap:normal"></asp:Table>
+                            <asp:Table ID="TablePublicaciones" OnLoad="TablePublicaciones_Load" CssClass="tablaBuscador" runat="server" style="table-layout:fixed;text-wrap:normal;text-align:center"></asp:Table>
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>

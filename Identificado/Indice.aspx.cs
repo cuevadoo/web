@@ -184,8 +184,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
         Table t = (Table)sender;
         TableRow row;
         TableCell cell;
-        foreach (EN.Publicacion p in list){
-            t.CssClass = "center";
+        foreach (EN.Publicacion p in list){           
             row = new TableRow();
             cell = new TableCell();
             Label texto = new Label();
