@@ -14,10 +14,10 @@ public partial class Identificado_Mensajes : System.Web.UI.Page
     protected void Table1_Load(object sender, EventArgs e){       
         EN.Usuario user = (EN.Usuario)Session["User"];
         ArrayList list = new CAD.MensajePrivado().read(user.Email);
-        Table t = (Table)sender;
+        Table t = (Table)sender;    
         
         foreach(EN.MensajePrivado m in list){
-            Table1.CssClass = "center";
+            Table1.CssClass = "tablaBuscador";
             TableRow row = new TableRow();
             TableCell cell = new TableCell();
             Label texto = new Label();
