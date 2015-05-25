@@ -31,14 +31,10 @@ namespace EN
             this.sexo = sexo;
             this.foto = foto;
         }
+
         protected Usuario(String email) 
         {
             this.email = email;
-        }
-
-        public Chat abrirChat(Usuario user){
-            Chat c = new Chat(this);
-            return c;
         }
 
         public String Apellido1

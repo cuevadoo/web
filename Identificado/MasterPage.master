@@ -10,59 +10,6 @@
     <title>Cuevadoo</title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
-    <script type="text/javascript">
-        function apDisp() {
-            document.getElementById('NuevosChats').style.display = "none";
-            document.getElementById('PestañasAbiertas').style.display = "block";
-            document.getElementById('Chat').style.display = "none";
-        }
-        function apAmigos() {
-            document.getElementById('NuevosChats').style.display = "block";
-            document.getElementById('PestañasAbiertas').style.display = "none";
-            document.getElementById('Chat').style.display = "none";
-        }
-        function aparecer() {
-            document.body.style.overflow = "hidden";
-            document.getElementById("light").style.display = "block";
-            document.getElementById("fade").style.display = "block";
-        }
-        function desaparecer() {
-            document.body.style.overflow = 'auto';
-            document.getElementById("light").style.display = "none";
-            document.getElementById("fade").style.display = "none";
-        }
-        var tam = 20;
-        var id1;
-        var id2;
-        function camTam(num) {
-            if (tam < 300) {
-                tam = tam + num;
-                document.getElementById("chat").style.width = tam + "px";
-            } else {
-                document.getElementById("ChatAbierto").checked = true;
-                clearInterval(id1);
-            }
-        }
-        function camTam2(num) {
-            if (tam > 20) {
-                tam = tam - num;
-                document.getElementById("chat").style.width = tam + "px";
-            } else {
-                clearInterval(id2);
-            }
-        }
-        function apChat() {
-            clearInterval(id1);
-            clearInterval(id2);
-            id1 = setInterval(camTam, 1, 2);
-        }
-        function desChat() {
-            clearInterval(id1);
-            clearInterval(id2);
-            id2 = setInterval(camTam2, 1, 4);
-            document.getElementById("ChatAbierto").checked = false;
-        }
-    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -70,11 +17,11 @@
         <div id="Flotante">
             <center>
                 <asp:Table ID="Table1" runat="server" style="margin-bottom: 0px">
-                    <asp:TableRow ID="TableRow1" runat="server">
-                        <asp:TableCell ID="TableCell1" runat="server">
+                    <asp:TableRow runat="server">
+                        <asp:TableCell runat="server">
                             <asp:ImageButton ID="ImageButton2" runat="server" Height="50px" ImageUrl="~/Imagenes/logoRecortado.png" Width="50px" OnClick="ImageButton2_Click" CausesValidation="False" TabIndex="99" />
                         </asp:TableCell>
-                        <asp:TableCell ID="TableCell2" runat="server">
+                        <asp:TableCell runat="server">
                             <asp:Menu ID="Menu1" CssClass="Menu" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="Default" DisappearAfter="100">
                                 <Items>
                                     <asp:MenuItem Text="[Usuario]" Value="Nuevo elemento" NavigateUrl="~/Identificado/Perfil.aspx"></asp:MenuItem>
@@ -89,12 +36,13 @@
 
                 <!--Chat desplegable-->
 
-                <div id="chat" onmouseover="apChat()" style="position:fixed;top:200px;left:0px;width:20px;height:500px;overflow:hidden;z-index:501">
+                <div id="chat" runat="server" onmouseover="apChat()" style="position:fixed;top:200px;left:0px;width:20px;height:500px;overflow:hidden;z-index:501">
                     <div class="chatbackground" style="width:300px; height:100%;background-color:brown;overflow:hidden;z-index:502">
                         
                         <!--Necesario para saber si el chat esta abierto-->
                         <div style="display:none">
                             <asp:CheckBox ID="ChatAbierto" runat="server"/>
+                            <asp:TextBox ID="VentanaAbierta" runat="server"></asp:TextBox>
                         </div>
 
                         <!--En este la informacion que se ve siempre-->
@@ -109,10 +57,10 @@
 
                         <!--En este la informacion que se ve siempre-->
                         <!--Y en este la de despues de desplegar-->
-
-                        <div id="Chat" style="float:left;width:280px;height:100%;z-index:503;display:none">
-                            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                                <ContentTemplate>
+                        
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                            <ContentTemplate>
+                                <div id="Chat" style="float:left;width:280px;height:100%;z-index:503;display:none">
                                     <div style="position:absolute;right:0px">
                                         <asp:Image CssClass="Manita" ID="Image6" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
                                     </div>
@@ -126,21 +74,23 @@
                                     <asp:TextBox ID="TextBox1" runat="server" Width="258px" CssClass="boxchat"></asp:TextBox><br />
                                         <asp:Button ID="Button1" runat="server" Text="Enviar" CssClass="botonchat" OnClick="Button1_Click"></asp:Button>
                                     </div>
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
-                        </div>
-                        <div id="PestañasAbiertas" style="float:left;width:280px;height:100%;z-index:503;display:block">
-                            <div style="position:absolute;right:0px">
-                                <asp:Image CssClass="Manita" ID="Image2" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
-                            </div>
-                        </div>
-                        <div id="NuevosChats" style="float:left;width:280px;height:100%;z-index:503;display:none">
-                            <div style="position:absolute;right:0px">
-                                <asp:Image CssClass="Manita" ID="Image7" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
-                            </div>
-                            <asp:Table ID="TableAmigos2" OnLoad="TableAmigos_Load" runat="server" style="table-layout:fixed;overflow-y:scroll;overflow-x:hidden;border:dotted;" Width="250px" Height="450px"></asp:Table>
-                        </div>
-
+                                </div>
+                                <div id="PestañasAbiertas" style="float:left;width:280px;height:100%;z-index:503;display:block">
+                                    <div style="position:absolute;right:0px">
+                                        <asp:Image CssClass="Manita" ID="Image2" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
+                                    </div>
+                                    <center><h3>Chats actuales</h3></center>
+                                    <asp:Table ID="TableAbiertas" OnLoad="TableAbiertas_Load" runat="server" style="table-layout:fixed;overflow-y:scroll;overflow-x:scroll;background:white;border:outset;" Width="250px" Height="400px"></asp:Table>
+                                </div>
+                                <div id="NuevosChats" style="float:left;width:280px;height:100%;z-index:503;display:none">
+                                    <div style="position:absolute;right:0px">
+                                        <asp:Image CssClass="Manita" ID="Image7" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
+                                    </div>
+                                    <center><h3>Nuevo chat</h3></center>
+                                    <asp:Table ID="TableAmigos" OnLoad="TableAmigos_Load" runat="server" style="table-layout:fixed;overflow-y:scroll;overflow-x:scroll;background:white;border:outset" Width="250px" Height="400px"></asp:Table>
+                                </div>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
                         <!--Y en este la de despues de desplegar-->
 
                     </div>
@@ -230,6 +180,63 @@
             </div>
         </div>
     </form>
+    <script type="text/javascript">
+        function apDisp() {
+            document.getElementById('NuevosChats').style.display = "none";
+            document.getElementById('PestañasAbiertas').style.display = "block";
+            document.getElementById('Chat').style.display = "none";
+        }
+        function apAmigos() {
+            document.getElementById('NuevosChats').style.display = "block";
+            document.getElementById('PestañasAbiertas').style.display = "none";
+            document.getElementById('Chat').style.display = "none";
+        }
+        function aparecer() {
+            document.body.style.overflow = "hidden";
+            document.getElementById("light").style.display = "block";
+            document.getElementById("fade").style.display = "block";
+        }
+        function desaparecer() {
+            document.body.style.overflow = 'auto';
+            document.getElementById("light").style.display = "none";
+            document.getElementById("fade").style.display = "none";
+        }
+        var tam = 20;
+        var id1;
+        var id2;
+        function camTam(num) {
+            if (tam < 300) {
+                tam = tam + num;
+                document.getElementById("chat").style.width = tam + "px";
+            } else {
+                document.getElementById("ChatAbierto").checked = true;
+                clearInterval(id1);
+            }
+        }
+        function camTam2(num) {
+            if (tam > 20) {
+                tam = tam - num;
+                document.getElementById("chat").style.width = tam + "px";
+            } else {
+                clearInterval(id2);
+            }
+        }
+        function apChat() {
+            clearInterval(id1);
+            clearInterval(id2);
+            id1 = setInterval(camTam, 1, 2);
+        }
+        function desChat() {
+            clearInterval(id1);
+            clearInterval(id2);
+            id2 = setInterval(camTam2, 1, 4);
+            document.getElementById("ChatAbierto").checked = false;
+        }
+        if (document.getElementById("chat").style.width == "300px") {
+            tam = 300;
+            document.getElementById("ChatAbierto").checked = true;
+        }
+    </script>
 </body>
 </html>
 
