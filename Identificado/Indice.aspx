@@ -36,6 +36,7 @@
                                 <asp:TableRow>
                                     <asp:TableCell>
                                         <p class="titulo">REGISTRO DE ACTIVIDAD</p>
+                                        <asp:Table ID="TablePublicaciones" OnLoad="TablePublicaciones_Load" runat="server" style="table-layout:fixed;text-wrap:normal"></asp:Table>
                                     </asp:TableCell>
                                 </asp:TableRow>
                             </asp:Table>
