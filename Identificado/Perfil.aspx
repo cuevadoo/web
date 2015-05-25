@@ -180,8 +180,8 @@
                 <div runat="server" id="recuadro" style="background: rgba(70,130,180,0.2);display:none;position:fixed;border: 1px solid #a104f8;height:0px;width:0px;z-index:1005;"></div>
             </div>
             <div runat="server" id="botones" class="BotonesFoto">
-                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Imagenes/iconoX2.png" Height="50" Width="50" OnClick="ImageButton2_Click"></asp:ImageButton>
-                <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/iconoV.png" Height="50" Width="50" OnClick="ImageButton3_Click"></asp:ImageButton>
+                <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Imagenes/iconoV.png" Height="50" Width="50" OnClick="ImageButton2_Click"></asp:ImageButton>
+                <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Imagenes/iconoX2.png" Height="50" Width="50" OnClick="ImageButton3_Click"></asp:ImageButton>
             </div>
 
         <!--Editor de imagen-->
