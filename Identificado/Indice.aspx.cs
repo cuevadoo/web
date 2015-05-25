@@ -203,12 +203,12 @@ public partial class Identificado_Indice : System.Web.UI.Page
             row = new TableRow();
             cell = new TableCell();
             texto = new Label();
-            texto.Text = "---";
+            texto.Text ="....";
             cell.Controls.Add(texto);
             row.Cells.Add(cell);
             cell = new TableCell();
             texto = new Label();
-            texto.Text = "---";
+            texto.Text = "....";
             cell.Controls.Add(texto);
             row.Cells.Add(cell);
             t.Rows.Add(row);
