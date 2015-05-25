@@ -79,13 +79,15 @@
                                     <div style="position:absolute;right:0px">
                                         <asp:Image CssClass="Manita" ID="Image2" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
                                     </div>
-                                    <asp:Table ID="TableAbiertas" OnLoad="TableAbiertas_Load" runat="server" style="table-layout:fixed;overflow-y:scroll;overflow-x:scroll;border:dotted;" Width="250px" Height="450px"></asp:Table>
+                                    <center><h3>Chats actuales</h3></center>
+                                    <asp:Table ID="TableAbiertas" OnLoad="TableAbiertas_Load" runat="server" style="table-layout:fixed;overflow-y:scroll;overflow-x:scroll;background:white;border:outset;" Width="250px" Height="400px"></asp:Table>
                                 </div>
                                 <div id="NuevosChats" style="float:left;width:280px;height:100%;z-index:503;display:none">
                                     <div style="position:absolute;right:0px">
                                         <asp:Image CssClass="Manita" ID="Image7" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
                                     </div>
-                                    <asp:Table ID="TableAmigos" OnLoad="TableAmigos_Load" runat="server" style="table-layout:fixed;overflow-y:scroll;overflow-x:scroll;border:dotted;" Width="250px" Height="450px"></asp:Table>
+                                    <center><h3>Nuevo chat</h3></center>
+                                    <asp:Table ID="TableAmigos" OnLoad="TableAmigos_Load" runat="server" style="table-layout:fixed;overflow-y:scroll;overflow-x:scroll;background:white;border:outset" Width="250px" Height="400px"></asp:Table>
                                 </div>
                             </ContentTemplate>
                         </asp:UpdatePanel>

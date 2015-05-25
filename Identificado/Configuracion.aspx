@@ -16,22 +16,22 @@
                 </asp:TableRow>
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell runat="server">
-                        <asp:TextBox ID="TextBox1" runat="server" CssClass="box" placeholder="Cambia tu nombre de usuario" Width="100%"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxNombre" runat="server" CssClass="box" placeholder="Cambia tu nombre de usuario" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell runat="server">
-                        <asp:TextBox ID="TextBox2" runat="server" CssClass="box" placeholder="Cambia tu primer apellido" Width="100%"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxApellido1" runat="server" CssClass="box" placeholder="Cambia tu primer apellido" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell runat="server">
-                        <asp:TextBox ID="TextBox3" runat="server" CssClass="box" placeholder="Cambia tu segundo apellido" Width="100%"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxApellido2" runat="server" CssClass="box" placeholder="Cambia tu segundo apellido" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell runat="server">
-                        <asp:TextBox ID="TextBox4" runat="server" CssClass="box" placeholder="Cambia tu Email" Width="100%"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxEmail" runat="server" CssClass="box" placeholder="Cambia tu Email" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow  runat="server" HorizontalAlign="Center">
@@ -42,19 +42,19 @@
                 </asp:TableRow>
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell  runat="server">
-                        <asp:TextBox ID="TextBox5" runat="server" CssClass="box" placeholder="Contraseña anterior" Width="100%"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxOldPass" runat="server" CssClass="box" placeholder="Contraseña anterior" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell  runat="server">
-                        <asp:TextBox ID="TextBox6" runat="server" CssClass="box" placeholder="Nueva contraseña" Width="100%"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxNewPass" runat="server" CssClass="box" placeholder="Nueva contraseña" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow  runat="server">
                     <asp:TableCell runat="server">
                         <br />
                         <center>
-                            <asp:Button ID="Button1" runat="server" Text="Guardar" cssclass="boton"></asp:Button>
+                            <asp:Button ID="ButtonGuardar" runat="server" Text="Guardar" cssclass="boton" OnClick="ButtonGuardar_Click" /><asp:Button>
                         </center>
                     </asp:TableCell>
                 </asp:TableRow>

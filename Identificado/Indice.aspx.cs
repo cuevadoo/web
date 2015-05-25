@@ -178,4 +178,27 @@ public partial class Identificado_Indice : System.Web.UI.Page
         }
         return null;
     }
+    protected void TablePublicaciones_Load(object sender, EventArgs e){
+       EN.Usuario user = (EN.Usuario)Session["User"];
+        ArrayList list = new CAD.Publicacion().read(user.Email);
+        Table t = (Table)sender;
+        TableRow row;
+        TableCell cell;
+        foreach (EN.Publicacion p in list){
+            t.CssClass = "center";
+            row = new TableRow();
+            cell = new TableCell();
+            Label texto = new Label();
+            EN.Usuario user2 = new CAD.Usuario().read(p.Email);
+            texto.Text = user2.Nombre + " " + user2.Apellido1 + " " + user2.Apellido2;
+            cell.Controls.Add(texto);
+            row.Cells.Add(cell);
+            cell = new TableCell();
+            texto = new Label();
+            texto.Text = p.Mensaje;
+            cell.Controls.Add(texto);
+            row.Cells.Add(cell);
+            t.Rows.Add(row);
+        }
+    }
 }

@@ -48,8 +48,8 @@
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>
-                        <asp:TableCell>
-                            <asp:Table ID="TableDinamica" runat="server"></asp:Table>
+                        <asp:TableCell VerticalAlign="Top">
+                            <asp:Table ID="TablePublicaciones" OnLoad="TablePublicaciones_Load" runat="server" style="table-layout:fixed;text-wrap:normal"></asp:Table>
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
