@@ -17,7 +17,6 @@ public partial class Identificado_Mensajes : System.Web.UI.Page
         Table t = (Table)sender;    
         
         foreach(EN.MensajePrivado m in list){
-            Table1.CssClass = "tablaBuscador";
             TableRow row = new TableRow();
             TableCell cell = new TableCell();
             Label texto = new Label();
