@@ -42,23 +42,29 @@
                 </asp:TableRow>
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell  runat="server">
-                        <asp:TextBox ID="TextBoxOldPass" runat="server" CssClass="box" placeholder="Contraseña anterior" Width="100%"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxOldPass" TextMode="Password" runat="server" CssClass="box" placeholder="Contraseña anterior" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell  runat="server">
-                        <asp:TextBox ID="TextBoxNewPass" runat="server" CssClass="box" placeholder="Nueva contraseña" Width="100%"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxNewPass" runat="server" TextMode="Password" CssClass="box" placeholder="Nueva contraseña" Width="100%"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow  runat="server">
-                    <asp:TableCell runat="server">
+                <asp:TableRow  runat="server" HorizontalAlign="Center">
+                    <asp:TableCell runat="server" >
                         <br />
-                        <center>
+                        
                             <asp:Button ID="ButtonGuardar" runat="server" Text="Guardar" cssclass="boton" OnClick="ButtonGuardar_Click" /><asp:Button>
-                        </center>
+                       
                     </asp:TableCell>
                 </asp:TableRow>
+                <asp:TableRow runat="server" HorizontalAlign="Center">
+                    <asp:TableCell><asp:Label ID="LabelError" runat="server" Text="" ></asp:Label></asp:TableCell>
+                </asp:TableRow>
+                
             </asp:Table>
+            <center>
+            <p>*Para guardar los cambios se requiere cambiar la contraseña o bien introducir la actual y confirmarla</p></center>
         </div>
     </center>
 
