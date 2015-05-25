@@ -189,7 +189,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
             cell = new TableCell();
             Label texto = new Label();
             EN.Usuario user2 = new CAD.Usuario().read(p.Email);
-            texto.Text = user2.Nombre + " " + user2.Apellido1 + " " + user2.Apellido2;
+            texto.Text = user2.Nombre + " " + user2.Apellido1 + " " + user2.Apellido2 + " dice: ";
             cell.Controls.Add(texto);
             row.Cells.Add(cell);
             cell = new TableCell();
@@ -198,6 +198,20 @@ public partial class Identificado_Indice : System.Web.UI.Page
             cell.Controls.Add(texto);
             row.Cells.Add(cell);
             t.Rows.Add(row);
+
+            row = new TableRow();
+            cell = new TableCell();
+            texto = new Label();
+            texto.Text = "---";
+            cell.Controls.Add(texto);
+            row.Cells.Add(cell);
+            cell = new TableCell();
+            texto = new Label();
+            texto.Text = "---";
+            cell.Controls.Add(texto);
+            row.Cells.Add(cell);
+            t.Rows.Add(row);
+
         }
     }
 }
