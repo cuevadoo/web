@@ -25,11 +25,10 @@ public partial class Identificado_Indice : System.Web.UI.Page
         TableRow row = new TableRow();
         row.Height = 30;
         TableCell cell = new TableCell();
-        cell.Text = "<p class='titulo' style='text-align:center;'>Amigos</p>";
+        cell.Text = "<p class='titulo' style='text-align:center;margin:10px'>Amigos</p>";
         row.Cells.Add(cell);
         t.Rows.Add(row);
         System.Collections.ArrayList array = rel.Usuarios;
-        bool entrado = true;
         foreach(String user in array){
             if(rel.isAceptada(user)){
                 row = new TableRow();
@@ -42,16 +41,14 @@ public partial class Identificado_Indice : System.Web.UI.Page
                 label.Click += new EventHandler(this.Redirect);
                 cell.Controls.Add(label);
                 row.Cells.Add(cell);
+                row.Height=30;
                 t.Rows.Add(row);
-                entrado = false;
             }
         }
-        if(entrado){
-            row = new TableRow();
-            cell = new TableCell();
-            row.Cells.Add(cell);
-            t.Rows.Add(row);
-        }
+        row = new TableRow();
+        cell = new TableCell();
+        row.Cells.Add(cell);
+        t.Rows.Add(row);
     }
 
     protected void TextBox1_TextChanged(object sender, EventArgs e){

@@ -72,7 +72,7 @@ namespace EN
             TableRow row1 = new TableRow();
             TableCell t1 = new TableCell();
             Label label1 = new Label();
-            label1.Text = "No se han encontrado Usuarios con ese nombre";
+            label1.Text = "No se han encontrado Usuarios";
             t1.Controls.Add(label1);
             row1.Cells.Add(t1);
             rows.Add(row1);
