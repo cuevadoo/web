@@ -176,8 +176,8 @@ public partial class Identificado_Indice : System.Web.UI.Page
     }
     protected void TablePublicaciones_Load(object sender, EventArgs e)
     {
-        EN.Usuario user = (EN.Usuario)Session["User"];
-        ArrayList list = new CAD.Publicacion().read();
+/*        EN.Usuario user = (EN.Usuario)Session["User"];
+        ArrayList list = new CAD.Publicacion().read(user.Email);
         Table t = (Table)sender;
 
         foreach (EN.MensajePrivado m in list)
@@ -197,6 +197,6 @@ public partial class Identificado_Indice : System.Web.UI.Page
             cell.Controls.Add(texto);
             row.Cells.Add(cell);
             t.Rows.Add(row);
-        }
+        }*/
     }
 }
