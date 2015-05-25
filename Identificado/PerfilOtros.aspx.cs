@@ -9,6 +9,7 @@ using EN;
 
 public partial class Identificado_PerfilOtros : System.Web.UI.Page
 {
+    //boton para poder leer los datos de la BBDD del usuario concreto
     protected void Page_Load(object sender, EventArgs e){
         EN.Usuario tuUser = (EN.Usuario)Session["User"];
         EN.Usuario user = (EN.Usuario)Session["PerfilOtro"];
@@ -39,8 +40,7 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
                     Button1.Enabled = false;
                 }
             }
-            //Residencia
-
+            //gustos Residencia
             try{
                 EN.Residencia r = new CAD.Residencia().read(user.Email);
                 if (r.Pais != null){
@@ -54,8 +54,7 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
                 }
             }catch(CAD.Exception ex){}
             
-            //Gustos informaticos
-
+            //gustos Gustos informaticos
             try{
                 EN.GustosOrdenadores gi = new CAD.GustosOrdenadores().read(user.Email);
                 if (gi.Sistemaoperativo != null){
@@ -69,8 +68,7 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
                 }
             }catch(CAD.Exception ex){}
             
-            //Gustos Videojuegos
-
+            //try Gustos Videojuegos
             try{
                 EN.GustosVideojuegos gv = new CAD.GustosVideojuegos().read(user.Email);
                 if (gv.Genero != null){
@@ -87,8 +85,7 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
                 }
             }catch(CAD.Exception ex){}
 
-            //Gustos Pelis y Series
-
+            //try Gustos Pelis y Series
             try{
                 EN.GustosFilm gf = new CAD.GustosFilm().read(user.Email);
                 if (gf.Actor != null){
@@ -117,8 +114,7 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
                 }
             }catch(CAD.Exception ex){}
 
-            //Gustos Musicales
-
+            //try para Gustos Musicales
             try{
                 EN.GustosMusicales gm = new CAD.GustosMusicales().read(user.Email);
                 if (gm.Artista != null){
@@ -140,6 +136,7 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
         }
     }
 
+    //boton para añadir amigos
     protected void Button1_Click(object sender, EventArgs e){
         EN.Relaciones rel = (EN.Relaciones)Session["Relaciones"];
         EN.Usuario user = (EN.Usuario)Session["PerfilOtro"];
@@ -160,6 +157,8 @@ public partial class Identificado_PerfilOtros : System.Web.UI.Page
             Session["Relaciones"] = rel;
         }
     }
+
+    //boton para enviar mensaje
     protected void Button3_Click(object sender, EventArgs e){
         Usuario Usuario1 = (Usuario)Session["User"];
         Usuario Usuario2 = (Usuario)Session["PerfilOtro"];
