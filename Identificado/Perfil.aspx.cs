@@ -9,6 +9,7 @@ using EN;
 
 public partial class Identificado_Perfil : System.Web.UI.Page
 {
+    //modulo para leer datos de la BBDD
     protected void Page_Load(object sender, EventArgs e){
         EN.Usuario user = (EN.Usuario) Session["User"];
         if(user!=null){
@@ -17,7 +18,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
                 }else{
                     ImageButton1.ImageUrl = "~/Imagenes/Usuarios/" + user.Email + "/prev.png";
                 }
-            
+            //leemos datos de residencia
             try
             {
                 //Declaración de las variables para cada gusto
@@ -38,8 +39,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
                     }
             }catch(CAD.Exception ex){}
 
-            //Gustos informaticos
-
+            //leemos datos de Gustos informaticos
             try
             {
                 EN.GustosOrdenadores gi = new CAD.GustosOrdenadores().read(user.Email);
@@ -58,7 +58,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             }
             catch (CAD.Exception ex) { }
 
-            //Gustos Videojuegos
+            //leemos datos de Gustos Videojuegos
 
             try
             {
@@ -82,7 +82,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             }
             catch (CAD.Exception ex) { }
 
-            //Gustos Film
+            //leemos datos de Gustos Film
 
             try
             {
@@ -122,7 +122,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             }
             catch (CAD.Exception ex) { }  
             
-            //Gustos Musicales
+            //leemos datos de Gustos Musicales
 
             try
             {
@@ -158,12 +158,13 @@ public partial class Identificado_Perfil : System.Web.UI.Page
         
         }
     }
+
     private static System.Drawing.Image cropImage(System.Drawing.Image img, System.Drawing.RectangleF cropArea){
         System.Drawing.Bitmap bmpImage = new System.Drawing.Bitmap(img);
         System.Drawing.Bitmap bmpCrop = bmpImage.Clone(cropArea, bmpImage.PixelFormat);
         return (System.Drawing.Image)(bmpCrop);
     }
-
+    //modulo para ver las imagenes
     protected void Table1_Load(object sender, EventArgs e){
         EN.Usuario user =(EN.Usuario) Session["User"];
         String[] dirs = Directory.GetFiles(Server.MapPath("~/Imagenes/Usuarios/" + user.Email + "/"));
@@ -184,6 +185,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
         }
         Table1.Rows.Add(row);
     }
+    //modulo para recortar las imagenes
     protected void DarleImagen(object sender, ImageClickEventArgs e){
         ImageButton ima = (ImageButton)sender;
         Session["FotoParaRecortar"] = Server.MapPath(ima.ImageUrl);
@@ -290,6 +292,7 @@ public partial class Identificado_Perfil : System.Web.UI.Page
             botones.Style["display"] = "none";
         }
     }
+    //boton que guarda los datos en la BBDD, recoge los datos del texbox y llama a los modulos de create o update de cada CAD
     protected void Button1_Click(object sender, EventArgs e)
     {
         try{

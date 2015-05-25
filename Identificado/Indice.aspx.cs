@@ -9,16 +9,17 @@ using EN;
 
 public partial class Identificado_Indice : System.Web.UI.Page
 {
+    //carga la página
     protected void Page_Load(object sender, EventArgs e){
         actualizarTabla();
     }
-    
+    //manda al perfil de otro usuario
     protected void Redirect(object sender, EventArgs e){
         Button b = (Button)sender;
         HttpContext.Current.Session["PerfilOtro"] = new CAD.Usuario().read(b.Style["email"]);
         HttpContext.Current.Response.Redirect("~/Identificado/PerfilOtros.aspx");
     }
-
+    //carga la tabla donde aparecen los usuarios agregados como amigos
     protected void TableAmigos_Load(object sender, EventArgs e) {
         EN.Relaciones rel = (EN.Relaciones)Session["Relaciones"];
         Table t = (Table)sender;
@@ -51,13 +52,13 @@ public partial class Identificado_Indice : System.Web.UI.Page
         row.Cells.Add(cell);
         t.Rows.Add(row);
     }
-
+    //text box para el buscador de amigos 
     protected void TextBox1_TextChanged(object sender, EventArgs e){
         CAD.Usuario user=new CAD.Usuario();
         Session["BuscadorIS"] = new EN.Buscador(new CAD.Buscador().buscarSin, TextBox1.Text);
         actualizarTabla();
     }
-
+    //botones de paso de página en caso de muchos resultados para la búsqueda de amigos
     protected void Button_Paginas(object sender, EventArgs e){
         Button but=(Button) sender;
         if (Session["BuscadorIS"]==null){
@@ -75,6 +76,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
             actualizarTabla();
         }
     }
+    //gestión de la búsqueda de amigos 
     private void actualizarTabla(){
         Table1.Rows.Clear();
         ArrayList lButton = new ArrayList();
@@ -143,6 +145,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
             }
         }
     }
+    //botón para enviar un publicación, siempre que haya algo escrito en el text box
     protected void Button1_Click(object sender, EventArgs e){
         Usuario Usuario = (Usuario)Session["User"];
         try
@@ -162,6 +165,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
         }
 
     }
+    // recoge el control que está siendo clickado para un buen funcionamiento del buscador 
     private Control GetControl(){
         string id = Page.Request.Params["__EVENTTARGET"];
         if (!string.IsNullOrEmpty(id)){
@@ -181,8 +185,7 @@ public partial class Identificado_Indice : System.Web.UI.Page
         Table t = (Table)sender;
         TableRow row;
         TableCell cell;
-        foreach (EN.Publicacion p in list){
-            t.CssClass = "center";
+        foreach (EN.Publicacion p in list){           
             row = new TableRow();
             cell = new TableCell();
             Label texto = new Label();

@@ -10,7 +10,9 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e){
         actualizarTabla();
     }
+    //text box para la búsqueda avanzada
     protected void TextBox1_TextChanged(object sender, EventArgs e){
+        //búsqueda por nombre 
         if(DropDownNombre.Enabled){
             if (DropDownNombre.SelectedIndex == 0){
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarNombre, TextBox1.Text);
@@ -22,6 +24,7 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarApellido2, TextBox1.Text);
             }
         }
+        //búsqueda por residencia 
         if(DropDownResidencia.Enabled){
             if(DropDownResidencia.SelectedIndex == 0){
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarPais, TextBox1.Text);
@@ -33,6 +36,7 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarLocalidad, TextBox1.Text);
             }
         }
+        //búsqueda por gustos informáticos
         if(DropDownGInf.Enabled){
             if (DropDownGInf.SelectedIndex == 0){
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarSO, TextBox1.Text);
@@ -44,6 +48,7 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarLprogramacion, TextBox1.Text);
             }
         }
+        //búsqueda por gustos videojuegos
         if(DropDownVideojuegos.Enabled){
             if (DropDownVideojuegos.SelectedIndex == 0){
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarGeneroV, TextBox1.Text);
@@ -58,6 +63,7 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarDesarrolladorfav, TextBox1.Text);
             }
         }
+        //búsqueda por gustos filmográficos
         if(DropDownPelisSeries.Enabled){
             if (DropDownPelisSeries.SelectedIndex == 0){
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarGeneroF, TextBox1.Text);
@@ -84,6 +90,7 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarSerie, TextBox1.Text);
             }
         }
+        //búsqueda por gustos musicales
         if(DropDownMusica.Enabled){
             if (DropDownMusica.SelectedIndex == 0){
                 Session["BuscadorCon"] = new EN.Buscador(new CAD.Buscador().buscarEstilo, TextBox1.Text);
@@ -103,13 +110,13 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
         }
         actualizarTabla();
     }
-    
+    //datos mostrados de búsqueda 
     protected void Redirect(object sender, EventArgs e){
         Button b = (Button)sender;
         HttpContext.Current.Session["PerfilOtro"] = new CAD.Usuario().read(b.Style["email"]);
         HttpContext.Current.Response.Redirect("~/Identificado/PerfilOtros.aspx");
     }
-
+    //botones para pasar las págines en caso de muchos resultados
     protected void Button_Paginas(object sender, EventArgs e){
         Button but = (Button)sender;
         if (Session["BuscadorSin"] == null){
@@ -127,6 +134,7 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
             actualizarTabla();
         }
     }
+    //actualización de la tabla depues de la busqueda
     private void actualizarTabla(){
         Table1.Rows.Clear();
         if (Session["BuscadorCon"] == null){
@@ -172,6 +180,7 @@ public partial class Identificado_BuscadorAvanzado : System.Web.UI.Page
             }
         }
     }
+    //activación de los subcampos de búsqueda a partir del campo superior que elijamos
     protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e){
         DropDownNombre.Enabled = false;
         DropDownResidencia.Enabled = false;

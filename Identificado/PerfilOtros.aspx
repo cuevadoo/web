@@ -17,11 +17,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <center>
     <div>
+        <!--Información basica de amigo, nos permite añadir amigo y enviarle un mensaje-->
         <h3 class="titulo"><asp:Label ID="LabelNombreUsuario" runat="server" Text="Nombre de usuario"></asp:Label></h3>
         <br />
         <asp:Image ID="UserImage1" runat="server" Height="198px" Width="250px" />
         <br />
-
         <asp:Table ID="Table4" runat="server">
             <asp:TableRow runat="server">
                 <asp:TableCell runat="server">
@@ -32,7 +32,7 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-        <!--enviar mensaje-->
+        <!--al darle al boton de enviar un mensaje aparece un div oculto-->
             <div id="mensaje" style="display:none;">
                 <center>
                     <asp:Table ID="TableEstatica" runat="server" Width="100%" HorizontalAlign="Center">
@@ -54,8 +54,7 @@
                     </asp:Table>
                 </center>
             </div>
-        <!--enviar mensaje-->
-
+<!--datos personales de residencia-->
     <div>
     <center><p style="text-decoration-line:underline">Datos personales</p></center>
             
@@ -71,8 +70,11 @@
         </asp:TableRow>
     </asp:Table><br />
     <asp:Table runat="server" ID="Table3" Width="734px" Style="text-align:center">
+
     <asp:TableRow runat="server" HorizontalAlign="Center">
-        <asp:TableCell runat="server"><p>Gustos Informáticos</p></asp:TableCell>
+        <asp:TableCell runat="server">
+            <!--datos sobre gustos informaticos-->
+            <p>Gustos Informáticos</p></asp:TableCell>
     </asp:TableRow>
     <asp:TableRow runat="server" HorizontalAlign="Center">
         <asp:TableCell runat="server"><asp:Label runat="server" Text="SO: "></asp:Label><asp:Label ID="LabelSO" runat="server" Text="No especificado" Backcolor="white" width="160px"></asp:Label>
@@ -89,7 +91,9 @@
 </asp:TableCell>
     </asp:TableRow>
     <asp:TableRow runat="server" HorizontalAlign="Center">
-        <asp:TableCell runat="server"><p>Videojuegos</p></asp:TableCell>
+        <asp:TableCell runat="server">
+            <!--datos sobre gustos de videojuegos-->
+            <p>Videojuegos</p></asp:TableCell>
     </asp:TableRow>
     <asp:TableRow runat="server" HorizontalAlign="Center">
         <asp:TableCell runat="server"><asp:Label runat="server" Text="Género de videojuegos: "></asp:Label><asp:Label ID="LabelGVideojuegos" runat="server" Text="No especificado" Backcolor="white" width="160px"></asp:Label>
@@ -107,7 +111,9 @@
     <asp:TableCell runat="server"><asp:Label  runat="server" Text="Desarrolladora favorita: "></asp:Label><asp:Label ID="LabelDesarrolladora" runat="server" Text="No especificado" Backcolor="white" width="480px"></asp:Label></asp:TableCell>
 </asp:TableRow>
     <asp:TableRow runat="server" HorizontalAlign="Center">
-    <asp:TableCell runat="server"><p>Películas y Series</p></asp:TableCell>
+    <asp:TableCell runat="server">
+        <!--datos sobre gustos de peliculas-->
+        <p>Películas y Series</p></asp:TableCell>
 </asp:TableRow>
         <asp:TableRow runat="server" HorizontalAlign="Justify">
     <asp:TableCell runat="server"><asp:Label  runat="server" Text="Género cinematográfico: "></asp:Label><asp:Label ID="LabelGCine" runat="server" Text="No especificado" Backcolor="white" width="470px"></asp:Label></asp:TableCell>
@@ -134,7 +140,9 @@
     <asp:TableCell runat="server"><asp:Label runat="server" Text="Serie favorita: "></asp:Label><asp:Label ID="LabelSerie" runat="server" Text="No especificado" Backcolor="white" width="554px"></asp:Label></asp:TableCell>
 </asp:TableRow>
     <asp:TableRow runat="server">
-    <asp:TableCell runat="server"><p>Música</p></asp:TableCell>
+    <asp:TableCell runat="server">
+    <!--datos sobre gustos de musica-->
+    <p>Música</p></asp:TableCell>
 </asp:TableRow>
     <asp:TableRow runat="server" Horizontal Align="Center">
     <asp:TableCell runat="server"><asp:Label runat="server" Text="Estilo de música: "></asp:Label><asp:Label ID="LabelEstilo" runat="server" Text="No especificado" Backcolor="white" width="160px"></asp:Label></asp:TextBox></asp:TableCell>
@@ -153,15 +161,10 @@
 </asp:TableRow>
 </asp:Table></center>
 <div>
-
-   
-    
+     
      <!--publicaciones-->
 
 </div>
-
-            
-            
-            
+      
     </div>
 </asp:Content>

@@ -44,7 +44,9 @@ public partial class Identificado_MasterPage : System.Web.UI.MasterPage{
             list = (ArrayList)Application[user.Email];
             EN.Chat chat = new EN.Chat(user.Email);
             chat.conectarChat(b.Style["email"]);
-            list.Add(chat);
+            if(!list.Contains(chat)){
+                list.Add(chat);
+            }
             Application[user.Email] = list;
         }else{
             list = new ArrayList();
@@ -53,6 +55,14 @@ public partial class Identificado_MasterPage : System.Web.UI.MasterPage{
             list.Add(chat);
             Application[user.Email] = list;
         }
+    }
+
+    protected void AbrirChat(object sender, EventArgs e) {
+        Button b = (Button)sender;
+        ChatUser.Text = b.Style["email"];
+        NuevosChats.Style["display"] = "none";
+        PestañasAbiertas.Style["display"] = "none";
+        Conversacion.Style["display"] = "block";
     }
 
     protected void TableAmigos_Load(object sender, EventArgs e) {
@@ -83,7 +93,8 @@ public partial class Identificado_MasterPage : System.Web.UI.MasterPage{
         row.Cells.Add(cell);
         t.Rows.Add(row);
     }
-    protected void TableAbiertas_Load(object sender, EventArgs e){
+
+    protected void TableAbiertas_PreRender(object sender, EventArgs e){
         EN.Usuario user = (EN.Usuario)Session["User"];
         Table t = (Table)sender;
         TableRow row;
@@ -98,7 +109,7 @@ public partial class Identificado_MasterPage : System.Web.UI.MasterPage{
                 EN.Usuario en = new CAD.Usuario().read(chat.User2);
                 label.Text = en.Nombre + " " + en.Apellido1 + " " + en.Apellido2;
                 label.Style["email"] = "" + chat.User2;
-                //label.Click += new EventHandler(this.HacerChat);
+                label.Click += new EventHandler(this.AbrirChat);
                 cell.Controls.Add(label);
                 row.Cells.Add(cell);
                 row.Height = 30;

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Identificado/MasterPage.master" AutoEventWireup="true" CodeFile="Perfil.aspx.cs" Inherits="Identificado_Perfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-
+    <!--funcion para poner foto de perfil y recortarla-->
     <script type="text/javascript">
         function TamVentana() {
             var Tamanyo = [0, 0];
@@ -188,7 +188,10 @@
         </div>
     </center>
     <div>
+        <!--los textbox nos muestra los datos de nuestro perfil, en el caso de que no tengamos nada introducido nos muestra un comentario con lo que hay que introducir-->
+        <!--en dicho campo. Si introducimos otro y le damos a guardar nos actualiza los datos en la BBDD-->
         <center>
+            <!--datos sobre la residencia-->
             <hr width="900px"/>
             <p style="text-decoration-line:underline">Lugar de residencia</p>
             <div class="todo">
@@ -209,7 +212,9 @@
             <hr width="900px">
             <asp:Table runat="server" ID="Table3" Width="734px" Style="text-align:center">
                 <asp:TableRow HorizontalAlign="Center">
-                    <asp:TableCell><p>Gustos Informáticos</p></asp:TableCell>
+                    <asp:TableCell>
+                        <!--datos sobre gustos informaticos-->
+                        <p>Gustos Informáticos</p></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow HorizontalAlign="Center">
                     <asp:TableCell>
@@ -228,7 +233,9 @@
                 </asp:TableRow>
 
                 <asp:TableRow HorizontalAlign="Center">
-                    <asp:TableCell><hr width="900px"><p>Videojuegos</p></asp:TableCell>
+                    <asp:TableCell><hr width="900px">
+                        <!--datos sobre videojuegos-->
+                        <p>Videojuegos</p></asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow HorizontalAlign="Center">
                     <asp:TableCell>
@@ -256,6 +263,7 @@
                 </asp:TableRow>
                 <asp:TableRow HorizontalAlign="Center">
                     <asp:TableCell>
+                        <!--datos sobre gustos de peliculas-->
                         <hr width="900px"><p>Películas y Series</p>
                     </asp:TableCell>
                 </asp:TableRow>
@@ -312,6 +320,7 @@
                 <asp:TableRow>
                     <asp:TableCell>
                         <hr width="900px">
+                        <!--datos sobre gustos de musica-->
                         <p>Música</p>
                     </asp:TableCell>
                 </asp:TableRow>
@@ -364,6 +373,7 @@
                 <asp:TableRow>
                     <asp:TableCell>
                         <br />
+                        <!--Boton para guardar o actualizar el perfil-->
                         <asp:Button ID="Button1" runat="server" Text="Guardar" cssclass="boton" OnClick="Button1_Click"></asp:Button>
                     </asp:TableCell>
                 </asp:TableRow>

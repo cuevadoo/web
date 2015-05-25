@@ -13,6 +13,7 @@
                     <asp:TableCell runat="server"></asp:TableCell>
                     <asp:TableCell runat="server"></asp:TableCell>
                     <asp:TableCell runat="server" columnSpan="2">
+                        <!--elegiremos el campo a activar desde el desplegable--> 
                         <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" class="box" AutoPostBack="True">
                             <asp:ListItem>Nombre</asp:ListItem>
                             <asp:ListItem>Residencia</asp:ListItem>
@@ -80,6 +81,7 @@
             </asp:Table>
         </div>
     </center>
+    <!--cuadro de texto para la búsqeuda avanzada--> 
     <div id="centrar">
         <asp:TextBox CssClass="box" placeholder="Inserte dato de búsqueda" ID="TextBox1" runat="server" Width="776px" AutoPostBack="True" OnTextChanged="TextBox1_TextChanged"></asp:TextBox><br />
         <center>
