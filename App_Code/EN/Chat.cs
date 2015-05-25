@@ -54,5 +54,20 @@ namespace EN
         public String User2{
             get { return user2; }
         }
+
+        public override bool Equals(object obj){
+            try {
+                EN.Chat c = (Chat)obj;
+                if(c.user1!=user1){
+                    return false;
+                }
+                if(c.user2!=user2){
+                    return false;
+                }
+                return true;
+            }catch(Exception){
+                return false;
+            }
+        }
     }
 }

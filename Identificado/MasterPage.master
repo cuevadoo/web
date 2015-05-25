@@ -42,7 +42,6 @@
                         <!--Necesario para saber si el chat esta abierto-->
                         <div style="display:none">
                             <asp:CheckBox ID="ChatAbierto" runat="server"/>
-                            <asp:TextBox ID="VentanaAbierta" runat="server"></asp:TextBox>
                         </div>
 
                         <!--En este la informacion que se ve siempre-->
@@ -60,7 +59,7 @@
                         
                         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                             <ContentTemplate>
-                                <div id="Chat" style="float:left;width:280px;height:100%;z-index:503;display:none">
+                                <div id="Conversacion" runat="server" style="float:left;width:280px;height:100%;z-index:503;display:none">
                                     <div style="position:absolute;right:0px">
                                         <asp:Image CssClass="Manita" ID="Image6" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
                                     </div>
@@ -71,18 +70,18 @@
                                         <!--Contenido de la conversacion del chart-->
                                     </div>
                                     <div>
-                                    <asp:TextBox ID="TextBox1" runat="server" Width="258px" CssClass="boxchat"></asp:TextBox><br />
+                                    <asp:TextBox ID="TextBox1" runat="server" Width="258px" CssClass="boxchat" AutoCompleteType="Disabled"></asp:TextBox><br />
                                         <asp:Button ID="Button1" runat="server" Text="Enviar" CssClass="botonchat" OnClick="Button1_Click"></asp:Button>
                                     </div>
                                 </div>
-                                <div id="PestañasAbiertas" style="float:left;width:280px;height:100%;z-index:503;display:block">
+                                <div id="PestañasAbiertas" runat="server" style="float:left;width:280px;height:100%;z-index:503;display:block">
                                     <div style="position:absolute;right:0px">
                                         <asp:Image CssClass="Manita" ID="Image2" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
                                     </div>
                                     <center><h3>Chats actuales</h3></center>
-                                    <asp:Table ID="TableAbiertas" OnLoad="TableAbiertas_Load" runat="server" style="table-layout:fixed;overflow-y:scroll;overflow-x:scroll;background:white;border:outset;" Width="250px" Height="400px"></asp:Table>
+                                    <asp:Table ID="TableAbiertas" OnLoad="TableAbiertas_PreRender" runat="server" style="table-layout:fixed;overflow-y:scroll;overflow-x:scroll;background:white;border:outset;" Width="250px" Height="400px"></asp:Table>
                                 </div>
-                                <div id="NuevosChats" style="float:left;width:280px;height:100%;z-index:503;display:none">
+                                <div id="NuevosChats" runat="server" style="float:left;width:280px;height:100%;z-index:503;display:none">
                                     <div style="position:absolute;right:0px">
                                         <asp:Image CssClass="Manita" ID="Image7" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
                                     </div>
@@ -184,12 +183,12 @@
         function apDisp() {
             document.getElementById('NuevosChats').style.display = "none";
             document.getElementById('PestañasAbiertas').style.display = "block";
-            document.getElementById('Chat').style.display = "none";
+            document.getElementById('Conversacion').style.display = "none";
         }
         function apAmigos() {
             document.getElementById('NuevosChats').style.display = "block";
             document.getElementById('PestañasAbiertas').style.display = "none";
-            document.getElementById('Chat').style.display = "none";
+            document.getElementById('Conversacion').style.display = "none";
         }
         function aparecer() {
             document.body.style.overflow = "hidden";
