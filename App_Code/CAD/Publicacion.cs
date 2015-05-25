@@ -12,12 +12,12 @@ namespace CAD
     public class Publicacion
     {
         private static Conexion conexion = new Conexion();
-        //metodo para crear un nuevo Gusto en la tabla 
+        //metodo para crear una publicación en la tabla 
         public void create(EN.Publicacion Publi)
         {
             try
             {
-                String s = "Inster into Publicacion(Fecha,Usuario,Mensaje) values ('"+DateTime.Now+"','"+Publi.Email+"','"+Publi.Mensaje+"')";
+                String s = "Insert into Publicacion(Fecha,Mensaje,Usuario) values ('"+Publi.Date.imprimirSql()+"','"+Publi.Mensaje+"','"+Publi.Email+"')";
                 conexion.ejecutarS(s);
             }
             catch (System.Exception e)
@@ -25,7 +25,7 @@ namespace CAD
                 throw new Exception("Error al crear una publicacion");
             }
         }
-        //metodo para eliminar un Gusto ya existente en la tabla 
+        //metodo para eliminar una publicación ya existente en la tabla 
         public void delete(EN.Publicacion Publi)
         {
             try
@@ -37,15 +37,17 @@ namespace CAD
                 throw new Exception("Error al crear una publicacion");
             }    
         }
-        //metodo para leer y devolver un gusto de la tabla
+        //metodo para leer y devolver una publicación de la tabla
         public EN.Publicacion read(String email)
         {
             EN.Publicacion Publi;
-
+            Fecha date = new Fecha();
+            
             try
             {
                 DataRowCollection data = conexion.ejecutarR("Select * from Publicacion where Usuario='" + email + "'").Rows;
-                Publi = new EN.Publicacion((String)data[0][0], (DateTime)data[0][1], (String)data[0][2]);
+                date.traducirSql((DateTime)data[0][0]);
+                Publi = new EN.Publicacion(date, (String)data[0][1], (String)data[0][2]);
             }
             catch (System.Exception e)
             {
