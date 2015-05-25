@@ -7,15 +7,18 @@
         otro buscador en la parte superior-->
     <center>
         <div class="todo">
+            <!--div para el buscador de amigos en la esquina superior izquierda-->
             <div runat="server" class="BuscadorFlotante">
-                &nbsp;<asp:TextBox onclick = "document.getElementById('ContentPlaceHolder1_light').style.display='block';document.getElementById('ContentPlaceHolder1_fade').style.display='block';document.getElementById('ContentPlaceHolder1_TextBox1').placeholder='Buscar amigo';document.getElementById('ContentPlaceHolder1_TextBox1').focus();document.getElementById('ContentPlaceHolder1_TextBox1').value='';" CssClass="box" placeholder="Buscar amigo" ID="TextBox3" runat="server" Width="776px"></asp:TextBox>
+                &nbsp;<asp:TextBox onclick = "document.getElementById('ContentPlaceHolder1_light').style.display='block';document.getElementById('ContentPlaceHolder1_fade').style.display='block';document.getElementById('ContentPlaceHolder1_TextBox1').placeholder='Buscar amigo';document.getElementById('ContentPlaceHolder1_TextBox1').focus();document.getElementById('ContentPlaceHolder1_TextBox1').value='';" CssClass="box" placeholder="Buscar amigo" ID="TextBox3" runat="server" Width="776px"></asp:TextBox>                      
                 <div runat="server" id="fade" class="FondoBuscador" onclick = "document.getElementById('ContentPlaceHolder1_light').style.display='none';document.getElementById('ContentPlaceHolder1_fade').style.display='none';document.getElementById('ContentPlaceHolder1_TextBox1').value=''"></div>
-                <div runat="server" id="light" class="ContenidoBuscador">
+               <!-- div para los resultados de búsqueda de amigos--> 
+                 <div runat="server" id="light" class="ContenidoBuscador">
                     &nbsp;<asp:TextBox CssClass="box" placeholder="" ID="TextBox1" runat="server" Width="776px" AutoPostBack="True" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
                     <asp:Table CssClass="tablaBuscador" ID="Table2" runat="server" Width="800px"></asp:Table>
                     <asp:Table ID="Table1" runat="server"></asp:Table>
                 </div> 
             </div>
+            <!--div para el resto de componentes de la página íncide: cuadro de publicación, botón de publicación, tabla de amigos, registro de actividad...--> 
             <div>
                 <br /><br />
                 <asp:Table ID="Table3" runat="server" Width="100%">

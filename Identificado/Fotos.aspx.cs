@@ -8,6 +8,7 @@ using System.IO;
 
 public partial class Identificado_Fotos : System.Web.UI.Page
 {
+    //carga la página para entrar
      protected void Page_Load(object sender, EventArgs e){
         if(Session["User"]==null){
             Response.Redirect("~/SinIdentificar/Entrar.aspx");
@@ -15,7 +16,7 @@ public partial class Identificado_Fotos : System.Web.UI.Page
         EN.Usuario aux = (EN.Usuario)Session["User"];
         Menu1.Items[0].Text = aux.Nombre;
     }
-
+    //carga la galería de fotos 
     protected void Table3_Load(object sender, EventArgs e){
         Table t = (Table)sender;
         EN.Usuario user =(EN.Usuario) Session["User"];
@@ -55,11 +56,11 @@ public partial class Identificado_Fotos : System.Web.UI.Page
             t.Rows.Add(row);
         }
     }
-
+    // carga la página por defecto de la parte privada 
     protected void ImageButton2_Click(object sender, ImageClickEventArgs e){
         Response.Redirect("~/Identificado/Indice.aspx");
     }
-
+    //sube una foto elegida por el usuario
     protected void Button1_Click(object sender, EventArgs e){
         if(FileUpload1.HasFile){
             bool comp = false;

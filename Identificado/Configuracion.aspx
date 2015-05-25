@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <!--Aqui nos encargaremos de configurar y poder reemplazar la información de nuestro usuario. Ya sea el nombre de usuario, apellidos, 
+    <!--En este div nos encargaremos de configurar y poder reemplazar la información de nuestro usuario. Ya sea el nombre de usuario, apellidos, 
         email y la contraseña -->
     <center>
         <div>
@@ -11,6 +11,7 @@
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell runat="server">
                         <h3 class="titulo">CONFIGURACIÓN DE CUENTA</h3><br />
+
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow runat="server" HorizontalAlign="Center">
