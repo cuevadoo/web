@@ -145,6 +145,7 @@
                 <div id="ContenidoI">
 
                     <!--Botones para subir fotos-->
+                    <center><h3 class="titulo">FOTOS</h3></center>
                     <asp:Label ID="Label3" runat="server" Text="Sube tus fotos" CssClass="titulo"></asp:Label>
                     <div style="background-color:#d1cdcd;width:450px;height:35px">
                         <asp:FileUpload ID="FileUpload1" runat="server" />

@@ -38,7 +38,7 @@
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <p class="titulo">REGISTRO DE ACTIVIDAD</p>
+                                        <h3 class="titulo">Publicaciones recientes</h3>
                                     </asp:TableCell>
                                 </asp:TableRow>
                             </asp:Table>

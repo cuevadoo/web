@@ -6,14 +6,14 @@
     <!--Se mostrarán los mensajes que has recibido -->
     <center>
         <div>
-            <h3 class="titulo">Recibidos</h3><br />
+            <h3 class="titulo">BANDEJA DE ENTRADA</h3><br />
             <asp:Table ID="Table2" runat="server" Width="100%">
                 <asp:TableRow>                  
                    <asp:TableCell CssClass="left">                   
-                      <h3 class="titulo" >USUARIO</h3>                         
+                      <h3 >Usuario</h3>                         
                    </asp:TableCell>
                    <asp:TableCell CssClass="left">
-                       <h3 class="titulo" >MENSAJE</h3>
+                       <h3>Mensaje</h3>
                    </asp:TableCell>                       
                 </asp:TableRow>
             </asp:Table>

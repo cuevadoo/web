@@ -8,6 +8,8 @@
         residencia o gustos.-->
     <center>
         <div>
+            <h3 class="titulo">Buscador Avanzado</h3>
+            <p>Seleccione una categoría superior y un campo de búsqueda inferior para realizar una búsqueda concreta</p>
             <asp:Table ID="Table3" runat="server">
                 <asp:TableRow runat="server" HorizontalAlign="Center">
                     <asp:TableCell runat="server"></asp:TableCell>
