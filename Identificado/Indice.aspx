@@ -24,12 +24,13 @@
                             <asp:Table ID="TableEstatica" runat="server" Width="100%">
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:TextBox ID="TextBox2" style="max-width:600px;max-height:60px" Wrap="true" runat="server" Width="600px" Height="60px" CssClass="box" placeholder="Cuéntale a tus amigos qué estás haciendo" TextMode="MultiLine" EnableViewState="True" EnableTheming="True"></asp:TextBox>
+                                        <asp:TextBox ID="TextBoxPublicacion" style="max-width:600px;max-height:60px" Wrap="true" runat="server" Width="600px" Height="60px" CssClass="box" placeholder="Cuéntale a tus amigos qué estás haciendo" TextMode="MultiLine" EnableViewState="True" EnableTheming="True"></asp:TextBox>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
                                     <asp:TableCell>
-                                        <asp:Button ID="Button2" runat="server" Text="Enviar" cssclass="boton" OnClick="Button2_Click"></asp:Button>
+                                        <asp:Button ID="ButtonEnviarP" runat="server" Text="Enviar" cssclass="boton" OnClick="Button1_Click"></asp:Button>
+                                        <asp:Label ID="LabelError" runat="server" Text=""></asp:Label>
                                     </asp:TableCell>
                                 </asp:TableRow>
                                 <asp:TableRow>
@@ -40,7 +41,7 @@
                             </asp:Table>
                         </asp:TableCell>
                         <asp:TableCell RowSpan="2">
-                            <asp:Table ID="TableAmigos" OnLoad="TableAmigos_Load" runat="server"  CssClass="tablaBuscador" style="table-layout:fixed;overflow-y:scroll;overflow-x:scroll;" Width="250px" Height="580px"></asp:Table>
+                            <asp:Table ID="TableAmigos" OnLoad="TableAmigos_Load" runat="server" style="table-layout:fixed;overflow-y:scroll;overflow-x:hidden;border:dotted;" Width="250px" Height="580px"></asp:Table>
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>

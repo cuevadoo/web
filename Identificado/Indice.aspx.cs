@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using EN;
 
 public partial class Identificado_Indice : System.Web.UI.Page
 {
@@ -143,9 +144,21 @@ public partial class Identificado_Indice : System.Web.UI.Page
         }
     }
     protected void Button1_Click(object sender, EventArgs e){
+        Usuario Usuario = (Usuario)Session["User"];
+        try
+        {
 
-    }
-    protected void Button2_Click(object sender, EventArgs e){
+            if (TextBoxPublicacion.Text != "")
+            {
+                String texto = TextBoxPublicacion.Text;
+                Fecha fecha = new Fecha(DateTime.Now);
+                new CAD.Publicacion().create(new EN.Publicacion(fecha,texto,Usuario.Email));
+            }
+        }
+        catch (CAD.Exception ex)
+        {
+            LabelError.Text = "  No se pudo enviar la publicación";
+        }
 
     }
     private Control GetControl(){
