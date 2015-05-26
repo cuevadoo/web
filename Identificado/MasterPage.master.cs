@@ -87,6 +87,7 @@ public partial class Identificado_MasterPage : System.Web.UI.MasterPage{
     }
 
     private void TextoChat_Load(){
+        TextoChat.InnerHtml = "";
         EN.Usuario user = (EN.Usuario)Session["User"];
         ArrayList list = (ArrayList)Application[user.Email];
         int aux = int.Parse(PosConversacion.Text);
