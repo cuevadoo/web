@@ -15,7 +15,6 @@ namespace EN
         private String user2;
         private ArrayList mensajesU1 = new ArrayList();
         private ArrayList mensajesU2 = new ArrayList();
-        private bool admitida = false;
         public Chat(String user){
             user1 = user;
         }
@@ -30,6 +29,14 @@ namespace EN
             }
             else {
                 mensajesU2.Add(chat);
+            }
+        }
+
+        public String contrario(String user){
+            if(user==user1){
+                return user2;
+            }else{
+                return user1;
             }
         }
 

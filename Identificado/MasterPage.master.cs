@@ -33,36 +33,71 @@ public partial class Identificado_MasterPage : System.Web.UI.MasterPage{
     }
 
     protected void Button1_Click(object sender, EventArgs e){
-        TextoChat.InnerHtml += "<div class='ChatP'>" + TextBox1.Text + "</div>";
+        EN.Usuario user = (EN.Usuario)Session["User"];
+        ArrayList list = (ArrayList)Application[user.Email];
+        int aux = int.Parse(PosConversacion.Text);
+        EN.Chat chat = (EN.Chat)list[aux];
+        chat.escribir(user.Email, TextBox1.Text);
+        TextoChat_Load();
     }
 
     protected void HacerChat(object sender, EventArgs e){
         Button b = (Button)sender;
         EN.Usuario user = (EN.Usuario)Session["User"];
         ArrayList list;
+        EN.Chat chat = new EN.Chat(user.Email);
+        chat.conectarChat(b.Style["email"]);
+
         if(Application[user.Email] != null){
             list = (ArrayList)Application[user.Email];
-            EN.Chat chat = new EN.Chat(user.Email);
-            chat.conectarChat(b.Style["email"]);
             if(!list.Contains(chat)){
                 list.Add(chat);
             }
             Application[user.Email] = list;
         }else{
             list = new ArrayList();
-            EN.Chat chat = new EN.Chat(user.Email);
-            chat.conectarChat(b.Style["email"]);
             list.Add(chat);
             Application[user.Email] = list;
         }
+
+        if(Application[b.Style["email"]] != null){
+            list = (ArrayList)Application[b.Style["email"]];
+            if(!list.Contains(chat)){
+                list.Add(chat);
+            }
+            Application[b.Style["email"]] = list;
+        }else{
+            list = new ArrayList();
+            list.Add(chat);
+            Application[b.Style["email"]] = list;
+        }
+
+        Response.Redirect(Request.RawUrl);
     }
 
     protected void AbrirChat(object sender, EventArgs e) {
         Button b = (Button)sender;
-        ChatUser.Text = b.Style["email"];
+        EN.Usuario user = new CAD.Usuario().read(b.Style["email"]);
+        PosConversacion.Text = b.Style["posicion"];
+        ChatUser.Text = user.Nombre;
         NuevosChats.Style["display"] = "none";
         PestañasAbiertas.Style["display"] = "none";
         Conversacion.Style["display"] = "block";
+        TextoChat_Load();
+    }
+
+    private void TextoChat_Load(){
+        EN.Usuario user = (EN.Usuario)Session["User"];
+        ArrayList list = (ArrayList)Application[user.Email];
+        int aux = int.Parse(PosConversacion.Text);
+        EN.Chat chat = (EN.Chat)list[aux];
+        ArrayList[] listas = chat.actualizar(user.Email);
+        foreach(String s in listas[1]){
+            TextoChat.InnerHtml += "<div class='ChatO'>" + s + "</div>";
+        }
+        foreach(String s in listas[0]){
+            TextoChat.InnerHtml += "<div class='ChatP'>" + s + "</div>";
+        }
     }
 
     protected void TableAmigos_Load(object sender, EventArgs e) {
@@ -95,25 +130,29 @@ public partial class Identificado_MasterPage : System.Web.UI.MasterPage{
     }
 
     protected void TableAbiertas_PreRender(object sender, EventArgs e){
-        EN.Usuario user = (EN.Usuario)Session["User"];
         Table t = (Table)sender;
+        EN.Usuario user = (EN.Usuario)Session["User"];
+        t.Rows.Clear();
         TableRow row;
         TableCell cell;
-        if(Application[user.Email] != null){
+        if (Application[user.Email] != null){
             ArrayList list = (ArrayList)Application[user.Email];
+            int i = 0;
             foreach (EN.Chat chat in list){
                 row = new TableRow();
                 cell = new TableCell();
+                EN.Usuario en = new CAD.Usuario().read(chat.contrario(user.Email));
                 Button label = new Button();
                 label.CssClass = "BotonChat";
-                EN.Usuario en = new CAD.Usuario().read(chat.User2);
+                label.Style["email"] = "" + en.Email;
+                label.Style["posicion"] = "" + i;
                 label.Text = en.Nombre + " " + en.Apellido1 + " " + en.Apellido2;
-                label.Style["email"] = "" + chat.User2;
                 label.Click += new EventHandler(this.AbrirChat);
                 cell.Controls.Add(label);
                 row.Cells.Add(cell);
                 row.Height = 30;
                 t.Rows.Add(row);
+                i++;
             }
         }
         row = new TableRow();

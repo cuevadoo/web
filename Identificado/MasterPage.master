@@ -39,10 +39,7 @@
                 <div id="chat" runat="server" onmouseover="apChat()" style="position:fixed;top:200px;left:0px;width:20px;height:500px;overflow:hidden;z-index:501">
                     <div class="chatbackground" style="width:300px; height:100%;background-color:brown;overflow:hidden;z-index:502">
                         
-                        <!--Necesario para saber si el chat esta abierto-->
-                        <div style="display:none">
-                            <asp:CheckBox ID="ChatAbierto" runat="server"/>
-                        </div>
+                        
 
                         <!--En este la informacion que se ve siempre-->
 
@@ -57,8 +54,14 @@
                         <!--En este la informacion que se ve siempre-->
                         <!--Y en este la de despues de desplegar-->
                         
-                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Always">
                             <ContentTemplate>
+                                <!--Necesario para saber si el chat esta abierto-->
+                                <div style="display:none">
+                                    <asp:CheckBox ID="ChatAbierto" runat="server"/>
+                                    <asp:TextBox ID="PosConversacion" runat="server"></asp:TextBox>
+                                </div>
+
                                 <div id="Conversacion" runat="server" style="float:left;width:280px;height:100%;z-index:503;display:none">
                                     <div style="position:absolute;right:0px">
                                         <asp:Image CssClass="Manita" ID="Image6" runat="server" ImageUrl="~/Imagenes/iconoflecha.png" Width="20px" onclick="desChat()"></asp:Image>
@@ -71,7 +74,7 @@
                                     </div>
                                     <div>
                                     <asp:TextBox ID="TextBox1" runat="server" Width="258px" CssClass="boxchat" AutoCompleteType="Disabled"></asp:TextBox><br />
-                                        <asp:Button ID="Button1" runat="server" Text="Enviar" CssClass="botonchat" OnClick="Button1_Click"></asp:Button>
+                                    <asp:Button ID="Button1" runat="server" Text="Enviar" CssClass="botonchat" OnClick="Button1_Click"></asp:Button>
                                     </div>
                                 </div>
                                 <div id="PestañasAbiertas" runat="server" style="float:left;width:280px;height:100%;z-index:503;display:block">
@@ -90,8 +93,8 @@
                                 </div>
                             </ContentTemplate>
                         </asp:UpdatePanel>
-                        <!--Y en este la de despues de desplegar-->
 
+                        <!--Y en este la de despues de desplegar-->
                     </div>
                 </div>
                 
@@ -189,6 +192,12 @@
             document.getElementById('NuevosChats').style.display = "block";
             document.getElementById('PestañasAbiertas').style.display = "none";
             document.getElementById('Conversacion').style.display = "none";
+        }
+        function apConversacion(email) {
+            document.getElementById('NuevosChats').style.display = "none";
+            document.getElementById('PestañasAbiertas').style.display = "none";
+            document.getElementById('Conversacion').style.display = "block";
+            document.getElementById('EmailConversacion').value = email;
         }
         function aparecer() {
             document.body.style.overflow = "hidden";
